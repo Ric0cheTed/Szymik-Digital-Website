@@ -4,12 +4,10 @@ import { type FormEvent, useState } from "react";
 import { enquiryEmail, siteSettings } from "@/lib/site";
 
 const helpOptions = [
-  "Website Design & Build",
-  "Website Redesign",
-  "Local Business Website",
-  "Digital Presence Cleanup",
-  "Digital Systems & Automation",
-  "Ongoing Support",
+  "New website",
+  "Website refresh",
+  "Local visibility / SEO",
+  "Automation or custom tool",
   "Not sure yet",
 ];
 
@@ -18,7 +16,6 @@ const budgetOptions = [
   "GBP 2,000 - GBP 5,000",
   "GBP 5,000 - GBP 10,000",
   "GBP 10,000+",
-  "Not sure yet",
 ];
 
 const timelineOptions = [
@@ -28,7 +25,7 @@ const timelineOptions = [
   "Flexible",
 ];
 
-const contactMethods = ["Email", "Phone", "Video call"];
+const contactMethods = ["Email first", "Phone", "Video call"];
 
 const inputClassName =
   "mt-2 w-full rounded-[1.35rem] border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition duration-200 placeholder:text-muted/70 focus:border-accent/40 focus:ring-4 focus:ring-accent-soft";
@@ -72,6 +69,7 @@ export function EnquiryForm() {
     const formData = new FormData(event.currentTarget);
     const name = getValue(formData, "name");
     const email = getValue(formData, "email");
+    const phone = getValue(formData, "phone");
     const businessName = getValue(formData, "businessName");
     const websiteUrl = getValue(formData, "websiteUrl");
     const helpWith = getValue(formData, "helpWith");
@@ -87,12 +85,13 @@ export function EnquiryForm() {
       "",
       `Name: ${name}`,
       `Email: ${email}`,
+      `Phone: ${phone || "Not provided"}`,
       `Business name: ${businessName || "Not provided"}`,
       `Website URL: ${websiteUrl || "Not provided"}`,
       `Help needed: ${helpWith}`,
       `What is not working: ${notWorking}`,
       `Success looks like: ${success}`,
-      `Budget range: ${budget}`,
+      `Budget range: ${budget || "Not provided"}`,
       `Timeline: ${timeline}`,
       `Best contact method: ${contactMethod}`,
     ].join("\n");
@@ -110,22 +109,22 @@ export function EnquiryForm() {
         <div>
           <span className="eyebrow">Project enquiry</span>
           <h2 className="mt-3 text-3xl font-semibold text-foreground">
-            Share the important details clearly
+            Prepare a clear project email
           </h2>
         </div>
         <p className="text-base leading-8 text-muted">
           This form prepares a draft email addressed to {enquiryEmail}. It keeps
-          the enquiry process straightforward and gives you a chance to
-          review everything before sending.
+          the enquiry process straightforward and gives you a chance to review
+          everything before sending.
         </p>
         <div className="rounded-[1.35rem] border border-border bg-background/75 p-4">
           <p className="font-mono text-xs uppercase tracking-[0.22em] text-muted">
             Fit note
           </p>
           <p className="mt-2 text-sm leading-7 text-muted">
-            The strongest enquiries usually come with a clear business problem,
-            a main decision-maker involved, and enough room to improve the
-            website or system properly rather than patching around the edges.
+            Start with the practical need: a new website, a refresh, local
+            visibility, or a repeated workflow problem that may need automation
+            or a custom tool.
           </p>
         </div>
       </div>
@@ -155,6 +154,17 @@ export function EnquiryForm() {
           />
         </Field>
 
+        <Field htmlFor="phone" label="Phone number, if useful">
+          <input
+            id="phone"
+            name="phone"
+            type="tel"
+            className={inputClassName}
+            autoComplete="tel"
+            placeholder="Optional"
+          />
+        </Field>
+
         <Field htmlFor="businessName" label="Business name">
           <input
             id="businessName"
@@ -166,7 +176,11 @@ export function EnquiryForm() {
           />
         </Field>
 
-        <Field htmlFor="websiteUrl" label="Website URL">
+        <Field
+          htmlFor="websiteUrl"
+          label="Website URL"
+          className="sm:col-span-2"
+        >
           <input
             id="websiteUrl"
             name="websiteUrl"
@@ -178,7 +192,7 @@ export function EnquiryForm() {
 
         <Field
           htmlFor="helpWith"
-          label="What do you need help with?"
+          label="Which route feels closest?"
           required
           className="sm:col-span-2"
         >
@@ -202,7 +216,7 @@ export function EnquiryForm() {
 
         <Field
           htmlFor="notWorking"
-          label="What is not working right now?"
+          label="What do you need help with?"
           required
           className="sm:col-span-2"
         >
@@ -212,7 +226,7 @@ export function EnquiryForm() {
             required
             rows={5}
             className={`${inputClassName} min-h-[8.5rem] resize-y`}
-            placeholder="What feels outdated, unclear, inconsistent, or harder than it should be?"
+            placeholder="Tell me what feels outdated, unclear, hard to find, too manual, or harder than it should be."
           />
         </Field>
 
@@ -228,20 +242,19 @@ export function EnquiryForm() {
             required
             rows={5}
             className={`${inputClassName} min-h-[8.5rem] resize-y`}
-            placeholder="A stronger first impression, better enquiries, easier updates, less manual admin, or something else?"
+            placeholder="A sharper website, stronger local visibility, better enquiries, easier updates, less manual admin, or something else?"
           />
         </Field>
 
-        <Field htmlFor="budget" label="Budget range" required>
+        <Field htmlFor="budget" label="Budget range, if known">
           <select
             id="budget"
             name="budget"
-            required
             defaultValue=""
             className={inputClassName}
           >
-            <option value="" disabled>
-              Select a range
+            <option value="">
+              Not sure yet
             </option>
             {budgetOptions.map((option) => (
               <option key={option} value={option}>
@@ -251,7 +264,7 @@ export function EnquiryForm() {
           </select>
         </Field>
 
-        <Field htmlFor="timeline" label="Timeline" required>
+        <Field htmlFor="timeline" label="Ideal timescale" required>
           <select
             id="timeline"
             name="timeline"

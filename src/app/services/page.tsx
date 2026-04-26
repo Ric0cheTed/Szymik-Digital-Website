@@ -8,7 +8,7 @@ import { services, siteSettings } from "@/lib/site";
 export const metadata: Metadata = createPageMetadata({
   title: "Services",
   description:
-    "Website design and build, redesigns, local business websites, digital cleanup, practical systems, and ongoing support from Szymik Digital.",
+    "Website Refresh, Starter Website, Local Growth Website, and Automation / Custom Tool Discovery pathways from Szymik Digital.",
   path: "/services",
 });
 
@@ -17,8 +17,8 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Services"
-        title="Clear digital work, shaped around real business needs"
-        intro="Szymik Digital helps businesses improve how they show up online and how they operate behind the scenes. The work stays practical, founder-led, and focused on what will actually help."
+        title="Practical service pathways for websites, local visibility, and useful systems"
+        intro="Start with the website and local visibility foundation. When the business has outgrown the basics, automation and custom tool discovery can help shape the next layer."
         actions={
           <>
             <CtaLink href="/contact">{siteSettings.ctaLabels.primary}</CtaLink>
@@ -34,10 +34,10 @@ export default function ServicesPage() {
             </p>
             <div className="mt-4 grid gap-3">
               {[
-                "The website feels outdated or does not reflect the quality of the business",
-                "The offer is harder to understand than it should be",
-                "Digital touchpoints have become messy or inconsistent over time",
-                "Too much repetitive admin is still being handled manually",
+                "The current website needs a practical refresh",
+                "The business needs its first credible website",
+                "Local service pages and trust signals need a stronger structure",
+                "Manual admin or scattered tools are starting to slow the business down",
               ].map((item) => (
                 <p key={item} className="list-check">
                   {item}
@@ -52,11 +52,11 @@ export default function ServicesPage() {
         <div className="site-container">
           <SectionHeading
             eyebrow="Overview"
-            title="Six practical service areas"
-            intro="Each offer is designed to solve a real problem rather than force the business into a fixed agency package."
+            title="Four clear pathways"
+            intro="Each pathway maps to a common small-business starting point, from improving an existing site to building a stronger local foundation or exploring practical systems."
           />
 
-          <div className="mt-10 grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {services.map((service) => (
               <a
                 key={service.id}
@@ -72,6 +72,9 @@ export default function ServicesPage() {
                 <p className="mt-4 text-base leading-8 text-muted">
                   {service.teaser}
                 </p>
+                <span className="link-arrow mt-6">
+                  Explore pathway <span aria-hidden>{">"}</span>
+                </span>
               </a>
             ))}
           </div>
@@ -102,7 +105,23 @@ export default function ServicesPage() {
                 <div className="grid gap-5 rounded-[1.6rem] bg-background/80 p-6">
                   <div>
                     <h3 className="text-lg font-semibold text-foreground">
-                      What it can include
+                      Who it is for
+                    </h3>
+                    <p className="mt-4 text-base leading-8 text-muted">
+                      {service.bestFor}
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground">
+                      The problem it solves
+                    </h3>
+                    <p className="mt-4 text-base leading-8 text-muted">
+                      {service.problem}
+                    </p>
+                  </div>
+                  <div>
+                    <h3 className="text-lg font-semibold text-foreground">
+                      What Szymik Digital helps with
                     </h3>
                     <div className="mt-4 grid gap-3">
                       {service.includes.map((item) => (
@@ -114,11 +133,16 @@ export default function ServicesPage() {
                   </div>
                   <div>
                     <h3 className="text-lg font-semibold text-foreground">
-                      Good fit if
+                      Practical outcome
                     </h3>
                     <p className="mt-4 text-base leading-8 text-muted">
-                      {service.fit}
+                      {service.outcome}
                     </p>
+                  </div>
+                  <div>
+                    <CtaLink href="/contact">
+                      {siteSettings.ctaLabels.primary}
+                    </CtaLink>
                   </div>
                 </div>
               </div>
@@ -132,14 +156,17 @@ export default function ServicesPage() {
           <div className="panel-dark px-6 py-8 sm:px-10 sm:py-10 lg:px-12 lg:py-12">
             <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_auto] lg:items-end">
               <div>
-                <span className="eyebrow text-accent">Need help choosing?</span>
+                <span className="eyebrow text-accent">
+                  Not sure where to start?
+                </span>
                 <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
-                  The right next step does not need to be overcomplicated
+                  You do not need to choose the package before the first conversation
                 </h2>
                 <p className="panel-dark-copy mt-5 max-w-3xl text-lg leading-8">
-                  If the problem is part website, part cleanup, and part
-                  operational friction, that is fine. Start with what feels
-                  messy now and the right scope can be shaped from there.
+                  If the problem is part website, part local visibility, and
+                  part operational friction, that is fine. Start with what
+                  feels unclear now and the right scope can be shaped from
+                  there.
                 </p>
               </div>
               <div>

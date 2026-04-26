@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import { CtaLink } from "@/components/cta-link";
 import { EnquiryForm } from "@/components/enquiry-form";
 import { PageHero } from "@/components/page-hero";
 import { createPageMetadata } from "@/lib/metadata";
@@ -10,10 +11,51 @@ import {
   siteSettings,
 } from "@/lib/site";
 
+const enquiryGuidance = [
+  "Business name and website URL, if you already have one",
+  "What you need help with: a new website, a refresh, local visibility, or automation/custom tools",
+  "What feels unclear, outdated, hard to find, or harder than it should be",
+  "Your ideal timescale and any important launch dates",
+  "The best way to contact you after the enquiry",
+];
+
+const nextSteps = [
+  {
+    title: `${siteSettings.founderShortName} reviews the enquiry`,
+    description:
+      "The first step is to understand the business, the problem, and whether the best starting point is a website, local visibility work, a refresh, or automation discovery.",
+  },
+  {
+    title: "A short discovery chat or email follow-up happens",
+    description:
+      "If the enquiry looks like a good fit, the next conversation fills in the practical details: goals, audience, pages, access, deadlines, and what needs to be included.",
+  },
+  {
+    title: "A clear quote and scope are prepared",
+    description:
+      "The quote explains the outcome, what is included, what is excluded, content responsibilities, review rounds, and the payment approach before work begins.",
+  },
+  {
+    title: "Deposit, build, review, and handover follow",
+    description:
+      "If you go ahead, the normal path is deposit, build, structured review, final balance, launch, handover, and support options where useful.",
+  },
+];
+
+const enquiryTemplate = [
+  "Business name:",
+  "Website URL, if you have one:",
+  "What I need help with: New website / Website refresh / Local visibility / Automation or custom tool / Not sure yet",
+  "What is not working right now:",
+  "What I want this project to improve:",
+  "Ideal timescale:",
+  "Best contact method:",
+].join("\n");
+
 export const metadata: Metadata = createPageMetadata({
   title: "Contact",
   description:
-    "Start a project with Szymik Digital using the enquiry form, direct email, and clear founder-led next-step guidance.",
+    "Start a project with Szymik Digital for a small business website, website refresh, local visibility foundation, or practical automation and custom tool enquiry.",
   path: "/contact",
 });
 
@@ -22,8 +64,16 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Contact"
-        title="Start your project"
-        intro="If the website feels outdated, the messaging is unclear, or the setup behind the scenes is harder than it should be, this is the right place to begin. The process stays direct, practical, and founder-led from the start."
+        title="Start a project"
+        intro="Tell Szymik Digital what you need help with: a new website, a website refresh, stronger local visibility, or a practical automation/custom tool when the business needs more than a brochure site."
+        actions={
+          <>
+            <CtaLink href="#enquiry">{siteSettings.ctaLabels.enquiry}</CtaLink>
+            <CtaLink href={`mailto:${enquiryEmail}`} variant="secondary">
+              Email directly
+            </CtaLink>
+          </>
+        }
         aside={
           <div>
             <p className="font-mono text-xs uppercase tracking-[0.22em] text-muted">
@@ -31,10 +81,10 @@ export default function ContactPage() {
             </p>
             <div className="mt-4 grid gap-3">
               {[
-                "New websites and redesigns that need clear direction",
-                "Businesses whose digital presence feels messy or inconsistent",
-                "Teams dealing with repetitive admin or clunky workflows",
-                "Founders or teams who want direct contact rather than an agency relay",
+                "Small businesses that need a clearer website",
+                "Local service businesses that need stronger visibility foundations",
+                "Existing websites that feel dated, unclear, or hard to use",
+                "Teams with repeated admin or workflow problems worth scoping properly",
               ].map((item) => (
                 <p key={item} className="list-check">
                   {item}
@@ -45,53 +95,50 @@ export default function ContactPage() {
         }
       />
 
-      <section className="page-section pt-0">
+      <section id="enquiry" className="page-section scroll-mt-28 pt-0">
         <div className="site-container">
           <div className="grid gap-6 lg:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)]">
             <div className="space-y-6">
               <article className="panel p-6 sm:p-8">
-                <span className="eyebrow">Project fit</span>
+                <span className="eyebrow">What to include</span>
                 <h2 className="mt-4 text-2xl font-semibold text-foreground">
-                  A strong starting point is better than a polished brief
+                  A useful enquiry is better than a perfect brief
                 </h2>
                 <p className="mt-4 text-base leading-8 text-muted">
-                  You do not need every detail figured out before getting in
-                  touch. The most helpful starting point is a clear view of what
-                  feels outdated, unclear, inconsistent, or heavier than it
-                  should be.
+                  You do not need the exact package name before getting in
+                  touch. A few practical details are enough to make the first
+                  reply useful.
                 </p>
+                <div className="mt-5 grid gap-3">
+                  {enquiryGuidance.map((item) => (
+                    <p key={item} className="list-check">
+                      {item}
+                    </p>
+                  ))}
+                </div>
+              </article>
+
+              <article className="panel p-6 sm:p-8">
+                <span className="eyebrow">Not sure where to start?</span>
+                <h2 className="mt-4 text-2xl font-semibold text-foreground">
+                  Start with the problem, not the package
+                </h2>
                 <p className="mt-4 text-base leading-8 text-muted">
-                  If there is a real business problem to solve and room to make
-                  practical decisions, that is usually enough to begin a useful
-                  conversation.
+                  It is fine if you are not sure whether the right route is a
+                  refresh, a new website, local visibility work, or a custom
+                  tool. Describe what feels messy or important, and the first
+                  reply can point you toward a sensible next step.
                 </p>
               </article>
 
               <article className="panel p-6 sm:p-8">
                 <span className="eyebrow">What happens next</span>
                 <div className="mt-5 grid gap-4">
-                  {[
-                    {
-                      title: "The form opens a prepared email draft",
-                      description: `When you submit the form, your email app opens a draft addressed to ${enquiryEmail} with the enquiry details already structured.`,
-                    },
-                    {
-                      title: `${siteSettings.founderName} reviews the enquiry personally`,
-                      description:
-                        "The first pass is about understanding the problem, the likely fit, and whether the next step should be a call, a proposal, or a simple recommendation.",
-                    },
-                    {
-                      title: "The conversation stays practical",
-                      description:
-                        "If the project looks like a good fit, the next discussion focuses on goals, blockers, priorities, and what a sensible scope would actually look like.",
-                    },
-                    {
-                      title: "You get a clear next step",
-                      description:
-                        "That might be a proposal, a phased recommendation, or a more focused direction on what should be fixed first.",
-                    },
-                  ].map((item) => (
-                    <div key={item.title} className="rounded-[1.5rem] bg-background/80 p-5">
+                  {nextSteps.map((item) => (
+                    <div
+                      key={item.title}
+                      className="rounded-[1.5rem] bg-background/80 p-5"
+                    >
                       <h2 className="text-lg font-semibold text-foreground">
                         {item.title}
                       </h2>
@@ -101,6 +148,21 @@ export default function ContactPage() {
                     </div>
                   ))}
                 </div>
+              </article>
+
+              <article className="panel p-6 sm:p-8">
+                <span className="eyebrow">Email template</span>
+                <h2 className="mt-4 text-2xl font-semibold text-foreground">
+                  Prefer to write the email yourself?
+                </h2>
+                <p className="mt-4 text-base leading-8 text-muted">
+                  The form prepares a mail draft, but enquiries are handled by
+                  email either way. You can copy this structure into your own
+                  message if that is easier.
+                </p>
+                <pre className="mt-5 overflow-x-auto rounded-[1.5rem] border border-border bg-background/80 p-5 whitespace-pre-wrap text-sm leading-7 text-muted">
+                  {enquiryTemplate}
+                </pre>
               </article>
 
               <article className="panel p-6 sm:p-8">
@@ -138,7 +200,7 @@ export default function ContactPage() {
                       Best inbox for project enquiries
                     </p>
                     <a
-                      href={`mailto:${enquiryEmail}`}
+                      href={`mailto:${enquiryEmail}?subject=${encodeURIComponent("Project enquiry for Szymik Digital")}`}
                       className="mt-3 inline-block text-base font-semibold text-accent-strong transition hover:text-foreground"
                     >
                       {enquiryEmail}

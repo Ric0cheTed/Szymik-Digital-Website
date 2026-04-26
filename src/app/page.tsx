@@ -20,25 +20,25 @@ const conversionPaths = [
     title: "I need a website",
     description:
       "A clean, mobile-friendly site that explains the offer clearly and makes the next step easy.",
-    href: "/services#website-design-build",
+    href: "/services#starter-website",
   },
   {
     title: "I need help getting found locally",
     description:
       "Stronger local foundations around services, location signals, and the trust details customers look for.",
-    href: "/services#local-business-websites",
+    href: "/services#local-growth",
   },
   {
     title: "I need my current website improved",
     description:
       "A practical refresh for dated, unclear, slow, or hard-to-use pages before committing to a bigger rebuild.",
-    href: "/services#website-redesign",
+    href: "/services#website-refresh",
   },
   {
     title: "I need automation or a custom tool",
     description:
       "Simple systems for repeated admin, enquiries, follow-up, or internal workflows when the website is no longer the only blocker.",
-    href: "/services#digital-systems-automation",
+    href: "/services#automation-tools",
   },
 ];
 

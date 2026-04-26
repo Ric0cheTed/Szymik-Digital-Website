@@ -65,7 +65,7 @@ export const siteSettings = {
     services: "View services",
     work: "View work",
     conversation: "Start a conversation",
-    enquiry: "Prepare enquiry email",
+    enquiry: "Open email draft",
   },
   meta: {
     defaultTitle:
@@ -119,105 +119,95 @@ export type Service = {
   title: string;
   teaser: string;
   description: string;
+  bestFor: string;
+  problem: string;
   includes: string[];
-  fit: string;
+  outcome: string;
 };
 
 export const services: Service[] = [
   {
-    id: "website-design-build",
-    shortLabel: "New build",
-    title: "Website Design & Build",
+    id: "website-refresh",
+    shortLabel: "Refresh",
+    title: "Website Refresh",
     teaser:
-      "New websites planned around the offer, the content, and the enquiry path rather than a template-first approach.",
+      "A focused improvement path for existing websites that feel dated, unclear, inconsistent, or harder to use than they should be.",
     description:
-      "For businesses that need a website from the ground up. The work starts by getting clear on the offer, the structure, and the actions the site needs to support, then moves into a modern, responsive build that feels credible and easy to use.",
+      "A practical refresh helps make an existing website clearer, more trustworthy, and easier for local customers to act on without forcing a full rebuild too early.",
+    bestFor:
+      "Small businesses with an existing site that needs clearer messaging, stronger trust, better structure, or practical fixes.",
+    problem:
+      "The site no longer reflects the quality of the business, the offer is hard to understand, or the enquiry path is weaker than it should be.",
     includes: [
-      "Page structure and content flow",
-      "Design direction and responsive UI build",
-      "Copy guidance and clearer calls to action",
-      "Launch support and tidy finishing details",
+      "Website review and practical improvement priorities",
+      "Messaging, structure, and call-to-action improvements where in scope",
+      "Basic technical, usability, and local visibility checks",
+      "Clear next-step recommendations if a larger rebuild is needed later",
     ],
-    fit: "A strong fit when the business needs a clean new foundation rather than trying to stretch an old site further.",
+    outcome:
+      "A clearer, more useful website and a practical view of what should be improved next.",
   },
   {
-    id: "website-redesign",
-    shortLabel: "Redesign",
-    title: "Website Redesign",
+    id: "starter-website",
+    shortLabel: "Starter",
+    title: "Starter Website",
     teaser:
-      "A clearer structure, stronger presentation, and better flow for sites that no longer match the business.",
+      "A lean, credible website for small businesses that need to explain what they do and make enquiries easy.",
     description:
-      "For existing websites that feel dated, too busy, hard to navigate, or simply no longer representative of the business. Redesign work focuses on clarity before decoration so the finished site feels sharper and easier to understand.",
+      "A Starter Website gives the business a clean foundation: clear positioning, core service information, trust signals, and a simple path for people to get in touch.",
+    bestFor:
+      "New or small businesses that need a professional web presence without a large, complex site.",
+    problem:
+      "The business needs somewhere credible to send prospects, but does not yet need a deep content strategy or advanced functionality.",
     includes: [
-      "Review of the current site and what is getting in the way",
-      "Content restructuring and cleaner page hierarchy",
-      "Refreshed design system and updated visuals",
-      "Improved navigation and stronger enquiry routes",
+      "Lean website structure around the main offer",
+      "Core service information and trust signals",
+      "Responsive build with a clear contact or enquiry path",
+      "Basic technical hygiene and simple handover guidance",
     ],
-    fit: "Best when the current site is still useful as a starting point, but no longer does the business justice.",
+    outcome:
+      "A professional website that explains the business, builds trust, and gives prospects a clear next step.",
   },
   {
-    id: "local-business-websites",
-    shortLabel: "Local",
-    title: "Local Business Websites",
+    id: "local-growth",
+    shortLabel: "Local growth",
+    title: "Local Growth Website",
     teaser:
-      "Credible, mobile-friendly sites for service businesses that need to explain what they do and make contact easy.",
+      "A stronger website foundation for service-led businesses that need clearer pages, local relevance, and better enquiry flow.",
     description:
-      "A focused offer for local and regional businesses that need a straightforward, trustworthy web presence. The goal is to help people understand the service quickly, build confidence, and make the next step obvious.",
+      "A Local Growth Website is for businesses that need more than a brochure site: clearer service pages, stronger trust sections, and local visibility foundations that support real enquiries.",
+    bestFor:
+      "Small local service businesses with clear offers, local competition, and a need to be easier to find and trust.",
+    problem:
+      "Potential customers cannot quickly understand the services, local relevance, proof, or best way to enquire.",
     includes: [
-      "Service-led pages with clear structure",
-      "Local trust content, contact points, and practical details",
-      "Mobile-first layouts for real-world browsing",
-      "Simple enquiry routes that reduce friction",
+      "Website structure around core services",
+      "Service pages or service sections with clearer calls to action",
+      "Local relevance content where appropriate",
+      "Trust, proof, and basic local SEO foundations",
     ],
-    fit: "Ideal for trades, support services, consultants, clinics, and other service-led businesses that rely on clear first impressions.",
+    outcome:
+      "A stronger local website foundation for visibility, service clarity, trust, and enquiry generation.",
   },
   {
-    id: "digital-presence-cleanup",
-    shortLabel: "Cleanup",
-    title: "Digital Presence Cleanup",
-    teaser:
-      "A practical tidy-up for businesses whose website, messaging, profiles, and contact points have drifted out of sync.",
-    description:
-      "Sometimes the issue is not just one page. It is a wider digital presence that has become inconsistent over time. Cleanup work focuses on the messy details that quietly weaken trust: outdated wording, mismatched information, broken links, scattered assets, and unclear positioning.",
-    includes: [
-      "Review of website messaging and key pages",
-      "Consistency checks across contact points and profiles",
-      "Removal of outdated, duplicated, or conflicting information",
-      "Clearer direction on what should stay, change, or be retired",
-    ],
-    fit: "Best when the business has evolved but the digital presence has not kept pace.",
-  },
-  {
-    id: "digital-systems-automation",
+    id: "automation-tools",
     shortLabel: "Systems",
-    title: "Digital Systems & Automation",
+    title: "Automation / Custom Tool Discovery",
     teaser:
-      "Practical workflows that reduce repetitive admin and make the business easier to run behind the scenes.",
+      "A discovery-led path for businesses that have outgrown spreadsheets, manual admin, or basic enquiry forms.",
     description:
-      "This work is about useful systems rather than flashy automation for its own sake. The aim is to remove avoidable friction, reduce repeat tasks, and create smoother handoffs around enquiries, follow-up, internal admin, or routine communication.",
+      "Automation and custom tools come after the website foundation when a business has a repeated workflow problem worth understanding properly before anything gets built.",
+    bestFor:
+      "Businesses with a specific repeated workflow problem, such as manual admin, scattered tracking, repeated reporting, or inconsistent client handling.",
+    problem:
+      "Too much repeated work is being handled manually or passed between disconnected tools without a clear process.",
     includes: [
-      "Simple enquiry and follow-up workflows",
-      "Lightweight automation opportunities mapped to real problems",
-      "Clearer internal process design and handoffs",
-      "Practical recommendations that stay manageable long term",
+      "Workflow discovery and problem definition",
+      "Current process mapping",
+      "Opportunity assessment and scope recommendation",
+      "Build estimate if a tool or automation is justified",
     ],
-    fit: "A good fit when too much manual work is being repeated or passed between tools and people without a clear system.",
-  },
-  {
-    id: "ongoing-support",
-    shortLabel: "Support",
-    title: "Ongoing Support",
-    teaser:
-      "Steady help after launch for updates, improvements, tidy-ups, and the next practical steps.",
-    description:
-      "Not every change needs a full project. Ongoing support keeps the site and surrounding setup moving forward, whether that means new pages, content updates, design refinements, small features, or wider digital tidy-ups after launch.",
-    includes: [
-      "Content updates and landing page additions",
-      "Design refinements and small feature improvements",
-      "Technical tidy-ups and practical problem solving",
-      "Flexible support without a bloated retainer structure",
-    ],
-    fit: "Useful for businesses that want a dependable partner after launch without overcomplicating the arrangement.",
+    outcome:
+      "A clear decision on whether automation or a custom tool is worth building, what it should do, and what it is likely to involve.",
   },
 ];

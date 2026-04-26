@@ -6,7 +6,7 @@ Phase 1: Website Foundation
 
 ## Current Focus
 
-Phase 1 website foundation work aligned with `PROJECT_TRUTH.md`. Homepage positioning and CTA structure are complete; the next focus is services overview and offer pathway alignment.
+Phase 1 website foundation work aligned with `PROJECT_TRUTH.md`. Homepage positioning, services overview pathway alignment, and contact/enquiry intake alignment are complete; the next focus is proof-led work references and trust alignment.
 
 ## Completed
 
@@ -20,16 +20,20 @@ Phase 1 website foundation work aligned with `PROJECT_TRUTH.md`. Homepage positi
 - Phase 1 Slice 1 complete: homepage positioning and CTA structure aligned around websites, local visibility, and practical digital systems for small businesses
 - Homepage now includes a simple conversion path for website, local visibility, website improvement, and automation/custom tool needs
 - Primary CTA label aligned to "Start a project"
+- Phase 1 Slice 2 complete: services overview and offer pathways aligned around Website Refresh, Starter Website, Local Growth Website, and Automation / Custom Tool Discovery
+- Phase 1 Slice 3 complete: contact/enquiry route and client intake aligned around new websites, website refreshes, local visibility, and automation/custom tool enquiries
+- Contact route now explains what to include, how email-based enquiries work, what happens next, and reassures visitors they do not need to know the exact package before getting in touch
 
 ## Files Changed In Latest Slice
 
-- `src/app/page.tsx`
+- `src/app/contact/page.tsx`
+- `src/components/enquiry-form.tsx`
 - `src/lib/site.ts`
 - `docs/DELIVERY_STATUS.md`
 
 ## Next Recommended Slice
 
-Services overview + offer pathway alignment.
+Work / proof-led references + trust alignment.
 
 ## Open Decisions
 
@@ -41,6 +45,6 @@ Services overview + offer pathway alignment.
 
 ## Boundaries
 
-- Current work is homepage-focused
-- No new service pages, pricing changes, dependencies, or legal page changes were introduced
-- Existing routes were reused for homepage conversion paths
+- Current work is contact/enquiry focused
+- No backend form handling, new service pages, pricing changes, dependencies, or legal page changes were introduced
+- Existing email/mailto enquiry approach was preserved and clarified
