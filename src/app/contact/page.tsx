@@ -12,23 +12,23 @@ import {
 } from "@/lib/site";
 
 const enquiryGuidance = [
-  "Business name and website URL, if you already have one",
-  "What you need help with: a new website, a refresh, local visibility, or automation/custom tools",
-  "What feels unclear, outdated, hard to find, or harder than it should be",
-  "Your ideal timescale and any important launch dates",
-  "The best way to contact you after the enquiry",
+  "Name, business name, email, and phone if useful",
+  "Enquiry type: Website Refresh, Starter Website, Local Growth Website, Automation / Custom Tool Discovery, or Not sure yet",
+  "Current website URL, if you already have one",
+  "Project description, budget range, timescale, and preferred contact method",
+  "Consent for Szymik Digital to respond to the enquiry",
 ];
 
 const nextSteps = [
   {
-    title: `${siteSettings.founderShortName} reviews the enquiry`,
+    title: "Hannah reviews and logs the enquiry",
     description:
-      "The first step is to understand the business, the problem, and whether the best starting point is a website, local visibility work, a refresh, or automation discovery.",
+      "The enquiry lands in the main Szymik Digital inbox, then Hannah checks the details and adds it to the tracker for shared review.",
   },
   {
-    title: "A short discovery chat or email follow-up happens",
+    title: `${siteSettings.founderShortName} reviews the next action`,
     description:
-      "If the enquiry looks like a good fit, the next conversation fills in the practical details: goals, audience, pages, access, deadlines, and what needs to be included.",
+      "Ric reviews the enquiry and Hannah's notes, then decides whether the next step is discovery questions, a call, a quote, or a polite decline.",
   },
   {
     title: "A clear quote and scope are prepared",
@@ -43,19 +43,23 @@ const nextSteps = [
 ];
 
 const enquiryTemplate = [
+  "Name:",
   "Business name:",
-  "Website URL, if you have one:",
-  "What I need help with: New website / Website refresh / Local visibility / Automation or custom tool / Not sure yet",
-  "What is not working right now:",
-  "What I want this project to improve:",
-  "Ideal timescale:",
-  "Best contact method:",
+  "Email:",
+  "Phone:",
+  "Enquiry type: Website Refresh / Starter Website / Local Growth Website / Automation / Custom Tool Discovery / Not sure yet",
+  "Current website URL, if you have one:",
+  "Project description:",
+  "Budget range:",
+  "Timescale:",
+  "Preferred contact method:",
+  "Consent: I consent to Szymik Digital using these details to respond to my enquiry.",
 ].join("\n");
 
 export const metadata: Metadata = createPageMetadata({
   title: "Contact",
   description:
-    "Start a project with Szymik Digital for a small business website, website refresh, local visibility foundation, or practical automation and custom tool enquiry.",
+    "Start a project with Szymik Digital for a Website Refresh, Starter Website, Local Growth Website, or Automation / Custom Tool Discovery enquiry.",
   path: "/contact",
 });
 
@@ -65,7 +69,7 @@ export default function ContactPage() {
       <PageHero
         eyebrow="Contact"
         title="Start a project"
-        intro="Tell Szymik Digital what you need help with: a new website, a website refresh, stronger local visibility, or a practical automation/custom tool when the business needs more than a brochure site."
+        intro="Tell Szymik Digital what you need help with: a Website Refresh, Starter Website, Local Growth Website, or Automation / Custom Tool Discovery when the business needs more than a brochure site."
         actions={
           <>
             <CtaLink href="#enquiry">{siteSettings.ctaLabels.enquiry}</CtaLink>
@@ -125,9 +129,10 @@ export default function ContactPage() {
                 </h2>
                 <p className="mt-4 text-base leading-8 text-muted">
                   It is fine if you are not sure whether the right route is a
-                  refresh, a new website, local visibility work, or a custom
-                  tool. Describe what feels messy or important, and the first
-                  reply can point you toward a sensible next step.
+                  Website Refresh, Starter Website, Local Growth Website, or
+                  Automation / Custom Tool Discovery. Describe what feels messy
+                  or important, and the first reply can point you toward a
+                  sensible next step.
                 </p>
               </article>
 
