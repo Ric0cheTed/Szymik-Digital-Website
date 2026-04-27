@@ -6,7 +6,7 @@ Phase 2: Client Delivery Operations
 
 ## Current Focus
 
-Enquiry form alignment and manual tracker handoff requirements for turning website enquiries into organised Hannah review and Ric follow-up.
+Quote, invoice, payment, scope-change, and launch approval templates for managing client work from quote through to launch approval.
 
 ## Completed
 
@@ -30,17 +30,21 @@ Enquiry form alignment and manual tracker handoff requirements for turning websi
 - Enquiry type options now match the early offer pathways: Website Refresh, Starter Website, Local Growth Website, Automation / Custom Tool Discovery, and Not sure yet
 - Enquiries still route to the main Szymik Digital enquiry inbox using the existing email-draft approach for Hannah/shared review
 - No automation, CRM, database, payment, client portal, or multi-recipient routing was added
+- Phase 2 Slice 3 complete: Hannah Client Comms Pack polished into a practical stage-based communication pack
+- `docs/client-email-templates.md` now includes enquiry, quote, project start, preview and feedback, launch, parked/completed, subject-line, usage guide, and internal Hannah-to-Ric handoff templates
+- Phase 2 Slice 3 was docs-only; no website runtime, contact form, dependency, package, route, config, asset, legal, or deployment changes were made
+- Phase 2 Slice 4 complete: Quote, Invoice, and Client Approval Pack added
+- `docs/quote-invoice-approval-pack.md` now includes quote structure, suggested quote sections, payment terms, approval wording, invoice notes, scope-change handling, revision rules, launch approval checklist, and mini templates
+- Phase 2 Slice 4 was docs-only; no website runtime, contact form, dependency, package, route, config, asset, legal, or deployment changes were made
 
 ## Files Changed In Latest Slice
 
-- `src/components/enquiry-form.tsx`
-- `src/app/contact/page.tsx`
-- `docs/enquiry-form-requirements.md`
+- `docs/quote-invoice-approval-pack.md`
 - `docs/DELIVERY_STATUS.md`
 
 ## Next Recommended Slice
 
-Create the live tracker using the documented tracker structure.
+Phase 2 Slice 5 - Website Trust and Process Copy Alignment.
 
 ## Open Decisions
 
@@ -52,6 +56,6 @@ Create the live tracker using the documented tracker structure.
 
 ## Boundaries
 
-- Current work is enquiry-form and tracker-handoff focused
-- No backend form handling, automation, CRM, database, payment, client portal, package, dependency, route, deployment, or legal page changes were introduced
+- Current work is quote, invoice, payment, approval, and scope-change documentation focused
+- No website UI, runtime, source, contact form, backend form handling, automation, CRM, database, payment system, client portal, package, dependency, route, config, asset, deployment, or legal page changes were introduced
 - Existing static email-draft enquiry architecture was preserved
