@@ -77,7 +77,19 @@ Examples:
 
 The current state of the enquiry or project.
 
-Use the status list from `client-delivery-flow.md` so the tracker stays consistent.
+Use the status list from `manual-client-ops-runbook.md` so the tracker stays consistent.
+
+### Owner
+
+Who has the ball for the next action.
+
+Suggested values:
+
+- Hannah
+- Ric
+- Client
+- Waiting on Client
+- External provider
 
 ### Hannah Notes
 
@@ -144,7 +156,7 @@ The client folder link containing briefs, assets, quote/invoice files, feedback,
 
 - Hannah owns keeping the tracker tidy.
 - Ric owns final decisions on fit, scope, quote, build, and launch readiness.
-- Every active item should have a status and next action.
+- Every active item should have a status, owner, and next action.
 - If a row has no clear next action, it is probably stuck.
 - Keep notes brief but useful. The tracker should point to documents, not replace them.
 - Avoid adding too many columns early. Add new fields only when they repeatedly solve a real tracking problem.

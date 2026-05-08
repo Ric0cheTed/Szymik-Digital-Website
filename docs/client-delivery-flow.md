@@ -262,33 +262,26 @@ Typical follow-up points:
 
 Use these statuses in the tracker:
 
-- New enquiry
-- Needs triage
-- Waiting for client info
-- Ric review needed
-- Discovery needed
-- Call booked
-- Quote needed
-- Quote sent
-- Awaiting approval
-- Deposit requested
-- Deposit paid
-- Assets needed
-- In build
-- Internal review
-- Preview sent
-- Client feedback received
-- Changes in progress
-- Changes ready for verification
-- Awaiting final approval
-- Final payment requested
-- Ready to launch
-- Launched
-- Handover sent
-- Follow-up scheduled
-- Complete
-- Declined
-- No response
+- New Enquiry
+- Needs Hannah Review
+- Awaiting Ric Review
+- Needs More Info
+- Discovery Call Needed
+- Quote To Prepare
+- Quote Sent
+- Approved / Awaiting Deposit
+- In Progress
+- Internal Review
+- Preview Sent
+- Changes Requested
+- Changes In Progress
+- Awaiting Approval
+- Approved for Launch
+- Final Payment Due
+- Live
+- Completed
+- Parked / No Response
+- Not a Fit
 
 ## Approval Rules
 

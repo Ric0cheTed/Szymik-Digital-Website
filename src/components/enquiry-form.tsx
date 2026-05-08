@@ -116,16 +116,18 @@ export function EnquiryForm() {
           This form prepares a draft email addressed to {enquiryEmail}. It keeps
           the enquiry process straightforward and gives you a chance to review
           everything before sending. Enquiries go to the main Szymik Digital
-          inbox for Hannah to triage before Ric reviews the next step.
+          inbox for Hannah to log and triage before Ric reviews the scope,
+          quote, and next step.
         </p>
         <div className="rounded-[1.35rem] border border-border bg-background/75 p-4">
           <p className="font-mono text-xs uppercase tracking-[0.22em] text-muted">
             Fit note
           </p>
           <p className="mt-2 text-sm leading-7 text-muted">
-            Start with the practical need: a website refresh, a starter
-            website, a local growth website, or a repeated workflow problem
-            that may need automation or custom tool discovery.
+            Include the practical need, your current website link if you have
+            one, what you want improved, your rough timescale, budget range or
+            whether you are unsure, and how you prefer to be contacted. A
+            written quote and agreed scope come before paid work starts.
           </p>
         </div>
       </div>
@@ -228,7 +230,7 @@ export function EnquiryForm() {
             required
             rows={7}
             className={`${inputClassName} min-h-[11rem] resize-y`}
-            placeholder="Tell us what you need help with, what is not working right now, and what a good outcome would look like."
+            placeholder="Tell us what you need help with, what is not working right now, what you want improved, and what a good outcome would look like. If you are not sure which pathway fits, say that too."
           />
         </Field>
 
@@ -239,9 +241,7 @@ export function EnquiryForm() {
             defaultValue=""
             className={inputClassName}
           >
-            <option value="">
-              Not sure yet
-            </option>
+            <option value="">Not sure yet - guidance welcome</option>
             {budgetOptions.map((option) => (
               <option key={option} value={option}>
                 {option}

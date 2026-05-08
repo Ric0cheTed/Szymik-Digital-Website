@@ -10,7 +10,7 @@ import { projects } from "@/lib/work";
 export const metadata: Metadata = createPageMetadata({
   title: "Work",
   description:
-    "Honest example work from Szymik Digital, including clearly labelled internal projects and concept examples that show approach without fake proof.",
+    "Honest example work from Szymik Digital, including client, internal, and concept examples that show practical outcomes without fake proof.",
   path: "/work",
 });
 
@@ -19,11 +19,13 @@ export default function WorkPage() {
     <>
       <PageHero
         eyebrow="Work"
-        title="Example work, shown honestly"
-        intro="This page shows Szymik Digital's own internal work and a small number of clearly labelled concept pieces. The aim is to demonstrate structure, judgement, and build quality without pretending early public work is something else."
+        title="Practical work, shown honestly"
+        intro="This page gives a small foundation for public examples: real client work where it can be described safely, internal Szymik Digital foundations, and clearly labelled concept work. No fake clients, fake metrics, or borrowed proof."
         actions={
           <>
-            <CtaLink href="/contact">{siteSettings.ctaLabels.primary}</CtaLink>
+            <CtaLink href="/contact#enquiry">
+              {siteSettings.ctaLabels.conversation}
+            </CtaLink>
             <CtaLink href="/services" variant="secondary">
               {siteSettings.ctaLabels.services}
             </CtaLink>
@@ -36,9 +38,9 @@ export default function WorkPage() {
             </p>
             <div className="mt-4 grid gap-3">
               {[
-                "Internal means real work created for Szymik Digital itself or for an internal operating tool.",
-                "Concept means a deliberate example used to show approach, not a claimed client outcome.",
-                "These entries are here to show judgement, structure, and build quality without inventing proof.",
+                "Client work is described carefully, without invented numbers or testimonials.",
+                "Internal work shows the foundations behind Szymik Digital's own website and delivery process.",
+                "Concept work is clearly labelled and used only to show approach, not claimed client delivery.",
               ].map((item) => (
                 <p key={item} className="list-check">
                   {item}
@@ -51,7 +53,7 @@ export default function WorkPage() {
 
       <section className="page-section pt-0">
         <div className="site-container">
-          <div className="grid gap-5 xl:grid-cols-2">
+          <div className="grid gap-4 sm:gap-5 xl:grid-cols-2">
             {projects.map((project) => (
               <ProjectCard key={project.title} project={project} />
             ))}
@@ -64,11 +66,16 @@ export default function WorkPage() {
           <SectionHeading
             eyebrow="Approach"
             title="Why the labels matter"
-            intro="For a founder-led studio, credibility comes from being direct about what is public, what is internal, and what is simply there to demonstrate thinking."
+            intro="For a founder-led studio, credibility comes from being direct about what is client work, what is internal, and what is simply there to demonstrate thinking."
           />
 
-          <div className="mt-10 grid gap-5 md:grid-cols-3">
+          <div className="mt-8 grid gap-4 sm:mt-10 sm:gap-5 md:grid-cols-3">
             {[
+              {
+                title: "Client work",
+                description:
+                  "Used only where the work can be described honestly. No fake results, revenue claims, or made-up testimonials are added.",
+              },
               {
                 title: "Internal work",
                 description:
@@ -79,17 +86,12 @@ export default function WorkPage() {
                 description:
                   "Used when a project exists to demonstrate structure, design thinking, or service fit without pretending it is client delivery.",
               },
-              {
-                title: "No borrowed credibility",
-                description:
-                  "This site does not use made-up clients, inflated results, or filler logos to make the portfolio look bigger than it is.",
-              },
             ].map((item) => (
-              <article key={item.title} className="panel p-6 sm:p-8">
-                <h2 className="text-2xl font-semibold text-foreground">
+              <article key={item.title} className="panel p-5 sm:p-8">
+                <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
                   {item.title}
                 </h2>
-                <p className="mt-4 text-base leading-8 text-muted">
+                <p className="mt-3 text-sm leading-7 text-muted sm:mt-4 sm:text-base sm:leading-8">
                   {item.description}
                 </p>
               </article>
@@ -105,16 +107,20 @@ export default function WorkPage() {
               <div>
                 <span className="eyebrow text-accent">Next step</span>
                 <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
-                  Need work that fits your business rather than a generic showcase?
+                  Have a similar project?
                 </h2>
                 <p className="panel-dark-copy mt-5 max-w-3xl text-lg leading-8">
                   Start with the actual problem: outdated pages, unclear
                   messaging, messy digital touchpoints, or admin that should be
-                  smoother. The project can be shaped from there.
+                  smoother. Not sure what fits? Start with a quick enquiry, then
+                  Hannah can help gather the details before Ric reviews the next
+                  step.
                 </p>
               </div>
               <div>
-                <CtaLink href="/contact">{siteSettings.ctaLabels.primary}</CtaLink>
+                <CtaLink href="/contact#enquiry">
+                  {siteSettings.ctaLabels.enquiry}
+                </CtaLink>
               </div>
             </div>
           </div>

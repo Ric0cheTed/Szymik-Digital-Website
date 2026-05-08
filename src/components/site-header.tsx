@@ -63,7 +63,9 @@ export function SiteHeader() {
             </nav>
 
             <div className="hidden md:block">
-              <CtaLink href="/contact">{siteSettings.ctaLabels.primary}</CtaLink>
+              <CtaLink href="/contact#enquiry">
+                {siteSettings.ctaLabels.primary}
+              </CtaLink>
             </div>
 
             <button
@@ -109,7 +111,11 @@ export function SiteHeader() {
               })}
             </nav>
             <div className="mt-4">
-              <CtaLink href="/contact" className="w-full" variant="primary">
+              <CtaLink
+                href="/contact#enquiry"
+                className="w-full"
+                variant="primary"
+              >
                 {siteSettings.ctaLabels.primary}
               </CtaLink>
             </div>

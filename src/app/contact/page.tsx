@@ -15,30 +15,38 @@ const enquiryGuidance = [
   "Name, business name, email, and phone if useful",
   "Enquiry type: Website Refresh, Starter Website, Local Growth Website, Automation / Custom Tool Discovery, or Not sure yet",
   "Current website URL, if you already have one",
-  "Project description, budget range, timescale, and preferred contact method",
+  "What kind of website, improvement, tool, or workflow help you need",
+  "What you want improved, fixed, clarified, or made easier",
+  "Budget range if you have one, timescale, and preferred contact method",
+  "Whether you are unsure and would like guidance on the right pathway",
   "Consent for Szymik Digital to respond to the enquiry",
 ];
 
 const nextSteps = [
   {
-    title: "Hannah reviews and logs the enquiry",
+    title: "Your enquiry goes for review",
     description:
-      "The enquiry lands in the main Szymik Digital inbox, then Hannah checks the details and adds it to the tracker for shared review.",
+      "The enquiry lands in the main Szymik Digital inbox. Hannah reviews the details, logs the enquiry, and may ask for anything missing before Ric reviews the next step.",
   },
   {
-    title: `${siteSettings.founderShortName} reviews the next action`,
+    title: `${siteSettings.founderShortName} confirms the right next step`,
     description:
-      "Ric reviews the enquiry and Hannah's notes, then decides whether the next step is discovery questions, a call, a quote, or a polite decline.",
+      "Ric reviews the need, technical shape, likely scope, and timing. The next step might be a few questions, a call, a quote, or a polite decline if it is not the right fit.",
   },
   {
-    title: "A clear quote and scope are prepared",
+    title: "You receive clear next steps or a quote",
     description:
-      "The quote explains the outcome, what is included, what is excluded, content responsibilities, review rounds, and the payment approach before work begins.",
+      "Where suitable, you receive a written quote that explains the outcome, what is included, what is excluded, content responsibilities, review rounds, price, and payment terms.",
   },
   {
-    title: "Deposit, build, review, and handover follow",
+    title: "No paid work starts until the scope is agreed",
     description:
-      "If you go ahead, the normal path is deposit, build, structured review, final balance, launch, handover, and support options where useful.",
+      "If you go ahead, work starts only once the quote is approved and the deposit or agreed payment terms are met.",
+  },
+  {
+    title: "Preview, feedback, launch, and handover follow",
+    description:
+      "Ric builds the preview, Hannah helps coordinate feedback, agreed changes are made, then launch approval, checks, handover, and support options follow.",
   },
 ];
 
@@ -49,8 +57,9 @@ const enquiryTemplate = [
   "Phone:",
   "Enquiry type: Website Refresh / Starter Website / Local Growth Website / Automation / Custom Tool Discovery / Not sure yet",
   "Current website URL, if you have one:",
+  "What do you want improved, fixed, clarified, or made easier?",
   "Project description:",
-  "Budget range:",
+  "Budget range, if known:",
   "Timescale:",
   "Preferred contact method:",
   "Consent: I consent to Szymik Digital using these details to respond to my enquiry.",
@@ -59,7 +68,7 @@ const enquiryTemplate = [
 export const metadata: Metadata = createPageMetadata({
   title: "Contact",
   description:
-    "Start a project with Szymik Digital for a Website Refresh, Starter Website, Local Growth Website, or Automation / Custom Tool Discovery enquiry.",
+    "Send an enquiry to Szymik Digital for a Website Refresh, Starter Website, Local Growth Website, or Automation / Custom Tool Discovery review.",
   path: "/contact",
 });
 
@@ -68,8 +77,8 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Contact"
-        title="Start a project"
-        intro="Tell Szymik Digital what you need help with: a Website Refresh, Starter Website, Local Growth Website, or Automation / Custom Tool Discovery when the business needs more than a brochure site."
+        title="Tell us what you need"
+        intro="Send a practical enquiry about your website, local visibility, or workflow problem. There is no pressure and no paid work starts from this form; it helps Szymik Digital review the need and confirm the right next step."
         actions={
           <>
             <CtaLink href="#enquiry">{siteSettings.ctaLabels.enquiry}</CtaLink>
@@ -111,7 +120,10 @@ export default function ContactPage() {
                 <p className="mt-4 text-base leading-8 text-muted">
                   You do not need the exact package name before getting in
                   touch. A few practical details are enough to make the first
-                  reply useful.
+                  reply useful, and Szymik Digital can ask follow-up questions
+                  before preparing a quote or next-step recommendation where
+                  suitable. A budget range helps, but it is fine to say you are
+                  unsure and need guidance.
                 </p>
                 <div className="mt-5 grid gap-3">
                   {enquiryGuidance.map((item) => (
@@ -131,8 +143,10 @@ export default function ContactPage() {
                   It is fine if you are not sure whether the right route is a
                   Website Refresh, Starter Website, Local Growth Website, or
                   Automation / Custom Tool Discovery. Describe what feels messy
-                  or important, and the first reply can point you toward a
-                  sensible next step.
+                  or important, what you have already tried, and what would make
+                  the work feel useful. The first reply can point you toward a
+                  sensible next step without committing you to paid work or
+                  needing an exact budget on day one.
                 </p>
               </article>
 
