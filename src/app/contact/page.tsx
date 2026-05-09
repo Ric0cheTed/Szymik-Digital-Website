@@ -12,50 +12,65 @@ import {
 } from "@/lib/site";
 
 const enquiryGuidance = [
-  "Business name and website URL, if you already have one",
-  "What you need help with: a new website, a refresh, local visibility, or automation/custom tools",
-  "What feels unclear, outdated, hard to find, or harder than it should be",
-  "Your ideal timescale and any important launch dates",
-  "The best way to contact you after the enquiry",
+  "Name, business name, email, and phone if useful",
+  "Enquiry type: Website Refresh, Starter Website, Local Growth Website, Automation / Custom Tool Discovery, or Not sure yet",
+  "Current website URL, if you already have one",
+  "Location or service area, especially for local growth website enquiries",
+  "What kind of website, improvement, tool, or workflow help you need",
+  "What you want improved, fixed, clarified, or made easier",
+  "Budget range if you have one, timescale, and preferred contact method",
+  "Whether you are unsure and would like guidance on the right pathway",
+  "Consent for Szymik Digital to respond to the enquiry",
 ];
 
 const nextSteps = [
   {
-    title: `${siteSettings.founderShortName} reviews the enquiry`,
+    title: "Your enquiry goes for review",
     description:
-      "The first step is to understand the business, the problem, and whether the best starting point is a website, local visibility work, a refresh, or automation discovery.",
+      "The enquiry lands in the main Szymik Digital inbox. Hannah reviews the details, logs the enquiry, and may ask for anything missing before Ric reviews the next step.",
   },
   {
-    title: "A short discovery chat or email follow-up happens",
+    title: `${siteSettings.founderShortName} confirms the right next step`,
     description:
-      "If the enquiry looks like a good fit, the next conversation fills in the practical details: goals, audience, pages, access, deadlines, and what needs to be included.",
+      "Ric reviews the need, technical shape, likely scope, and timing. The next step might be a few questions, a call, a quote, or a polite decline if it is not the right fit.",
   },
   {
-    title: "A clear quote and scope are prepared",
+    title: "You receive clear next steps or a quote",
     description:
-      "The quote explains the outcome, what is included, what is excluded, content responsibilities, review rounds, and the payment approach before work begins.",
+      "Where suitable, you receive a written quote that explains the outcome, what is included, what is excluded, content responsibilities, review rounds, price, and payment terms.",
   },
   {
-    title: "Deposit, build, review, and handover follow",
+    title: "No paid work starts until the scope is agreed",
     description:
-      "If you go ahead, the normal path is deposit, build, structured review, final balance, launch, handover, and support options where useful.",
+      "If you go ahead, work starts only once the quote is approved and the deposit or agreed payment terms are met.",
+  },
+  {
+    title: "Preview, feedback, launch, and handover follow",
+    description:
+      "Ric builds the preview, Hannah helps coordinate feedback, agreed changes are made, then launch approval, checks, handover, and support options follow.",
   },
 ];
 
 const enquiryTemplate = [
+  "Name:",
   "Business name:",
-  "Website URL, if you have one:",
-  "What I need help with: New website / Website refresh / Local visibility / Automation or custom tool / Not sure yet",
-  "What is not working right now:",
-  "What I want this project to improve:",
-  "Ideal timescale:",
-  "Best contact method:",
+  "Email:",
+  "Phone:",
+  "Enquiry type: Website Refresh / Starter Website / Local Growth Website / Automation / Custom Tool Discovery / Not sure yet",
+  "Current website URL, if you have one:",
+  "Location or service area, if relevant:",
+  "What do you want improved, fixed, clarified, or made easier?",
+  "Project description:",
+  "Budget range, if known:",
+  "Timescale:",
+  "Preferred contact method:",
+  "Consent: I consent to Szymik Digital using these details to respond to my enquiry.",
 ].join("\n");
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Contact",
+  title: "Contact Szymik Digital",
   description:
-    "Start a project with Szymik Digital for a small business website, website refresh, local visibility foundation, or practical automation and custom tool enquiry.",
+    "Send an enquiry for a website refresh, starter website, local growth website, or automation/custom tool discovery with Szymik Digital in Todmorden, West Yorkshire.",
   path: "/contact",
 });
 
@@ -64,8 +79,8 @@ export default function ContactPage() {
     <>
       <PageHero
         eyebrow="Contact"
-        title="Start a project"
-        intro="Tell Szymik Digital what you need help with: a new website, a website refresh, stronger local visibility, or a practical automation/custom tool when the business needs more than a brochure site."
+        title="Tell us what you need"
+        intro="Send a practical enquiry about your website, local visibility, or workflow problem. Szymik Digital is based in Todmorden, West Yorkshire and works with small businesses locally and across the UK. There is no pressure and no paid work starts from this form; it helps Szymik Digital review the need and confirm the right next step."
         actions={
           <>
             <CtaLink href="#enquiry">{siteSettings.ctaLabels.enquiry}</CtaLink>
@@ -82,9 +97,10 @@ export default function ContactPage() {
             <div className="mt-4 grid gap-3">
               {[
                 "Small businesses that need a clearer website",
-                "Local service businesses that need stronger visibility foundations",
+                "Sole traders, trades, and local service businesses",
+                "Businesses that need stronger local visibility foundations",
+                "Care/support providers or local organisations that need clearer trust signals",
                 "Existing websites that feel dated, unclear, or hard to use",
-                "Teams with repeated admin or workflow problems worth scoping properly",
               ].map((item) => (
                 <p key={item} className="list-check">
                   {item}
@@ -97,19 +113,23 @@ export default function ContactPage() {
 
       <section id="enquiry" className="page-section scroll-mt-28 pt-0">
         <div className="site-container">
-          <div className="grid gap-6 lg:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)]">
-            <div className="space-y-6">
-              <article className="panel p-6 sm:p-8">
+          <div className="grid gap-6 lg:grid-cols-[minmax(0,0.88fr)_minmax(0,1.12fr)] lg:items-start">
+            <div className="space-y-5">
+              <article className="panel p-5 sm:p-7">
                 <span className="eyebrow">What to include</span>
                 <h2 className="mt-4 text-2xl font-semibold text-foreground">
                   A useful enquiry is better than a perfect brief
                 </h2>
-                <p className="mt-4 text-base leading-8 text-muted">
+                <p className="mt-3 text-base leading-8 text-muted">
                   You do not need the exact package name before getting in
                   touch. A few practical details are enough to make the first
-                  reply useful.
+                  reply useful, and Szymik Digital can ask follow-up questions
+                  before preparing a quote or next-step recommendation where
+                  suitable. A budget range helps, but it is fine to say you are
+                  unsure and need guidance. Location or service-area details
+                  are useful for local growth website enquiries.
                 </p>
-                <div className="mt-5 grid gap-3">
+                <div className="mt-4 grid gap-3">
                   {enquiryGuidance.map((item) => (
                     <p key={item} className="list-check">
                       {item}
@@ -118,31 +138,34 @@ export default function ContactPage() {
                 </div>
               </article>
 
-              <article className="panel p-6 sm:p-8">
+              <article className="panel p-5 sm:p-7">
                 <span className="eyebrow">Not sure where to start?</span>
                 <h2 className="mt-4 text-2xl font-semibold text-foreground">
                   Start with the problem, not the package
                 </h2>
-                <p className="mt-4 text-base leading-8 text-muted">
+                <p className="mt-3 text-base leading-8 text-muted">
                   It is fine if you are not sure whether the right route is a
-                  refresh, a new website, local visibility work, or a custom
-                  tool. Describe what feels messy or important, and the first
-                  reply can point you toward a sensible next step.
+                  Website Refresh, Starter Website, Local Growth Website, or
+                  Automation / Custom Tool Discovery. Describe what feels messy
+                  or important, what you have already tried, and what would make
+                  the work feel useful. The first reply can point you toward a
+                  sensible next step without committing you to paid work or
+                  needing an exact budget on day one.
                 </p>
               </article>
 
-              <article className="panel p-6 sm:p-8">
+              <article className="panel p-5 sm:p-7">
                 <span className="eyebrow">What happens next</span>
-                <div className="mt-5 grid gap-4">
+                <div className="mt-4 grid gap-3">
                   {nextSteps.map((item) => (
                     <div
                       key={item.title}
-                      className="rounded-[1.5rem] bg-background/80 p-5"
+                      className="rounded-[1.4rem] bg-background/80 p-4 sm:p-5"
                     >
-                      <h2 className="text-lg font-semibold text-foreground">
+                      <h2 className="text-base font-semibold text-foreground sm:text-lg">
                         {item.title}
                       </h2>
-                      <p className="mt-3 text-base leading-8 text-muted">
+                      <p className="mt-2 text-sm leading-7 text-muted">
                         {item.description}
                       </p>
                     </div>
@@ -150,34 +173,34 @@ export default function ContactPage() {
                 </div>
               </article>
 
-              <article className="panel p-6 sm:p-8">
+              <article className="panel p-5 sm:p-7">
                 <span className="eyebrow">Email template</span>
                 <h2 className="mt-4 text-2xl font-semibold text-foreground">
                   Prefer to write the email yourself?
                 </h2>
-                <p className="mt-4 text-base leading-8 text-muted">
+                <p className="mt-3 text-base leading-8 text-muted">
                   The form prepares a mail draft, but enquiries are handled by
                   email either way. You can copy this structure into your own
                   message if that is easier.
                 </p>
-                <pre className="mt-5 overflow-x-auto rounded-[1.5rem] border border-border bg-background/80 p-5 whitespace-pre-wrap text-sm leading-7 text-muted">
+                <pre className="mt-4 overflow-x-auto rounded-[1.4rem] border border-border bg-background/80 p-4 whitespace-pre-wrap text-sm leading-7 text-muted">
                   {enquiryTemplate}
                 </pre>
               </article>
 
-              <article className="panel p-6 sm:p-8">
+              <article className="panel p-5 sm:p-7">
                 <span className="eyebrow">Direct contact</span>
                 <h2 className="mt-4 text-2xl font-semibold text-foreground">
                   Prefer to contact {siteSettings.founderShortName} directly?
                 </h2>
-                <div className="mt-5 grid gap-5">
+                <div className="mt-4 grid gap-5">
                   <div>
                     <p className="font-mono text-xs uppercase tracking-[0.22em] text-muted">
                       Primary email
                     </p>
                     <a
                       href={`mailto:${contactEmail}`}
-                      className="mt-3 inline-block text-lg font-semibold text-accent-strong transition hover:text-foreground"
+                      className="mt-2 inline-block text-lg font-semibold text-accent-strong transition hover:text-foreground"
                     >
                       {contactEmail}
                     </a>
@@ -189,7 +212,7 @@ export default function ContactPage() {
                       </p>
                       <a
                         href={`mailto:${secondaryContactEmail}`}
-                        className="mt-3 inline-block text-lg font-semibold text-accent-strong transition hover:text-foreground"
+                        className="mt-2 inline-block text-lg font-semibold text-accent-strong transition hover:text-foreground"
                       >
                         {secondaryContactEmail}
                       </a>
@@ -201,7 +224,7 @@ export default function ContactPage() {
                     </p>
                     <a
                       href={`mailto:${enquiryEmail}?subject=${encodeURIComponent("Project enquiry for Szymik Digital")}`}
-                      className="mt-3 inline-block text-base font-semibold text-accent-strong transition hover:text-foreground"
+                      className="mt-2 inline-block text-lg font-semibold text-accent-strong transition hover:text-foreground"
                     >
                       {enquiryEmail}
                     </a>
@@ -210,7 +233,7 @@ export default function ContactPage() {
                     <p className="font-mono text-xs uppercase tracking-[0.22em] text-muted">
                       Location
                     </p>
-                    <p className="mt-3 text-base leading-8 text-muted">
+                    <p className="mt-2 text-base leading-8 text-muted">
                       {siteSettings.locationText}
                     </p>
                   </div>
@@ -219,11 +242,11 @@ export default function ContactPage() {
                       <p className="font-mono text-xs uppercase tracking-[0.22em] text-muted">
                         Public profiles
                       </p>
-                      <p className="mt-3 text-base leading-8 text-muted">
+                      <p className="mt-2 text-base leading-8 text-muted">
                         LinkedIn and Facebook are there if you want a quick
                         public reference point before getting in touch.
                       </p>
-                      <div className="mt-4 flex flex-wrap gap-3">
+                      <div className="mt-3 flex flex-wrap gap-3">
                         {activeSocialLinks.map((link) => (
                           <a
                             key={link.label}

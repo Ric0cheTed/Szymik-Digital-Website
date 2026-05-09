@@ -4,10 +4,10 @@ import { type FormEvent, useState } from "react";
 import { enquiryEmail, siteSettings } from "@/lib/site";
 
 const helpOptions = [
-  "New website",
-  "Website refresh",
-  "Local visibility / SEO",
-  "Automation or custom tool",
+  "Website Refresh",
+  "Starter Website",
+  "Local Growth Website",
+  "Automation / Custom Tool Discovery",
   "Not sure yet",
 ];
 
@@ -18,17 +18,17 @@ const budgetOptions = [
   "GBP 10,000+",
 ];
 
-const timelineOptions = [
+const timescaleOptions = [
   "As soon as possible",
   "Within the next month",
   "Within 1 to 3 months",
   "Flexible",
 ];
 
-const contactMethods = ["Email first", "Phone", "Video call"];
+const contactMethods = ["Email", "Phone", "Video call"];
 
 const inputClassName =
-  "mt-2 w-full rounded-[1.35rem] border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition duration-200 placeholder:text-muted/70 focus:border-accent/40 focus:ring-4 focus:ring-accent-soft";
+  "mt-2 w-full rounded-[1.35rem] border border-border bg-white px-4 py-2.5 text-sm text-foreground outline-none transition duration-200 placeholder:text-muted/70 focus:border-accent/40 focus:ring-4 focus:ring-accent-soft";
 
 function getValue(formData: FormData, key: string) {
   return String(formData.get(key) ?? "").trim();
@@ -71,29 +71,29 @@ export function EnquiryForm() {
     const email = getValue(formData, "email");
     const phone = getValue(formData, "phone");
     const businessName = getValue(formData, "businessName");
-    const websiteUrl = getValue(formData, "websiteUrl");
-    const helpWith = getValue(formData, "helpWith");
-    const notWorking = getValue(formData, "notWorking");
-    const success = getValue(formData, "success");
-    const budget = getValue(formData, "budget");
-    const timeline = getValue(formData, "timeline");
-    const contactMethod = getValue(formData, "contactMethod");
+    const currentWebsiteUrl = getValue(formData, "currentWebsiteUrl");
+    const enquiryType = getValue(formData, "enquiryType");
+    const projectDescription = getValue(formData, "projectDescription");
+    const budgetRange = getValue(formData, "budgetRange");
+    const timescale = getValue(formData, "timescale");
+    const preferredContactMethod = getValue(formData, "preferredContactMethod");
+    const consent = formData.get("consent") === "yes" ? "Yes" : "No";
 
     const subject = `Project enquiry from ${businessName || name || "Szymik Digital website"}`;
     const body = [
       "Project enquiry",
       "",
       `Name: ${name}`,
+      `Business name: ${businessName}`,
       `Email: ${email}`,
       `Phone: ${phone || "Not provided"}`,
-      `Business name: ${businessName || "Not provided"}`,
-      `Website URL: ${websiteUrl || "Not provided"}`,
-      `Help needed: ${helpWith}`,
-      `What is not working: ${notWorking}`,
-      `Success looks like: ${success}`,
-      `Budget range: ${budget || "Not provided"}`,
-      `Timeline: ${timeline}`,
-      `Best contact method: ${contactMethod}`,
+      `Enquiry type: ${enquiryType}`,
+      `Current website URL: ${currentWebsiteUrl || "Not provided"}`,
+      `Project description: ${projectDescription}`,
+      `Budget range: ${budgetRange || "Not provided"}`,
+      `Timescale: ${timescale}`,
+      `Preferred contact method: ${preferredContactMethod}`,
+      `Consent confirmed: ${consent}`,
     ].join("\n");
 
     window.location.href = `mailto:${enquiryEmail}?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
@@ -104,32 +104,36 @@ export function EnquiryForm() {
   }
 
   return (
-    <form className="panel p-6 sm:p-8" onSubmit={handleSubmit}>
-      <div className="mb-8 space-y-4">
+    <form className="panel p-5 sm:p-6 lg:p-7" onSubmit={handleSubmit}>
+      <div className="mb-6 space-y-3">
         <div>
           <span className="eyebrow">Project enquiry</span>
-          <h2 className="mt-3 text-3xl font-semibold text-foreground">
+          <h2 className="mt-3 text-2xl font-semibold text-foreground sm:text-3xl">
             Prepare a clear project email
           </h2>
         </div>
-        <p className="text-base leading-8 text-muted">
+        <p className="text-sm leading-7 text-muted sm:text-base sm:leading-8">
           This form prepares a draft email addressed to {enquiryEmail}. It keeps
           the enquiry process straightforward and gives you a chance to review
-          everything before sending.
+          everything before sending. Enquiries go to the main Szymik Digital
+          inbox for Hannah to log and triage before Ric reviews the scope,
+          quote, and next step.
         </p>
-        <div className="rounded-[1.35rem] border border-border bg-background/75 p-4">
+        <div className="rounded-[1.35rem] border border-border bg-background/75 p-3.5 sm:p-4">
           <p className="font-mono text-xs uppercase tracking-[0.22em] text-muted">
             Fit note
           </p>
           <p className="mt-2 text-sm leading-7 text-muted">
-            Start with the practical need: a new website, a refresh, local
-            visibility, or a repeated workflow problem that may need automation
-            or a custom tool.
+            Include the practical need, your current website link if you have
+            one, location or service area if relevant, what you want improved,
+            your rough timescale, budget range or whether you are unsure, and
+            how you prefer to be contacted. A written quote and agreed scope
+            come before paid work starts.
           </p>
         </div>
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
         <Field htmlFor="name" label="Name" required>
           <input
             id="name"
@@ -139,6 +143,18 @@ export function EnquiryForm() {
             className={inputClassName}
             autoComplete="name"
             placeholder="Your name"
+          />
+        </Field>
+
+        <Field htmlFor="businessName" label="Business name" required>
+          <input
+            id="businessName"
+            name="businessName"
+            type="text"
+            required
+            className={inputClassName}
+            autoComplete="organization"
+            placeholder="Business or organisation name"
           />
         </Field>
 
@@ -154,7 +170,7 @@ export function EnquiryForm() {
           />
         </Field>
 
-        <Field htmlFor="phone" label="Phone number, if useful">
+        <Field htmlFor="phone" label="Phone">
           <input
             id="phone"
             name="phone"
@@ -165,25 +181,14 @@ export function EnquiryForm() {
           />
         </Field>
 
-        <Field htmlFor="businessName" label="Business name">
-          <input
-            id="businessName"
-            name="businessName"
-            type="text"
-            className={inputClassName}
-            autoComplete="organization"
-            placeholder="Business or organisation name"
-          />
-        </Field>
-
         <Field
-          htmlFor="websiteUrl"
-          label="Website URL"
+          htmlFor="currentWebsiteUrl"
+          label="Current website URL"
           className="sm:col-span-2"
         >
           <input
-            id="websiteUrl"
-            name="websiteUrl"
+            id="currentWebsiteUrl"
+            name="currentWebsiteUrl"
             type="url"
             className={inputClassName}
             placeholder="https://"
@@ -191,14 +196,14 @@ export function EnquiryForm() {
         </Field>
 
         <Field
-          htmlFor="helpWith"
-          label="Which route feels closest?"
+          htmlFor="enquiryType"
+          label="Enquiry type"
           required
           className="sm:col-span-2"
         >
           <select
-            id="helpWith"
-            name="helpWith"
+            id="enquiryType"
+            name="enquiryType"
             required
             defaultValue=""
             className={inputClassName}
@@ -215,47 +220,29 @@ export function EnquiryForm() {
         </Field>
 
         <Field
-          htmlFor="notWorking"
-          label="What do you need help with?"
+          htmlFor="projectDescription"
+          label="Project description"
           required
           className="sm:col-span-2"
         >
           <textarea
-            id="notWorking"
-            name="notWorking"
+            id="projectDescription"
+            name="projectDescription"
             required
-            rows={5}
-            className={`${inputClassName} min-h-[8.5rem] resize-y`}
-            placeholder="Tell me what feels outdated, unclear, hard to find, too manual, or harder than it should be."
+            rows={6}
+            className={`${inputClassName} min-h-[10rem] resize-y`}
+            placeholder="Tell us what you need help with, what is not working right now, what you want improved, and what a good outcome would look like. For local website work, include your location or service area if relevant. If you are not sure which pathway fits, say that too."
           />
         </Field>
 
-        <Field
-          htmlFor="success"
-          label="What would success look like?"
-          required
-          className="sm:col-span-2"
-        >
-          <textarea
-            id="success"
-            name="success"
-            required
-            rows={5}
-            className={`${inputClassName} min-h-[8.5rem] resize-y`}
-            placeholder="A sharper website, stronger local visibility, better enquiries, easier updates, less manual admin, or something else?"
-          />
-        </Field>
-
-        <Field htmlFor="budget" label="Budget range, if known">
+        <Field htmlFor="budgetRange" label="Budget range">
           <select
-            id="budget"
-            name="budget"
+            id="budgetRange"
+            name="budgetRange"
             defaultValue=""
             className={inputClassName}
           >
-            <option value="">
-              Not sure yet
-            </option>
+            <option value="">Not sure yet - guidance welcome</option>
             {budgetOptions.map((option) => (
               <option key={option} value={option}>
                 {option}
@@ -264,18 +251,18 @@ export function EnquiryForm() {
           </select>
         </Field>
 
-        <Field htmlFor="timeline" label="Ideal timescale" required>
+        <Field htmlFor="timescale" label="Timescale" required>
           <select
-            id="timeline"
-            name="timeline"
+            id="timescale"
+            name="timescale"
             required
             defaultValue=""
             className={inputClassName}
           >
             <option value="" disabled>
-              Select a timeline
+              Select a timescale
             </option>
-            {timelineOptions.map((option) => (
+            {timescaleOptions.map((option) => (
               <option key={option} value={option}>
                 {option}
               </option>
@@ -284,20 +271,20 @@ export function EnquiryForm() {
         </Field>
 
         <Field
-          htmlFor="contactMethod"
-          label="Best contact method"
+          htmlFor="preferredContactMethod"
+          label="Preferred contact method"
           required
           className="sm:col-span-2"
         >
-          <div className="mt-3 grid gap-3 sm:grid-cols-3">
+          <div className="mt-2.5 grid gap-2.5 sm:grid-cols-3 sm:gap-3">
             {contactMethods.map((method, index) => (
               <label
                 key={method}
-                className="flex cursor-pointer items-center gap-3 rounded-[1.35rem] border border-border bg-white px-4 py-3 text-sm font-medium text-foreground transition hover:border-accent/40 hover:bg-accent-soft"
+                className="flex cursor-pointer items-center gap-3 rounded-[1.35rem] border border-border bg-white px-4 py-2.5 text-sm font-medium text-foreground transition hover:border-accent/40 hover:bg-accent-soft"
               >
                 <input
                   type="radio"
-                  name="contactMethod"
+                  name="preferredContactMethod"
                   value={method}
                   defaultChecked={index === 0}
                   className="h-4 w-4 accent-[#0d7a33]"
@@ -307,9 +294,25 @@ export function EnquiryForm() {
             ))}
           </div>
         </Field>
+
+        <div className="sm:col-span-2">
+          <label className="flex cursor-pointer items-start gap-3 rounded-[1.35rem] border border-border bg-white px-4 py-3.5 text-sm leading-7 text-muted transition hover:border-accent/40 hover:bg-accent-soft">
+            <input
+              type="checkbox"
+              name="consent"
+              value="yes"
+              required
+              className="mt-1 h-4 w-4 shrink-0 accent-[#0d7a33]"
+            />
+            <span>
+              I consent to Szymik Digital using these details to respond to my
+              enquiry and manage the project conversation.
+            </span>
+          </label>
+        </div>
       </div>
 
-      <div className="mt-8 space-y-4">
+      <div className="mt-6 space-y-3">
         <p className="text-sm leading-7 text-muted">
           There is no black-box submission here. The enquiry details open in
           your own email app so the message is visible, editable, and easy to

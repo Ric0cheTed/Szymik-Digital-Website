@@ -101,10 +101,10 @@ export default async function OpenGraphImage() {
               fontSize: 68,
               lineHeight: 1.03,
               fontWeight: 700,
-              letterSpacing: -2.5,
+              letterSpacing: 0,
             }}
           >
-            Modern websites and digital tools for growing businesses
+            Practical websites for small local businesses
           </div>
           <div
             style={{
@@ -114,30 +114,31 @@ export default async function OpenGraphImage() {
               color: "rgba(248,251,246,0.72)",
             }}
           >
-            Founder-led websites, redesigns, digital presence cleanup, and
-            practical systems that help businesses look sharper online and run
-            more smoothly behind the scenes.
+            Website refreshes, starter websites, local growth support, and
+            practical systems from Todmorden, West Yorkshire.
           </div>
         </div>
 
         <div style={{ display: "flex", gap: 14 }}>
-          {["Websites", "Redesigns", "Digital systems"].map((item) => (
-            <div
-              key={item}
-              style={{
-                display: "flex",
-                alignItems: "center",
-                borderRadius: 999,
-                border: "1px solid rgba(248,251,246,0.14)",
-                background: "rgba(248,251,246,0.08)",
-                padding: "12px 20px",
-                fontSize: 20,
-                color: "rgba(248,251,246,0.8)",
-              }}
-            >
-              {item}
-            </div>
-          ))}
+          {["Website refreshes", "Starter websites", "Local growth"].map(
+            (item) => (
+              <div
+                key={item}
+                style={{
+                  display: "flex",
+                  alignItems: "center",
+                  borderRadius: 999,
+                  border: "1px solid rgba(248,251,246,0.14)",
+                  background: "rgba(248,251,246,0.08)",
+                  padding: "12px 20px",
+                  fontSize: 20,
+                  color: "rgba(248,251,246,0.8)",
+                }}
+              >
+                {item}
+              </div>
+            ),
+          )}
         </div>
       </div>
     ),

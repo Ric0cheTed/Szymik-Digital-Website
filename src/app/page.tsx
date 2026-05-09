@@ -9,23 +9,49 @@ import { services, siteSettings } from "@/lib/site";
 import { projects } from "@/lib/work";
 
 const trustItems = [
-  "Founder-led delivery from first call to launch",
-  "Clear scope and direct communication",
-  "Built for small, local, service-led businesses",
-  "Website foundations made to be improved over time",
+  {
+    title: "No-pressure enquiry",
+    description:
+      "Tell us what feels unclear. The first step is review and guidance, not a rushed sale.",
+  },
+  {
+    title: "Written quote first",
+    description:
+      "Suitable projects get a clear written quote before paid work starts.",
+  },
+  {
+    title: "Scope agreed before build",
+    description:
+      "The work, responsibilities, payment steps, and review rounds are agreed before the build begins.",
+  },
+  {
+    title: "Preview before launch",
+    description:
+      "Website projects include a preview and feedback stage before anything goes live.",
+  },
+  {
+    title: "Clear communication",
+    description:
+      "Hannah can help coordinate messages and feedback while Ric handles the build and technical decisions.",
+  },
+  {
+    title: "Built for small local businesses",
+    description:
+      "The focus stays practical for service businesses, trades, care/support providers, sole traders, and local organisations.",
+  },
 ];
 
 const conversionPaths = [
   {
     title: "I need a website",
     description:
-      "A clean, mobile-friendly site that explains the offer clearly and makes the next step easy.",
+      "A clean, mobile-friendly starter website that explains the business clearly and gives local customers a simple way to enquire.",
     href: "/services#starter-website",
   },
   {
     title: "I need help getting found locally",
     description:
-      "Stronger local foundations around services, location signals, and the trust details customers look for.",
+      "Stronger local foundations around services, location signals, service areas, and the trust details customers look for.",
     href: "/services#local-growth",
   },
   {
@@ -37,59 +63,31 @@ const conversionPaths = [
   {
     title: "I need automation or a custom tool",
     description:
-      "Simple systems for repeated admin, enquiries, follow-up, or internal workflows when the website is no longer the only blocker.",
+      "Discovery for repeated admin, enquiry handling, follow-up, or internal workflows before any tool is scoped.",
     href: "/services#automation-tools",
-  },
-];
-
-const whyChooseUs = [
-  {
-    title: "Founder-led from start to finish",
-    description:
-      "You work directly with the person planning, designing, and building the project. There is no handoff after the first conversation.",
-  },
-  {
-    title: "Clear, practical priorities",
-    description:
-      "The focus stays on what the business actually needs first: a clearer offer, a sharper website, and stronger local foundations.",
-  },
-  {
-    title: "Local visibility before clever extras",
-    description:
-      "Small businesses usually need to be easier to find and easier to trust before they need a complicated digital setup.",
-  },
-  {
-    title: "Systems when they solve a real problem",
-    description:
-      "Automation and custom tools are introduced when they reduce repeated work, smooth out enquiries, or make the business easier to run.",
   },
 ];
 
 const processSteps = [
   {
-    step: "Discovery",
+    step: "Enquiry review",
     description:
-      "Understand the business, the offer, the audience, and the friction points getting in the way right now.",
+      "You send the practical details. Hannah helps organise the enquiry, then Ric reviews the likely fit, scope, and next step.",
   },
   {
-    step: "Planning",
+    step: "Quote and scope",
     description:
-      "Map the structure, priorities, content flow, and practical requirements before the build starts moving.",
+      "If the project is suitable, you receive a written quote with scope, assumptions, payment terms, and what is needed from you.",
   },
   {
-    step: "Build",
+    step: "Preview and feedback",
     description:
-      "Design and develop the site or supporting system with clarity, responsiveness, and maintainability in mind.",
+      "Once approved, Ric builds the preview. Hannah can help turn feedback into a clear list of agreed changes.",
   },
   {
-    step: "Refine",
+    step: "Launch and handover",
     description:
-      "Review the important details, tighten the copy, and improve the pages or flows that matter most.",
-  },
-  {
-    step: "Launch & support",
-    description:
-      "Go live cleanly, then keep momentum with follow-up support, tidy-ups, and the next practical improvements.",
+      "After approval and launch checks, the site goes live and handover notes or support options are shared where useful.",
   },
 ];
 
@@ -97,7 +95,7 @@ const faqs = [
   {
     question: "What kind of businesses are the best fit?",
     answer:
-      "Szymik Digital is best suited to small, local, service-led businesses that need a clearer website, stronger local visibility foundations, or practical systems once the basics are working.",
+      "Szymik Digital is best suited to small local businesses: trades, care/support providers, clinics, consultants, sole traders, and service-led teams that need a clearer website, stronger local visibility foundations, or practical systems once the basics are working.",
   },
   {
     question: "Can you help if we already have a website?",
@@ -110,9 +108,9 @@ const faqs = [
       "Websites and local visibility are the first focus. When a business has outgrown the basics, support can also include practical systems, lightweight automation, and custom tools behind the scenes.",
   },
   {
-    question: `Will we work directly with ${siteSettings.founderShortName}?`,
+    question: "Who will we hear from during the project?",
     answer:
-      `Yes. Szymik Digital is founder-led from first conversation to delivery, so you are working directly with ${siteSettings.founderShortName} throughout the project.`,
+      `Szymik Digital stays small and direct. ${siteSettings.founderShortName} handles the build and technical delivery, and Hannah may help coordinate client communication, feedback, and admin steps where useful.`,
   },
   {
     question: "Do you offer support after launch?",
@@ -123,14 +121,14 @@ const faqs = [
 
 export const metadata: Metadata = createPageMetadata({
   description:
-    "Websites, local visibility foundations, and practical digital systems for small businesses that want to look sharper online, get found locally, and run with less friction.",
+    "Practical website refreshes, starter websites, local growth websites, and digital support for small businesses in Todmorden, West Yorkshire, and across the UK.",
   path: "/",
 });
 
 export default function Home() {
   return (
     <>
-      <section className="page-section pb-8 pt-10 sm:pt-14 lg:pt-20">
+      <section className="page-section pb-6 pt-10 sm:pb-8 sm:pt-14 lg:pt-20">
         <div className="site-container">
           <div className="panel-dark relative overflow-hidden px-6 py-8 sm:px-10 sm:py-10 lg:px-12 lg:py-12">
             <div className="absolute inset-y-0 right-0 hidden w-1/2 bg-[radial-gradient(circle_at_top_right,_rgba(87,214,129,0.2),_transparent_55%)] lg:block" />
@@ -141,16 +139,22 @@ export default function Home() {
                 </span>
                 <div className="space-y-5">
                   <h1 className="max-w-4xl text-4xl font-semibold text-white sm:text-5xl lg:text-7xl">
-                    Websites, local visibility, and practical digital systems for small businesses
+                    Practical websites and digital support for small local businesses
                   </h1>
                   <p className="panel-dark-copy max-w-3xl text-lg leading-8 sm:text-xl">
-                    Szymik Digital helps small businesses look sharper online,
-                    get found locally, and build practical systems when they
-                    outgrow a basic brochure site.
+                    Based in Todmorden, West Yorkshire, Szymik Digital helps
+                    service businesses, trades, care/support providers, sole
+                    traders, and local organisations look clearer online and
+                    make better digital decisions without a hard sell.
                   </p>
                 </div>
                 <div className="flex flex-col gap-3 sm:flex-row">
-                  <CtaLink href="/contact">{siteSettings.ctaLabels.primary}</CtaLink>
+                  <CtaLink
+                    href="/contact#enquiry"
+                    className="!text-surface-strong hover:!text-surface-strong"
+                  >
+                    {siteSettings.ctaLabels.primary}
+                  </CtaLink>
                   <CtaLink href="/services" variant="secondary">
                     {siteSettings.ctaLabels.services}
                   </CtaLink>
@@ -163,10 +167,10 @@ export default function Home() {
                 </p>
                 <div className="mt-5 grid gap-4">
                   {[
-                    "Clear websites that explain the offer and make enquiries easier",
-                    "Local visibility foundations for service-led businesses",
-                    "Website improvements for dated, unclear, or inconsistent sites",
-                    "Practical automation and custom tools when the business needs more than a brochure site",
+                    "Website refreshes for dated, unclear, or inconsistent sites",
+                    "Starter websites for sole traders and small local teams",
+                    "Local growth websites for service-led businesses",
+                    "Discovery for practical automation and custom tools when repeated work needs scoping properly",
                   ].map((item) => (
                     <p key={item} className="list-check panel-dark-copy">
                       {item}
@@ -181,11 +185,14 @@ export default function Home() {
 
       <section className="page-section py-8 sm:py-10">
         <div className="site-container">
-          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+          <div className="grid gap-4 md:grid-cols-2 xl:grid-cols-3">
             {trustItems.map((item) => (
-              <div key={item} className="panel p-5 sm:p-6">
-                <p className="text-sm font-medium leading-7 text-foreground/90">
-                  {item}
+              <div key={item.title} className="panel p-5 sm:p-6">
+                <h2 className="text-base font-semibold text-foreground">
+                  {item.title}
+                </h2>
+                <p className="mt-2 text-sm leading-7 text-muted">
+                  {item.description}
                 </p>
               </div>
             ))}
@@ -193,29 +200,29 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="page-section">
+      <section className="page-section py-12 sm:py-16 lg:py-20">
         <div className="site-container">
           <SectionHeading
             eyebrow="Start here"
             title="Choose the path that matches the problem in front of you"
-            intro="Most projects begin with a simple need: a better website, stronger local visibility, a current site that needs fixing, or a practical system that removes repeated work."
+            intro="Most projects begin with a simple need: a better website, stronger local visibility, a current site that needs fixing, or a workflow problem worth understanding before anything is built."
           />
 
-          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-8 grid gap-4 sm:mt-10 sm:gap-5 md:grid-cols-2 xl:grid-cols-4">
             {conversionPaths.map((path) => (
               <Link
                 key={path.title}
                 href={path.href}
-                className="panel flex h-full flex-col p-6 transition duration-300 hover:-translate-y-1 sm:p-7"
+                className="panel flex h-full flex-col p-5 transition duration-300 hover:-translate-y-1 sm:p-7"
               >
                 <h3 className="text-xl font-semibold text-foreground">
                   {path.title}
                 </h3>
-                <p className="mt-4 flex-1 text-sm leading-7 text-muted">
+                <p className="mt-3 flex-1 text-sm leading-7 text-muted">
                   {path.description}
                 </p>
-                <span className="link-arrow mt-6">
-                  See how we help <span aria-hidden>{">"}</span>
+                <span className="link-arrow mt-5">
+                  Explore services <span aria-hidden>{">"}</span>
                 </span>
               </Link>
             ))}
@@ -223,30 +230,33 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="page-section">
+      <section className="page-section pt-0">
         <div className="site-container">
           <SectionHeading
             eyebrow="Services"
             title="Start with the website foundation, then add the systems that make sense"
-            intro="The first layer is a clearer website and stronger local presence. When the business needs more than that, practical systems and automation can support the work behind the scenes."
+            intro="Start with the website and local presence: a refresh, a starter website, or a local growth website. If the problem is operational, discovery comes first so automation or custom tool support can be scoped properly."
           />
 
-          <div className="mt-10 grid gap-5 lg:grid-cols-2 xl:grid-cols-3">
+          <div className="mt-8 grid gap-4 sm:mt-10 sm:gap-5 lg:grid-cols-2 xl:grid-cols-4">
             {services.map((service) => (
               <article
                 key={service.id}
-                className="panel flex h-full flex-col p-6 sm:p-8"
+                className="panel flex h-full flex-col p-5 sm:p-8"
               >
                 <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent-strong">
                   {service.shortLabel}
                 </p>
-                <h3 className="mt-4 text-2xl font-semibold text-foreground">
+                <h3 className="mt-3 text-xl font-semibold text-foreground sm:mt-4 sm:text-2xl">
                   {service.title}
                 </h3>
-                <p className="mt-4 flex-1 text-base leading-8 text-muted">
+                <p className="mt-3 flex-1 text-sm leading-7 text-muted sm:mt-4 sm:text-base sm:leading-8">
                   {service.teaser}
                 </p>
-                <Link className="link-arrow mt-6" href={`/services#${service.id}`}>
+                <Link
+                  className="link-arrow mt-5 sm:mt-6"
+                  href={`/services#${service.id}`}
+                >
                   Explore this service <span aria-hidden>{">"}</span>
                 </Link>
               </article>
@@ -255,61 +265,42 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="page-section">
+      <section className="page-section pt-0">
         <div className="site-container">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <SectionHeading
               eyebrow="Featured work"
-              title="Honest examples, clearly labelled"
-              intro="Szymik Digital is building its public portfolio carefully. Until more client work can be shared openly, featured projects include internal and concept work and are labelled as such."
+              title="A quick look at the kind of work behind the offer"
+              intro="A few honest examples show how the same practical thinking applies to local service websites, internal delivery systems, and clearly labelled concept work."
             />
             <Link className="link-arrow" href="/work">
-              View all project examples <span aria-hidden>{">"}</span>
+              View our work <span aria-hidden>{">"}</span>
             </Link>
           </div>
 
-          <div className="mt-10 grid gap-5 xl:grid-cols-3">
+          <div className="mt-8 grid gap-4 sm:mt-10 sm:gap-5 xl:grid-cols-3">
             {projects.slice(0, 3).map((project) => (
-              <ProjectCard key={project.title} project={project} />
+              <ProjectCard
+                key={project.title}
+                project={project}
+                variant="compact"
+              />
             ))}
           </div>
         </div>
       </section>
 
-      <section className="page-section">
-        <div className="site-container">
-          <SectionHeading
-            eyebrow="Why choose Szymik Digital"
-            title="Clear, practical work for small business websites and systems"
-            intro="The aim is simple: direct communication, useful decisions, and digital work that helps the business look better, get found, and run more smoothly."
-          />
-
-          <div className="mt-10 grid gap-5 md:grid-cols-2">
-            {whyChooseUs.map((item) => (
-              <article key={item.title} className="panel p-6 sm:p-8">
-                <h3 className="text-2xl font-semibold text-foreground">
-                  {item.title}
-                </h3>
-                <p className="mt-4 text-base leading-8 text-muted">
-                  {item.description}
-                </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="page-section">
+      <section className="page-section pt-0">
         <div className="site-container">
           <div className="panel-dark overflow-hidden px-6 py-8 sm:px-10 sm:py-10 lg:px-12 lg:py-12">
             <SectionHeading
-              eyebrow="Process"
-              title="A clear path from first conversation to launch"
-              intro="Projects move with structure, but without unnecessary ceremony. Each step is there to reduce uncertainty and keep the work grounded in the real goal."
+              eyebrow="How it works"
+              title="A clear path without pretending every project is identical"
+              intro="The detail changes by project, but the shape stays calm: review the enquiry, agree the scope, build a preview, handle feedback, then launch with checks."
               surface="dark"
               className="max-w-4xl"
             />
-            <div className="mt-10 grid gap-4 lg:grid-cols-5">
+            <div className="mt-8 grid gap-4 sm:mt-10 md:grid-cols-2 xl:grid-cols-4">
               {processSteps.map((item, index) => (
                 <article
                   key={item.step}
@@ -327,6 +318,17 @@ export default function Home() {
                 </article>
               ))}
             </div>
+            <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+              <CtaLink
+                href="/contact#enquiry"
+                className="!text-surface-strong hover:!text-surface-strong"
+              >
+                {siteSettings.ctaLabels.enquiry}
+              </CtaLink>
+              <CtaLink href="/services" variant="secondary">
+                {siteSettings.ctaLabels.services}
+              </CtaLink>
+            </div>
           </div>
         </div>
       </section>
@@ -339,28 +341,27 @@ export default function Home() {
               <h2 className="mt-4 text-3xl font-semibold text-foreground sm:text-4xl">
                 A practical studio led directly by {siteSettings.founderName}
               </h2>
-              <div className="mt-6 space-y-5 text-base leading-8 text-muted">
+              <div className="mt-5 space-y-4 text-sm leading-7 text-muted sm:mt-6 sm:text-base sm:leading-8">
                 <p>
                   Szymik Digital is built for small businesses that want direct
                   thinking, sharper online presentation, and practical digital
-                  work that actually helps day to day.
+                  work that actually helps day to day, whether they are local
+                  to Todmorden and West Yorkshire or supported remotely across
+                  the UK.
                 </p>
                 <p>
-                  That can mean a new website, a sharper redesign, stronger
-                  local visibility foundations, or practical systems that remove
-                  friction behind the scenes.
-                </p>
-                <p>
-                  The goal is not to add noise. It is to make the business look
-                  sharper online, become easier to find, and run better
-                  underneath when the basics are ready.
+                  That can mean a new website, a sharper refresh, stronger
+                  local visibility foundations, or practical systems only when
+                  they solve a real workflow problem.
                 </p>
               </div>
               <div className="mt-8 flex flex-col gap-3 sm:flex-row">
                 <CtaLink href="/about" variant="secondary">
                   Meet {siteSettings.founderShortName}
                 </CtaLink>
-                <CtaLink href="/contact">{siteSettings.ctaLabels.conversation}</CtaLink>
+                <CtaLink href="/contact#enquiry">
+                  {siteSettings.ctaLabels.conversation}
+                </CtaLink>
               </div>
             </div>
 
@@ -426,20 +427,30 @@ export default function Home() {
           <div className="panel-dark px-6 py-8 sm:px-10 sm:py-10 lg:px-12 lg:py-12">
             <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_auto] lg:items-end">
               <div>
-                <span className="eyebrow text-accent">Final step</span>
+                <span className="eyebrow text-accent">Not sure yet?</span>
                 <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl lg:text-5xl">
-                  Ready to make your website and local presence work harder?
+                  Tell us what you need, and we will help shape the next step
                 </h2>
                 <p className="panel-dark-copy mt-5 max-w-3xl text-lg leading-8">
                   Start with a practical conversation about what feels outdated,
-                  unclear, difficult to find, or harder than it should be. From
-                  there, the next step can be shaped properly.
+                  unclear, difficult to find locally, or harder than it should
+                  be. From there, Hannah can help gather the right details and
+                  Ric can review the scope before a quote or recommendation is
+                  suggested.
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-                <CtaLink href="/contact">{siteSettings.ctaLabels.primary}</CtaLink>
+                <CtaLink
+                  href="/contact#enquiry"
+                  className="!text-surface-strong hover:!text-surface-strong"
+                >
+                  {siteSettings.ctaLabels.primary}
+                </CtaLink>
                 <CtaLink href="/services" variant="secondary">
                   {siteSettings.ctaLabels.services}
+                </CtaLink>
+                <CtaLink href="/work" variant="secondary">
+                  {siteSettings.ctaLabels.work}
                 </CtaLink>
               </div>
             </div>
