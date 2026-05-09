@@ -6,8 +6,9 @@ export const siteSettings = {
   founderName: 'Richard "Ric" Szymik',
   founderShortName: "Ric",
   founderRole: "Founder",
-  tagline: "Lean digital studio for small businesses",
-  locationText: "Todmorden, West Yorkshire - UK-based and remote-friendly",
+  tagline: "Practical websites and digital support for small businesses",
+  locationText:
+    "Based in Todmorden, West Yorkshire - UK-based and remote-friendly",
   siteUrl: "https://szymikdigital.co.uk",
   language: "en-GB",
   locale: "en_GB",
@@ -69,11 +70,11 @@ export const siteSettings = {
   },
   meta: {
     defaultTitle:
-      "Szymik Digital | Websites and local visibility for small businesses",
+      "Szymik Digital | Practical websites for small local businesses",
     defaultDescription:
-      "Szymik Digital helps small businesses look sharper online, get found locally, and build practical digital systems when they need more than a brochure site.",
+      "Website refreshes, starter websites, local growth websites, and practical digital support for small businesses. Based in Todmorden, West Yorkshire, working UK-wide.",
     openGraphAlt:
-      "Szymik Digital branded social preview for small business websites, local visibility, and practical digital systems.",
+      "Szymik Digital branded social preview for practical small-business websites, local growth support, and digital systems.",
   },
   legal: {
     lastUpdatedDisplay: "24 April 2026",
@@ -145,7 +146,7 @@ export const services: Service[] = [
     description:
       "A Website Refresh is for businesses that already have a website, but know it is not doing enough. The aim is to improve clarity, trust, structure, and enquiry flow without forcing a rebuild too early.",
     bestFor:
-      "Small businesses with an existing site that still has value, but needs clearer messaging, stronger trust, better structure, or practical fixes.",
+      "Small local businesses, sole traders, trades, care/support providers, or local organisations with an existing site that still has value, but needs clearer messaging, stronger trust, better structure, or practical fixes.",
     problem:
       "The site feels dated, confusing, inconsistent, or weaker than the business behind it. Visitors may struggle to understand the offer or find the right way to enquire.",
     includes: [
@@ -168,7 +169,7 @@ export const services: Service[] = [
     description:
       "A Starter Website gives a small business a clean first foundation online: clear positioning, core service information, trust signals, and a simple contact path.",
     bestFor:
-      "New or small businesses that need a professional web presence without a large content-heavy site or advanced functionality.",
+      "New or small businesses, sole traders, and local organisations that need a professional web presence without a large content-heavy site or advanced functionality.",
     problem:
       "The business needs somewhere credible to send prospects, explain the offer, and make contact easy without relying only on social profiles or referrals.",
     includes: [
@@ -191,9 +192,9 @@ export const services: Service[] = [
     description:
       "A Local Growth Website is for service-led businesses that need more than a simple brochure site: clearer services, local relevance, trust content, and stronger enquiry routes.",
     bestFor:
-      "Small local service businesses with clear offers, local competition, and a need to be easier to find, understand, and trust.",
+      "Small local service businesses, trades, care/support providers, clinics, consultants, and appointment-led teams that need to be easier to find, understand, and trust.",
     problem:
-      "Potential customers cannot quickly see the services, locations, proof, or best way to make the right enquiry.",
+      "Potential customers cannot quickly see the services, locations or service area, proof, or best way to make the right enquiry.",
     includes: [
       "Website structure around core services and service areas",
       "Service pages or service sections with clearer calls to action",
@@ -235,7 +236,7 @@ export const pricingGuidance: PricingGuidance[] = [
     serviceId: "website-refresh",
     title: "Website Refresh",
     bestFit:
-      "Existing websites that need focused improvements before considering a full rebuild.",
+      "Existing small-business websites that need focused improvements before considering a full rebuild.",
     startingFrom: "Starting from GBP 750 for a focused review or improvement sprint.",
     priceFactors: [
       "Number of pages or sections to review",
@@ -249,7 +250,7 @@ export const pricingGuidance: PricingGuidance[] = [
     serviceId: "starter-website",
     title: "Starter Website",
     bestFit:
-      "New or small businesses that need a credible first website and a simple enquiry route.",
+      "New or small local businesses that need a credible first website and a simple enquiry route.",
     startingFrom: "Starting from GBP 1,500 for a lean, agreed-scope website foundation.",
     priceFactors: [
       "Page count and content readiness",

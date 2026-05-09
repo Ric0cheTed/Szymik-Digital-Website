@@ -30,14 +30,14 @@ const trustItems = [
       "Website projects include a preview and feedback stage before anything goes live.",
   },
   {
-    title: "Hannah and Ric stay clear",
+    title: "Clear communication",
     description:
-      "Hannah can help coordinate communication while Ric handles the build and technical decisions.",
+      "Hannah can help coordinate messages and feedback while Ric handles the build and technical decisions.",
   },
   {
     title: "Built for small local businesses",
     description:
-      "The focus stays practical: clearer offers, stronger trust, easier enquiries, and sensible next steps.",
+      "The focus stays practical for service businesses, trades, care/support providers, sole traders, and local organisations.",
   },
 ];
 
@@ -45,13 +45,13 @@ const conversionPaths = [
   {
     title: "I need a website",
     description:
-      "A clean, mobile-friendly site that explains the offer clearly and gives people a simple way to enquire.",
+      "A clean, mobile-friendly starter website that explains the business clearly and gives local customers a simple way to enquire.",
     href: "/services#starter-website",
   },
   {
     title: "I need help getting found locally",
     description:
-      "Stronger local foundations around services, location signals, and the trust details customers look for.",
+      "Stronger local foundations around services, location signals, service areas, and the trust details customers look for.",
     href: "/services#local-growth",
   },
   {
@@ -95,7 +95,7 @@ const faqs = [
   {
     question: "What kind of businesses are the best fit?",
     answer:
-      "Szymik Digital is best suited to small, local, service-led businesses that need a clearer website, stronger local visibility foundations, or practical systems once the basics are working.",
+      "Szymik Digital is best suited to small local businesses: trades, care/support providers, clinics, consultants, sole traders, and service-led teams that need a clearer website, stronger local visibility foundations, or practical systems once the basics are working.",
   },
   {
     question: "Can you help if we already have a website?",
@@ -121,7 +121,7 @@ const faqs = [
 
 export const metadata: Metadata = createPageMetadata({
   description:
-    "Websites, local visibility foundations, and practical digital systems for small businesses that want to look sharper online, get found locally, and run with less friction.",
+    "Practical website refreshes, starter websites, local growth websites, and digital support for small businesses in Todmorden, West Yorkshire, and across the UK.",
   path: "/",
 });
 
@@ -139,16 +139,20 @@ export default function Home() {
                 </span>
                 <div className="space-y-5">
                   <h1 className="max-w-4xl text-4xl font-semibold text-white sm:text-5xl lg:text-7xl">
-                    Websites, local visibility, and practical digital systems for small businesses
+                    Practical websites and digital support for small local businesses
                   </h1>
                   <p className="panel-dark-copy max-w-3xl text-lg leading-8 sm:text-xl">
-                    Szymik Digital helps small businesses look sharper online,
-                    get found locally, and make better digital decisions
-                    without turning a first enquiry into a hard sell.
+                    Based in Todmorden, West Yorkshire, Szymik Digital helps
+                    service businesses, trades, care/support providers, sole
+                    traders, and local organisations look clearer online and
+                    make better digital decisions without a hard sell.
                   </p>
                 </div>
                 <div className="flex flex-col gap-3 sm:flex-row">
-                  <CtaLink href="/contact#enquiry">
+                  <CtaLink
+                    href="/contact#enquiry"
+                    className="!text-surface-strong hover:!text-surface-strong"
+                  >
                     {siteSettings.ctaLabels.primary}
                   </CtaLink>
                   <CtaLink href="/services" variant="secondary">
@@ -163,9 +167,9 @@ export default function Home() {
                 </p>
                 <div className="mt-5 grid gap-4">
                   {[
-                    "Clear websites that explain the offer and make enquiries easier",
-                    "Local visibility foundations for service-led businesses",
-                    "Website improvements for dated, unclear, or inconsistent sites",
+                    "Website refreshes for dated, unclear, or inconsistent sites",
+                    "Starter websites for sole traders and small local teams",
+                    "Local growth websites for service-led businesses",
                     "Discovery for practical automation and custom tools when repeated work needs scoping properly",
                   ].map((item) => (
                     <p key={item} className="list-check panel-dark-copy">
@@ -231,7 +235,7 @@ export default function Home() {
           <SectionHeading
             eyebrow="Services"
             title="Start with the website foundation, then add the systems that make sense"
-            intro="The first layer is a clearer website and stronger local presence. If the problem is operational, discovery comes first so the right support can be scoped before any build work starts."
+            intro="Start with the website and local presence: a refresh, a starter website, or a local growth website. If the problem is operational, discovery comes first so automation or custom tool support can be scoped properly."
           />
 
           <div className="mt-8 grid gap-4 sm:mt-10 sm:gap-5 lg:grid-cols-2 xl:grid-cols-4">
@@ -267,7 +271,7 @@ export default function Home() {
             <SectionHeading
               eyebrow="Featured work"
               title="A quick look at the kind of work behind the offer"
-              intro="The homepage keeps this light: a few honest examples with fuller context on the Work page. No fake metrics, borrowed proof, or inflated claims."
+              intro="A few honest examples show how the same practical thinking applies to local service websites, internal delivery systems, and clearly labelled concept work."
             />
             <Link className="link-arrow" href="/work">
               View our work <span aria-hidden>{">"}</span>
@@ -315,7 +319,10 @@ export default function Home() {
               ))}
             </div>
             <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-              <CtaLink href="/contact#enquiry">
+              <CtaLink
+                href="/contact#enquiry"
+                className="!text-surface-strong hover:!text-surface-strong"
+              >
                 {siteSettings.ctaLabels.enquiry}
               </CtaLink>
               <CtaLink href="/services" variant="secondary">
@@ -338,7 +345,9 @@ export default function Home() {
                 <p>
                   Szymik Digital is built for small businesses that want direct
                   thinking, sharper online presentation, and practical digital
-                  work that actually helps day to day.
+                  work that actually helps day to day, whether they are local
+                  to Todmorden and West Yorkshire or supported remotely across
+                  the UK.
                 </p>
                 <p>
                   That can mean a new website, a sharper refresh, stronger
@@ -424,14 +433,17 @@ export default function Home() {
                 </h2>
                 <p className="panel-dark-copy mt-5 max-w-3xl text-lg leading-8">
                   Start with a practical conversation about what feels outdated,
-                  unclear, difficult to find, or harder than it should be. From
-                  there, Hannah can help gather the right details and Ric can
-                  review the scope before a quote or recommendation is
+                  unclear, difficult to find locally, or harder than it should
+                  be. From there, Hannah can help gather the right details and
+                  Ric can review the scope before a quote or recommendation is
                   suggested.
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
-                <CtaLink href="/contact#enquiry">
+                <CtaLink
+                  href="/contact#enquiry"
+                  className="!text-surface-strong hover:!text-surface-strong"
+                >
                   {siteSettings.ctaLabels.primary}
                 </CtaLink>
                 <CtaLink href="/services" variant="secondary">

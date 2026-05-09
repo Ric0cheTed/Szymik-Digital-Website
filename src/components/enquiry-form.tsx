@@ -28,7 +28,7 @@ const timescaleOptions = [
 const contactMethods = ["Email", "Phone", "Video call"];
 
 const inputClassName =
-  "mt-2 w-full rounded-[1.35rem] border border-border bg-white px-4 py-3 text-sm text-foreground outline-none transition duration-200 placeholder:text-muted/70 focus:border-accent/40 focus:ring-4 focus:ring-accent-soft";
+  "mt-2 w-full rounded-[1.35rem] border border-border bg-white px-4 py-2.5 text-sm text-foreground outline-none transition duration-200 placeholder:text-muted/70 focus:border-accent/40 focus:ring-4 focus:ring-accent-soft";
 
 function getValue(formData: FormData, key: string) {
   return String(formData.get(key) ?? "").trim();
@@ -104,35 +104,36 @@ export function EnquiryForm() {
   }
 
   return (
-    <form className="panel p-6 sm:p-8" onSubmit={handleSubmit}>
-      <div className="mb-8 space-y-4">
+    <form className="panel p-5 sm:p-6 lg:p-7" onSubmit={handleSubmit}>
+      <div className="mb-6 space-y-3">
         <div>
           <span className="eyebrow">Project enquiry</span>
-          <h2 className="mt-3 text-3xl font-semibold text-foreground">
+          <h2 className="mt-3 text-2xl font-semibold text-foreground sm:text-3xl">
             Prepare a clear project email
           </h2>
         </div>
-        <p className="text-base leading-8 text-muted">
+        <p className="text-sm leading-7 text-muted sm:text-base sm:leading-8">
           This form prepares a draft email addressed to {enquiryEmail}. It keeps
           the enquiry process straightforward and gives you a chance to review
           everything before sending. Enquiries go to the main Szymik Digital
           inbox for Hannah to log and triage before Ric reviews the scope,
           quote, and next step.
         </p>
-        <div className="rounded-[1.35rem] border border-border bg-background/75 p-4">
+        <div className="rounded-[1.35rem] border border-border bg-background/75 p-3.5 sm:p-4">
           <p className="font-mono text-xs uppercase tracking-[0.22em] text-muted">
             Fit note
           </p>
           <p className="mt-2 text-sm leading-7 text-muted">
             Include the practical need, your current website link if you have
-            one, what you want improved, your rough timescale, budget range or
-            whether you are unsure, and how you prefer to be contacted. A
-            written quote and agreed scope come before paid work starts.
+            one, location or service area if relevant, what you want improved,
+            your rough timescale, budget range or whether you are unsure, and
+            how you prefer to be contacted. A written quote and agreed scope
+            come before paid work starts.
           </p>
         </div>
       </div>
 
-      <div className="grid gap-5 sm:grid-cols-2">
+      <div className="grid gap-4 sm:grid-cols-2 sm:gap-5">
         <Field htmlFor="name" label="Name" required>
           <input
             id="name"
@@ -228,9 +229,9 @@ export function EnquiryForm() {
             id="projectDescription"
             name="projectDescription"
             required
-            rows={7}
-            className={`${inputClassName} min-h-[11rem] resize-y`}
-            placeholder="Tell us what you need help with, what is not working right now, what you want improved, and what a good outcome would look like. If you are not sure which pathway fits, say that too."
+            rows={6}
+            className={`${inputClassName} min-h-[10rem] resize-y`}
+            placeholder="Tell us what you need help with, what is not working right now, what you want improved, and what a good outcome would look like. For local website work, include your location or service area if relevant. If you are not sure which pathway fits, say that too."
           />
         </Field>
 
@@ -275,11 +276,11 @@ export function EnquiryForm() {
           required
           className="sm:col-span-2"
         >
-          <div className="mt-3 grid gap-3 sm:grid-cols-3">
+          <div className="mt-2.5 grid gap-2.5 sm:grid-cols-3 sm:gap-3">
             {contactMethods.map((method, index) => (
               <label
                 key={method}
-                className="flex cursor-pointer items-center gap-3 rounded-[1.35rem] border border-border bg-white px-4 py-3 text-sm font-medium text-foreground transition hover:border-accent/40 hover:bg-accent-soft"
+                className="flex cursor-pointer items-center gap-3 rounded-[1.35rem] border border-border bg-white px-4 py-2.5 text-sm font-medium text-foreground transition hover:border-accent/40 hover:bg-accent-soft"
               >
                 <input
                   type="radio"
@@ -295,7 +296,7 @@ export function EnquiryForm() {
         </Field>
 
         <div className="sm:col-span-2">
-          <label className="flex cursor-pointer items-start gap-3 rounded-[1.35rem] border border-border bg-white px-4 py-4 text-sm leading-7 text-muted transition hover:border-accent/40 hover:bg-accent-soft">
+          <label className="flex cursor-pointer items-start gap-3 rounded-[1.35rem] border border-border bg-white px-4 py-3.5 text-sm leading-7 text-muted transition hover:border-accent/40 hover:bg-accent-soft">
             <input
               type="checkbox"
               name="consent"
@@ -311,7 +312,7 @@ export function EnquiryForm() {
         </div>
       </div>
 
-      <div className="mt-8 space-y-4">
+      <div className="mt-6 space-y-3">
         <p className="text-sm leading-7 text-muted">
           There is no black-box submission here. The enquiry details open in
           your own email app so the message is visible, editable, and easy to

@@ -26,15 +26,23 @@ export function SiteHeader() {
           <div className="flex items-center justify-between gap-4">
             <Link
               href="/"
-              className="flex items-center rounded-full px-2.5 py-2 transition hover:bg-black/5"
+              className="flex items-center gap-2.5 rounded-full px-2.5 py-2 transition hover:bg-black/5"
               onClick={() => setIsOpen(false)}
             >
               <BrandLogo
                 priority
-                variant="horizontal"
-                sizes="(min-width: 640px) 170px, 148px"
-                className="h-auto w-[148px] sm:w-[170px]"
+                variant="mark"
+                sizes="(min-width: 640px) 42px, 38px"
+                className="h-auto w-[38px] sm:w-[42px]"
+                alt=""
               />
+              <span
+                className="flex items-baseline text-[1.35rem] font-extrabold leading-none tracking-normal sm:text-[1.5rem]"
+                aria-hidden="true"
+              >
+                <span className="text-foreground">Szymik</span>
+                <span className="text-accent-strong">Digital</span>
+              </span>
               <span className="sr-only">{siteName}</span>
             </Link>
 

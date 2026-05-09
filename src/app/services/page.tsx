@@ -6,9 +6,9 @@ import { createPageMetadata } from "@/lib/metadata";
 import { pricingGuidance, services, siteSettings } from "@/lib/site";
 
 export const metadata: Metadata = createPageMetadata({
-  title: "Services",
+  title: "Small Business Website Services",
   description:
-    "Website Refresh, Starter Website, Local Growth Website, and Automation / Custom Tool Discovery pathways from Szymik Digital.",
+    "Website refreshes, starter websites, local growth websites, and automation/custom tool discovery for small local businesses, based in Todmorden, West Yorkshire.",
   path: "/services",
 });
 
@@ -17,8 +17,8 @@ export default function ServicesPage() {
     <>
       <PageHero
         eyebrow="Services"
-        title="Practical service pathways for websites, local visibility, and useful systems"
-        intro="Start with the website and local visibility foundation. Each project is reviewed before a clear quote is prepared, so the scope, next steps, and payment approach are agreed before work begins."
+        title="Website refreshes, starter websites, local growth support, and useful systems"
+        intro="Practical website and digital support for small local businesses, service businesses, trades, care/support providers, sole traders, and local organisations. Each enquiry is reviewed before a clear quote is prepared, so the scope, next steps, and payment approach are agreed before work begins."
         actions={
           <>
             <CtaLink href="/contact#enquiry">
@@ -37,8 +37,8 @@ export default function ServicesPage() {
             <div className="mt-4 grid gap-3">
               {[
                 "The current website needs a practical refresh",
-                "The business needs its first credible website",
-                "Local service pages and trust signals need a stronger structure",
+                "A sole trader or small team needs its first credible website",
+                "Local service pages, service areas, and trust signals need a stronger structure",
                 "Manual admin or scattered tools are starting to slow the business down",
               ].map((item) => (
                 <p key={item} className="list-check">
@@ -55,7 +55,7 @@ export default function ServicesPage() {
           <SectionHeading
             eyebrow="Overview"
             title="Four clear pathways, one simple starting point"
-            intro="Each pathway maps to a common small-business problem. You do not need to pick perfectly before getting in touch; the enquiry helps Szymik Digital understand which route is most useful."
+            intro="Each pathway maps to a common small-business problem: a tired site, no proper website yet, weak local visibility, or repeated admin that needs understanding. You do not need to pick perfectly before getting in touch."
           />
 
           <div className="mt-8 grid gap-4 sm:mt-10 sm:gap-5 md:grid-cols-2 xl:grid-cols-4">
@@ -91,20 +91,31 @@ export default function ServicesPage() {
               id={service.id}
               className="panel scroll-mt-28 p-5 sm:p-8 lg:p-10"
             >
-              <div className="grid gap-6 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-8">
-                <div>
-                  <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent-strong">
-                    {service.shortLabel}
-                  </p>
-                  <h2 className="mt-3 text-2xl font-semibold text-foreground sm:mt-4 sm:text-4xl">
-                    {service.title}
-                  </h2>
-                  <p className="mt-4 max-w-3xl text-sm leading-7 text-muted sm:mt-5 sm:text-base sm:leading-8">
-                    {service.description}
-                  </p>
+              <div className="grid gap-6 lg:grid-cols-[minmax(16rem,0.72fr)_minmax(0,1.28fr)] lg:items-start lg:gap-7 xl:grid-cols-[minmax(18rem,0.66fr)_minmax(0,1.34fr)]">
+                <div className="grid content-start gap-5 sm:gap-6">
+                  <div>
+                    <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent-strong">
+                      {service.shortLabel}
+                    </p>
+                    <h2 className="mt-3 text-2xl font-semibold text-foreground sm:mt-4 sm:text-4xl">
+                      {service.title}
+                    </h2>
+                    <p className="mt-4 max-w-3xl text-sm leading-7 text-muted sm:mt-5 sm:text-base sm:leading-8">
+                      {service.description}
+                    </p>
+                  </div>
+
+                  <div className="border-t border-border pt-5 sm:pt-6">
+                    <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-foreground sm:text-lg sm:normal-case sm:tracking-normal">
+                      Practical outcome
+                    </h3>
+                    <p className="mt-2 text-sm leading-7 text-muted sm:mt-4 sm:text-base sm:leading-8">
+                      {service.outcome}
+                    </p>
+                  </div>
                 </div>
 
-                <div className="grid gap-4 rounded-[1.4rem] bg-background/80 p-5 sm:gap-5 sm:rounded-[1.6rem] sm:p-6">
+                <div className="grid gap-4 rounded-[1.4rem] bg-background/80 p-5 sm:gap-5 sm:rounded-[1.6rem] sm:p-6 lg:grid-cols-2 lg:items-start">
                   <div>
                     <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-foreground sm:text-lg sm:normal-case sm:tracking-normal">
                       Who it is for
@@ -121,11 +132,11 @@ export default function ServicesPage() {
                       {service.problem}
                     </p>
                   </div>
-                  <div>
+                  <div className="lg:col-span-2">
                     <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-foreground sm:text-lg sm:normal-case sm:tracking-normal">
                       What Szymik Digital helps with
                     </h3>
-                    <div className="mt-3 grid gap-2 sm:mt-4 sm:gap-3">
+                    <div className="mt-3 grid gap-2 sm:mt-4 sm:gap-3 lg:grid-cols-2">
                       {service.includes.map((item) => (
                         <p key={item} className="list-check">
                           {item}
@@ -133,15 +144,7 @@ export default function ServicesPage() {
                       ))}
                     </div>
                   </div>
-                  <div>
-                    <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-foreground sm:text-lg sm:normal-case sm:tracking-normal">
-                      Practical outcome
-                    </h3>
-                    <p className="mt-2 text-sm leading-7 text-muted sm:mt-4 sm:text-base sm:leading-8">
-                      {service.outcome}
-                    </p>
-                  </div>
-                  <div>
+                  <div className="lg:col-span-2">
                     <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-foreground sm:text-lg sm:normal-case sm:tracking-normal">
                       Best next step
                     </h3>
@@ -149,7 +152,7 @@ export default function ServicesPage() {
                       {service.nextStep}
                     </p>
                   </div>
-                  <div className="pt-1">
+                  <div className="pt-1 lg:col-span-2">
                     <CtaLink href="/contact#enquiry">
                       {siteSettings.ctaLabels.conversation}
                     </CtaLink>
@@ -166,7 +169,7 @@ export default function ServicesPage() {
           <SectionHeading
             eyebrow="Pricing guidance"
             title="Starting points before a written quote"
-            intro="These are guide prices, not instant quotes or rigid packages. Typical projects may vary depending on scope, content, technical needs, and how much is already ready. Szymik Digital reviews each enquiry before confirming a clear written quote."
+            intro="These are guide prices, not instant quotes or rigid packages. Website refreshes, starter websites, local growth projects, and discovery work all vary depending on scope, content, technical needs, and how much is already ready. Szymik Digital reviews each enquiry before confirming a clear written quote."
           />
 
           <div className="mt-8 grid gap-4 sm:mt-10 sm:gap-5 lg:grid-cols-2">
@@ -253,9 +256,11 @@ export default function ServicesPage() {
                 <p className="panel-dark-copy mt-4 max-w-3xl text-sm leading-7 sm:mt-5 sm:text-lg sm:leading-8">
                   If the problem is part website, part local visibility, and
                   part operational friction, that is fine. Start with what
-                  feels unclear now. Szymik Digital can review the enquiry,
-                  ask for any missing details, and shape a written scope before
-                  any paid work starts.
+                  feels unclear now, whether you are local to Todmorden and
+                  West Yorkshire or need remote-friendly support elsewhere in
+                  the UK. Szymik Digital can review the enquiry, ask for any
+                  missing details, and shape a written scope before any paid
+                  work starts.
                 </p>
               </div>
               <div>

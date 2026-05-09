@@ -10,7 +10,7 @@ import { projects } from "@/lib/work";
 export const metadata: Metadata = createPageMetadata({
   title: "Work",
   description:
-    "Honest example work from Szymik Digital, including client, internal, and concept examples that show practical outcomes without fake proof.",
+    "Honest Szymik Digital work examples for small-business websites, local service website foundations, internal workflow support, and practical digital systems.",
   path: "/work",
 });
 
@@ -20,7 +20,7 @@ export default function WorkPage() {
       <PageHero
         eyebrow="Work"
         title="Practical work, shown honestly"
-        intro="This page gives a small foundation for public examples: real client work where it can be described safely, internal Szymik Digital foundations, and clearly labelled concept work. No fake clients, fake metrics, or borrowed proof."
+        intro="This page gives a small foundation for public examples: real client work where it can be described safely, internal Szymik Digital foundations, and clearly labelled concept work for small-business websites and useful systems. No fake clients, fake metrics, or borrowed proof."
         actions={
           <>
             <CtaLink href="/contact#enquiry">
@@ -40,7 +40,7 @@ export default function WorkPage() {
               {[
                 "Client work is described carefully, without invented numbers or testimonials.",
                 "Internal work shows the foundations behind Szymik Digital's own website and delivery process.",
-                "Concept work is clearly labelled and used only to show approach, not claimed client delivery.",
+                "Concept work is clearly labelled and used only to show approach for local service businesses, not claimed client delivery.",
               ].map((item) => (
                 <p key={item} className="list-check">
                   {item}
@@ -66,7 +66,7 @@ export default function WorkPage() {
           <SectionHeading
             eyebrow="Approach"
             title="Why the labels matter"
-            intro="For a founder-led studio, credibility comes from being direct about what is client work, what is internal, and what is simply there to demonstrate thinking."
+            intro="For a founder-led studio working with small local businesses, credibility comes from being direct about what is client work, what is internal, and what is simply there to demonstrate thinking."
           />
 
           <div className="mt-8 grid gap-4 sm:mt-10 sm:gap-5 md:grid-cols-3">

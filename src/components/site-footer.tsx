@@ -30,7 +30,12 @@ export function SiteFooter() {
               overbuilt process.
             </p>
             <div className="mt-8">
-              <CtaLink href="/contact">{siteSettings.ctaLabels.primary}</CtaLink>
+              <CtaLink
+                href="/contact"
+                className="!text-surface-strong hover:!text-surface-strong"
+              >
+                {siteSettings.ctaLabels.primary}
+              </CtaLink>
             </div>
           </div>
 
