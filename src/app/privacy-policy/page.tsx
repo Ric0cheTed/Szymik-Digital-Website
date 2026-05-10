@@ -204,16 +204,24 @@ export default function PrivacyPolicyPage() {
                   7. Cookies and analytics
                 </h2>
                 <p className="mt-4">
-                  The current public website is intended to stay lightweight and
-                  does not intentionally use non-essential marketing cookies or
-                  a backend contact-form database. Basic technical logs may
-                  still be created by website hosting and security systems as
-                  part of normal operation.
+                  The current public website uses Google Analytics only if a
+                  visitor accepts analytics cookies. Google Analytics helps
+                  Szymik Digital understand broad site usage, such as which
+                  pages are visited, so the website can be improved over time.
                 </p>
                 <p className="mt-4">
-                  If analytics, tracking, advertising pixels, or similar tools
-                  are introduced later, this page will be updated so visitors
-                  can understand what is being used and why.
+                  Visitors can decline analytics and still use the website
+                  normally. The cookie choice is stored in the browser using
+                  local storage, and can be reopened using the Cookie settings
+                  link in the footer.
+                </p>
+                <p className="mt-4">
+                  The site does not use Google Ads tracking, Google Tag Manager,
+                  marketing pixels, or a backend contact-form database. Basic
+                  technical logs may still be created by website hosting and
+                  security systems as part of normal operation. This section is
+                  practical information about the current setup, not legal or
+                  accounting advice.
                 </p>
               </section>
 

@@ -1,5 +1,6 @@
 import type { Metadata, Viewport } from "next";
 import { IBM_Plex_Mono, Manrope } from "next/font/google";
+import { AnalyticsConsent } from "@/components/analytics-consent";
 import { SiteFooter } from "@/components/site-footer";
 import { SiteHeader } from "@/components/site-header";
 import { rootMetadata } from "@/lib/metadata";
@@ -44,6 +45,7 @@ export default function RootLayout({
           <SiteHeader />
           <main className="relative flex-1">{children}</main>
           <SiteFooter />
+          <AnalyticsConsent />
         </div>
       </body>
     </html>

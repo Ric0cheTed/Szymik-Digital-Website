@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Deployment Readiness
+Post-Live Slice 1
 
 ## Current Focus
 
-Hostinger static export readiness added.
+Google Analytics and consent-aware cookie setup added.
 
 ## Completed
 
@@ -111,20 +111,34 @@ Hostinger static export readiness added.
 - `docs/HOSTINGER_DEPLOYMENT.md` was added with the build, upload, live-check, and sitemap submission steps
 - The site was checked for static export compatibility: no server actions, dynamic request-time route handlers, auth/session logic, backend/database calls, middleware/proxy requirement, payment/server logic, or client portal logic were introduced
 - Hostinger readiness was limited to deployment configuration and docs; no public copy, UI redesign, package/dependency, route, legal page, backend, database, CRM, payment, or client portal changes were made
+- Correct Hostinger production version is now live at `https://szymikdigital.co.uk`
+- Post-live checklist added for live URL smoke tests, Vercel preview separation, canonical/domain checks, Google Search Console verification, sitemap submission, and social/profile URL updates
+- `docs/HOSTINGER_DEPLOYMENT.md` now warns that Hostinger is production, Vercel is preview/testing only, and future production updates require a fresh `/out` upload
+- This post-live handoff was docs-only; no runtime, source, public UI, route, package, dependency, config, deployment setting, legal, backend, CRM, payment, or client portal changes were made
+- Post-Live Slice 1 complete: Google Analytics 4 setup added with consent-aware loading
+- GA4 Measurement ID `G-VE1LWXJTKS` is stored in site config and treated as a public browser-visible ID
+- Analytics does not load on first page load; visitors can accept or decline analytics, and the choice is stored in local storage
+- Footer Cookie settings control added so visitors can reopen the analytics choice
+- Privacy wording now explains Google Analytics consent, broad site-usage measurement, declining analytics, and changing the cookie choice
+- Google Search Console was already set up separately and the sitemap was submitted before this slice
+- Szymik Digital remains Hostinger-hosted for production, with Vercel used only for preview/testing
+- This slice added no CRM, payment, backend, database, Google Ads, Google Tag Manager, marketing pixels, package/dependency, deployment setting, or client portal changes
 
 ## Files Changed In Latest Slice
 
-- `next.config.ts`
-- `src/app/manifest.ts`
-- `src/app/opengraph-image.tsx`
-- `src/app/robots.ts`
-- `src/app/sitemap.ts`
+- `src/app/layout.tsx`
+- `src/app/privacy-policy/page.tsx`
+- `src/components/analytics-consent.tsx`
+- `src/components/cookie-settings-button.tsx`
+- `src/components/site-footer.tsx`
+- `src/lib/site.ts`
 - `docs/HOSTINGER_DEPLOYMENT.md`
+- `docs/POST_LIVE_CHECKLIST.md`
 - `docs/DELIVERY_STATUS.md`
 
 ## Next Recommended Slice
 
-Hostinger upload dry run and live-domain check after the static `out` contents are uploaded.
+Build/export and upload the updated site to Hostinger, then verify Google Analytics Realtime after accepting analytics consent.
 
 ## Open Decisions
 
@@ -137,6 +151,6 @@ Hostinger upload dry run and live-domain check after the static `out` contents a
 
 ## Boundaries
 
-- Current work is Hostinger static export readiness
-- No public copy, UI redesign, backend form handling, automation, CRM logic, database, payment system, checkout links, client portal, package, dependency, route, asset, deployment setting outside `next.config.ts`, or legal page changes were introduced
+- Current work is consent-aware Google Analytics setup for the live Hostinger site
+- No backend form handling, automation, CRM logic, database, payment system, checkout link, Google Ads, Google Tag Manager, marketing pixels, package, dependency, route, deployment setting, or client portal changes were introduced
 - Existing static email-draft enquiry architecture was preserved

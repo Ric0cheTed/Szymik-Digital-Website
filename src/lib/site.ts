@@ -12,6 +12,9 @@ export const siteSettings = {
   siteUrl: "https://szymikdigital.co.uk",
   language: "en-GB",
   locale: "en_GB",
+  analytics: {
+    googleAnalyticsMeasurementId: "G-VE1LWXJTKS",
+  },
   brandAssets: {
     logoHorizontal: {
       src: "/brand/logo-horizontal.png",

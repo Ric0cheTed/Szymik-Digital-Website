@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { BrandLogo } from "@/components/brand-logo";
+import { CookieSettingsButton } from "@/components/cookie-settings-button";
 import { CtaLink } from "@/components/cta-link";
 import {
   activeSocialLinks,
@@ -129,13 +130,14 @@ export function SiteFooter() {
         </div>
 
         <div className="mt-12 flex flex-col gap-4 border-t border-white/10 pt-6 text-sm text-white/50 sm:flex-row sm:items-center sm:justify-between">
-          <p>
-            Copyright {new Date().getFullYear()} {siteName}. All rights
-            reserved.
-          </p>
-          <p>
-            Founder-led websites, redesigns, cleanup, and practical systems.
-          </p>
+          <div className="grid gap-2">
+            <p>
+              Copyright {new Date().getFullYear()} {siteName}. All rights
+              reserved.
+            </p>
+            <CookieSettingsButton />
+          </div>
+          <p>Founder-led websites, redesigns, cleanup, and practical systems.</p>
         </div>
       </div>
     </footer>
