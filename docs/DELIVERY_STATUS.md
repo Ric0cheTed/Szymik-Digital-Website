@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3: Public Offer Pathway Refinement
+Deployment Readiness
 
 ## Current Focus
 
-Contact page left support-panel density polish redone lighter after Ric review.
+Hostinger static export readiness added.
 
 ## Completed
 
@@ -104,15 +104,27 @@ Contact page left support-panel density polish redone lighter after Ric review.
 - The Contact support column now keeps the calmer stacked panel rhythm while using modestly reduced panel padding, slightly tighter gaps, single-column "What happens next" cards, and a normal visible email-template block
 - The lighter left-panel pass preserved the existing content meaning, key contact routes, direct email guidance, public profile links, mobile stacking, and the right-side enquiry form behaviour
 - This polish was limited to Contact page support-panel layout/content density and docs tracking; no backend, database, CRM, payment, dependency, package, config, deployment, or legal page changes were made
+- Hostinger static export readiness complete
+- `next.config.ts` now enables `output: "export"` with `trailingSlash: true` so static routes build into Hostinger-friendly folders
+- Next image optimization is disabled for static export compatibility while preserving the existing logo/image usage
+- The Open Graph image, sitemap, robots, and manifest metadata routes were marked static so they can be generated during `next build` for static export
+- `docs/HOSTINGER_DEPLOYMENT.md` was added with the build, upload, live-check, and sitemap submission steps
+- The site was checked for static export compatibility: no server actions, dynamic request-time route handlers, auth/session logic, backend/database calls, middleware/proxy requirement, payment/server logic, or client portal logic were introduced
+- Hostinger readiness was limited to deployment configuration and docs; no public copy, UI redesign, package/dependency, route, legal page, backend, database, CRM, payment, or client portal changes were made
 
 ## Files Changed In Latest Slice
 
-- `src/app/contact/page.tsx`
+- `next.config.ts`
+- `src/app/manifest.ts`
+- `src/app/opengraph-image.tsx`
+- `src/app/robots.ts`
+- `src/app/sitemap.ts`
+- `docs/HOSTINGER_DEPLOYMENT.md`
 - `docs/DELIVERY_STATUS.md`
 
 ## Next Recommended Slice
 
-Ric manual browser acceptance pass + first outreach list.
+Hostinger upload dry run and live-domain check after the static `out` contents are uploaded.
 
 ## Open Decisions
 
@@ -125,6 +137,6 @@ Ric manual browser acceptance pass + first outreach list.
 
 ## Boundaries
 
-- Current work is bounded Contact page left support-panel density polish
-- No homepage, Services page, Work page, header, footer, new feature, broad redesign, route, package, dependency, config, asset, deployment, legal page, backend form handling, automation, CRM logic, database, payment system, checkout link, or client portal changes were introduced
+- Current work is Hostinger static export readiness
+- No public copy, UI redesign, backend form handling, automation, CRM logic, database, payment system, checkout links, client portal, package, dependency, route, asset, deployment setting outside `next.config.ts`, or legal page changes were introduced
 - Existing static email-draft enquiry architecture was preserved
