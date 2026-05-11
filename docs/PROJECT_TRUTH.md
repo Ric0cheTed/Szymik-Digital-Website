@@ -15,11 +15,19 @@ It is being built as the commercial umbrella for:
 ## Source Of Truth Structure
 
 - `PROJECT_TRUTH.md` is the canonical source of truth for Szymik Digital's identity, positioning, and strategic wedge.
+- `SZYMIK_DIGITAL_MASTER_CONTROL.md` is the central control document for current direction, active workstreams, parked ideas, repo/tool ownership, workflow rules, and next-step decisions.
 - `STRATEGIC_DIRECTION.md` captures the broader reasoning, commercial thesis, 90-day thinking, and strategic context.
 - `ROADMAP.md` controls phased execution.
 - `DELIVERY_STATUS.md` controls the current phase, current focus, completed work, open decisions, and next action.
 - `SERVICE_LADDER.md`, `OFFER_PACKAGES.md`, and `CLIENT_WORKFLOW.md` support commercial delivery.
 - If docs conflict, `PROJECT_TRUTH.md` wins.
+
+## Durable Operating Truths
+
+- The current live Szymik Digital website remains the stable v1 baseline.
+- Major redesign work must happen separately through a branch / preview flow before it is merged or uploaded to production.
+- The public website repo and Szymik Digital CRM repo remain separate.
+- Concept Preview is now an official workflow step before build where visual direction, structure, and expectations need alignment.
 
 ## One-Line Positioning
 

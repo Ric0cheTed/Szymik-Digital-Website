@@ -2,6 +2,65 @@
 
 This roadmap keeps Szymik Digital focused on building a practical commercial foundation before expanding into automation and products.
 
+## Current Control Position
+
+### Stable Live V1
+
+The current live Szymik Digital website is the stable v1 baseline.
+
+It is already live on the public domain and has post-live analytics/cookie/privacy work completed. It should remain stable while major redesign work happens separately.
+
+### Premium Website V2 Refresh
+
+The next website direction is a premium v2 refresh.
+
+The v2 redesign should use a separate branch / preview flow and should not be merged or uploaded to production until reviewed and approved.
+
+The initial redesign order is:
+
+1. Homepage first.
+2. Work / Case Studies.
+3. Services.
+4. Contact / enquiry flow.
+
+### Concept Preview Workflow
+
+Concept Preview is now an official Szymik Digital process.
+
+The workflow is:
+
+```text
+Brief
+-> Concept Preview
+-> Review / Direction Lock
+-> Build
+-> Internal Review
+-> Client Preview
+-> Refine
+-> Launch / Handover
+```
+
+Concept Previews are visual direction tools. They help align style, structure, and expectations before build, but they are not pixel-perfect technical obligations.
+
+### Next Recommended Slice
+
+Phase 3 Slice 1 - Website v2 Redesign Branch + Homepage Concept Build.
+
+Goal:
+
+Start the premium website redesign separately from the current live v1 by creating/using a redesign branch and building the homepage toward the approved dark/green Szymik Digital Concept Preview direction.
+
+Scope:
+
+- homepage-first
+- Szymik Digital branding
+- selected work previews for Bent Burger, Country Pizza, and Libra Support Services where suitable
+- preserve existing live v1 until approved
+- no Hostinger production upload
+- no CRM integration
+- no client portal
+- no automation
+
 ## Phase 0: Source Of Truth
 
 ### Goal

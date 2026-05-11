@@ -10,6 +10,8 @@ Google Analytics and consent-aware cookie setup added.
 
 ## Completed
 
+- Strategy control pass complete: `docs/SZYMIK_DIGITAL_MASTER_CONTROL.md` created as the central control point for Szymik Digital direction, active workstreams, parked ideas, repo/tool ownership, workflow rules, and the next recommended v2 redesign slice
+- This strategy control pass was docs-only; no runtime, source, package, deployment, analytics/cookie, form, public UI, public route, styling, or CRM repo changes were made
 - Strategic direction agreed
 - Szymik Digital positioned as a lean digital studio, not a generic web design agency
 - Current wedge defined: websites and local visibility first, automation and custom systems second
@@ -126,19 +128,16 @@ Google Analytics and consent-aware cookie setup added.
 
 ## Files Changed In Latest Slice
 
-- `src/app/layout.tsx`
-- `src/app/privacy-policy/page.tsx`
-- `src/components/analytics-consent.tsx`
-- `src/components/cookie-settings-button.tsx`
-- `src/components/site-footer.tsx`
-- `src/lib/site.ts`
-- `docs/HOSTINGER_DEPLOYMENT.md`
-- `docs/POST_LIVE_CHECKLIST.md`
+- `docs/SZYMIK_DIGITAL_MASTER_CONTROL.md`
 - `docs/DELIVERY_STATUS.md`
+- `docs/ROADMAP.md`
+- `docs/PROJECT_TRUTH.md`
 
 ## Next Recommended Slice
 
-Build/export and upload the updated site to Hostinger, then verify Google Analytics Realtime after accepting analytics consent.
+Phase 3 Slice 1 - Website v2 Redesign Branch + Homepage Concept Build.
+
+Start the premium website redesign separately from the current live v1 by creating/using a redesign branch and building the homepage toward the approved dark/green Szymik Digital Concept Preview direction. No Hostinger production upload, CRM integration, client portal, or automation should be included in that slice.
 
 ## Open Decisions
 
@@ -151,6 +150,6 @@ Build/export and upload the updated site to Hostinger, then verify Google Analyt
 
 ## Boundaries
 
-- Current work is consent-aware Google Analytics setup for the live Hostinger site
-- No backend form handling, automation, CRM logic, database, payment system, checkout link, Google Ads, Google Tag Manager, marketing pixels, package, dependency, route, deployment setting, or client portal changes were introduced
-- Existing static email-draft enquiry architecture was preserved
+- Current work is strategy control documentation only
+- No runtime, source, public UI, public route, styling, package, dependency, deployment, analytics/cookie, form, CRM repo, backend, database, payment, or client portal changes were introduced
+- Existing stable live v1 website baseline was preserved
