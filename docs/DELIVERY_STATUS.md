@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3 Slice 3 - Homepage V2 Concept Match + Work Preview Assets
+Phase 3 Slice 4 - Homepage V2 Header Readability + Concept Match Polish
 
 ## Current Focus
 
-Concept-match pass using real work preview assets on the homepage v2 preview.
+Homepage header readability fix and dark concept-match polish.
 
 ## Completed
 
@@ -148,6 +148,13 @@ Concept-match pass using real work preview assets on the homepage v2 preview.
 - Service, process, trust, and CTA sections were kept compact and aligned with the dark/green concept direction without changing their route targets or core messaging
 - Work wording remains truthful: Bent Burger and Country Pizza are presented as concept/refresh previews, and Libra Support Services is referenced cautiously as local business website work without invented metrics or paid case-study claims
 - Phase 3 Slice 3 stayed homepage-first; no production upload, merge to main, CRM changes, agreement pack changes, ops workspace changes, contact form/runtime changes, analytics/cookie/privacy changes, package/dependency changes, new routes, or folder restructure were made
+- Phase 3 Slice 4 complete: homepage header readability and concept-match polish applied
+- Homepage header/nav now uses explicit light text on the dark premium header so inactive links remain readable against the black/charcoal background
+- Active Home state now uses a clear Szymik green accent treatment without relying on dark text on a dark surface
+- Homepage CTA remains vivid green with dark readable text, and the mobile menu keeps readable light text on the homepage dark variant
+- Non-homepage header readability was preserved by keeping the existing light header treatment on other routes
+- Hero/header spacing was tightened so the dark hero sits closer to the premium concept reference while preserving the layered project-preview collage and selected-work asset cards
+- Phase 3 Slice 4 stayed homepage/header polish only; no production upload, merge to main, CRM changes, agreement pack changes, ops workspace changes, contact form/runtime changes, analytics/cookie/privacy changes, package/dependency changes, new routes, or folder restructure were made
 
 ## Files Changed In Latest Slice
 
@@ -158,7 +165,7 @@ Concept-match pass using real work preview assets on the homepage v2 preview.
 
 ## Next Recommended Slice
 
-Phase 3 Slice 4 - Manual Browser Acceptance + Homepage Asset QA.
+Phase 3 Slice 5 - Manual Browser Acceptance + Homepage Asset QA.
 
 Open the homepage v2 preview in a manual browser session across desktop and mobile widths, then check the preview asset cropping, header/menu behaviour, selected-work proof wording, and final CTA flow before moving beyond the homepage.
 

@@ -148,17 +148,17 @@ export const metadata: Metadata = createPageMetadata({
 export default function Home() {
   return (
     <div className="bg-[#050806] text-white">
-      <section className="relative overflow-hidden px-0 pb-14 pt-8 sm:pb-18 sm:pt-12 lg:pb-20 lg:pt-16">
+      <section className="relative -mt-[5.35rem] overflow-hidden px-0 pb-14 pt-32 sm:-mt-[5.8rem] sm:pb-20 sm:pt-36 lg:pb-20 lg:pt-36">
         <div className="absolute inset-0 bg-[linear-gradient(90deg,_rgba(87,214,129,0.08)_1px,_transparent_1px),linear-gradient(180deg,_rgba(87,214,129,0.06)_1px,_transparent_1px)] bg-[length:82px_82px] opacity-45" />
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,_rgba(87,214,129,0.32),_transparent_28%),radial-gradient(circle_at_24%_8%,_rgba(87,214,129,0.12),_transparent_22%),linear-gradient(135deg,_#030504_0%,_#07100b_42%,_#111713_100%)]" />
         <div className="site-container relative">
-          <div className="grid gap-9 lg:grid-cols-[minmax(0,0.92fr)_minmax(30rem,1.08fr)] lg:items-center xl:gap-12">
-            <div className="max-w-4xl space-y-7 sm:space-y-8">
-              <span className="pill max-w-full border-white/12 bg-white/10 text-white/78">
-                Premium website v2 concept preview
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(30rem,1.1fr)] lg:items-center xl:gap-12">
+            <div className="max-w-4xl space-y-6 sm:space-y-7">
+              <span className="pill max-w-full border-accent/28 bg-accent/10 text-accent">
+                Websites. Automation. Growth.
               </span>
               <div className="space-y-5 sm:space-y-6">
-                <h1 className="max-w-5xl text-4xl font-semibold leading-[1.04] text-white sm:text-6xl lg:text-[4.65rem]">
+                <h1 className="max-w-5xl text-4xl font-semibold leading-[1.04] text-white sm:text-6xl lg:text-[4.5rem]">
                   Websites that make local businesses look ready for bigger
                   things.
                 </h1>
@@ -185,7 +185,7 @@ export default function Home() {
               </div>
             </div>
 
-            <div className="relative min-h-[29rem] sm:min-h-[34rem] lg:min-h-[38rem]">
+            <div className="relative min-h-[28rem] sm:min-h-[33rem] lg:min-h-[37rem]">
               <div className="absolute inset-x-8 top-7 hidden h-56 rounded-full bg-accent/18 blur-3xl sm:block" />
               <BrowserFrame
                 work={selectedWork[0]}

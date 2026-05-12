@@ -89,7 +89,7 @@ Status:
 
 Implemented as a bounded homepage v2 polish pass on `redesign/site-v2-homepage`. The pass improved hero responsiveness, selected work card presentation, CTA touch targets, and card rhythm while preserving static export compatibility and the branch/preview workflow.
 
-### Current Redesign Slice
+### Completed Redesign Slice
 
 Phase 3 Slice 3 - Manual Browser Acceptance + Selected Work Proof Assets.
 
@@ -114,13 +114,40 @@ Status:
 
 Implemented on `redesign/site-v2-homepage` as a homepage-first concept-match/assets pass. The hero now uses layered browser-window previews, selected work uses the provided real assets, and the homepage header has a dark/premium treatment while the stable live v1 remains protected.
 
-### Next Recommended Slice
+### Current Redesign Slice
 
 Phase 3 Slice 4 - Manual Browser Acceptance + Homepage Asset QA.
 
 Goal:
 
-Open the homepage v2 preview in a manual browser session across desktop and mobile widths, then check the preview asset cropping, header/menu behaviour, selected-work proof wording, and final CTA flow before moving beyond the homepage.
+Fix the homepage header readability issue and polish the dark/green concept match without redesigning from scratch.
+
+Scope:
+
+- homepage/header polish only
+- readable light nav text on dark homepage header
+- green active Home state
+- vivid readable Start a project CTA
+- hero/header spacing and dark concept rhythm
+- preserve selected-work preview assets and truthful wording
+- preserve non-homepage header readability
+- no Hostinger production upload
+- no merge to main
+- no CRM integration
+- no client portal
+- no automation
+
+Status:
+
+Implemented on `redesign/site-v2-homepage` as a homepage/header readability and concept-match polish pass. The homepage header now uses explicit light navigation text on the dark premium shell, a green-accent active Home state, and preserved light-header behaviour on other routes.
+
+### Next Recommended Slice
+
+Phase 3 Slice 5 - Manual Browser Acceptance + Homepage Asset QA.
+
+Goal:
+
+Open the homepage v2 preview in a manual browser session across desktop and mobile widths, then check header readability, mobile menu behaviour, hero collage cropping, selected-work proof wording, and final CTA flow before moving beyond the homepage.
 
 Scope:
 
