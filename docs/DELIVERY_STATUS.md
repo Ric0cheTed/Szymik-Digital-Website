@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3 Slice 1 - Website V2 Homepage Redesign Branch
+Phase 3 Slice 2 - Homepage V2 Responsive Polish
 
 ## Current Focus
 
-Homepage-first premium v2 redesign preview on a separate branch.
+Responsive polish and browser-review fixes for the homepage v2 preview.
 
 ## Completed
 
@@ -134,6 +134,13 @@ Homepage-first premium v2 redesign preview on a separate branch.
 - Homepage process now includes Brief, Concept Preview, Build, Review, and Launch
 - Homepage trust/delivery section now reflects clear process, practical results, local-business focus, and honest support with Ric/Hannah delivery context
 - This v2 slice was homepage-first only; no production upload, merge to main, CRM changes, contact form changes, analytics/cookie/privacy changes, package/dependency changes, or folder restructure were made
+- Phase 3 Slice 2 complete: homepage v2 responsive polish and review fixes applied
+- Homepage hero spacing, mobile type scale, CTA touch-target height, and desktop rhythm were tightened without changing the approved concept direction
+- Selected work cards for Bent Burger, Country Pizza, and Libra Support Services now have stronger visual preview panels, more balanced heights, and clearer honest-context notes
+- Service pathway, process, trust, and final CTA sections now use steadier card heights and mobile-friendly stacking while preserving the same routes and content intent
+- Local preview server smoke check passed at `http://localhost:3000`
+- Browser automation was attempted through the in-app browser plugin, but the available Node REPL runtime was `v22.20.0` and the plugin requires `>= v22.22.0`; no project dependency was added to work around this
+- Phase 3 Slice 2 stayed homepage-first; no production upload, merge to main, CRM changes, contact form/runtime changes, analytics/cookie/privacy changes, package/dependency changes, new routes, or folder restructure were made
 
 ## Files Changed In Latest Slice
 
@@ -143,9 +150,9 @@ Homepage-first premium v2 redesign preview on a separate branch.
 
 ## Next Recommended Slice
 
-Phase 3 Slice 2 - Review Homepage V2 Preview + Refine Responsiveness.
+Phase 3 Slice 3 - Manual Browser Acceptance + Selected Work Proof Assets.
 
-Review the homepage v2 preview in browser across mobile and desktop, then make a bounded refinement pass for spacing, contrast, copy, and selected-work proof accuracy before considering any wider route redesign.
+Open the homepage v2 preview in a manual browser session across desktop and mobile widths, then gather or confirm any real proof assets/screenshots and permission details before moving beyond the homepage.
 
 ## Open Decisions
 

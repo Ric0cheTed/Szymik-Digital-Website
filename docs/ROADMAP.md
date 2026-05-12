@@ -42,7 +42,7 @@ Brief
 
 Concept Previews are visual direction tools. They help align style, structure, and expectations before build, but they are not pixel-perfect technical obligations.
 
-### Current Redesign Slice
+### Completed Redesign Slice
 
 Phase 3 Slice 1 - Website v2 Redesign Branch + Homepage Concept Build.
 
@@ -65,7 +65,7 @@ Scope:
 - no client portal
 - no automation
 
-### Next Recommended Slice
+### Current Redesign Slice
 
 Phase 3 Slice 2 - Review Homepage V2 Preview + Refine Responsiveness.
 
@@ -79,6 +79,30 @@ Scope:
 - mobile and desktop spacing review
 - selected work wording/proof accuracy review
 - CTA and route preservation check
+- no Hostinger production upload
+- no merge to main
+- no CRM integration
+- no client portal
+- no automation
+
+Status:
+
+Implemented as a bounded homepage v2 polish pass on `redesign/site-v2-homepage`. The pass improved hero responsiveness, selected work card presentation, CTA touch targets, and card rhythm while preserving static export compatibility and the branch/preview workflow.
+
+### Next Recommended Slice
+
+Phase 3 Slice 3 - Manual Browser Acceptance + Selected Work Proof Assets.
+
+Goal:
+
+Open the homepage v2 preview in a manual browser session across desktop and mobile widths, then gather or confirm any real proof assets, screenshots, and permission details before moving beyond the homepage.
+
+Scope:
+
+- manual homepage preview acceptance
+- desktop and mobile browser review
+- selected work proof/permission check
+- screenshot or asset decisions for Bent Burger, Country Pizza, and Libra Support Services
 - no Hostinger production upload
 - no merge to main
 - no CRM integration

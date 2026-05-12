@@ -11,6 +11,7 @@ const selectedWork = [
     title: "Bent Burger",
     label: "Concept preview",
     category: "Food and local hospitality",
+    accent: "from-[#57d681]/28 via-white/10 to-[#101713]",
     summary:
       "A bold restaurant website refresh direction shaped around appetite, fast scanning, and a clearer route from interest to order or visit.",
     detail:
@@ -20,6 +21,7 @@ const selectedWork = [
     title: "Country Pizza",
     label: "Website refresh",
     category: "Local food business",
+    accent: "from-[#57d681]/20 via-[#f3f6f1]/12 to-[#172119]",
     summary:
       "A warmer local-business website direction for menu-led browsing, simple offers, trust cues, and easy customer action on mobile.",
     detail:
@@ -29,6 +31,7 @@ const selectedWork = [
     title: "Libra Support Services",
     label: "Local business website",
     category: "Care and support services",
+    accent: "from-[#57d681]/18 via-[#dfffe8]/10 to-[#0b1410]",
     summary:
       "A clearer service-led website foundation for explaining support, building trust, and helping people find the right contact route.",
     detail:
@@ -96,39 +99,43 @@ export const metadata: Metadata = createPageMetadata({
 export default function Home() {
   return (
     <div className="bg-[#050806] text-white">
-      <section className="relative overflow-hidden px-0 pb-14 pt-10 sm:pb-16 sm:pt-14 lg:pb-20 lg:pt-20">
+      <section className="relative overflow-hidden px-0 pb-16 pt-10 sm:pb-20 sm:pt-14 lg:pb-24 lg:pt-20">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_0%,_rgba(87,214,129,0.26),_transparent_34%),linear-gradient(135deg,_#050806_0%,_#0a120d_48%,_#101713_100%)]" />
         <div className="site-container relative">
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.08fr)_minmax(20rem,0.92fr)] lg:items-end">
-            <div className="max-w-5xl space-y-8">
-              <span className="pill border-white/12 bg-white/10 text-white/78">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,1.06fr)_minmax(20rem,0.94fr)] lg:items-end xl:gap-12">
+            <div className="max-w-5xl space-y-7 sm:space-y-8">
+              <span className="pill max-w-full border-white/12 bg-white/10 text-white/78">
                 Premium website v2 concept preview
               </span>
-              <div className="space-y-6">
-                <h1 className="max-w-5xl text-5xl font-semibold leading-[1.02] text-white sm:text-6xl lg:text-7xl">
+              <div className="space-y-5 sm:space-y-6">
+                <h1 className="max-w-5xl text-4xl font-semibold leading-[1.05] text-white sm:text-6xl lg:text-7xl">
                   Websites that make local businesses look ready for bigger
                   things.
                 </h1>
-                <p className="max-w-3xl text-lg leading-8 text-white/78 sm:text-xl">
+                <p className="max-w-3xl text-base leading-8 text-white/78 sm:text-xl">
                   Szymik Digital builds sharper website refreshes, starter
                   websites, and local growth websites for small businesses that
                   need to look clearer, more credible, and easier to choose.
                 </p>
               </div>
-              <div className="flex flex-col gap-3 sm:flex-row">
+              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
                 <CtaLink
                   href="/contact#enquiry"
-                  className="!text-surface-strong hover:!text-surface-strong"
+                  className="min-h-12 !text-surface-strong hover:!text-surface-strong"
                 >
                   Start a project
                 </CtaLink>
-                <CtaLink href="#selected-work" variant="secondary">
+                <CtaLink
+                  href="#selected-work"
+                  variant="secondary"
+                  className="min-h-12"
+                >
                   View our work
                 </CtaLink>
               </div>
             </div>
 
-            <aside className="rounded-[1.75rem] border border-white/10 bg-white/[0.07] p-5 shadow-[0_30px_90px_rgba(0,0,0,0.32)] backdrop-blur-sm sm:p-7">
+            <aside className="rounded-[1.75rem] border border-white/10 bg-white/[0.07] p-5 shadow-[0_30px_90px_rgba(0,0,0,0.32)] backdrop-blur-sm sm:p-7 lg:mb-1">
               <div className="flex items-center gap-4">
                 <div className="flex h-14 w-14 items-center justify-center rounded-[1.15rem] bg-white/10 p-2.5">
                   <BrandLogo
@@ -143,7 +150,7 @@ export default function Home() {
                   <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent">
                     Local studio
                   </p>
-                  <p className="mt-1 text-lg font-semibold text-white">
+                  <p className="mt-1 text-base font-semibold text-white sm:text-lg">
                     Ric build, Hannah support
                   </p>
                 </div>
@@ -183,25 +190,43 @@ export default function Home() {
             {selectedWork.map((work) => (
               <article
                 key={work.title}
-                className="flex h-full flex-col rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-5 transition duration-300 hover:-translate-y-1 hover:border-accent/35 sm:p-7"
+                className="flex h-full min-h-[27rem] flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.06] transition duration-300 hover:-translate-y-1 hover:border-accent/35"
               >
-                <div className="flex flex-wrap items-center gap-3">
-                  <span className="rounded-full border border-accent/25 bg-accent/15 px-3 py-1.5 text-xs font-semibold text-accent">
-                    {work.label}
-                  </span>
-                  <span className="font-mono text-xs uppercase tracking-[0.18em] text-white/48">
-                    {work.category}
-                  </span>
+                <div
+                  className={`relative min-h-36 border-b border-white/10 bg-gradient-to-br ${work.accent} p-4 sm:min-h-40`}
+                >
+                  <div className="absolute inset-x-4 bottom-4 rounded-[1rem] border border-white/14 bg-black/24 p-3 shadow-[0_22px_50px_rgba(0,0,0,0.24)] backdrop-blur-sm">
+                    <div className="flex items-center gap-1.5">
+                      <span className="h-2.5 w-2.5 rounded-full bg-accent" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-white/35" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+                    </div>
+                    <div className="mt-4 grid gap-2">
+                      <span className="h-2 rounded-full bg-white/58" />
+                      <span className="h-2 w-2/3 rounded-full bg-white/24" />
+                      <span className="h-2 w-5/6 rounded-full bg-accent/42" />
+                    </div>
+                  </div>
                 </div>
-                <h3 className="mt-5 text-2xl font-semibold text-white">
-                  {work.title}
-                </h3>
-                <p className="mt-3 flex-1 text-sm leading-7 text-white/76">
-                  {work.summary}
-                </p>
-                <p className="mt-6 border-t border-white/10 pt-4 text-xs font-medium leading-6 text-white/58">
-                  {work.detail}
-                </p>
+                <div className="flex flex-1 flex-col p-5 sm:p-7">
+                  <div className="flex flex-wrap items-center gap-3">
+                    <span className="rounded-full border border-accent/25 bg-accent/15 px-3 py-1.5 text-xs font-semibold text-accent">
+                      {work.label}
+                    </span>
+                    <span className="font-mono text-xs uppercase tracking-[0.18em] text-white/50">
+                      {work.category}
+                    </span>
+                  </div>
+                  <h3 className="mt-5 text-2xl font-semibold text-white">
+                    {work.title}
+                  </h3>
+                  <p className="mt-3 flex-1 text-sm leading-7 text-white/78">
+                    {work.summary}
+                  </p>
+                  <p className="mt-6 border-t border-white/10 pt-4 text-sm font-medium leading-7 text-white/62">
+                    {work.detail}
+                  </p>
+                </div>
               </article>
             ))}
           </div>
@@ -222,7 +247,7 @@ export default function Home() {
               <Link
                 key={service.id}
                 href={`/services#${service.id}`}
-                className="flex h-full flex-col rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-5 transition duration-300 hover:-translate-y-1 hover:border-accent/35 sm:p-6"
+                className="flex h-full min-h-72 flex-col rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-5 transition duration-300 hover:-translate-y-1 hover:border-accent/35 sm:p-6"
               >
                 <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent">
                   {service.shortLabel}
@@ -251,11 +276,11 @@ export default function Home() {
             surface="dark"
           />
 
-          <div className="mt-10 grid gap-4 lg:grid-cols-5">
+          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
             {processSteps.map((step, index) => (
               <article
                 key={step.title}
-                className="rounded-[1.35rem] border border-white/10 bg-black/18 p-5"
+                className="rounded-[1.35rem] border border-white/10 bg-black/18 p-5 sm:min-h-64 lg:min-h-80"
               >
                 <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent">
                   0{index + 1}
@@ -285,7 +310,7 @@ export default function Home() {
               {trustItems.map((item) => (
                 <article
                   key={item.title}
-                  className="rounded-[1.35rem] border border-white/10 bg-white/[0.06] p-5"
+                  className="rounded-[1.35rem] border border-white/10 bg-white/[0.06] p-5 sm:min-h-44"
                 >
                   <h3 className="text-lg font-semibold text-white">
                     {item.title}
@@ -320,11 +345,15 @@ export default function Home() {
               <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
                 <CtaLink
                   href="/contact#enquiry"
-                  className="!text-surface-strong hover:!text-surface-strong"
+                  className="min-h-12 !text-surface-strong hover:!text-surface-strong"
                 >
                   Start a project
                 </CtaLink>
-                <CtaLink href="#selected-work" variant="secondary">
+                <CtaLink
+                  href="#selected-work"
+                  variant="secondary"
+                  className="min-h-12"
+                >
                   View our work
                 </CtaLink>
               </div>
