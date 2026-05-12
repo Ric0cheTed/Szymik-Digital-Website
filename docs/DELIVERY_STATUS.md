@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3 Slice 9B - Services V2 Libra Analytics Proof Panel
+Phase 3 Slice 10B - Remove Services Analytics Proof Panel
 
 ## Current Focus
 
-Services hero proof-panel enhancement using the Libra Support Services analytics snapshot while preserving the accepted dark/green v2 visual system.
+Remove the Services Libra analytics proof-panel experiment and restore the clean Services v2 hero layout while keeping About V2 intact.
 
 ## Completed
 
@@ -214,18 +214,34 @@ Services hero proof-panel enhancement using the Libra Support Services analytics
 - Displayed Libra Support Services metrics include 130 UK active users, 396 home page views, 98 contact page views, and 93 Organic Search sessions from the last 28 days snapshot
 - The proof copy avoids guaranteed-result claims and frames the analytics as practical real-world visibility proof, not a promise of identical outcomes
 - Phase 3 Slice 9B stayed Services-page only; no homepage, Work, Contact, route, runtime, contact form, analytics/cookie/privacy, package/dependency, CRM, agreement pack, ops workspace, production upload, or merge-to-main changes were made
+- Phase 3 Slice 10 complete: About / Founder Story v2 redesigned on `redesign/site-v2-homepage`
+- `/about` now uses the accepted homepage/work/services/contact v2 visual system: dark/charcoal base, white typography, vivid Szymik green accents, rounded cards, compact section rhythm, and a strong conversion CTA
+- About hero now positions Szymik Digital as a small digital studio building sharper websites for local businesses, with grounded copy around credibility, enquiries, and practical digital work
+- Founder story section now explains that Ric builds websites, digital systems, and practical tools, and that Szymik Digital grew from real local-business website work and client workflow improvements
+- Ric/Hannah working model now presents Ric's build/technical direction role and Hannah's client flow, communication support, triage, and organisation role without exposing unnecessary internal detail
+- Differentiator and values sections now cover Concept Preview where useful, clear process, local-business understanding, practical pathways, honest advice, design that reflects business quality, clear communication, low jargon, and useful outcomes
+- `SiteHeader` now applies the accepted dark/green v2 header treatment on `/about` as well as `/`, `/work`, `/services`, and `/contact`
+- Phase 3 Slice 10 stayed About-page first; no homepage, Work, Services, Contact, route, runtime, contact form, analytics/cookie/privacy, package/dependency, CRM, agreement pack, ops workspace, production upload, or merge-to-main changes were made
+- Phase 3 Slice 10B complete: Services analytics proof-panel experiment removed
+- The "Real-world traction" / Libra analytics proof panel was removed from the `/services` hero area
+- The framed analytics screenshot and related metric chips were removed from the Services page, including the now-unused `next/image` import and proof-stat data
+- The original "Start with the problem" hero support panel remains in place, and the four Services v2 pathway cards plus the rest of the Services page remain intact
+- `public/images/proof/libra-analytics-overview.png` was removed from the working tree because it was only used by the removed Services proof panel
+- About / Founder Story V2 was left intact; `src/app/about/page.tsx` was not edited in this removal slice
+- Phase 3 Slice 10B stayed Services proof-panel removal only; no homepage, Work, About, Contact, route, runtime, contact form, analytics/cookie/privacy, package/dependency, CRM, agreement pack, ops workspace, production upload, or merge-to-main changes were made
 
 ## Files Changed In Latest Slice
 
 - `src/app/services/page.tsx`
+- `public/images/proof/libra-analytics-overview.png`
 - `docs/DELIVERY_STATUS.md`
 - `docs/ROADMAP.md`
 
 ## Next Recommended Slice
 
-Phase 3 Slice 10 - About / Founder Story V2.
+Phase 3 Slice 11 - V2 cross-page polish and legal-route/header safety review.
 
-Redesign the About / founder-story route using the accepted v2 visual system, keeping the local-studio positioning, Ric/Hannah delivery story, and preview-branch guardrails intact.
+Review the full v2 preview across homepage, Work, Services, About, and Contact, then decide whether Privacy Policy and Terms keep the light legacy shell or receive a guarded dark-header/readability polish before final branch acceptance.
 
 ## Open Decisions
 

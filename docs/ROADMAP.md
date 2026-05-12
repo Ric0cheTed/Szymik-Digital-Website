@@ -356,7 +356,7 @@ Status:
 
 Implemented on `redesign/site-v2-homepage`. The Services hero now includes a dark/green "Real-world traction" panel using the Libra Support Services analytics screenshot, compact metric chips, and careful wording that presents the snapshot as practical visibility proof without promising guaranteed results.
 
-### Next Recommended Slice
+### Completed Redesign Slice
 
 Phase 3 Slice 10 - About / Founder Story V2.
 
@@ -369,6 +369,58 @@ Scope:
 - `/about` or existing founder/about route only, if present
 - keep route structure intact
 - preserve analytics/cookie/privacy setup
+- no Hostinger production upload
+- no merge to main
+- no CRM integration
+- no client portal
+- no automation
+
+Status:
+
+Implemented on `redesign/site-v2-homepage`. The About route now uses the accepted dark/green v2 visual system with a stronger founder-led local-studio story, Ric/Hannah working model, differentiator cards, values/approach section, and a conversion CTA while avoiding claims about large team size, awards, guaranteed results, or guaranteed rankings/leads.
+
+### Completed Redesign Slice
+
+Phase 3 Slice 10B - Remove Services Analytics Proof Panel.
+
+Goal:
+
+Remove the Libra analytics proof panel from Services and restore the cleaner Services v2 hero composition.
+
+Scope:
+
+- `/services` proof-panel removal only
+- keep the "Start with the problem" hero panel
+- keep the four service pathways and Services v2 content intact
+- keep About / Founder Story V2 intact
+- remove the proof screenshot asset if unused
+- no route changes
+- no runtime/contact/form changes
+- no analytics/cookie/privacy changes
+- no Hostinger production upload
+- no merge to main
+- no CRM integration
+- no client portal
+- no automation
+
+Status:
+
+Implemented on `redesign/site-v2-homepage`. The Services hero no longer includes the "Real-world traction" Libra analytics panel or screenshot; the clean Services v2 layout and original "Start with the problem" support card remain in place. About V2 was not changed by this removal slice.
+
+### Next Recommended Slice
+
+Phase 3 Slice 11 - V2 Cross-Page Polish and Legal-Route/Header Safety Review.
+
+Goal:
+
+Review the full v2 branch experience across Homepage, Work, Services, About, and Contact, then confirm whether Privacy Policy and Terms should remain on the readable legacy/light shell or receive a minimal dark-header/readability polish.
+
+Scope:
+
+- cross-page v2 visual and mobile QA
+- header active-state/readability checks across all public routes
+- legal-route readability guardrails
+- no content overclaiming
 - no Hostinger production upload
 - no merge to main
 - no CRM integration

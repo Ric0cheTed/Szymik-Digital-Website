@@ -22,6 +22,7 @@ export function SiteHeader() {
     pathname === "/" ||
     pathname.startsWith("/work") ||
     pathname.startsWith("/services") ||
+    pathname.startsWith("/about") ||
     pathname.startsWith("/contact");
   const headerShellClassName = usesV2Header
     ? "border-b border-white/10 bg-[#030504]/94 shadow-none"
