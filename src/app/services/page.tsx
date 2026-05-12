@@ -1,9 +1,55 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { CtaLink } from "@/components/cta-link";
-import { PageHero } from "@/components/page-hero";
-import { SectionHeading } from "@/components/section-heading";
 import { createPageMetadata } from "@/lib/metadata";
-import { pricingGuidance, services, siteSettings } from "@/lib/site";
+import { services } from "@/lib/site";
+
+const choosePath = [
+  {
+    need: "Existing site, but it feels weak",
+    serviceId: "website-refresh",
+    service: "Website Refresh",
+  },
+  {
+    need: "No proper site yet",
+    serviceId: "starter-website",
+    service: "Starter Website",
+  },
+  {
+    need: "Want more local enquiries",
+    serviceId: "local-growth",
+    service: "Local Growth Website",
+  },
+  {
+    need: "Repeated admin or process pain",
+    serviceId: "automation-tools",
+    service: "Automation / Custom Tool Discovery",
+  },
+];
+
+const deliverySteps = [
+  "Brief",
+  "Concept Preview",
+  "Direction lock",
+  "Build",
+  "Review",
+  "Launch / handover",
+];
+
+const trustItems = [
+  "Clear process",
+  "Honest guidance",
+  "Practical outcomes",
+  "Local-business focus",
+  "Built to be manageable after launch",
+];
+
+const serviceIcon: Record<string, string> = {
+  "website-refresh": "screen",
+  "starter-website": "rocket",
+  "local-growth": "chart",
+  "automation-tools": "gear",
+};
 
 export const metadata: Metadata = createPageMetadata({
   title: "Small Business Website Services",
@@ -12,266 +58,309 @@ export const metadata: Metadata = createPageMetadata({
   path: "/services",
 });
 
+function LineIcon({ name }: { name: string }) {
+  const className = "h-8 w-8 text-accent";
+
+  if (name === "rocket") {
+    return (
+      <svg className={className} viewBox="0 0 32 32" aria-hidden="true">
+        <path
+          d="M20 5c-5 1-9 5-11 10l8 8c5-2 9-6 10-11l-7-7Z"
+          fill="none"
+          stroke="currentColor"
+          strokeLinejoin="round"
+          strokeWidth="2"
+        />
+        <path d="M10 22 6 26M19 11h.1" stroke="currentColor" strokeWidth="2" />
+      </svg>
+    );
+  }
+
+  if (name === "chart") {
+    return (
+      <svg className={className} viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M6 24h20M8 22l5-6 4 3 7-10" fill="none" stroke="currentColor" strokeWidth="2" />
+        <path d="M23 9h3v3" fill="none" stroke="currentColor" strokeWidth="2" />
+      </svg>
+    );
+  }
+
+  if (name === "gear") {
+    return (
+      <svg className={className} viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="4" fill="none" stroke="currentColor" strokeWidth="2" />
+        <path
+          d="M16 4v4M16 24v4M4 16h4M24 16h4M7.5 7.5l2.8 2.8M21.7 21.7l2.8 2.8M24.5 7.5l-2.8 2.8M10.3 21.7l-2.8 2.8"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
+      </svg>
+    );
+  }
+
+  return (
+    <svg className={className} viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M6 8h20v15H6V8Z" fill="none" stroke="currentColor" strokeWidth="2" />
+      <path d="M11 27h10M14 23v4M18 23v4" stroke="currentColor" strokeWidth="2" />
+    </svg>
+  );
+}
+
+function Eyebrow({ children }: { children: string }) {
+  return (
+    <span className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-accent">
+      {children}
+    </span>
+  );
+}
+
 export default function ServicesPage() {
   return (
-    <>
-      <PageHero
-        eyebrow="Services"
-        title="Website refreshes, starter websites, local growth support, and useful systems"
-        intro="Practical website and digital support for small local businesses, service businesses, trades, care/support providers, sole traders, and local organisations. Each enquiry is reviewed before a clear quote is prepared, so the scope, next steps, and payment approach are agreed before work begins."
-        actions={
-          <>
-            <CtaLink href="/contact#enquiry">
-              {siteSettings.ctaLabels.primary}
-            </CtaLink>
-            <CtaLink href="/work" variant="secondary">
-              {siteSettings.ctaLabels.work}
-            </CtaLink>
-          </>
-        }
-        aside={
-          <div>
-            <p className="font-mono text-xs uppercase tracking-[0.22em] text-muted">
-              Typical starting points
-            </p>
-            <div className="mt-4 grid gap-3">
-              {[
-                "The current website needs a practical refresh",
-                "A sole trader or small team needs its first credible website",
-                "Local service pages, service areas, and trust signals need a stronger structure",
-                "Manual admin or scattered tools are starting to slow the business down",
-              ].map((item) => (
-                <p key={item} className="list-check">
-                  {item}
-                </p>
-              ))}
+    <div className="bg-[#030504] text-white">
+      <section className="relative -mt-[5.35rem] overflow-hidden border-b border-white/10 px-0 pb-14 pt-30 sm:-mt-[5.8rem] sm:pb-16 sm:pt-36 lg:pt-32">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_20%,_rgba(87,214,129,0.2),_transparent_30%),linear-gradient(135deg,_#030504_0%,_#07100b_48%,_#090d0a_100%)]" />
+        <div className="absolute inset-0 opacity-35 [background-image:linear-gradient(130deg,_transparent_0%,_transparent_54%,_rgba(87,214,129,0.28)_55%,_transparent_56%)]" />
+        <div className="site-container relative">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(22rem,0.72fr)] lg:items-end">
+            <div className="max-w-4xl">
+              <span className="inline-flex rounded-full border border-accent/35 bg-accent/10 px-4 py-2 font-mono text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-accent">
+                Services
+              </span>
+              <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-[1.04] text-white sm:text-6xl">
+                Websites and digital support built around{" "}
+                <span className="text-accent">real business needs.</span>
+              </h1>
+              <p className="mt-5 max-w-2xl text-base leading-8 text-white/72 sm:text-lg">
+                Szymik Digital helps local businesses improve their online
+                presence, win trust, and make their digital setup easier to
+                manage.
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <CtaLink
+                  href="/contact#enquiry"
+                  className="min-h-12 !text-surface-strong hover:!text-surface-strong"
+                >
+                  Start a project
+                </CtaLink>
+                <CtaLink
+                  href="/work"
+                  variant="secondary"
+                  className="min-h-12 border-white/22 bg-transparent !text-white hover:bg-white/10 hover:!text-white"
+                >
+                  View our work
+                </CtaLink>
+              </div>
             </div>
-          </div>
-        }
-      />
 
-      <section className="page-section pt-0">
-        <div className="site-container">
-          <SectionHeading
-            eyebrow="Overview"
-            title="Four clear pathways, one simple starting point"
-            intro="Each pathway maps to a common small-business problem: a tired site, no proper website yet, weak local visibility, or repeated admin that needs understanding. You do not need to pick perfectly before getting in touch."
-          />
-
-          <div className="mt-8 grid gap-4 sm:mt-10 sm:gap-5 md:grid-cols-2 xl:grid-cols-4">
-            {services.map((service) => (
-              <a
-                key={service.id}
-                href={`#${service.id}`}
-                className="panel block p-5 transition duration-300 hover:-translate-y-1 sm:p-8"
-              >
-                <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent-strong">
-                  {service.shortLabel}
-                </p>
-                <h2 className="mt-3 text-xl font-semibold text-foreground sm:mt-4 sm:text-2xl">
-                  {service.title}
-                </h2>
-                <p className="mt-3 text-sm leading-7 text-muted sm:mt-4 sm:text-base sm:leading-8">
-                  {service.teaser}
-                </p>
-                <span className="link-arrow mt-5 sm:mt-6">
-                  Explore pathway <span aria-hidden>{">"}</span>
-                </span>
-              </a>
-            ))}
+            <aside className="rounded-[1.15rem] border border-accent/22 bg-white/[0.055] p-5 shadow-[0_28px_90px_rgba(0,0,0,0.32)]">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-accent">
+                Start with the problem
+              </p>
+              <div className="mt-5 grid gap-3 text-sm leading-7 text-white/70">
+                <p>Outdated website, no proper site yet, weak local enquiry flow, or repeated admin that needs clarity.</p>
+                <p>You do not need to choose perfectly before getting in touch.</p>
+              </div>
+            </aside>
           </div>
         </div>
       </section>
 
-      <section className="page-section pt-0">
-        <div className="site-container space-y-4 sm:space-y-5">
-          {services.map((service) => (
-            <article
-              key={service.id}
-              id={service.id}
-              className="panel scroll-mt-28 p-5 sm:p-8 lg:p-10"
-            >
-              <div className="grid gap-6 lg:grid-cols-[minmax(16rem,0.72fr)_minmax(0,1.28fr)] lg:items-start lg:gap-7 xl:grid-cols-[minmax(18rem,0.66fr)_minmax(0,1.34fr)]">
-                <div className="grid content-start gap-5 sm:gap-6">
-                  <div>
-                    <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent-strong">
+      <section className="border-b border-white/10 bg-[#050806] py-10 sm:py-12">
+        <div className="site-container">
+          <Eyebrow>Service pathways</Eyebrow>
+          <h2 className="mt-3 max-w-4xl text-3xl font-semibold text-white sm:text-4xl">
+            Four clear routes for different stages of a local business.
+          </h2>
+
+          <div className="mt-8 grid gap-5 lg:grid-cols-2">
+            {services.map((service) => (
+              <article
+                key={service.id}
+                id={service.id}
+                className="scroll-mt-28 rounded-[1.15rem] border border-white/12 bg-white/[0.055] p-5 shadow-[0_28px_90px_rgba(0,0,0,0.22)] sm:p-6"
+              >
+                <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
+                  <div className="shrink-0 rounded-[0.9rem] border border-accent/20 bg-accent/10 p-3">
+                    <LineIcon name={serviceIcon[service.id] ?? "screen"} />
+                  </div>
+                  <div className="min-w-0">
+                    <p className="font-mono text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-accent">
                       {service.shortLabel}
                     </p>
-                    <h2 className="mt-3 text-2xl font-semibold text-foreground sm:mt-4 sm:text-4xl">
+                    <h3 className="mt-2 text-2xl font-semibold text-white">
                       {service.title}
-                    </h2>
-                    <p className="mt-4 max-w-3xl text-sm leading-7 text-muted sm:mt-5 sm:text-base sm:leading-8">
+                    </h3>
+                    <p className="mt-3 text-sm leading-7 text-white/70">
                       {service.description}
                     </p>
                   </div>
+                </div>
 
-                  <div className="border-t border-border pt-5 sm:pt-6">
-                    <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-foreground sm:text-lg sm:normal-case sm:tracking-normal">
+                <div className="mt-6 grid gap-4 lg:grid-cols-2">
+                  <div className="rounded-[0.95rem] border border-white/10 bg-black/18 p-4">
+                    <h4 className="text-sm font-semibold text-white">Best for</h4>
+                    <p className="mt-2 text-sm leading-7 text-white/64">
+                      {service.bestFor}
+                    </p>
+                  </div>
+                  <div className="rounded-[0.95rem] border border-white/10 bg-black/18 p-4">
+                    <h4 className="text-sm font-semibold text-white">
                       Practical outcome
-                    </h3>
-                    <p className="mt-2 text-sm leading-7 text-muted sm:mt-4 sm:text-base sm:leading-8">
+                    </h4>
+                    <p className="mt-2 text-sm leading-7 text-white/64">
                       {service.outcome}
                     </p>
                   </div>
                 </div>
 
-                <div className="grid gap-4 rounded-[1.4rem] bg-background/80 p-5 sm:gap-5 sm:rounded-[1.6rem] sm:p-6 lg:grid-cols-2 lg:items-start">
-                  <div>
-                    <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-foreground sm:text-lg sm:normal-case sm:tracking-normal">
-                      Who it is for
-                    </h3>
-                    <p className="mt-2 text-sm leading-7 text-muted sm:mt-4 sm:text-base sm:leading-8">
-                      {service.bestFor}
-                    </p>
-                  </div>
-                  <div>
-                    <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-foreground sm:text-lg sm:normal-case sm:tracking-normal">
-                      The problem it solves
-                    </h3>
-                    <p className="mt-2 text-sm leading-7 text-muted sm:mt-4 sm:text-base sm:leading-8">
-                      {service.problem}
-                    </p>
-                  </div>
-                  <div className="lg:col-span-2">
-                    <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-foreground sm:text-lg sm:normal-case sm:tracking-normal">
-                      What Szymik Digital helps with
-                    </h3>
-                    <div className="mt-3 grid gap-2 sm:mt-4 sm:gap-3 lg:grid-cols-2">
-                      {service.includes.map((item) => (
-                        <p key={item} className="list-check">
-                          {item}
-                        </p>
-                      ))}
-                    </div>
-                  </div>
-                  <div className="lg:col-span-2">
-                    <h3 className="text-sm font-semibold uppercase tracking-[0.12em] text-foreground sm:text-lg sm:normal-case sm:tracking-normal">
-                      Best next step
-                    </h3>
-                    <p className="mt-2 text-sm leading-7 text-muted sm:mt-4 sm:text-base sm:leading-8">
-                      {service.nextStep}
-                    </p>
-                  </div>
-                  <div className="pt-1 lg:col-span-2">
-                    <CtaLink href="/contact#enquiry">
-                      {siteSettings.ctaLabels.conversation}
-                    </CtaLink>
+                <div className="mt-5">
+                  <h4 className="text-sm font-semibold text-white">
+                    What it can include
+                  </h4>
+                  <div className="mt-3 flex flex-wrap gap-2">
+                    {service.includes.map((item) => (
+                      <span
+                        key={item}
+                        className="rounded-full border border-accent/22 bg-accent/10 px-3 py-1.5 text-xs font-semibold text-accent"
+                      >
+                        {item}
+                      </span>
+                    ))}
                   </div>
                 </div>
-              </div>
-            </article>
-          ))}
-        </div>
-      </section>
 
-      <section id="pricing" className="page-section scroll-mt-28 pt-0">
-        <div className="site-container">
-          <SectionHeading
-            eyebrow="Pricing guidance"
-            title="Starting points before a written quote"
-            intro="These are guide prices, not instant quotes or rigid packages. Website refreshes, starter websites, local growth projects, and discovery work all vary depending on scope, content, technical needs, and how much is already ready. Szymik Digital reviews each enquiry before confirming a clear written quote."
-          />
-
-          <div className="mt-8 grid gap-4 sm:mt-10 sm:gap-5 lg:grid-cols-2">
-            {pricingGuidance.map((item) => (
-              <article key={item.serviceId} className="panel p-5 sm:p-8">
-                <div className="flex flex-col gap-3 sm:flex-row sm:items-start sm:justify-between">
-                  <div>
-                    <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent-strong">
-                      {item.title}
-                    </p>
-                    <h3 className="mt-3 text-xl font-semibold text-foreground sm:text-2xl">
-                      {item.startingFrom}
-                    </h3>
-                  </div>
-                  <a
-                    href={`#${item.serviceId}`}
-                    className="link-arrow shrink-0"
+                <div className="mt-6 flex flex-col gap-3 border-t border-white/10 pt-5 sm:flex-row sm:items-center sm:justify-between">
+                  <p className="max-w-xl text-sm leading-7 text-white/58">
+                    {service.nextStep}
+                  </p>
+                  <Link
+                    href="/contact#enquiry"
+                    className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-[0.75rem] border border-white/16 px-4 text-sm font-semibold text-white transition hover:border-accent/45 hover:text-accent"
                   >
-                    View pathway <span aria-hidden>{">"}</span>
-                  </a>
-                </div>
-
-                <div className="mt-5 grid gap-4 sm:mt-6 sm:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)]">
-                  <div>
-                    <h4 className="text-sm font-semibold uppercase tracking-[0.12em] text-foreground sm:text-base sm:normal-case sm:tracking-normal">
-                      Best fit
-                    </h4>
-                    <p className="mt-2 text-sm leading-7 text-muted">
-                      {item.bestFit}
-                    </p>
-                  </div>
-
-                  <div>
-                    <h4 className="text-sm font-semibold uppercase tracking-[0.12em] text-foreground sm:text-base sm:normal-case sm:tracking-normal">
-                      What can affect price
-                    </h4>
-                    <div className="mt-2 grid gap-2">
-                      {item.priceFactors.map((factor) => (
-                        <p key={factor} className="list-check">
-                          {factor}
-                        </p>
-                      ))}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-5 rounded-[1.35rem] border border-border bg-background/80 p-4">
-                  <p className="font-mono text-xs uppercase tracking-[0.22em] text-muted">
-                    After enquiry
-                  </p>
-                  <p className="mt-2 text-sm leading-7 text-muted">
-                    {item.afterEnquiry}
-                  </p>
+                    Discuss this path <span aria-hidden>{">"}</span>
+                  </Link>
                 </div>
               </article>
             ))}
           </div>
+        </div>
+      </section>
 
-          <div className="mt-5 grid gap-4 rounded-[1.5rem] border border-border bg-white/70 p-5 sm:mt-6 sm:grid-cols-3 sm:p-6">
-            {[
-              "Every suitable project gets a written quote before paid work starts.",
-              "Deposit or payment terms are confirmed before build work begins.",
-              "Extra work outside the agreed scope is discussed before being added.",
-            ].map((item) => (
-              <p key={item} className="list-check">
-                {item}
-              </p>
-            ))}
+      <section className="border-b border-white/10 bg-[#050806] py-10 sm:py-12">
+        <div className="site-container">
+          <div className="rounded-[1.25rem] border border-accent/25 bg-[radial-gradient(circle_at_28%_0%,_rgba(87,214,129,0.15),_transparent_24%),linear-gradient(135deg,_rgba(255,255,255,0.07),_rgba(255,255,255,0.035))] p-6 sm:p-8 lg:p-10">
+            <Eyebrow>How to choose</Eyebrow>
+            <h2 className="mt-3 max-w-3xl text-3xl font-semibold text-white sm:text-4xl">
+              Match the pathway to what feels most urgent.
+            </h2>
+            <div className="mt-8 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+              {choosePath.map((item) => (
+                <Link
+                  key={item.serviceId}
+                  href={`#${item.serviceId}`}
+                  className="rounded-[0.95rem] border border-white/12 bg-black/18 p-5 transition hover:border-accent/35"
+                >
+                  <p className="text-sm leading-7 text-white/68">{item.need}</p>
+                  <p className="mt-4 text-base font-semibold text-accent">
+                    {item.service} <span aria-hidden>{">"}</span>
+                  </p>
+                </Link>
+              ))}
+            </div>
           </div>
         </div>
       </section>
 
-      <section className="page-section pt-0">
+      <section className="border-b border-white/10 bg-[#050806] py-10 sm:py-12">
         <div className="site-container">
-          <div className="panel-dark px-6 py-8 sm:px-10 sm:py-10 lg:px-12 lg:py-12">
-            <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_auto] lg:items-end">
+          <div className="grid gap-8 lg:grid-cols-[minmax(16rem,0.7fr)_minmax(0,1.3fr)]">
+            <div>
+              <Eyebrow>Delivery process</Eyebrow>
+              <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
+                Concept Preview before build where it helps.
+              </h2>
+              <p className="mt-5 text-sm leading-7 text-white/68">
+                For visual direction and larger website decisions, Szymik
+                Digital can use Concept Preview before build so the style,
+                structure, and expectations are clear.
+              </p>
+            </div>
+            <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-3">
+              {deliverySteps.map((step, index) => (
+                <article
+                  key={step}
+                  className="rounded-[0.95rem] border border-white/12 bg-white/[0.055] p-5"
+                >
+                  <span className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-sm font-bold text-surface-strong">
+                    {index + 1}
+                  </span>
+                  <h3 className="mt-4 text-lg font-semibold text-white">
+                    {step}
+                  </h3>
+                </article>
+              ))}
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-white/10 bg-[#050806] py-10 sm:py-12">
+        <div className="site-container">
+          <div className="rounded-[1.25rem] border border-accent/25 bg-[radial-gradient(circle_at_42%_0%,_rgba(87,214,129,0.13),_transparent_26%),linear-gradient(135deg,_rgba(255,255,255,0.07),_rgba(255,255,255,0.035))] p-6 sm:p-8 lg:p-10">
+            <div className="grid gap-8 lg:grid-cols-[minmax(16rem,0.7fr)_minmax(0,1.3fr)]">
               <div>
-                <span className="eyebrow text-accent">
-                  Not sure where to start?
-                </span>
-                <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
-                  Not sure yet? Start with a quick enquiry
+                <Eyebrow>Practical support</Eyebrow>
+                <h2 className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-4xl">
+                  Built for local businesses that need the site to stay useful.
                 </h2>
-                <p className="panel-dark-copy mt-4 max-w-3xl text-sm leading-7 sm:mt-5 sm:text-lg sm:leading-8">
-                  If the problem is part website, part local visibility, and
-                  part operational friction, that is fine. Start with what
-                  feels unclear now, whether you are local to Todmorden and
-                  West Yorkshire or need remote-friendly support elsewhere in
-                  the UK. Szymik Digital can review the enquiry, ask for any
-                  missing details, and shape a written scope before any paid
-                  work starts.
+              </div>
+              <div className="grid gap-4 sm:grid-cols-2 xl:grid-cols-5">
+                {trustItems.map((item) => (
+                  <article key={item} className="rounded-[0.95rem] border border-white/12 bg-black/18 p-4">
+                    <h3 className="text-sm font-semibold text-white">{item}</h3>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#050806] py-10 sm:py-12">
+        <div className="site-container">
+          <div className="overflow-hidden rounded-[1.35rem] border border-accent/25 bg-[linear-gradient(135deg,_rgba(87,214,129,0.14),_rgba(255,255,255,0.055)_38%,_rgba(5,8,6,0.95)),linear-gradient(130deg,_transparent_0%,_transparent_72%,_rgba(87,214,129,0.32)_73%,_transparent_77%)] p-6 sm:p-8 lg:p-10">
+            <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
+              <div>
+                <span className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-accent">
+                  Not sure yet?
+                </span>
+                <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-white sm:text-4xl">
+                  Not sure which service fits?
+                </h2>
+                <p className="mt-4 max-w-2xl text-sm leading-7 text-white/68">
+                  Start with what feels outdated, unclear, or too manual. The
+                  right pathway can be shaped after the enquiry is reviewed.
                 </p>
               </div>
-              <div>
-                <CtaLink href="/contact#enquiry">
-                  {siteSettings.ctaLabels.enquiry}
+              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+                <CtaLink
+                  href="/contact#enquiry"
+                  className="min-h-12 !text-surface-strong hover:!text-surface-strong"
+                >
+                  Start a project
+                </CtaLink>
+                <CtaLink
+                  href="/contact"
+                  variant="secondary"
+                  className="min-h-12 border-white/22 bg-transparent !text-white hover:bg-white/10 hover:!text-white"
+                >
+                  Send an enquiry
                 </CtaLink>
               </div>
             </div>
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

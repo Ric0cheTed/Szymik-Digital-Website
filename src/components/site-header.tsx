@@ -18,7 +18,10 @@ function isCurrentPath(pathname: string, href: string) {
 export function SiteHeader() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  const usesV2Header = pathname === "/" || pathname.startsWith("/work");
+  const usesV2Header =
+    pathname === "/" ||
+    pathname.startsWith("/work") ||
+    pathname.startsWith("/services");
   const headerShellClassName = usesV2Header
     ? "border-b border-white/10 bg-[#030504]/94 shadow-none"
     : "border border-black/6 bg-white/90 shadow-[0_24px_56px_rgba(9,18,13,0.12)]";

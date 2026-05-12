@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3 Slice 7B - V2 Header Consistency Across Homepage and Work
+Phase 3 Slice 8B - V2 Header Consistency Across Homepage, Work, and Services
 
 ## Current Focus
 
-Header consistency fix for homepage and Work v2 pages.
+Header consistency fix across homepage, Work, and Services v2 pages.
 
 ## Completed
 
@@ -183,6 +183,23 @@ Header consistency fix for homepage and Work v2 pages.
 - Mobile menu styling now follows the same readable dark v2 treatment on both homepage and Work
 - Other routes keep the existing readable light header treatment for route safety until their v2 redesign slices are implemented
 - Phase 3 Slice 7B stayed header-focused; no homepage section redesign, Work content redesign, route changes, contact/runtime changes, analytics/cookie/privacy changes, package/dependency changes, CRM changes, agreement pack changes, ops workspace changes, folder restructure, production upload, or merge to main were made
+- Phase 3 Slice 8 complete: Services v2 redesigned on `redesign/site-v2-homepage`
+- `/services` now uses the accepted homepage/work v2 visual system: dark/charcoal base, white typography, vivid Szymik green accents, clean rounded cards, subtle glow/line accents, compact section rhythm, and polished conversion CTAs
+- Services hero now positions the page around websites and digital support built around real business needs, with Start a project and View our work actions
+- Service pathway cards now cover Website Refresh, Starter Website, Local Growth Website, and Automation / Custom Tool Discovery with best-for guidance, description, included focus areas, practical outcome, and safe contact CTAs
+- Existing route anchors were preserved: `#website-refresh`, `#starter-website`, `#local-growth`, and `#automation-tools`
+- A concise How to choose section now maps common visitor needs to the right pathway
+- A delivery process section now includes Brief, Concept Preview, Direction lock, Build, Review, and Launch / handover
+- Practical support and final CTA sections were added without fixed-price changes or guaranteed SEO/lead/revenue claims
+- Automation remains discovery-first and is not implied as automatically included in website packages
+- Phase 3 Slice 8 stayed Services-page first; no production upload, merge to main, CRM changes, agreement pack changes, ops workspace changes, contact form/runtime changes, analytics/cookie/privacy changes, package/dependency changes, new routes, or folder restructure were made
+- Phase 3 Slice 8B complete: v2 header consistency fixed across homepage, Work, and Services
+- `SiteHeader` now applies the accepted dark/green v2 header treatment on `/`, `/work`, and `/services`
+- Active navigation remains route-aware: Home is active on `/`, Work is active on `/work`, and Services is active on `/services`
+- Inactive nav links remain light/readable on the dark v2 header, and the green Start a project CTA remains readable
+- Mobile menu styling now follows the same readable dark v2 treatment on homepage, Work, and Services
+- Non-v2 routes such as Contact, Privacy Policy, and Terms keep the existing readable light header treatment for route safety until their own v2 slices
+- Phase 3 Slice 8B stayed header-focused; no homepage redesign, Work content changes, Services content changes, route changes, contact/runtime changes, analytics/cookie/privacy changes, package/dependency changes, CRM changes, agreement pack changes, ops workspace changes, folder restructure, production upload, or merge to main were made
 
 ## Files Changed In Latest Slice
 
@@ -192,9 +209,9 @@ Header consistency fix for homepage and Work v2 pages.
 
 ## Next Recommended Slice
 
-Phase 3 Slice 8 - Services V2.
+Phase 3 Slice 9 - Contact / Enquiry V2.
 
-Redesign the Services route using the accepted v2 visual system and the now-matched homepage/work direction, while preserving offer truth, existing anchors, and contact/enquiry flow.
+Redesign the Contact / Enquiry route using the accepted v2 visual system while preserving the existing enquiry form fields, consent behaviour, email-draft/runtime behaviour, analytics/cookie/privacy setup, and Hannah/Ric review expectations.
 
 ## Open Decisions
 

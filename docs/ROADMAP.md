@@ -225,7 +225,7 @@ Status:
 
 Implemented on `redesign/site-v2-homepage`. The Work / Case Studies route now uses the accepted dark/green v2 visual system with strong preview cards for Bent Burger, Country Pizza, and Libra Support Services, concise Concept Preview process explanation, and safe conversion CTAs.
 
-### Current Redesign Slice
+### Completed Redesign Slice
 
 Phase 3 Slice 7B - V2 Header Consistency Across Homepage and Work.
 
@@ -250,7 +250,7 @@ Status:
 
 Implemented on `redesign/site-v2-homepage`. The accepted dark v2 header now applies to both homepage and Work, with light readable nav text, green active state, and route-safe behaviour for pages not yet redesigned.
 
-### Next Recommended Slice
+### Completed Redesign Slice
 
 Phase 3 Slice 8 - Services V2.
 
@@ -265,6 +265,56 @@ Scope:
 - preserve pricing/quote guidance truthfulness
 - preserve contact/enquiry flow
 - preserve analytics/cookie/privacy setup
+- no Hostinger production upload
+- no merge to main
+- no CRM integration
+- no client portal
+- no automation
+
+Status:
+
+Implemented on `redesign/site-v2-homepage`. The Services route now uses the accepted dark/green v2 visual system with four clear service pathway cards, preserved anchors, a How to choose section, Concept Preview delivery process, practical support panel, and conversion CTA while keeping claims truthful and automation discovery-first.
+
+### Current Redesign Slice
+
+Phase 3 Slice 8B - V2 Header Consistency Across Homepage, Work, and Services.
+
+Goal:
+
+Make the shared site header visually consistent across the accepted v2 pages before moving on to Contact V2.
+
+Scope:
+
+- shared header consistency for `/`, `/work`, and `/services`
+- dark/green premium v2 header on all accepted v2 pages
+- route-aware active state for Home, Work, and Services
+- readable mobile menu on all accepted v2 pages
+- preserve readable header behaviour on Contact, Privacy Policy, and Terms until their v2 slices
+- no Hostinger production upload
+- no merge to main
+- no CRM integration
+- no client portal
+- no automation
+
+Status:
+
+Implemented on `redesign/site-v2-homepage`. The accepted dark v2 header now applies to homepage, Work, and Services, with light readable nav text, green active state, readable CTA, and route-safe behaviour for pages not yet redesigned.
+
+### Next Recommended Slice
+
+Phase 3 Slice 9 - Contact / Enquiry V2.
+
+Goal:
+
+Redesign the Contact / Enquiry route using the accepted v2 visual system while preserving the existing enquiry form behaviour and client-intake expectations.
+
+Scope:
+
+- `/contact` route v2 redesign
+- preserve existing enquiry form fields and consent behaviour
+- preserve email-draft/runtime behaviour
+- preserve analytics/cookie/privacy setup
+- preserve Hannah/Ric review expectation wording
 - no Hostinger production upload
 - no merge to main
 - no CRM integration
