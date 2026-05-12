@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3 Slice 6 - Homepage V2 Branch Acceptance Notes
+Phase 3 Slice 7 - Work / Case Studies V2
 
 ## Current Focus
 
-Docs-only acceptance record for the homepage v2 concept-reference direction.
+Work / Case Studies route redesigned using the accepted homepage v2 visual system.
 
 ## Completed
 
@@ -169,17 +169,26 @@ Docs-only acceptance record for the homepage v2 concept-reference direction.
 - The accepted homepage style is now the intended visual standard for the next redesigned v2 pages
 - Homepage v2 remains accepted on the redesign branch only; no merge to main and no Hostinger production upload has happened yet
 - Phase 3 Slice 6 was docs-only; no homepage UI, source, styling, routes, assets, packages, deployment config, analytics/cookie/privacy, contact/enquiry runtime, CRM, agreement pack, ops workspace, or folder structure changes were made
+- Phase 3 Slice 7 complete: Work / Case Studies v2 redesigned on `redesign/site-v2-homepage`
+- `/work` now uses the accepted homepage v2 visual system: dark/charcoal base, white typography, vivid Szymik green accents, clean rounded cards, subtle glow/line accents, strong screenshots, and compact premium section rhythm
+- Featured Work now highlights Bent Burger, Country Pizza, and Libra Support Services using the real preview assets from `public/images/work/`
+- Work cards include screenshots, project name, truthful project type/label, short description, focus-area pills, honest notes, and safe contact CTAs rather than broken project links
+- Bent Burger is described as a takeaway website concept, Country Pizza as a restaurant website concept, and Libra Support Services as a home care website / local-business website reference
+- A concise Concept Preview section now explains Brief, Concept Preview, Review / direction lock, Build, and Launch / handover as the reason previews appear on the Work page
+- The Work page CTA now asks "Want your business to look this polished online?" with Start a project and View services actions
+- Phase 3 Slice 7 stayed Work-page first; no production upload, merge to main, CRM changes, agreement pack changes, ops workspace changes, contact form/runtime changes, analytics/cookie/privacy changes, package/dependency changes, new routes, or folder restructure were made
 
 ## Files Changed In Latest Slice
 
+- `src/app/work/page.tsx`
 - `docs/DELIVERY_STATUS.md`
 - `docs/ROADMAP.md`
 
 ## Next Recommended Slice
 
-Phase 3 Slice 7 - Work / Case Studies V2.
+Phase 3 Slice 8 - Services V2.
 
-Redesign the Work / Case Studies route using the accepted homepage v2 visual system: dark/green premium local-studio styling, real preview assets where suitable, and truthful proof/case-study wording. Keep production/main/Hostinger guarded until full v2 review and approval.
+Redesign the Services route using the accepted v2 visual system and the now-matched homepage/work direction, while preserving offer truth, existing anchors, and contact/enquiry flow.
 
 ## Open Decisions
 

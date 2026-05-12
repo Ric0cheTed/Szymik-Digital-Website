@@ -1,131 +1,297 @@
 import type { Metadata } from "next";
+import Image from "next/image";
+import Link from "next/link";
 import { CtaLink } from "@/components/cta-link";
-import { PageHero } from "@/components/page-hero";
-import { ProjectCard } from "@/components/project-card";
-import { SectionHeading } from "@/components/section-heading";
 import { createPageMetadata } from "@/lib/metadata";
-import { siteSettings } from "@/lib/site";
-import { projects } from "@/lib/work";
+
+const featuredWork = [
+  {
+    name: "Bent Burger",
+    label: "Takeaway website concept",
+    image: "/images/work/bent-burger-preview.png",
+    alt: "Bent Burger takeaway website concept preview",
+    description:
+      "A bold local food website direction shaped around appetite, quick scanning, mobile action, and a stronger first impression.",
+    focus: ["Mobile-first", "Brand polish", "Clear calls to action"],
+    note:
+      "Shown as a concept preview to demonstrate direction and judgement, not a claimed paid or live client case study.",
+  },
+  {
+    name: "Country Pizza",
+    label: "Restaurant website concept",
+    image: "/images/work/country-pizza-preview.png",
+    alt: "Country Pizza restaurant website concept preview",
+    description:
+      "A polished restaurant and takeaway website direction built around menu browsing, local trust, offers, and easy customer action.",
+    focus: ["Menu clarity", "Local trust", "Visual polish"],
+    note:
+      "Presented as restaurant website concept and refresh direction without invented metrics, testimonials, or results.",
+  },
+  {
+    name: "Libra Support Services",
+    label: "Home care website",
+    image: "/images/work/libra-support-preview.png",
+    alt: "Libra Support Services home care website preview",
+    description:
+      "A care-sector website foundation focused on service clarity, trust signals, and helping families find the right contact route.",
+    focus: ["Service clarity", "Local trust", "Clear calls to action"],
+    note:
+      "Real local-business website work referenced cautiously without overstated case-study or performance claims.",
+  },
+];
+
+const previewSteps = [
+  {
+    title: "Brief",
+    copy: "Understand the business, audience, current site, and what needs to feel clearer.",
+  },
+  {
+    title: "Concept Preview",
+    copy: "Turn the direction into something visual before asking anyone to commit to a full build.",
+  },
+  {
+    title: "Review / direction lock",
+    copy: "Discuss what feels right, what needs changing, and what the build should protect.",
+  },
+  {
+    title: "Build",
+    copy: "Create the responsive website with the agreed structure, messaging, and calls to action.",
+  },
+  {
+    title: "Launch / handover",
+    copy: "Go live after approval, then hand over the essentials for the next stage.",
+  },
+];
 
 export const metadata: Metadata = createPageMetadata({
   title: "Work",
   description:
-    "Honest Szymik Digital work examples for small-business websites, local service website foundations, internal workflow support, and practical digital systems.",
+    "Selected Szymik Digital work and concept previews for local business websites, takeaway websites, restaurant websites, and home care website direction.",
   path: "/work",
 });
 
+function BrowserDots() {
+  return (
+    <div className="flex items-center gap-1.5" aria-hidden="true">
+      <span className="h-2 w-2 rounded-full bg-red-400/80" />
+      <span className="h-2 w-2 rounded-full bg-yellow-300/80" />
+      <span className="h-2 w-2 rounded-full bg-accent" />
+    </div>
+  );
+}
+
+function WorkCard({ work }: { work: (typeof featuredWork)[number] }) {
+  return (
+    <article className="group flex h-full flex-col overflow-hidden rounded-[1.1rem] border border-white/12 bg-white/[0.055] shadow-[0_28px_90px_rgba(0,0,0,0.28)] transition duration-300 hover:-translate-y-1 hover:border-accent/40">
+      <div className="relative aspect-[16/10] overflow-hidden border-b border-white/10 bg-black">
+        <Image
+          src={work.image}
+          alt={work.alt}
+          fill
+          sizes="(min-width: 1024px) 31vw, (min-width: 640px) 50vw, 92vw"
+          className="object-cover object-top transition duration-500 group-hover:scale-[1.035]"
+        />
+        <div className="absolute inset-x-0 top-0 flex items-center justify-between border-b border-white/10 bg-black/58 px-4 py-2 backdrop-blur-sm">
+          <BrowserDots />
+          <span className="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-white/52">
+            Preview
+          </span>
+        </div>
+      </div>
+
+      <div className="flex flex-1 flex-col p-5 sm:p-6">
+        <p className="font-mono text-[0.68rem] font-semibold uppercase tracking-[0.2em] text-accent">
+          {work.label}
+        </p>
+        <h2 className="mt-3 text-2xl font-semibold text-white">{work.name}</h2>
+        <p className="mt-3 flex-1 text-sm leading-7 text-white/70">
+          {work.description}
+        </p>
+        <div className="mt-5 flex flex-wrap gap-2">
+          {work.focus.map((item) => (
+            <span
+              key={item}
+              className="rounded-full border border-accent/22 bg-accent/10 px-3 py-1.5 text-xs font-semibold text-accent"
+            >
+              {item}
+            </span>
+          ))}
+        </div>
+        <p className="mt-5 border-t border-white/10 pt-4 text-xs leading-6 text-white/48">
+          {work.note}
+        </p>
+        <Link
+          href="/contact#enquiry"
+          className="mt-5 inline-flex min-h-11 items-center justify-center gap-2 rounded-[0.75rem] border border-white/16 px-4 text-sm font-semibold text-white transition hover:border-accent/45 hover:text-accent"
+        >
+          Discuss a similar project <span aria-hidden>{">"}</span>
+        </Link>
+      </div>
+    </article>
+  );
+}
+
 export default function WorkPage() {
   return (
-    <>
-      <PageHero
-        eyebrow="Work"
-        title="Practical work, shown honestly"
-        intro="This page gives a small foundation for public examples: real client work where it can be described safely, internal Szymik Digital foundations, and clearly labelled concept work for small-business websites and useful systems. No fake clients, fake metrics, or borrowed proof."
-        actions={
-          <>
-            <CtaLink href="/contact#enquiry">
-              {siteSettings.ctaLabels.conversation}
-            </CtaLink>
-            <CtaLink href="/services" variant="secondary">
-              {siteSettings.ctaLabels.services}
-            </CtaLink>
-          </>
-        }
-        aside={
-          <div>
-            <p className="font-mono text-xs uppercase tracking-[0.22em] text-muted">
-              How this page works
-            </p>
-            <div className="mt-4 grid gap-3">
-              {[
-                "Client work is described carefully, without invented numbers or testimonials.",
-                "Internal work shows the foundations behind Szymik Digital's own website and delivery process.",
-                "Concept work is clearly labelled and used only to show approach for local service businesses, not claimed client delivery.",
-              ].map((item) => (
-                <p key={item} className="list-check">
-                  {item}
-                </p>
-              ))}
+    <div className="bg-[#030504] text-white">
+      <section className="relative -mt-[5.35rem] overflow-hidden border-b border-white/10 px-0 pb-14 pt-30 sm:-mt-[5.8rem] sm:pb-16 sm:pt-36 lg:pt-32">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_20%,_rgba(87,214,129,0.2),_transparent_30%),linear-gradient(135deg,_#030504_0%,_#07100b_48%,_#090d0a_100%)]" />
+        <div className="absolute inset-0 opacity-35 [background-image:linear-gradient(130deg,_transparent_0%,_transparent_54%,_rgba(87,214,129,0.28)_55%,_transparent_56%)]" />
+        <div className="site-container relative">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(24rem,0.7fr)] lg:items-end">
+            <div className="max-w-4xl">
+              <span className="inline-flex rounded-full border border-accent/35 bg-accent/10 px-4 py-2 font-mono text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-accent">
+                Selected work
+              </span>
+              <h1 className="mt-6 max-w-4xl text-4xl font-semibold leading-[1.04] text-white sm:text-6xl">
+                Selected work and concept previews built for{" "}
+                <span className="text-accent">local businesses.</span>
+              </h1>
+              <p className="mt-5 max-w-2xl text-base leading-8 text-white/72 sm:text-lg">
+                Szymik Digital creates polished websites and practical digital
+                directions for local businesses that need to look clearer, more
+                trustworthy, and easier to choose.
+              </p>
+              <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <CtaLink
+                  href="/contact#enquiry"
+                  className="min-h-12 !text-surface-strong hover:!text-surface-strong"
+                >
+                  Start a project
+                </CtaLink>
+                <CtaLink
+                  href="/services"
+                  variant="secondary"
+                  className="min-h-12 border-white/22 bg-transparent !text-white hover:bg-white/10 hover:!text-white"
+                >
+                  View services
+                </CtaLink>
+              </div>
             </div>
-          </div>
-        }
-      />
 
-      <section className="page-section pt-0">
-        <div className="site-container">
-          <div className="grid gap-4 sm:gap-5 xl:grid-cols-2">
-            {projects.map((project) => (
-              <ProjectCard key={project.title} project={project} />
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="page-section pt-0">
-        <div className="site-container">
-          <SectionHeading
-            eyebrow="Approach"
-            title="Why the labels matter"
-            intro="For a founder-led studio working with small local businesses, credibility comes from being direct about what is client work, what is internal, and what is simply there to demonstrate thinking."
-          />
-
-          <div className="mt-8 grid gap-4 sm:mt-10 sm:gap-5 md:grid-cols-3">
-            {[
-              {
-                title: "Client work",
-                description:
-                  "Used only where the work can be described honestly. No fake results, revenue claims, or made-up testimonials are added.",
-              },
-              {
-                title: "Internal work",
-                description:
-                  "Used when the project is real and genuinely built for Szymik Digital itself or for an internal working system.",
-              },
-              {
-                title: "Concept work",
-                description:
-                  "Used when a project exists to demonstrate structure, design thinking, or service fit without pretending it is client delivery.",
-              },
-            ].map((item) => (
-              <article key={item.title} className="panel p-5 sm:p-8">
-                <h2 className="text-xl font-semibold text-foreground sm:text-2xl">
-                  {item.title}
-                </h2>
-                <p className="mt-3 text-sm leading-7 text-muted sm:mt-4 sm:text-base sm:leading-8">
-                  {item.description}
+            <aside className="rounded-[1.15rem] border border-accent/22 bg-white/[0.055] p-5 shadow-[0_28px_90px_rgba(0,0,0,0.32)]">
+              <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-accent">
+                How to read this page
+              </p>
+              <div className="mt-5 grid gap-4 text-sm leading-7 text-white/70">
+                <p>
+                  Concept previews show visual direction and judgement before a
+                  full website build.
                 </p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section className="page-section pt-0">
-        <div className="site-container">
-          <div className="panel-dark px-6 py-8 sm:px-10 sm:py-10 lg:px-12 lg:py-12">
-            <div className="grid gap-8 lg:grid-cols-[minmax(0,1.1fr)_auto] lg:items-end">
-              <div>
-                <span className="eyebrow text-accent">Next step</span>
-                <h2 className="mt-4 text-3xl font-semibold text-white sm:text-4xl">
-                  Have a similar project?
-                </h2>
-                <p className="panel-dark-copy mt-5 max-w-3xl text-lg leading-8">
-                  Start with the actual problem: outdated pages, unclear
-                  messaging, messy digital touchpoints, or admin that should be
-                  smoother. Not sure what fits? Start with a quick enquiry, then
-                  Hannah can help gather the details before Ric reviews the next
-                  step.
+                <p>
+                  Real local-business work is described carefully, without
+                  invented results, testimonials, or performance numbers.
                 </p>
               </div>
+            </aside>
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-white/10 bg-[#050806] py-10 sm:py-12">
+        <div className="site-container">
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <span className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-accent">
+                Featured work
+              </span>
+              <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
+                Preview directions with real project visuals
+              </h2>
+            </div>
+            <Link
+              href="/contact#enquiry"
+              className="inline-flex min-h-11 items-center justify-center gap-3 rounded-[0.75rem] border border-white/18 px-5 text-sm font-semibold text-white transition hover:border-accent/45 hover:text-accent"
+            >
+              Discuss a project <span aria-hidden>{">"}</span>
+            </Link>
+          </div>
+
+          <div className="mt-8 grid gap-5 lg:grid-cols-3">
+            {featuredWork.map((work) => (
+              <WorkCard key={work.name} work={work} />
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-b border-white/10 bg-[#050806] py-10 sm:py-12">
+        <div className="site-container">
+          <div className="rounded-[1.25rem] border border-accent/25 bg-[radial-gradient(circle_at_28%_0%,_rgba(87,214,129,0.15),_transparent_24%),linear-gradient(135deg,_rgba(255,255,255,0.07),_rgba(255,255,255,0.035))] p-6 sm:p-8 lg:p-10">
+            <div className="grid gap-8 lg:grid-cols-[minmax(16rem,0.7fr)_minmax(0,1.3fr)]">
               <div>
-                <CtaLink href="/contact#enquiry">
-                  {siteSettings.ctaLabels.enquiry}
+                <span className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-accent">
+                  Concept Preview
+                </span>
+                <h2 className="mt-4 text-3xl font-semibold leading-tight text-white sm:text-4xl">
+                  Why previews appear on the Work page
+                </h2>
+                <p className="mt-5 text-sm leading-7 text-white/68">
+                  Some work is shown as concept preview or website direction
+                  because that is an official Szymik Digital step. It helps
+                  make style, structure, and expectations visible before build.
+                </p>
+              </div>
+
+              <div className="grid gap-4 md:grid-cols-5">
+                {previewSteps.map((step, index) => (
+                  <article
+                    key={step.title}
+                    className="rounded-[0.95rem] border border-white/12 bg-black/18 p-4"
+                  >
+                    <span className="flex h-8 w-8 items-center justify-center rounded-full bg-accent text-sm font-bold text-surface-strong">
+                      {index + 1}
+                    </span>
+                    <h3 className="mt-4 text-base font-semibold text-white">
+                      {step.title}
+                    </h3>
+                    <p className="mt-3 text-xs leading-6 text-white/62">
+                      {step.copy}
+                    </p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#050806] py-10 sm:py-12">
+        <div className="site-container">
+          <div className="overflow-hidden rounded-[1.35rem] border border-accent/25 bg-[linear-gradient(135deg,_rgba(87,214,129,0.14),_rgba(255,255,255,0.055)_38%,_rgba(5,8,6,0.95)),linear-gradient(130deg,_transparent_0%,_transparent_72%,_rgba(87,214,129,0.32)_73%,_transparent_77%)] p-6 sm:p-8 lg:p-10">
+            <div className="grid gap-6 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-center">
+              <div>
+                <span className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-accent">
+                  Next step
+                </span>
+                <h2 className="mt-4 max-w-3xl text-3xl font-semibold leading-tight text-white sm:text-4xl">
+                  Want your business to look this polished online?
+                </h2>
+                <p className="mt-4 max-w-2xl text-sm leading-7 text-white/68">
+                  Start with a practical conversation about the website,
+                  message, or local-business direction that needs to feel
+                  sharper.
+                </p>
+              </div>
+              <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
+                <CtaLink
+                  href="/contact#enquiry"
+                  className="min-h-12 !text-surface-strong hover:!text-surface-strong"
+                >
+                  Start a project
+                </CtaLink>
+                <CtaLink
+                  href="/services"
+                  variant="secondary"
+                  className="min-h-12 border-white/22 bg-transparent !text-white hover:bg-white/10 hover:!text-white"
+                >
+                  View services
                 </CtaLink>
               </div>
             </div>
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 }

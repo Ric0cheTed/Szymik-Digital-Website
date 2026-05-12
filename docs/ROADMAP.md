@@ -174,7 +174,7 @@ Ric manually accepted this homepage v2 direction on the redesign branch. The acc
 
 This acceptance is branch-only. The stable live v1 remains protected on main, and no Hostinger production upload should happen until the wider v2 review and approval process is complete.
 
-### Current Redesign Slice
+### Completed Redesign Slice
 
 Phase 3 Slice 6 - Homepage V2 Branch Acceptance Notes.
 
@@ -198,7 +198,7 @@ Status:
 
 Complete. No source, runtime, UI, styling, route, package, asset, deployment, analytics, contact/enquiry, CRM, agreement pack, ops workspace, or folder structure changes were made for this acceptance slice.
 
-### Next Recommended Slice
+### Current Redesign Slice
 
 Phase 3 Slice 7 - Work / Case Studies V2.
 
@@ -214,6 +214,31 @@ Scope:
 - truthful proof, concept preview, and case-study wording
 - preserve existing routes
 - preserve contact/enquiry runtime
+- preserve analytics/cookie/privacy setup
+- no Hostinger production upload
+- no merge to main
+- no CRM integration
+- no client portal
+- no automation
+
+Status:
+
+Implemented on `redesign/site-v2-homepage`. The Work / Case Studies route now uses the accepted dark/green v2 visual system with strong preview cards for Bent Burger, Country Pizza, and Libra Support Services, concise Concept Preview process explanation, and safe conversion CTAs.
+
+### Next Recommended Slice
+
+Phase 3 Slice 8 - Services V2.
+
+Goal:
+
+Redesign the Services route using the accepted v2 visual system and the now-matched homepage/work direction while keeping the offer ladder truthful and route anchors intact.
+
+Scope:
+
+- `/services` route v2 redesign
+- preserve Website Refresh, Starter Website, Local Growth Website, and Automation / Custom Tool Discovery anchors
+- preserve pricing/quote guidance truthfulness
+- preserve contact/enquiry flow
 - preserve analytics/cookie/privacy setup
 - no Hostinger production upload
 - no merge to main
