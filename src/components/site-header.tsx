@@ -20,7 +20,7 @@ export function SiteHeader() {
   const [isOpen, setIsOpen] = useState(false);
   const isHome = pathname === "/";
   const headerShellClassName = isHome
-    ? "border border-white/10 bg-[#030504]/94 shadow-[0_24px_70px_rgba(0,0,0,0.34)]"
+    ? "border-b border-white/10 bg-[#030504]/94 shadow-none"
     : "border border-black/6 bg-white/90 shadow-[0_24px_56px_rgba(9,18,13,0.12)]";
   const brandHoverClassName = isHome ? "hover:bg-white/10" : "hover:bg-black/5";
   const menuPanelClassName = isHome
@@ -28,11 +28,20 @@ export function SiteHeader() {
     : "border-border/80 bg-white/90";
 
   return (
-    <header className="sticky top-0 z-[60]">
-      <div className="site-container pt-3 sm:pt-4">
+    <header
+      className={[
+        "sticky top-0 z-[60]",
+        isHome ? "bg-[#030504]/94 backdrop-blur-xl" : "",
+      ]
+        .join(" ")
+        .trim()}
+    >
+      <div className={isHome ? "site-container" : "site-container pt-3 sm:pt-4"}>
         <div
           className={[
-            "rounded-[1.35rem] px-3 py-3 backdrop-blur-xl sm:rounded-full",
+            isHome
+              ? "px-0 py-3 backdrop-blur-xl"
+              : "rounded-[1.35rem] px-3 py-3 backdrop-blur-xl sm:rounded-full",
             headerShellClassName,
           ]
             .join(" ")
@@ -70,7 +79,7 @@ export function SiteHeader() {
               <span className="sr-only">{siteName}</span>
             </Link>
 
-            <nav className="hidden items-center gap-1 md:flex">
+            <nav className="hidden flex-1 items-center justify-center gap-2 md:flex">
               {primaryNavigation.map((item) => {
                 const active = isCurrentPath(pathname, item.href);
 

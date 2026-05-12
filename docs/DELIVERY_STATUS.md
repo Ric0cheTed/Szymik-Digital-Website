@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3 Slice 4 - Homepage V2 Header Readability + Concept Match Polish
+Phase 3 Slice 5 - Homepage V2 Concept Reference Match Rebuild
 
 ## Current Focus
 
-Homepage header readability fix and dark concept-match polish.
+Homepage rebuild/refactor to closely match the approved concept reference.
 
 ## Completed
 
@@ -155,17 +155,26 @@ Homepage header readability fix and dark concept-match polish.
 - Non-homepage header readability was preserved by keeping the existing light header treatment on other routes
 - Hero/header spacing was tightened so the dark hero sits closer to the premium concept reference while preserving the layered project-preview collage and selected-work asset cards
 - Phase 3 Slice 4 stayed homepage/header polish only; no production upload, merge to main, CRM changes, agreement pack changes, ops workspace changes, contact form/runtime changes, analytics/cookie/privacy changes, package/dependency changes, new routes, or folder restructure were made
+- Phase 3 Slice 5 complete: homepage v2 rebuilt/refactored to more closely match `docs/design-references/homepage-v2-concept-reference.png`
+- Homepage now follows the concept structure more closely: compact dark header, left hero headline with green highlight, CTAs, three trust points, layered browser-window preview collage, recent projects, services, wide trust panel, horizontal process flow, final CTA banner, and compact dark footer handoff
+- Hero collage and Selected Work cards continue using the Bent Burger, Country Pizza, and Libra Support Services preview assets with useful alt text
+- Selected Work copy remains truthful: Bent Burger is presented as a takeaway website concept, Country Pizza as a restaurant website concept, and Libra Support Services as a home care website/local-business website reference without invented metrics or paid case-study claims
+- Services remain linked to Website Refresh, Starter Website, Local Growth Website, and Automation / Custom Tool Discovery
+- Process now uses a six-step flow matching the reference: Enquiry, Review, Proposal, Build, Feedback, Launch, with Concept Preview mentioned as part of the review/proposal stage
+- Shared header and footer changes were limited to concept-match readability/spacing: homepage header is dark and route-safe; footer remains dark, readable, and compact with existing links, contact details, cookie control, and social/profile behaviour preserved
+- Phase 3 Slice 5 stayed homepage-first; no production upload, merge to main, CRM changes, agreement pack changes, ops workspace changes, contact form/runtime changes, analytics/cookie/privacy changes, package/dependency changes, new routes, or folder restructure were made
 
 ## Files Changed In Latest Slice
 
 - `src/app/page.tsx`
 - `src/components/site-header.tsx`
+- `src/components/site-footer.tsx`
 - `docs/DELIVERY_STATUS.md`
 - `docs/ROADMAP.md`
 
 ## Next Recommended Slice
 
-Phase 3 Slice 5 - Manual Browser Acceptance + Homepage Asset QA.
+Phase 3 Slice 6 - Manual Browser Acceptance + Homepage Asset QA.
 
 Open the homepage v2 preview in a manual browser session across desktop and mobile widths, then check the preview asset cropping, header/menu behaviour, selected-work proof wording, and final CTA flow before moving beyond the homepage.
 

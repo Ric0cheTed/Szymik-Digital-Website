@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
 import { CtaLink } from "@/components/cta-link";
-import { SectionHeading } from "@/components/section-heading";
 import { createPageMetadata } from "@/lib/metadata";
 import { services } from "@/lib/site";
 
@@ -11,39 +10,255 @@ const selectedWork = [
     title: "Bent Burger",
     label: "Concept preview",
     category: "Takeaway website concept",
-    accent: "from-[#57d681]/28 via-white/10 to-[#101713]",
     image: "/images/work/bent-burger-preview.png",
-    alt: "Bent Burger website concept preview showing a dark burger restaurant homepage",
-    summary:
-      "A bold restaurant website refresh direction shaped around appetite, fast scanning, and a clearer route from interest to order or visit.",
+    alt: "Bent Burger takeaway website concept preview",
+    summary: "Takeaway website concept",
     detail:
-      "Shown as concept preview work to demonstrate direction and judgement, not as a claimed paid case study or performance result.",
+      "Shown as a concept preview, not a claimed paid case study or measured result.",
   },
   {
     title: "Country Pizza",
     label: "Website refresh",
     category: "Restaurant website concept",
-    accent: "from-[#57d681]/20 via-[#f3f6f1]/12 to-[#172119]",
     image: "/images/work/country-pizza-preview.png",
-    alt: "Country Pizza restaurant website concept preview with menu-led sections",
-    summary:
-      "A warmer local-business website direction for menu-led browsing, simple offers, trust cues, and easy customer action on mobile.",
+    alt: "Country Pizza restaurant website concept preview",
+    summary: "Restaurant website concept",
     detail:
-      "Presented as selected concept and refresh thinking, with no invented metrics, testimonials, or commercial claims.",
+      "Presented as restaurant website concept and refresh direction without invented metrics.",
   },
   {
     title: "Libra Support Services",
     label: "Local business website",
     category: "Home care website",
-    accent: "from-[#57d681]/18 via-[#dfffe8]/10 to-[#0b1410]",
     image: "/images/work/libra-support-preview.png",
-    alt: "Libra Support Services home care website preview with service-led content",
-    summary:
-      "A clearer service-led website foundation for explaining support, building trust, and helping people find the right contact route.",
+    alt: "Libra Support Services home care website preview",
+    summary: "Home care website",
     detail:
-      "Real external website work referenced cautiously while permissioned proof, live links, and case-study details are confirmed.",
+      "Real local-business website work referenced cautiously without overstated case-study claims.",
   },
 ];
+
+const heroTrust = [
+  {
+    title: "Local focus",
+    copy: "Real businesses. Real context.",
+    icon: "shield",
+  },
+  {
+    title: "Modern & reliable",
+    copy: "Websites built to look great and perform.",
+    icon: "star",
+  },
+  {
+    title: "Honest support",
+    copy: "Clear advice before and after launch.",
+    icon: "chat",
+  },
+];
+
+const trustItems = [
+  {
+    title: "Modern Design",
+    copy: "Clean, professional websites that reflect the quality of your business.",
+    icon: "brush",
+  },
+  {
+    title: "Clear Process",
+    copy: "Straightforward steps, clear updates, and no jargon.",
+    icon: "check",
+  },
+  {
+    title: "Practical Results",
+    copy: "Websites and tools built to help you get more enquiries and save time.",
+    icon: "chart",
+  },
+  {
+    title: "Local Focus",
+    copy: "We understand local markets and what your customers value.",
+    icon: "pin",
+  },
+  {
+    title: "Honest Support",
+    copy: "Reliable, approachable support before, during, and after launch.",
+    icon: "heart",
+  },
+];
+
+const processSteps = [
+  {
+    title: "Enquiry",
+    copy: "You get in touch and share your goals.",
+  },
+  {
+    title: "Review",
+    copy: "We review your needs and current setup.",
+  },
+  {
+    title: "Proposal",
+    copy: "You receive a clear plan and quote.",
+  },
+  {
+    title: "Build",
+    copy: "We design and build your solution.",
+  },
+  {
+    title: "Feedback",
+    copy: "You review and we refine as needed.",
+  },
+  {
+    title: "Launch",
+    copy: "We go live and support your growth.",
+  },
+];
+
+const serviceAccent: Record<string, string> = {
+  "website-refresh": "screen",
+  "starter-website": "rocket",
+  "local-growth": "chart",
+  "automation-tools": "gear",
+};
+
+function LineIcon({ name }: { name: string }) {
+  const baseClassName = "h-8 w-8 text-accent";
+
+  if (name === "shield") {
+    return (
+      <svg className={baseClassName} viewBox="0 0 32 32" aria-hidden="true">
+        <path
+          d="M16 4 26 8v7c0 6.2-4 10.4-10 13-6-2.6-10-6.8-10-13V8l10-4Z"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
+        <path d="m11 16 3 3 7-7" fill="none" stroke="currentColor" strokeWidth="2" />
+      </svg>
+    );
+  }
+
+  if (name === "star") {
+    return (
+      <svg className={baseClassName} viewBox="0 0 32 32" aria-hidden="true">
+        <path
+          d="m16 4 3.4 7 7.6 1.1-5.5 5.4 1.3 7.5-6.8-3.6L9.2 25l1.3-7.5L5 12.1 12.6 11 16 4Z"
+          fill="none"
+          stroke="currentColor"
+          strokeLinejoin="round"
+          strokeWidth="2"
+        />
+      </svg>
+    );
+  }
+
+  if (name === "chat") {
+    return (
+      <svg className={baseClassName} viewBox="0 0 32 32" aria-hidden="true">
+        <path
+          d="M6 8h20v13H14l-6 5v-5H6V8Z"
+          fill="none"
+          stroke="currentColor"
+          strokeLinejoin="round"
+          strokeWidth="2"
+        />
+        <path d="M11 14h10M11 18h6" stroke="currentColor" strokeWidth="2" />
+      </svg>
+    );
+  }
+
+  if (name === "rocket") {
+    return (
+      <svg className={baseClassName} viewBox="0 0 32 32" aria-hidden="true">
+        <path
+          d="M20 5c-5 1-9 5-11 10l8 8c5-2 9-6 10-11l-7-7Z"
+          fill="none"
+          stroke="currentColor"
+          strokeLinejoin="round"
+          strokeWidth="2"
+        />
+        <path d="M10 22 6 26M19 11h.1" stroke="currentColor" strokeWidth="2" />
+      </svg>
+    );
+  }
+
+  if (name === "chart") {
+    return (
+      <svg className={baseClassName} viewBox="0 0 32 32" aria-hidden="true">
+        <path d="M6 24h20M8 22l5-6 4 3 7-10" fill="none" stroke="currentColor" strokeWidth="2" />
+        <path d="M23 9h3v3" fill="none" stroke="currentColor" strokeWidth="2" />
+      </svg>
+    );
+  }
+
+  if (name === "gear") {
+    return (
+      <svg className={baseClassName} viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="4" fill="none" stroke="currentColor" strokeWidth="2" />
+        <path
+          d="M16 4v4M16 24v4M4 16h4M24 16h4M7.5 7.5l2.8 2.8M21.7 21.7l2.8 2.8M24.5 7.5l-2.8 2.8M10.3 21.7l-2.8 2.8"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
+      </svg>
+    );
+  }
+
+  if (name === "brush") {
+    return (
+      <svg className={baseClassName} viewBox="0 0 32 32" aria-hidden="true">
+        <path
+          d="M20 5 27 12 13 26H6v-7L20 5Z"
+          fill="none"
+          stroke="currentColor"
+          strokeLinejoin="round"
+          strokeWidth="2"
+        />
+      </svg>
+    );
+  }
+
+  if (name === "check") {
+    return (
+      <svg className={baseClassName} viewBox="0 0 32 32" aria-hidden="true">
+        <circle cx="16" cy="16" r="11" fill="none" stroke="currentColor" strokeWidth="2" />
+        <path d="m10 16 4 4 8-9" fill="none" stroke="currentColor" strokeWidth="2" />
+      </svg>
+    );
+  }
+
+  if (name === "pin") {
+    return (
+      <svg className={baseClassName} viewBox="0 0 32 32" aria-hidden="true">
+        <path
+          d="M16 28s9-8.2 9-15A9 9 0 0 0 7 13c0 6.8 9 15 9 15Z"
+          fill="none"
+          stroke="currentColor"
+          strokeWidth="2"
+        />
+        <circle cx="16" cy="13" r="3" fill="none" stroke="currentColor" strokeWidth="2" />
+      </svg>
+    );
+  }
+
+  if (name === "heart") {
+    return (
+      <svg className={baseClassName} viewBox="0 0 32 32" aria-hidden="true">
+        <path
+          d="M16 26S6 20 6 12.5C6 8 11.5 6.5 16 11c4.5-4.5 10-3 10 1.5C26 20 16 26 16 26Z"
+          fill="none"
+          stroke="currentColor"
+          strokeLinejoin="round"
+          strokeWidth="2"
+        />
+      </svg>
+    );
+  }
+
+  return (
+    <svg className={baseClassName} viewBox="0 0 32 32" aria-hidden="true">
+      <path d="M6 8h20v16H6V8Z" fill="none" stroke="currentColor" strokeWidth="2" />
+      <path d="M10 25h12" stroke="currentColor" strokeWidth="2" />
+    </svg>
+  );
+}
 
 function BrowserFrame({
   work,
@@ -57,87 +272,81 @@ function BrowserFrame({
   return (
     <div
       className={[
-        "overflow-hidden rounded-[1.1rem] border border-white/12 bg-[#111a14] shadow-[0_30px_80px_rgba(0,0,0,0.42)]",
+        "overflow-hidden rounded-[0.9rem] border border-white/18 bg-[#111a14] shadow-[0_24px_70px_rgba(0,0,0,0.5)]",
         className,
       ]
         .join(" ")
         .trim()}
     >
-      <div className="flex items-center justify-between border-b border-white/10 bg-black/32 px-3 py-2">
+      <div className="flex items-center justify-between border-b border-white/10 bg-black/55 px-3 py-2">
         <div className="flex items-center gap-1.5">
-          <span className="h-2.5 w-2.5 rounded-full bg-accent" />
-          <span className="h-2.5 w-2.5 rounded-full bg-white/35" />
-          <span className="h-2.5 w-2.5 rounded-full bg-white/18" />
+          <span className="h-2 w-2 rounded-full bg-red-400/80" />
+          <span className="h-2 w-2 rounded-full bg-yellow-300/80" />
+          <span className="h-2 w-2 rounded-full bg-accent" />
         </div>
-        <span className="font-mono text-[0.62rem] uppercase tracking-[0.18em] text-white/48">
-          {work.label}
+        <span className="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-white/46">
+          {work.title}
         </span>
       </div>
-      <div className={`relative aspect-[16/10] bg-gradient-to-br ${work.accent}`}>
+      <div className="relative aspect-[16/10] bg-black">
         <Image
           src={work.image}
           alt={work.alt}
           fill
           priority={priority}
-          sizes="(min-width: 1024px) 520px, (min-width: 640px) 72vw, 92vw"
+          sizes="(min-width: 1024px) 560px, (min-width: 640px) 76vw, 92vw"
           className="object-cover object-top"
         />
-        <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
       </div>
     </div>
   );
 }
 
-const processSteps = [
-  {
-    title: "Brief",
-    description:
-      "We gather the business, audience, current site, goals, and practical constraints before deciding what should change.",
-  },
-  {
-    title: "Concept Preview",
-    description:
-      "A visual direction step makes the look, structure, and tone easier to judge before the full build begins.",
-  },
-  {
-    title: "Build",
-    description:
-      "Ric turns the agreed direction into a responsive website foundation with clear pages, calls to action, and technical hygiene.",
-  },
-  {
-    title: "Review",
-    description:
-      "Hannah can help organise feedback while Ric works through the agreed changes and keeps the project practical.",
-  },
-  {
-    title: "Launch",
-    description:
-      "After approval and launch checks, the site goes live with the right handover notes or support next steps.",
-  },
-];
+function WorkCard({ work }: { work: (typeof selectedWork)[number] }) {
+  return (
+    <article className="group overflow-hidden rounded-[1rem] border border-white/12 bg-white/[0.055] transition duration-300 hover:-translate-y-1 hover:border-accent/35">
+      <div className="relative aspect-[16/9] overflow-hidden border-b border-white/10 bg-black">
+        <Image
+          src={work.image}
+          alt={work.alt}
+          fill
+          sizes="(min-width: 1024px) 31vw, (min-width: 640px) 50vw, 92vw"
+          className="object-cover object-top transition duration-500 group-hover:scale-[1.035]"
+        />
+        <div className="absolute inset-x-0 top-0 flex items-center justify-between border-b border-white/10 bg-black/55 px-3 py-2 backdrop-blur-sm">
+          <div className="flex items-center gap-1.5">
+            <span className="h-2 w-2 rounded-full bg-red-400/80" />
+            <span className="h-2 w-2 rounded-full bg-yellow-300/80" />
+            <span className="h-2 w-2 rounded-full bg-accent" />
+          </div>
+          <span className="font-mono text-[0.58rem] uppercase tracking-[0.18em] text-white/50">
+            {work.label}
+          </span>
+        </div>
+      </div>
+      <div className="grid gap-3 p-5">
+        <div className="flex items-start justify-between gap-4">
+          <div>
+            <h3 className="text-lg font-semibold text-white">{work.title}</h3>
+            <p className="mt-1 text-sm text-white/66">{work.summary}</p>
+          </div>
+          <span className="shrink-0 pt-1 text-sm font-semibold text-accent">
+            View project <span aria-hidden>{">"}</span>
+          </span>
+        </div>
+        <p className="text-xs leading-6 text-white/46">{work.detail}</p>
+      </div>
+    </article>
+  );
+}
 
-const trustItems = [
-  {
-    title: "Clear process",
-    description:
-      "You know what happens next, what is needed from you, and when a decision or approval is required.",
-  },
-  {
-    title: "Practical results",
-    description:
-      "The focus stays on clearer presentation, better enquiry paths, and a website that feels easier to trust.",
-  },
-  {
-    title: "Local-business focus",
-    description:
-      "The work is shaped for small service businesses, trades, care/support providers, and local teams.",
-  },
-  {
-    title: "Honest support",
-    description:
-      "No fake proof, inflated claims, or rushed scope. If a smaller step is the better move, we will say so.",
-  },
-];
+function Eyebrow({ children }: { children: string }) {
+  return (
+    <span className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-accent">
+      {children}
+    </span>
+  );
+}
 
 export const metadata: Metadata = createPageMetadata({
   description:
@@ -147,162 +356,125 @@ export const metadata: Metadata = createPageMetadata({
 
 export default function Home() {
   return (
-    <div className="bg-[#050806] text-white">
-      <section className="relative -mt-[5.35rem] overflow-hidden px-0 pb-14 pt-32 sm:-mt-[5.8rem] sm:pb-20 sm:pt-36 lg:pb-20 lg:pt-36">
-        <div className="absolute inset-0 bg-[linear-gradient(90deg,_rgba(87,214,129,0.08)_1px,_transparent_1px),linear-gradient(180deg,_rgba(87,214,129,0.06)_1px,_transparent_1px)] bg-[length:82px_82px] opacity-45" />
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,_rgba(87,214,129,0.32),_transparent_28%),radial-gradient(circle_at_24%_8%,_rgba(87,214,129,0.12),_transparent_22%),linear-gradient(135deg,_#030504_0%,_#07100b_42%,_#111713_100%)]" />
+    <div className="bg-[#030504] text-white">
+      <section className="relative -mt-[5.35rem] overflow-hidden border-b border-white/10 px-0 pb-10 pt-30 sm:-mt-[5.8rem] sm:pt-36 lg:pb-8 lg:pt-32">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_20%,_rgba(87,214,129,0.24),_transparent_30%),linear-gradient(135deg,_#030504_0%,_#07100b_46%,_#090d0a_100%)]" />
+        <div className="absolute inset-0 opacity-40 [background-image:linear-gradient(130deg,_transparent_0%,_transparent_46%,_rgba(87,214,129,0.32)_47%,_transparent_48%,_transparent_58%,_rgba(87,214,129,0.2)_59%,_transparent_60%)]" />
         <div className="site-container relative">
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(30rem,1.1fr)] lg:items-center xl:gap-12">
-            <div className="max-w-4xl space-y-6 sm:space-y-7">
-              <span className="pill max-w-full border-accent/28 bg-accent/10 text-accent">
+          <div className="grid gap-10 lg:grid-cols-[minmax(0,0.78fr)_minmax(34rem,1.22fr)] lg:items-center">
+            <div className="space-y-7">
+              <span className="inline-flex rounded-full border border-accent/35 bg-accent/10 px-4 py-2 font-mono text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-accent">
                 Websites. Automation. Growth.
               </span>
-              <div className="space-y-5 sm:space-y-6">
-                <h1 className="max-w-5xl text-4xl font-semibold leading-[1.04] text-white sm:text-6xl lg:text-[4.5rem]">
-                  Websites that make local businesses look ready for bigger
-                  things.
+
+              <div className="space-y-5">
+                <h1 className="max-w-3xl text-4xl font-semibold leading-[1.04] text-white sm:text-6xl lg:text-[4.55rem]">
+                  Websites that make local businesses look ready for{" "}
+                  <span className="text-accent">bigger things.</span>
                 </h1>
-                <p className="max-w-3xl text-base leading-8 text-white/78 sm:text-xl">
-                  Szymik Digital builds sharper website refreshes, starter
-                  websites, and local growth websites for small businesses that
-                  need to look clearer, more credible, and easier to choose.
+                <p className="max-w-xl text-base leading-8 text-white/72">
+                  Polished websites and digital solutions for local businesses
+                  that want to stand out, win trust, and grow with confidence.
                 </p>
               </div>
-              <div className="flex flex-col gap-3 sm:flex-row sm:flex-wrap">
+
+              <div className="flex flex-col gap-3 sm:flex-row">
                 <CtaLink
                   href="/contact#enquiry"
                   className="min-h-12 !text-surface-strong hover:!text-surface-strong"
                 >
-                  Start a project
+                  Start a Project
                 </CtaLink>
                 <CtaLink
                   href="#selected-work"
                   variant="secondary"
-                  className="min-h-12"
+                  className="min-h-12 border-white/22 bg-transparent !text-white hover:bg-white/10 hover:!text-white"
                 >
-                  View our work
+                  View Our Work
                 </CtaLink>
+              </div>
+
+              <div className="grid gap-5 pt-5 sm:grid-cols-3 lg:max-w-xl">
+                {heroTrust.map((item) => (
+                  <div key={item.title} className="grid gap-2">
+                    <LineIcon name={item.icon} />
+                    <h2 className="text-sm font-semibold text-white">
+                      {item.title}
+                    </h2>
+                    <p className="text-xs leading-5 text-white/62">{item.copy}</p>
+                  </div>
+                ))}
               </div>
             </div>
 
-            <div className="relative min-h-[28rem] sm:min-h-[33rem] lg:min-h-[37rem]">
-              <div className="absolute inset-x-8 top-7 hidden h-56 rounded-full bg-accent/18 blur-3xl sm:block" />
+            <div className="relative min-h-[29rem] sm:min-h-[37rem] lg:min-h-[42rem]">
+              <div className="absolute inset-x-8 top-16 h-64 rounded-full bg-accent/20 blur-3xl" />
+              <BrowserFrame
+                work={selectedWork[1]}
+                className="absolute right-8 top-0 z-10 w-[76%] rotate-[-1deg] opacity-86"
+              />
               <BrowserFrame
                 work={selectedWork[0]}
                 priority
-                className="relative z-20 mx-auto w-[94%] max-w-[38rem] lg:ml-auto lg:mr-0"
-              />
-              <BrowserFrame
-                work={selectedWork[1]}
-                className="absolute left-0 top-[13rem] z-10 w-[58%] min-w-[15rem] rotate-[-4deg] sm:top-[15.5rem] lg:top-[17rem]"
+                className="absolute left-0 top-[8.3rem] z-30 w-[92%] sm:top-[9.4rem]"
               />
               <BrowserFrame
                 work={selectedWork[2]}
-                className="absolute bottom-0 right-0 z-30 w-[64%] min-w-[17rem] rotate-[3deg]"
+                className="absolute bottom-0 right-0 z-40 w-[76%]"
               />
-              <div className="absolute right-5 top-4 z-40 rounded-full border border-accent/30 bg-accent px-4 py-2 text-sm font-semibold text-surface-strong shadow-[0_18px_40px_rgba(87,214,129,0.24)]">
-                Concept Preview first
-              </div>
-              <div className="absolute bottom-9 left-5 z-40 hidden rounded-[1.1rem] border border-white/12 bg-black/50 px-4 py-3 text-sm leading-6 text-white/78 backdrop-blur-sm sm:block">
-                Selected work, refresh ideas, and real local-business context
-              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="selected-work" className="bg-[#08100b] py-14 sm:py-16 lg:py-20">
+      <section id="selected-work" className="border-b border-white/10 bg-[#050806] py-10 sm:py-12">
         <div className="site-container">
-          <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
-            <SectionHeading
-              eyebrow="Selected work"
-              title="Concepts and local business examples with the claims kept honest"
-              intro="These examples show the kind of direction Szymik Digital is building toward: sharper first impressions, stronger local-business positioning, and clearer next steps."
-              surface="dark"
-            />
-            <Link className="link-arrow text-white hover:text-accent" href="/work">
-              View more work <span aria-hidden>{">"}</span>
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <Eyebrow>Selected Work</Eyebrow>
+              <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
+                Recent Projects
+              </h2>
+            </div>
+            <Link
+              href="/work"
+              className="inline-flex min-h-11 items-center justify-center gap-3 rounded-[0.75rem] border border-white/18 px-5 text-sm font-semibold text-white transition hover:border-accent/45 hover:text-accent"
+            >
+              View All Work <span aria-hidden>{">"}</span>
             </Link>
           </div>
 
-          <div className="mt-10 grid gap-5 lg:grid-cols-3">
+          <div className="mt-8 grid gap-5 lg:grid-cols-3">
             {selectedWork.map((work) => (
-              <article
-                key={work.title}
-                className="group flex h-full min-h-[31rem] flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.06] transition duration-300 hover:-translate-y-1 hover:border-accent/35"
-              >
-                <div className="relative aspect-[16/11] overflow-hidden border-b border-white/10 bg-black">
-                  <Image
-                    src={work.image}
-                    alt={work.alt}
-                    fill
-                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 92vw"
-                    className="object-cover object-top transition duration-500 group-hover:scale-[1.03]"
-                  />
-                  <div className="absolute inset-x-0 top-0 flex items-center justify-between border-b border-white/10 bg-black/50 px-4 py-2 backdrop-blur-sm">
-                    <div className="flex items-center gap-1.5">
-                      <span className="h-2.5 w-2.5 rounded-full bg-accent" />
-                      <span className="h-2.5 w-2.5 rounded-full bg-white/35" />
-                      <span className="h-2.5 w-2.5 rounded-full bg-white/18" />
-                    </div>
-                    <span className="font-mono text-[0.62rem] uppercase tracking-[0.18em] text-white/56">
-                      Preview
-                    </span>
-                  </div>
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
-                </div>
-                <div className="flex flex-1 flex-col p-5 sm:p-7">
-                  <div className="flex flex-wrap items-center gap-3">
-                    <span className="rounded-full border border-accent/25 bg-accent/15 px-3 py-1.5 text-xs font-semibold text-accent">
-                      {work.label}
-                    </span>
-                    <span className="font-mono text-xs uppercase tracking-[0.18em] text-white/50">
-                      {work.category}
-                    </span>
-                  </div>
-                  <h3 className="mt-5 text-2xl font-semibold text-white">
-                    {work.title}
-                  </h3>
-                  <p className="mt-3 flex-1 text-sm leading-7 text-white/78">
-                    {work.summary}
-                  </p>
-                  <p className="mt-6 border-t border-white/10 pt-4 text-sm font-medium leading-7 text-white/62">
-                    {work.detail}
-                  </p>
-                </div>
-              </article>
+              <WorkCard key={work.title} work={work} />
             ))}
           </div>
         </div>
       </section>
 
-      <section className="page-section bg-[#050806]">
+      <section className="border-b border-white/10 bg-[#050806] py-10 sm:py-12">
         <div className="site-container">
-          <SectionHeading
-            eyebrow="Service pathways"
-            title="Pick the route that matches the business problem"
-            intro="The offer stays simple: improve an existing site, build a credible first site, grow a stronger local presence, or scope the admin/workflow problem before promising automation."
-            surface="dark"
-          />
+          <Eyebrow>Our Services</Eyebrow>
+          <h2 className="mt-3 max-w-4xl text-3xl font-semibold text-white sm:text-4xl">
+            Digital solutions that help local businesses grow.
+          </h2>
 
-          <div className="mt-10 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
+          <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {services.map((service) => (
               <Link
                 key={service.id}
                 href={`/services#${service.id}`}
-                className="flex h-full min-h-72 flex-col rounded-[1.5rem] border border-white/10 bg-white/[0.06] p-5 transition duration-300 hover:-translate-y-1 hover:border-accent/35 sm:p-6"
+                className="group flex min-h-56 flex-col rounded-[1rem] border border-white/12 bg-white/[0.055] p-5 transition duration-300 hover:-translate-y-1 hover:border-accent/35"
               >
-                <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent">
-                  {service.shortLabel}
-                </p>
-                <h3 className="mt-4 text-xl font-semibold text-white">
+                <LineIcon name={serviceAccent[service.id] ?? "screen"} />
+                <h3 className="mt-5 text-xl font-semibold text-white">
                   {service.title}
                 </h3>
-                <p className="mt-3 flex-1 text-sm leading-7 text-white/72">
+                <p className="mt-3 flex-1 text-sm leading-7 text-white/66">
                   {service.teaser}
                 </p>
-                <span className="link-arrow mt-5 text-white hover:text-accent">
-                  Explore pathway <span aria-hidden>{">"}</span>
+                <span className="mt-5 text-sm font-semibold text-accent">
+                  Learn more <span aria-hidden>{">"}</span>
                 </span>
               </Link>
             ))}
@@ -310,79 +482,94 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="page-section bg-[#0b1410]">
+      <section className="bg-[#050806] py-10 sm:py-12">
         <div className="site-container">
-          <SectionHeading
-            eyebrow="Process"
-            title="A calm route from first idea to launch"
-            intro="Concept Preview is now part of the Szymik Digital workflow because it gives everyone a clearer direction before the heavier build work starts."
-            surface="dark"
-          />
+          <div className="rounded-[1.35rem] border border-accent/25 bg-[radial-gradient(circle_at_42%_0%,_rgba(87,214,129,0.13),_transparent_26%),linear-gradient(135deg,_rgba(255,255,255,0.07),_rgba(255,255,255,0.035))] p-6 shadow-[0_28px_90px_rgba(0,0,0,0.32)] sm:p-8 lg:p-10">
+            <div className="grid gap-8 lg:grid-cols-[minmax(15rem,0.7fr)_minmax(0,1.3fr)] lg:items-start">
+              <div>
+                <Eyebrow>Why Choose Szymik Digital</Eyebrow>
+                <h2 className="mt-5 text-3xl font-semibold leading-tight text-white sm:text-4xl">
+                  Your business.
+                  <br />
+                  Our focus.
+                </h2>
+                <p className="mt-5 max-w-md text-sm leading-7 text-white/68">
+                  We partner with local businesses to deliver websites and
+                  digital solutions that build trust, look professional, and
+                  drive real outcomes.
+                </p>
+                <Link
+                  href="/about"
+                  className="mt-6 inline-flex min-h-11 items-center justify-center gap-3 rounded-[0.75rem] border border-white/20 px-5 text-sm font-semibold text-white transition hover:border-accent/45 hover:text-accent"
+                >
+                  Learn More About Us <span aria-hidden>{">"}</span>
+                </Link>
+              </div>
 
-          <div className="mt-10 grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+              <div className="grid gap-5 sm:grid-cols-2 xl:grid-cols-5">
+                {trustItems.map((item) => (
+                  <article key={item.title} className="grid gap-3">
+                    <LineIcon name={item.icon} />
+                    <h3 className="text-sm font-semibold text-white">
+                      {item.title}
+                    </h3>
+                    <p className="text-xs leading-6 text-white/64">{item.copy}</p>
+                  </article>
+                ))}
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section className="bg-[#050806] py-10 sm:py-12">
+        <div className="site-container">
+          <Eyebrow>Our Process</Eyebrow>
+          <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
+            Simple steps. Strong results.
+          </h2>
+          <p className="mt-4 max-w-3xl text-sm leading-7 text-white/64">
+            Concept Preview sits inside the review and proposal stage, helping
+            lock the visual direction before the main build.
+          </p>
+
+          <div className="mt-8 grid gap-4 md:grid-cols-3 xl:grid-cols-6">
             {processSteps.map((step, index) => (
               <article
                 key={step.title}
-                className="rounded-[1.35rem] border border-white/10 bg-black/18 p-5 sm:min-h-64 lg:min-h-80"
+                className="relative rounded-[1rem] border border-white/12 bg-white/[0.055] p-5 text-center"
               >
-                <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent">
-                  0{index + 1}
-                </p>
-                <h3 className="mt-4 text-xl font-semibold text-white">
+                <span className="absolute -left-1 -top-3 flex h-8 w-8 items-center justify-center rounded-full bg-accent text-sm font-bold text-surface-strong">
+                  {index + 1}
+                </span>
+                <LineIcon name={index === 5 ? "rocket" : index === 3 ? "screen" : "chat"} />
+                <h3 className="mt-4 text-base font-semibold text-white">
                   {step.title}
                 </h3>
-                <p className="mt-3 text-sm leading-7 text-white/70">
-                  {step.description}
-                </p>
+                <p className="mt-3 text-xs leading-6 text-white/62">{step.copy}</p>
+                {index < processSteps.length - 1 ? (
+                  <span className="absolute left-full top-1/2 hidden h-px w-4 bg-accent/55 xl:block" />
+                ) : null}
               </article>
             ))}
           </div>
         </div>
       </section>
 
-      <section className="page-section bg-[#050806]">
+      <section className="bg-[#050806] pb-10 sm:pb-12">
         <div className="site-container">
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:items-start">
-            <SectionHeading
-              eyebrow="Delivery style"
-              title="Small-studio attention without making the project feel heavy"
-              intro="The delivery style is direct and practical: Ric handles the build and technical judgement, while Hannah can help keep communication and feedback organised where useful."
-              surface="dark"
-            />
-            <div className="grid gap-4 sm:grid-cols-2">
-              {trustItems.map((item) => (
-                <article
-                  key={item.title}
-                  className="rounded-[1.35rem] border border-white/10 bg-white/[0.06] p-5 sm:min-h-44"
-                >
-                  <h3 className="text-lg font-semibold text-white">
-                    {item.title}
-                  </h3>
-                  <p className="mt-3 text-sm leading-7 text-white/70">
-                    {item.description}
-                  </p>
-                </article>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section className="page-section bg-[#08100b] pt-0">
-        <div className="site-container">
-          <div className="rounded-[1.75rem] border border-accent/20 bg-[linear-gradient(135deg,_rgba(87,214,129,0.18),_rgba(255,255,255,0.06)_42%,_rgba(255,255,255,0.04))] p-6 shadow-[0_30px_100px_rgba(0,0,0,0.34)] sm:p-10 lg:p-12">
-            <div className="grid gap-8 lg:grid-cols-[minmax(0,1fr)_auto] lg:items-end">
+          <div className="overflow-hidden rounded-[1.35rem] border border-accent/25 bg-[linear-gradient(135deg,_rgba(87,214,129,0.13),_rgba(255,255,255,0.055)_38%,_rgba(5,8,6,0.95)),linear-gradient(130deg,_transparent_0%,_transparent_72%,_rgba(87,214,129,0.32)_73%,_transparent_77%)] p-6 sm:p-8 lg:p-10">
+            <div className="grid gap-6 lg:grid-cols-[auto_minmax(0,1fr)_auto] lg:items-center">
+              <div className="hidden h-24 w-24 items-center justify-center rounded-full border border-white/10 bg-white/[0.04] lg:flex">
+                <LineIcon name="rocket" />
+              </div>
               <div>
-                <span className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-accent">
-                  Ready for the next version?
-                </span>
-                <h2 className="mt-4 max-w-4xl text-3xl font-semibold text-white sm:text-4xl lg:text-5xl">
-                  Start with the website customers see first.
+                <h2 className="max-w-2xl text-3xl font-semibold leading-tight text-white sm:text-4xl">
+                  Ready to make your online presence work harder?
                 </h2>
-                <p className="mt-5 max-w-3xl text-base leading-8 text-white/76 sm:text-lg">
-                  Tell us what feels dated, unclear, or too small for where the
-                  business is going. We will help shape the right next step
-                  before a quote or build commitment.
+                <p className="mt-3 max-w-2xl text-sm leading-7 text-white/68">
+                  Let us build a website or digital solution that looks
+                  professional and helps your business grow.
                 </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
@@ -390,14 +577,14 @@ export default function Home() {
                   href="/contact#enquiry"
                   className="min-h-12 !text-surface-strong hover:!text-surface-strong"
                 >
-                  Start a project
+                  Start a Project
                 </CtaLink>
                 <CtaLink
-                  href="#selected-work"
+                  href="/contact"
                   variant="secondary"
-                  className="min-h-12"
+                  className="min-h-12 border-white/22 bg-transparent !text-white hover:bg-white/10 hover:!text-white"
                 >
-                  View our work
+                  Send an Enquiry
                 </CtaLink>
               </div>
             </div>

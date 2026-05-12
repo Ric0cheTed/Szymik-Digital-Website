@@ -13,8 +13,8 @@ import {
 
 export function SiteFooter() {
   return (
-    <footer className="mt-24 border-t border-white/10 bg-surface-strong text-white">
-      <div className="site-container py-16 sm:py-20">
+    <footer className="mt-0 border-t border-white/10 bg-surface-strong text-white">
+      <div className="site-container py-10 sm:py-12">
         <div className="grid gap-12 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)_minmax(0,0.8fr)]">
           <div className="max-w-2xl">
             <BrandLogo

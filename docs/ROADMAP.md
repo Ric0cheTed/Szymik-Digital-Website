@@ -114,7 +114,7 @@ Status:
 
 Implemented on `redesign/site-v2-homepage` as a homepage-first concept-match/assets pass. The hero now uses layered browser-window previews, selected work uses the provided real assets, and the homepage header has a dark/premium treatment while the stable live v1 remains protected.
 
-### Current Redesign Slice
+### Completed Redesign Slice
 
 Phase 3 Slice 4 - Manual Browser Acceptance + Homepage Asset QA.
 
@@ -141,9 +141,36 @@ Status:
 
 Implemented on `redesign/site-v2-homepage` as a homepage/header readability and concept-match polish pass. The homepage header now uses explicit light navigation text on the dark premium shell, a green-accent active Home state, and preserved light-header behaviour on other routes.
 
+### Current Redesign Slice
+
+Phase 3 Slice 5 - Homepage V2 Concept Reference Match Rebuild.
+
+Goal:
+
+Rebuild/refactor the homepage layout so it closely matches the approved concept reference image rather than reading like the old homepage with dark styling.
+
+Scope:
+
+- homepage-first concept-reference match
+- compact dark header and dark homepage rhythm
+- hero headline with green emphasis and trust points
+- layered browser-window project collage
+- selected work cards with real preview assets
+- service cards, wide trust panel, process flow, final CTA banner, and compact dark footer handoff
+- truthful selected-work wording
+- no Hostinger production upload
+- no merge to main
+- no CRM integration
+- no client portal
+- no automation
+
+Status:
+
+Implemented on `redesign/site-v2-homepage` using `docs/design-references/homepage-v2-concept-reference.png` as the visual direction reference. The homepage was rebuilt as real responsive sections using the existing project assets, with no new routes or dependencies.
+
 ### Next Recommended Slice
 
-Phase 3 Slice 5 - Manual Browser Acceptance + Homepage Asset QA.
+Phase 3 Slice 6 - Manual Browser Acceptance + Homepage Asset QA.
 
 Goal:
 
