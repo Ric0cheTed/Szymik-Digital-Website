@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { CtaLink } from "@/components/cta-link";
 import { createPageMetadata } from "@/lib/metadata";
@@ -42,6 +43,13 @@ const trustItems = [
   "Practical outcomes",
   "Local-business focus",
   "Built to be manageable after launch",
+];
+
+const libraProofStats = [
+  { value: "130", label: "UK active users" },
+  { value: "396", label: "home page views" },
+  { value: "98", label: "contact page views" },
+  { value: "93", label: "Organic Search sessions" },
 ];
 
 const serviceIcon: Record<string, string> = {
@@ -152,15 +160,72 @@ export default function ServicesPage() {
               </div>
             </div>
 
-            <aside className="rounded-[1.15rem] border border-accent/22 bg-white/[0.055] p-5 shadow-[0_28px_90px_rgba(0,0,0,0.32)]">
-              <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-accent">
-                Start with the problem
-              </p>
-              <div className="mt-5 grid gap-3 text-sm leading-7 text-white/70">
-                <p>Outdated website, no proper site yet, weak local enquiry flow, or repeated admin that needs clarity.</p>
-                <p>You do not need to choose perfectly before getting in touch.</p>
-              </div>
-            </aside>
+            <div className="grid gap-4">
+              <article className="overflow-hidden rounded-[1.15rem] border border-accent/25 bg-[radial-gradient(circle_at_70%_0%,_rgba(87,214,129,0.18),_transparent_28%),linear-gradient(135deg,_rgba(255,255,255,0.08),_rgba(255,255,255,0.035))] p-4 shadow-[0_28px_90px_rgba(0,0,0,0.34)] sm:p-5">
+                <div className="flex flex-col gap-4">
+                  <div>
+                    <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-accent">
+                      Real-world traction
+                    </p>
+                    <h2 className="mt-3 text-xl font-semibold text-white">
+                      What better visibility can look like
+                    </h2>
+                    <p className="mt-2 text-sm leading-7 text-white/68">
+                      Libra Support Services - last 28 days. A clearer
+                      local-facing website can create more visibility and more
+                      chances for people to get in touch.
+                    </p>
+                  </div>
+
+                  <div className="rounded-[0.95rem] border border-white/12 bg-black/24 p-2">
+                    <Image
+                      src="/images/proof/libra-analytics-overview.png"
+                      alt="Libra Support Services analytics overview showing active users, page views, and traffic channels from the last 28 days."
+                      width={920}
+                      height={520}
+                      className="h-auto w-full rounded-[0.7rem] border border-white/10 object-cover"
+                      sizes="(min-width: 1024px) 32rem, 100vw"
+                    />
+                  </div>
+
+                  <div className="grid grid-cols-2 gap-2">
+                    {libraProofStats.map((stat) => (
+                      <div
+                        key={stat.label}
+                        className="rounded-[0.85rem] border border-accent/18 bg-accent/10 p-3"
+                      >
+                        <p className="text-xl font-semibold text-accent">
+                          {stat.value}
+                        </p>
+                        <p className="mt-1 text-xs leading-5 text-white/62">
+                          {stat.label}
+                        </p>
+                      </div>
+                    ))}
+                  </div>
+                  <p className="text-xs leading-6 text-white/46">
+                    Analytics are a snapshot, not a guaranteed result. They are
+                    used here as practical proof of visibility from real local
+                    website work.
+                  </p>
+                </div>
+              </article>
+
+              <aside className="rounded-[1.15rem] border border-accent/22 bg-white/[0.055] p-5 shadow-[0_28px_90px_rgba(0,0,0,0.32)]">
+                <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-accent">
+                  Start with the problem
+                </p>
+                <div className="mt-5 grid gap-3 text-sm leading-7 text-white/70">
+                  <p>
+                    Outdated website, no proper site yet, weak local enquiry
+                    flow, or repeated admin that needs clarity.
+                  </p>
+                  <p>
+                    You do not need to choose perfectly before getting in touch.
+                  </p>
+                </div>
+              </aside>
+            </div>
           </div>
         </div>
       </section>

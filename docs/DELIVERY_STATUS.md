@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3 Slice 9 - Contact / Enquiry V2
+Phase 3 Slice 9B - Services V2 Libra Analytics Proof Panel
 
 ## Current Focus
 
-Contact / Enquiry v2 redesign using the accepted dark/green visual system while preserving the existing enquiry runtime behaviour.
+Services hero proof-panel enhancement using the Libra Support Services analytics snapshot while preserving the accepted dark/green v2 visual system.
 
 ## Completed
 
@@ -208,12 +208,16 @@ Contact / Enquiry v2 redesign using the accepted dark/green visual system while 
 - The existing `EnquiryForm` was restyled to the dark v2 system while preserving its existing fields, field names, required fields, consent checkbox, mailto/email-draft submit behaviour, status message, and Hannah/Ric review wording
 - `SiteHeader` now applies the accepted dark/green v2 header treatment on `/contact` as well as `/`, `/work`, and `/services`
 - Phase 3 Slice 9 stayed Contact-page first; no production upload, merge to main, CRM changes, agreement pack changes, ops workspace changes, backend changes, email automation, analytics/cookie/privacy changes, package/dependency changes, new routes, or folder restructure were made
+- Phase 3 Slice 9B complete: Services v2 Libra analytics proof panel added
+- `/services` hero now includes a polished "Real-world traction" proof panel using `public/images/proof/libra-analytics-overview.png`
+- The proof panel supports the existing "Start with the problem" card rather than replacing it, and uses dark v2 card styling, green accents, framed analytics imagery, compact metric chips, and cautious explanatory copy
+- Displayed Libra Support Services metrics include 130 UK active users, 396 home page views, 98 contact page views, and 93 Organic Search sessions from the last 28 days snapshot
+- The proof copy avoids guaranteed-result claims and frames the analytics as practical real-world visibility proof, not a promise of identical outcomes
+- Phase 3 Slice 9B stayed Services-page only; no homepage, Work, Contact, route, runtime, contact form, analytics/cookie/privacy, package/dependency, CRM, agreement pack, ops workspace, production upload, or merge-to-main changes were made
 
 ## Files Changed In Latest Slice
 
-- `src/components/site-header.tsx`
-- `src/components/enquiry-form.tsx`
-- `src/app/contact/page.tsx`
+- `src/app/services/page.tsx`
 - `docs/DELIVERY_STATUS.md`
 - `docs/ROADMAP.md`
 

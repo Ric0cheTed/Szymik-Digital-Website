@@ -329,6 +329,33 @@ Runtime guardrail:
 
 The existing enquiry form behaviour was preserved. The form still prepares a mail draft addressed to the Szymik Digital enquiry inbox and keeps the existing fields, field names, required fields, consent checkbox, status message, and client-side submit flow. No backend submission logic, CRM integration, email automation, new dependency, route change, merge to main, or Hostinger production upload was added.
 
+### Completed Redesign Slice
+
+Phase 3 Slice 9B - Services V2 Libra Analytics Proof Panel.
+
+Goal:
+
+Add a polished real-world proof panel to the Services hero area using the Libra Support Services analytics snapshot while preserving the accepted v2 visual system.
+
+Scope:
+
+- `/services` hero proof panel only
+- use Libra analytics snapshot and cautious hardcoded metrics
+- keep the existing "Start with the problem" panel
+- preserve service pathway content and anchors
+- no route changes
+- no runtime/contact/form changes
+- no analytics/cookie/privacy changes
+- no Hostinger production upload
+- no merge to main
+- no CRM integration
+- no client portal
+- no automation
+
+Status:
+
+Implemented on `redesign/site-v2-homepage`. The Services hero now includes a dark/green "Real-world traction" panel using the Libra Support Services analytics screenshot, compact metric chips, and careful wording that presents the snapshot as practical visibility proof without promising guaranteed results.
+
 ### Next Recommended Slice
 
 Phase 3 Slice 10 - About / Founder Story V2.
