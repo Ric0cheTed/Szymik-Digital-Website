@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3 Slice 5 - Homepage V2 Concept Reference Match Rebuild
+Phase 3 Slice 6 - Homepage V2 Branch Acceptance Notes
 
 ## Current Focus
 
-Homepage rebuild/refactor to closely match the approved concept reference.
+Docs-only acceptance record for the homepage v2 concept-reference direction.
 
 ## Completed
 
@@ -163,20 +163,23 @@ Homepage rebuild/refactor to closely match the approved concept reference.
 - Process now uses a six-step flow matching the reference: Enquiry, Review, Proposal, Build, Feedback, Launch, with Concept Preview mentioned as part of the review/proposal stage
 - Shared header and footer changes were limited to concept-match readability/spacing: homepage header is dark and route-safe; footer remains dark, readable, and compact with existing links, contact details, cookie control, and social/profile behaviour preserved
 - Phase 3 Slice 5 stayed homepage-first; no production upload, merge to main, CRM changes, agreement pack changes, ops workspace changes, contact form/runtime changes, analytics/cookie/privacy changes, package/dependency changes, new routes, or folder restructure were made
+- Phase 3 Slice 6 complete: homepage v2 concept-reference direction manually accepted by Ric on `redesign/site-v2-homepage`
+- Ric accepted the Phase 3 Slice 5 homepage v2 concept-reference match as the correct Szymik Digital v2 homepage style
+- Accepted visual direction: dark/green premium local-studio style with black/charcoal base, vivid Szymik green accents, compact premium rhythm, strong project previews, and practical local-business messaging
+- The accepted homepage style is now the intended visual standard for the next redesigned v2 pages
+- Homepage v2 remains accepted on the redesign branch only; no merge to main and no Hostinger production upload has happened yet
+- Phase 3 Slice 6 was docs-only; no homepage UI, source, styling, routes, assets, packages, deployment config, analytics/cookie/privacy, contact/enquiry runtime, CRM, agreement pack, ops workspace, or folder structure changes were made
 
 ## Files Changed In Latest Slice
 
-- `src/app/page.tsx`
-- `src/components/site-header.tsx`
-- `src/components/site-footer.tsx`
 - `docs/DELIVERY_STATUS.md`
 - `docs/ROADMAP.md`
 
 ## Next Recommended Slice
 
-Phase 3 Slice 6 - Manual Browser Acceptance + Homepage Asset QA.
+Phase 3 Slice 7 - Work / Case Studies V2.
 
-Open the homepage v2 preview in a manual browser session across desktop and mobile widths, then check the preview asset cropping, header/menu behaviour, selected-work proof wording, and final CTA flow before moving beyond the homepage.
+Redesign the Work / Case Studies route using the accepted homepage v2 visual system: dark/green premium local-studio styling, real preview assets where suitable, and truthful proof/case-study wording. Keep production/main/Hostinger guarded until full v2 review and approval.
 
 ## Open Decisions
 

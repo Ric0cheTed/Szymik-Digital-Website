@@ -141,7 +141,7 @@ Status:
 
 Implemented on `redesign/site-v2-homepage` as a homepage/header readability and concept-match polish pass. The homepage header now uses explicit light navigation text on the dark premium shell, a green-accent active Home state, and preserved light-header behaviour on other routes.
 
-### Current Redesign Slice
+### Completed Redesign Slice
 
 Phase 3 Slice 5 - Homepage V2 Concept Reference Match Rebuild.
 
@@ -168,21 +168,53 @@ Status:
 
 Implemented on `redesign/site-v2-homepage` using `docs/design-references/homepage-v2-concept-reference.png` as the visual direction reference. The homepage was rebuilt as real responsive sections using the existing project assets, with no new routes or dependencies.
 
-### Next Recommended Slice
+Acceptance:
 
-Phase 3 Slice 6 - Manual Browser Acceptance + Homepage Asset QA.
+Ric manually accepted this homepage v2 direction on the redesign branch. The accepted visual standard for v2 is the dark/green premium local-studio style: black/charcoal base, vivid Szymik green accents, compact premium rhythm, strong project previews, clean dark cards, and truthful local-business messaging.
+
+This acceptance is branch-only. The stable live v1 remains protected on main, and no Hostinger production upload should happen until the wider v2 review and approval process is complete.
+
+### Current Redesign Slice
+
+Phase 3 Slice 6 - Homepage V2 Branch Acceptance Notes.
 
 Goal:
 
-Open the homepage v2 preview in a manual browser session across desktop and mobile widths, then check header readability, mobile menu behaviour, hero collage cropping, selected-work proof wording, and final CTA flow before moving beyond the homepage.
+Record Ric's manual acceptance of the homepage v2 concept-reference direction on the redesign branch.
 
 Scope:
 
-- manual homepage preview acceptance
-- desktop and mobile browser review
-- hero collage and selected-work image cropping
-- homepage header/mobile menu QA
-- selected work proof/permission wording check
+- docs-only acceptance note
+- record accepted homepage visual direction
+- confirm homepage v2 remains branch-only
+- set accepted homepage style as the v2 visual standard for the next redesigned pages
+- no Hostinger production upload
+- no merge to main
+- no CRM integration
+- no client portal
+- no automation
+
+Status:
+
+Complete. No source, runtime, UI, styling, route, package, asset, deployment, analytics, contact/enquiry, CRM, agreement pack, ops workspace, or folder structure changes were made for this acceptance slice.
+
+### Next Recommended Slice
+
+Phase 3 Slice 7 - Work / Case Studies V2.
+
+Goal:
+
+Redesign the Work / Case Studies route using the accepted homepage v2 visual system while keeping production/main/Hostinger guarded until full v2 review and approval.
+
+Scope:
+
+- `/work` route v2 redesign
+- dark/green premium local-studio styling from the accepted homepage
+- real preview assets where suitable
+- truthful proof, concept preview, and case-study wording
+- preserve existing routes
+- preserve contact/enquiry runtime
+- preserve analytics/cookie/privacy setup
 - no Hostinger production upload
 - no merge to main
 - no CRM integration
