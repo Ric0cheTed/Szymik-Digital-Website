@@ -38,7 +38,7 @@ The aim is not to become a generic web design agency. The aim is to offer useful
 - It should not be edited directly for the premium redesign.
 - Redesign work must happen on a separate branch / preview flow first.
 
-The current site remains the stable baseline until a reviewed v2 preview is approved.
+The current site remains the stable public baseline. The v2 redesign branch has a strong accepted future direction, but it is intentionally parked from production for now because the live site launched recently and should not be replaced too quickly.
 
 ## Premium Website Redesign Direction
 
@@ -68,6 +68,17 @@ The initial redesign should be:
 4. Contact / enquiry flow last.
 
 The redesign should be built separately from the current live v1 and only merged/uploaded once reviewed and approved.
+
+Current v2 status: accepted future visual direction, parked-good / preview-hold. Do not merge the v2 branch to main and do not prepare a Hostinger production upload yet.
+
+Return to the v2 branch when there is:
+
+- more recent and confirmed client work
+- more real proof or performance data
+- reviewed human trust assets or photos of Ric and Hannah where approved
+- time for final branch QA before any merge or production decision
+
+The later v2 relaunch can be used as a story of improvement: Szymik Digital launched, learned, improved its own process, and upgraded the website to match the quality of work it now delivers.
 
 ## Concept Preview Workflow
 
@@ -150,6 +161,7 @@ The public website repo must stay separate from the CRM repo.
 
 These are useful ideas, but they are not active build items yet.
 
+- Website v2 preview branch as accepted future visual direction, held until stronger proof/assets and final QA
 - Website Factory / reusable starter kit
 - Case File / Client Memory Timeline
 - Advanced AI summaries of clients/prospects

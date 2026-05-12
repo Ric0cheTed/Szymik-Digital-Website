@@ -14,7 +14,9 @@ It is already live on the public domain and has post-live analytics/cookie/priva
 
 The next website direction is a premium v2 refresh.
 
-The v2 redesign should use a separate branch / preview flow and should not be merged or uploaded to production until reviewed and approved.
+The v2 redesign uses a separate branch / preview flow and should not be merged or uploaded to production until reviewed and explicitly approved.
+
+Current status: preview / parked-good. The v2 branch is accepted as a strong future direction, but it is intentionally not the immediate production plan because the current live site launched recently and should remain stable for now.
 
 The initial redesign order is:
 
@@ -22,6 +24,8 @@ The initial redesign order is:
 2. Work / Case Studies.
 3. Services.
 4. Contact / enquiry flow.
+
+The v2 branch should be revisited when Szymik Digital has more recent confirmed client work, more real proof/performance data, and reviewed human trust assets such as approved photos of Ric and Hannah.
 
 ### Concept Preview Workflow
 
@@ -435,25 +439,41 @@ Cookie/analytics note:
 
 The consent-based analytics approach was preserved. The root layout still mounts the analytics consent component, Google Analytics still loads only after acceptance, the cookie settings button remains in the footer, and no consent storage or analytics loading behaviour was changed.
 
-### Next Recommended Slice
+### Completed Redesign Slice
 
-Phase 3 Slice 12 - Branch Acceptance QA and Preview Handoff.
+Phase 3 Slice 12 - Park Website V2 Preview Branch.
 
 Goal:
 
-Run a final manual preview acceptance pass with Ric before any merge or production decision.
+Record that the v2 redesign branch is accepted as a strong future direction but parked from production for now.
 
 Scope:
 
-- final browser acceptance checklist for v2 branch
-- confirm copy/truthfulness across main public pages
-- confirm mobile and footer/header behaviour
-- decide whether legal pages remain on the light shell for launch
-- no Hostinger production upload without explicit approval
-- no merge to main without explicit approval
+- docs-only parking decision
+- keep current live v1 stable as the public baseline
+- keep v2 available as preview/future upgrade direction
+- no Hostinger production upload
+- no merge to main
+- no source/runtime/UI/styling/package/route changes
 - no CRM integration
 - no client portal
 - no automation
+
+Status:
+
+Complete. The v2 branch is parked-good / preview-hold. It remains the accepted future visual direction, but no merge to main and no Hostinger upload should happen yet.
+
+Future return point:
+
+1. Review the v2 branch against the then-current live site and business proof.
+2. Add human trust/photo assets if approved.
+3. Refresh Work and proof sections with newer confirmed examples.
+4. Run final QA across desktop, mobile, static export, contact/enquiry, cookie consent, and legal routes.
+5. Then decide whether to merge and prepare a Hostinger upload.
+
+Production guard:
+
+The current live site remains the stable public baseline. A future v2 relaunch can become part of the business story: Szymik Digital launched, learned, improved its own process, and upgraded the website to match the quality of work it now delivers.
 
 ## Phase 0: Source Of Truth
 

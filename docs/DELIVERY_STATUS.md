@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3 Slice 11 - V2 Cross-Page Polish and Legal-Route/Header Safety Review
+Phase 3 Slice 12 - Park Website V2 Preview Branch
 
 ## Current Focus
 
-Bounded cross-page v2 polish and safety review for header/footer consistency, legal-route readability, cookie/analytics consent access, and route smoke checks before any merge or production decision.
+Record the website v2 redesign branch as accepted future direction but intentionally parked from production while the newly launched live site remains stable.
 
 ## Completed
 
@@ -236,19 +236,25 @@ Bounded cross-page v2 polish and safety review for header/footer consistency, le
 - Analytics consent remains mounted through the root layout, Google Analytics still only loads after acceptance, and the cookie banner/settings panel remains available through the existing consent component
 - Legal routes remain content-first and readable; no privacy policy or terms wording was changed
 - This review stayed safety-focused; no full redesigns, new routes, dependencies, backend/runtime changes, contact form changes, analytics/cookie/privacy behaviour changes, CRM changes, production upload, or merge-to-main changes were made
+- Phase 3 Slice 12 complete: website v2 preview branch parked-good / preview-hold
+- The v2 redesign branch is accepted as a strong future Szymik Digital visual direction across homepage, Work, Services, Contact, About, header/footer, and cookie settings polish
+- The v2 branch should remain available as a preview/future upgrade direction, but it should not be merged to main and should not be prepared for a Hostinger production upload yet
+- Reason for the hold: the current live Szymik Digital site only launched recently and should remain the stable public baseline for now rather than being replaced too quickly
+- Future unlock conditions for returning to the v2 branch: more recent and confirmed client work, more real proof/performance data, reviewed human trust assets or photos of Ric and Hannah where approved, and final branch QA before any merge or production upload decision
+- Future relaunch story: Szymik Digital launched, learned, improved its own process, and can later upgrade the website to better match the quality of work it delivers
+- Phase 3 Slice 12 was docs-only; no source, UI, styling, runtime, routes, packages, analytics/cookie/privacy behaviour, CRM, agreement pack, ops workspace, folder structure, production upload, or merge-to-main changes were made
 
 ## Files Changed In Latest Slice
 
-- `src/components/site-footer.tsx`
-- `src/components/cookie-settings-button.tsx`
 - `docs/DELIVERY_STATUS.md`
 - `docs/ROADMAP.md`
+- `docs/SZYMIK_DIGITAL_MASTER_CONTROL.md`
 
-## Next Recommended Slice
+## Next Recommended Step
 
-Phase 3 Slice 12 - Branch acceptance QA and preview handoff.
+Keep `redesign/site-v2-homepage` parked as the accepted future preview direction.
 
-Run a final preview acceptance pass with Ric, decide whether the v2 branch is ready for merge planning, and keep Hostinger production upload blocked until explicit approval.
+Return to it only when there is stronger recent work/proof, approved human trust assets, and time for a final QA pass before any explicit merge/Hostinger decision.
 
 ## Open Decisions
 
@@ -261,6 +267,6 @@ Run a final preview acceptance pass with Ric, decide whether the v2 branch is re
 
 ## Boundaries
 
-- Current work is v2 redesign preview only
-- Stable live v1 remains protected on main and Hostinger production should not be updated from this slice
+- Current work is v2 redesign preview only and now parked-good / preview-hold
+- Stable live v1 remains protected on main and Hostinger production should not be updated from this branch yet
 - No merge to main, production upload, broad site redesign, CRM repo change, agreement pack change, business workspace docs change, client project repo change, backend/database/payment change, analytics/cookie/privacy change, package/dependency change, or contact form/runtime change was introduced
