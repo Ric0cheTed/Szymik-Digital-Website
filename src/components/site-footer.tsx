@@ -32,7 +32,7 @@ export function SiteFooter() {
             </p>
             <div className="mt-8">
               <CtaLink
-                href="/contact"
+                href="/contact#enquiry"
                 className="!text-surface-strong hover:!text-surface-strong"
               >
                 {siteSettings.ctaLabels.primary}

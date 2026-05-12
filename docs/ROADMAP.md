@@ -407,7 +407,7 @@ Status:
 
 Implemented on `redesign/site-v2-homepage`. The Services hero no longer includes the "Real-world traction" Libra analytics panel or screenshot; the clean Services v2 layout and original "Start with the problem" support card remain in place. About V2 was not changed by this removal slice.
 
-### Next Recommended Slice
+### Completed Redesign Slice
 
 Phase 3 Slice 11 - V2 Cross-Page Polish and Legal-Route/Header Safety Review.
 
@@ -423,6 +423,34 @@ Scope:
 - no content overclaiming
 - no Hostinger production upload
 - no merge to main
+- no CRM integration
+- no client portal
+- no automation
+
+Status:
+
+Implemented on `redesign/site-v2-homepage`. The v2 branch has reached a bounded cross-page polish and safety review stage: main v2 pages keep the accepted dark/green header, Privacy Policy and Terms remain readable on the light legal-page shell, footer links remain readable, cookie settings remain available, and the footer Start a project CTA now points directly to the enquiry anchor.
+
+Cookie/analytics note:
+
+The consent-based analytics approach was preserved. The root layout still mounts the analytics consent component, Google Analytics still loads only after acceptance, the cookie settings button remains in the footer, and no consent storage or analytics loading behaviour was changed.
+
+### Next Recommended Slice
+
+Phase 3 Slice 12 - Branch Acceptance QA and Preview Handoff.
+
+Goal:
+
+Run a final manual preview acceptance pass with Ric before any merge or production decision.
+
+Scope:
+
+- final browser acceptance checklist for v2 branch
+- confirm copy/truthfulness across main public pages
+- confirm mobile and footer/header behaviour
+- decide whether legal pages remain on the light shell for launch
+- no Hostinger production upload without explicit approval
+- no merge to main without explicit approval
 - no CRM integration
 - no client portal
 - no automation

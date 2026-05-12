@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3 Slice 10B - Remove Services Analytics Proof Panel
+Phase 3 Slice 11 - V2 Cross-Page Polish and Legal-Route/Header Safety Review
 
 ## Current Focus
 
-Remove the Services Libra analytics proof-panel experiment and restore the clean Services v2 hero layout while keeping About V2 intact.
+Bounded cross-page v2 polish and safety review for header/footer consistency, legal-route readability, cookie/analytics consent access, and route smoke checks before any merge or production decision.
 
 ## Completed
 
@@ -229,19 +229,26 @@ Remove the Services Libra analytics proof-panel experiment and restore the clean
 - `public/images/proof/libra-analytics-overview.png` was removed from the working tree because it was only used by the removed Services proof panel
 - About / Founder Story V2 was left intact; `src/app/about/page.tsx` was not edited in this removal slice
 - Phase 3 Slice 10B stayed Services proof-panel removal only; no homepage, Work, About, Contact, route, runtime, contact form, analytics/cookie/privacy, package/dependency, CRM, agreement pack, ops workspace, production upload, or merge-to-main changes were made
+- Phase 3 Slice 11 complete: v2 cross-page polish and legal-route/header safety review completed
+- Header behaviour was reviewed across `/`, `/work`, `/services`, `/contact`, `/about`, `/privacy-policy`, and `/terms`; the accepted dark/green v2 header remains active on the main v2 pages, while Privacy Policy and Terms keep the readable light legacy header treatment
+- Footer consistency was reviewed and kept aligned with the v2 dark system; the footer Start a project CTA now links directly to `/contact#enquiry`
+- Cookie settings access remains in the footer and was lightly polished for readability, focus visibility, and tap-target comfort without changing consent storage or analytics loading behaviour
+- Analytics consent remains mounted through the root layout, Google Analytics still only loads after acceptance, and the cookie banner/settings panel remains available through the existing consent component
+- Legal routes remain content-first and readable; no privacy policy or terms wording was changed
+- This review stayed safety-focused; no full redesigns, new routes, dependencies, backend/runtime changes, contact form changes, analytics/cookie/privacy behaviour changes, CRM changes, production upload, or merge-to-main changes were made
 
 ## Files Changed In Latest Slice
 
-- `src/app/services/page.tsx`
-- `public/images/proof/libra-analytics-overview.png`
+- `src/components/site-footer.tsx`
+- `src/components/cookie-settings-button.tsx`
 - `docs/DELIVERY_STATUS.md`
 - `docs/ROADMAP.md`
 
 ## Next Recommended Slice
 
-Phase 3 Slice 11 - V2 cross-page polish and legal-route/header safety review.
+Phase 3 Slice 12 - Branch acceptance QA and preview handoff.
 
-Review the full v2 preview across homepage, Work, Services, About, and Contact, then decide whether Privacy Policy and Terms keep the light legacy shell or receive a guarded dark-header/readability polish before final branch acceptance.
+Run a final preview acceptance pass with Ric, decide whether the v2 branch is ready for merge planning, and keep Hostinger production upload blocked until explicit approval.
 
 ## Open Decisions
 
