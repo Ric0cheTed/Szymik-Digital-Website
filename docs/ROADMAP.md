@@ -65,7 +65,7 @@ Scope:
 - no client portal
 - no automation
 
-### Current Redesign Slice
+### Completed Redesign Slice
 
 Phase 3 Slice 2 - Review Homepage V2 Preview + Refine Responsiveness.
 
@@ -89,20 +89,46 @@ Status:
 
 Implemented as a bounded homepage v2 polish pass on `redesign/site-v2-homepage`. The pass improved hero responsiveness, selected work card presentation, CTA touch targets, and card rhythm while preserving static export compatibility and the branch/preview workflow.
 
-### Next Recommended Slice
+### Current Redesign Slice
 
 Phase 3 Slice 3 - Manual Browser Acceptance + Selected Work Proof Assets.
 
 Goal:
 
-Open the homepage v2 preview in a manual browser session across desktop and mobile widths, then gather or confirm any real proof assets, screenshots, and permission details before moving beyond the homepage.
+Bring the homepage closer to the approved dark/green Concept Preview direction by using real preview assets for Bent Burger, Country Pizza, and Libra Support Services in the hero and selected-work sections.
+
+Scope:
+
+- homepage concept-match polish only
+- hero project-preview collage
+- selected work preview assets
+- homepage-only dark header treatment
+- truthful wording for concept previews and real local-business website work
+- no Hostinger production upload
+- no merge to main
+- no CRM integration
+- no client portal
+- no automation
+
+Status:
+
+Implemented on `redesign/site-v2-homepage` as a homepage-first concept-match/assets pass. The hero now uses layered browser-window previews, selected work uses the provided real assets, and the homepage header has a dark/premium treatment while the stable live v1 remains protected.
+
+### Next Recommended Slice
+
+Phase 3 Slice 4 - Manual Browser Acceptance + Homepage Asset QA.
+
+Goal:
+
+Open the homepage v2 preview in a manual browser session across desktop and mobile widths, then check the preview asset cropping, header/menu behaviour, selected-work proof wording, and final CTA flow before moving beyond the homepage.
 
 Scope:
 
 - manual homepage preview acceptance
 - desktop and mobile browser review
-- selected work proof/permission check
-- screenshot or asset decisions for Bent Burger, Country Pizza, and Libra Support Services
+- hero collage and selected-work image cropping
+- homepage header/mobile menu QA
+- selected work proof/permission wording check
 - no Hostinger production upload
 - no merge to main
 - no CRM integration

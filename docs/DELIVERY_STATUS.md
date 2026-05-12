@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3 Slice 2 - Homepage V2 Responsive Polish
+Phase 3 Slice 3 - Homepage V2 Concept Match + Work Preview Assets
 
 ## Current Focus
 
-Responsive polish and browser-review fixes for the homepage v2 preview.
+Concept-match pass using real work preview assets on the homepage v2 preview.
 
 ## Completed
 
@@ -141,18 +141,26 @@ Responsive polish and browser-review fixes for the homepage v2 preview.
 - Local preview server smoke check passed at `http://localhost:3000`
 - Browser automation was attempted through the in-app browser plugin, but the available Node REPL runtime was `v22.20.0` and the plugin requires `>= v22.22.0`; no project dependency was added to work around this
 - Phase 3 Slice 2 stayed homepage-first; no production upload, merge to main, CRM changes, contact form/runtime changes, analytics/cookie/privacy changes, package/dependency changes, new routes, or folder restructure were made
+- Phase 3 Slice 3 complete: homepage v2 concept-match and work preview asset pass applied
+- Homepage hero now includes an overlapping browser-window style project preview collage using Bent Burger, Country Pizza, and Libra Support Services assets from `public/images/work/`
+- Selected Work cards now use the same real preview assets with useful alt text and stronger browser-window framing
+- Homepage header now uses a dark/premium treatment on the homepage while preserving existing routes and the non-homepage header behaviour
+- Service, process, trust, and CTA sections were kept compact and aligned with the dark/green concept direction without changing their route targets or core messaging
+- Work wording remains truthful: Bent Burger and Country Pizza are presented as concept/refresh previews, and Libra Support Services is referenced cautiously as local business website work without invented metrics or paid case-study claims
+- Phase 3 Slice 3 stayed homepage-first; no production upload, merge to main, CRM changes, agreement pack changes, ops workspace changes, contact form/runtime changes, analytics/cookie/privacy changes, package/dependency changes, new routes, or folder restructure were made
 
 ## Files Changed In Latest Slice
 
 - `src/app/page.tsx`
+- `src/components/site-header.tsx`
 - `docs/DELIVERY_STATUS.md`
 - `docs/ROADMAP.md`
 
 ## Next Recommended Slice
 
-Phase 3 Slice 3 - Manual Browser Acceptance + Selected Work Proof Assets.
+Phase 3 Slice 4 - Manual Browser Acceptance + Homepage Asset QA.
 
-Open the homepage v2 preview in a manual browser session across desktop and mobile widths, then gather or confirm any real proof assets/screenshots and permission details before moving beyond the homepage.
+Open the homepage v2 preview in a manual browser session across desktop and mobile widths, then check the preview asset cropping, header/menu behaviour, selected-work proof wording, and final CTA flow before moving beyond the homepage.
 
 ## Open Decisions
 

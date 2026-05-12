@@ -1,17 +1,19 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
-import { BrandLogo } from "@/components/brand-logo";
 import { CtaLink } from "@/components/cta-link";
 import { SectionHeading } from "@/components/section-heading";
 import { createPageMetadata } from "@/lib/metadata";
-import { services, siteSettings } from "@/lib/site";
+import { services } from "@/lib/site";
 
 const selectedWork = [
   {
     title: "Bent Burger",
     label: "Concept preview",
-    category: "Food and local hospitality",
+    category: "Takeaway website concept",
     accent: "from-[#57d681]/28 via-white/10 to-[#101713]",
+    image: "/images/work/bent-burger-preview.png",
+    alt: "Bent Burger website concept preview showing a dark burger restaurant homepage",
     summary:
       "A bold restaurant website refresh direction shaped around appetite, fast scanning, and a clearer route from interest to order or visit.",
     detail:
@@ -20,8 +22,10 @@ const selectedWork = [
   {
     title: "Country Pizza",
     label: "Website refresh",
-    category: "Local food business",
+    category: "Restaurant website concept",
     accent: "from-[#57d681]/20 via-[#f3f6f1]/12 to-[#172119]",
+    image: "/images/work/country-pizza-preview.png",
+    alt: "Country Pizza restaurant website concept preview with menu-led sections",
     summary:
       "A warmer local-business website direction for menu-led browsing, simple offers, trust cues, and easy customer action on mobile.",
     detail:
@@ -30,14 +34,59 @@ const selectedWork = [
   {
     title: "Libra Support Services",
     label: "Local business website",
-    category: "Care and support services",
+    category: "Home care website",
     accent: "from-[#57d681]/18 via-[#dfffe8]/10 to-[#0b1410]",
+    image: "/images/work/libra-support-preview.png",
+    alt: "Libra Support Services home care website preview with service-led content",
     summary:
       "A clearer service-led website foundation for explaining support, building trust, and helping people find the right contact route.",
     detail:
       "Real external website work referenced cautiously while permissioned proof, live links, and case-study details are confirmed.",
   },
 ];
+
+function BrowserFrame({
+  work,
+  className = "",
+  priority = false,
+}: {
+  work: (typeof selectedWork)[number];
+  className?: string;
+  priority?: boolean;
+}) {
+  return (
+    <div
+      className={[
+        "overflow-hidden rounded-[1.1rem] border border-white/12 bg-[#111a14] shadow-[0_30px_80px_rgba(0,0,0,0.42)]",
+        className,
+      ]
+        .join(" ")
+        .trim()}
+    >
+      <div className="flex items-center justify-between border-b border-white/10 bg-black/32 px-3 py-2">
+        <div className="flex items-center gap-1.5">
+          <span className="h-2.5 w-2.5 rounded-full bg-accent" />
+          <span className="h-2.5 w-2.5 rounded-full bg-white/35" />
+          <span className="h-2.5 w-2.5 rounded-full bg-white/18" />
+        </div>
+        <span className="font-mono text-[0.62rem] uppercase tracking-[0.18em] text-white/48">
+          {work.label}
+        </span>
+      </div>
+      <div className={`relative aspect-[16/10] bg-gradient-to-br ${work.accent}`}>
+        <Image
+          src={work.image}
+          alt={work.alt}
+          fill
+          priority={priority}
+          sizes="(min-width: 1024px) 520px, (min-width: 640px) 72vw, 92vw"
+          className="object-cover object-top"
+        />
+        <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-white/10" />
+      </div>
+    </div>
+  );
+}
 
 const processSteps = [
   {
@@ -99,16 +148,17 @@ export const metadata: Metadata = createPageMetadata({
 export default function Home() {
   return (
     <div className="bg-[#050806] text-white">
-      <section className="relative overflow-hidden px-0 pb-16 pt-10 sm:pb-20 sm:pt-14 lg:pb-24 lg:pt-20">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_80%_0%,_rgba(87,214,129,0.26),_transparent_34%),linear-gradient(135deg,_#050806_0%,_#0a120d_48%,_#101713_100%)]" />
+      <section className="relative overflow-hidden px-0 pb-14 pt-8 sm:pb-18 sm:pt-12 lg:pb-20 lg:pt-16">
+        <div className="absolute inset-0 bg-[linear-gradient(90deg,_rgba(87,214,129,0.08)_1px,_transparent_1px),linear-gradient(180deg,_rgba(87,214,129,0.06)_1px,_transparent_1px)] bg-[length:82px_82px] opacity-45" />
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,_rgba(87,214,129,0.32),_transparent_28%),radial-gradient(circle_at_24%_8%,_rgba(87,214,129,0.12),_transparent_22%),linear-gradient(135deg,_#030504_0%,_#07100b_42%,_#111713_100%)]" />
         <div className="site-container relative">
-          <div className="grid gap-8 lg:grid-cols-[minmax(0,1.06fr)_minmax(20rem,0.94fr)] lg:items-end xl:gap-12">
-            <div className="max-w-5xl space-y-7 sm:space-y-8">
+          <div className="grid gap-9 lg:grid-cols-[minmax(0,0.92fr)_minmax(30rem,1.08fr)] lg:items-center xl:gap-12">
+            <div className="max-w-4xl space-y-7 sm:space-y-8">
               <span className="pill max-w-full border-white/12 bg-white/10 text-white/78">
                 Premium website v2 concept preview
               </span>
               <div className="space-y-5 sm:space-y-6">
-                <h1 className="max-w-5xl text-4xl font-semibold leading-[1.05] text-white sm:text-6xl lg:text-7xl">
+                <h1 className="max-w-5xl text-4xl font-semibold leading-[1.04] text-white sm:text-6xl lg:text-[4.65rem]">
                   Websites that make local businesses look ready for bigger
                   things.
                 </h1>
@@ -135,44 +185,33 @@ export default function Home() {
               </div>
             </div>
 
-            <aside className="rounded-[1.75rem] border border-white/10 bg-white/[0.07] p-5 shadow-[0_30px_90px_rgba(0,0,0,0.32)] backdrop-blur-sm sm:p-7 lg:mb-1">
-              <div className="flex items-center gap-4">
-                <div className="flex h-14 w-14 items-center justify-center rounded-[1.15rem] bg-white/10 p-2.5">
-                  <BrandLogo
-                    priority
-                    variant="mark"
-                    sizes="56px"
-                    className="h-auto w-full"
-                    alt={`${siteSettings.businessName} logo mark`}
-                  />
-                </div>
-                <div>
-                  <p className="font-mono text-xs uppercase tracking-[0.22em] text-accent">
-                    Local studio
-                  </p>
-                  <p className="mt-1 text-base font-semibold text-white sm:text-lg">
-                    Ric build, Hannah support
-                  </p>
-                </div>
+            <div className="relative min-h-[29rem] sm:min-h-[34rem] lg:min-h-[38rem]">
+              <div className="absolute inset-x-8 top-7 hidden h-56 rounded-full bg-accent/18 blur-3xl sm:block" />
+              <BrowserFrame
+                work={selectedWork[0]}
+                priority
+                className="relative z-20 mx-auto w-[94%] max-w-[38rem] lg:ml-auto lg:mr-0"
+              />
+              <BrowserFrame
+                work={selectedWork[1]}
+                className="absolute left-0 top-[13rem] z-10 w-[58%] min-w-[15rem] rotate-[-4deg] sm:top-[15.5rem] lg:top-[17rem]"
+              />
+              <BrowserFrame
+                work={selectedWork[2]}
+                className="absolute bottom-0 right-0 z-30 w-[64%] min-w-[17rem] rotate-[3deg]"
+              />
+              <div className="absolute right-5 top-4 z-40 rounded-full border border-accent/30 bg-accent px-4 py-2 text-sm font-semibold text-surface-strong shadow-[0_18px_40px_rgba(87,214,129,0.24)]">
+                Concept Preview first
               </div>
-              <div className="mt-7 grid gap-3">
-                {[
-                  "Dark/green branded direction",
-                  "Concept Preview before full build",
-                  "Website refresh and local growth pathways",
-                  "Truthful selected work, clearly labelled",
-                ].map((item) => (
-                  <p key={item} className="list-check text-white/78">
-                    {item}
-                  </p>
-                ))}
+              <div className="absolute bottom-9 left-5 z-40 hidden rounded-[1.1rem] border border-white/12 bg-black/50 px-4 py-3 text-sm leading-6 text-white/78 backdrop-blur-sm sm:block">
+                Selected work, refresh ideas, and real local-business context
               </div>
-            </aside>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="selected-work" className="page-section bg-[#08100b]">
+      <section id="selected-work" className="bg-[#08100b] py-14 sm:py-16 lg:py-20">
         <div className="site-container">
           <div className="flex flex-col gap-6 lg:flex-row lg:items-end lg:justify-between">
             <SectionHeading
@@ -190,23 +229,27 @@ export default function Home() {
             {selectedWork.map((work) => (
               <article
                 key={work.title}
-                className="flex h-full min-h-[27rem] flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.06] transition duration-300 hover:-translate-y-1 hover:border-accent/35"
+                className="group flex h-full min-h-[31rem] flex-col overflow-hidden rounded-[1.5rem] border border-white/10 bg-white/[0.06] transition duration-300 hover:-translate-y-1 hover:border-accent/35"
               >
-                <div
-                  className={`relative min-h-36 border-b border-white/10 bg-gradient-to-br ${work.accent} p-4 sm:min-h-40`}
-                >
-                  <div className="absolute inset-x-4 bottom-4 rounded-[1rem] border border-white/14 bg-black/24 p-3 shadow-[0_22px_50px_rgba(0,0,0,0.24)] backdrop-blur-sm">
+                <div className="relative aspect-[16/11] overflow-hidden border-b border-white/10 bg-black">
+                  <Image
+                    src={work.image}
+                    alt={work.alt}
+                    fill
+                    sizes="(min-width: 1024px) 33vw, (min-width: 640px) 50vw, 92vw"
+                    className="object-cover object-top transition duration-500 group-hover:scale-[1.03]"
+                  />
+                  <div className="absolute inset-x-0 top-0 flex items-center justify-between border-b border-white/10 bg-black/50 px-4 py-2 backdrop-blur-sm">
                     <div className="flex items-center gap-1.5">
                       <span className="h-2.5 w-2.5 rounded-full bg-accent" />
                       <span className="h-2.5 w-2.5 rounded-full bg-white/35" />
-                      <span className="h-2.5 w-2.5 rounded-full bg-white/20" />
+                      <span className="h-2.5 w-2.5 rounded-full bg-white/18" />
                     </div>
-                    <div className="mt-4 grid gap-2">
-                      <span className="h-2 rounded-full bg-white/58" />
-                      <span className="h-2 w-2/3 rounded-full bg-white/24" />
-                      <span className="h-2 w-5/6 rounded-full bg-accent/42" />
-                    </div>
+                    <span className="font-mono text-[0.62rem] uppercase tracking-[0.18em] text-white/56">
+                      Preview
+                    </span>
                   </div>
+                  <div className="absolute inset-0 bg-gradient-to-t from-black/20 via-transparent to-transparent" />
                 </div>
                 <div className="flex flex-1 flex-col p-5 sm:p-7">
                   <div className="flex flex-wrap items-center gap-3">

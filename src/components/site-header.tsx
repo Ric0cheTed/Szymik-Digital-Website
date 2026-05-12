@@ -18,15 +18,30 @@ function isCurrentPath(pathname: string, href: string) {
 export function SiteHeader() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
+  const isHome = pathname === "/";
 
   return (
     <header className="sticky top-0 z-[60]">
       <div className="site-container pt-4">
-        <div className="rounded-full border border-black/6 bg-white/90 px-3 py-3 shadow-[0_24px_56px_rgba(9,18,13,0.12)] backdrop-blur-xl">
+        <div
+          className={[
+            "rounded-full px-3 py-3 backdrop-blur-xl",
+            isHome
+              ? "border border-white/10 bg-[#050806]/88 shadow-[0_24px_70px_rgba(0,0,0,0.3)]"
+              : "border border-black/6 bg-white/90 shadow-[0_24px_56px_rgba(9,18,13,0.12)]",
+          ]
+            .join(" ")
+            .trim()}
+        >
           <div className="flex items-center justify-between gap-4">
             <Link
               href="/"
-              className="flex items-center gap-2.5 rounded-full px-2.5 py-2 transition hover:bg-black/5"
+              className={[
+                "flex items-center gap-2.5 rounded-full px-2.5 py-2 transition",
+                isHome ? "hover:bg-white/10" : "hover:bg-black/5",
+              ]
+                .join(" ")
+                .trim()}
               onClick={() => setIsOpen(false)}
             >
               <BrandLogo
@@ -40,8 +55,12 @@ export function SiteHeader() {
                 className="flex items-baseline text-[1.35rem] font-extrabold leading-none tracking-normal sm:text-[1.5rem]"
                 aria-hidden="true"
               >
-                <span className="text-foreground">Szymik</span>
-                <span className="text-accent-strong">Digital</span>
+                <span className={isHome ? "text-white" : "text-foreground"}>
+                  Szymik
+                </span>
+                <span className={isHome ? "text-accent" : "text-accent-strong"}>
+                  Digital
+                </span>
               </span>
               <span className="sr-only">{siteName}</span>
             </Link>
@@ -58,8 +77,12 @@ export function SiteHeader() {
                     className={[
                       "rounded-full px-4 py-2 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/35",
                       active
-                        ? "bg-surface-strong !text-white hover:!text-white focus-visible:!text-white"
-                        : "text-muted hover:bg-black/5 hover:text-foreground",
+                        ? isHome
+                          ? "bg-accent !text-surface-strong hover:!text-surface-strong focus-visible:!text-surface-strong"
+                          : "bg-surface-strong !text-white hover:!text-white focus-visible:!text-white"
+                        : isHome
+                          ? "text-white/72 hover:bg-white/10 hover:text-white"
+                          : "text-muted hover:bg-black/5 hover:text-foreground",
                     ]
                       .join(" ")
                       .trim()}
@@ -78,7 +101,14 @@ export function SiteHeader() {
 
             <button
               type="button"
-              className="inline-flex h-11 w-11 items-center justify-center rounded-full border border-border text-foreground transition hover:border-accent/40 hover:text-accent-strong md:hidden"
+              className={[
+                "inline-flex h-11 w-11 items-center justify-center rounded-full border transition md:hidden",
+                isHome
+                  ? "border-white/14 text-white hover:border-accent/40 hover:text-accent"
+                  : "border-border text-foreground hover:border-accent/40 hover:text-accent-strong",
+              ]
+                .join(" ")
+                .trim()}
               aria-expanded={isOpen}
               aria-label={isOpen ? "Close menu" : "Open menu"}
               onClick={() => setIsOpen((open) => !open)}
@@ -93,7 +123,16 @@ export function SiteHeader() {
         </div>
 
         {isOpen ? (
-          <div className="panel mt-3 p-4 md:hidden">
+          <div
+            className={[
+              "mt-3 rounded-[1.5rem] border p-4 shadow-[0_24px_56px_rgba(9,18,13,0.18)] backdrop-blur-xl md:hidden",
+              isHome
+                ? "border-white/10 bg-[#050806]/94"
+                : "border-border/80 bg-white/90",
+            ]
+              .join(" ")
+              .trim()}
+          >
             <nav className="grid gap-2">
               {primaryNavigation.map((item) => {
                 const active = isCurrentPath(pathname, item.href);
@@ -106,8 +145,12 @@ export function SiteHeader() {
                     className={[
                       "rounded-[1.3rem] px-4 py-3 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/35",
                       active
-                        ? "bg-surface-strong !text-white hover:!text-white focus-visible:!text-white"
-                        : "bg-white text-foreground hover:border-accent/40 hover:bg-accent-soft",
+                        ? isHome
+                          ? "bg-accent !text-surface-strong hover:!text-surface-strong focus-visible:!text-surface-strong"
+                          : "bg-surface-strong !text-white hover:!text-white focus-visible:!text-white"
+                        : isHome
+                          ? "bg-white/8 text-white hover:bg-white/12"
+                          : "bg-white text-foreground hover:border-accent/40 hover:bg-accent-soft",
                     ]
                       .join(" ")
                       .trim()}
