@@ -275,7 +275,7 @@ Status:
 
 Implemented on `redesign/site-v2-homepage`. The Services route now uses the accepted dark/green v2 visual system with four clear service pathway cards, preserved anchors, a How to choose section, Concept Preview delivery process, practical support panel, and conversion CTA while keeping claims truthful and automation discovery-first.
 
-### Current Redesign Slice
+### Completed Redesign Slice
 
 Phase 3 Slice 8B - V2 Header Consistency Across Homepage, Work, and Services.
 
@@ -300,7 +300,7 @@ Status:
 
 Implemented on `redesign/site-v2-homepage`. The accepted dark v2 header now applies to homepage, Work, and Services, with light readable nav text, green active state, readable CTA, and route-safe behaviour for pages not yet redesigned.
 
-### Next Recommended Slice
+### Completed Redesign Slice
 
 Phase 3 Slice 9 - Contact / Enquiry V2.
 
@@ -315,6 +315,33 @@ Scope:
 - preserve email-draft/runtime behaviour
 - preserve analytics/cookie/privacy setup
 - preserve Hannah/Ric review expectation wording
+- no Hostinger production upload
+- no merge to main
+- no CRM integration
+- no client portal
+- no automation
+
+Status:
+
+Implemented on `redesign/site-v2-homepage`. The Contact / Enquiry route now uses the accepted dark/green v2 visual system with a premium hero, low-pressure enquiry flow, Hannah/Ric review explanation, support cards, Concept Preview note, dark-styled enquiry form, and closing reassurance CTA.
+
+Runtime guardrail:
+
+The existing enquiry form behaviour was preserved. The form still prepares a mail draft addressed to the Szymik Digital enquiry inbox and keeps the existing fields, field names, required fields, consent checkbox, status message, and client-side submit flow. No backend submission logic, CRM integration, email automation, new dependency, route change, merge to main, or Hostinger production upload was added.
+
+### Next Recommended Slice
+
+Phase 3 Slice 10 - About / Founder Story V2.
+
+Goal:
+
+Redesign the About / founder-story route using the accepted v2 visual standard so the public site tells the Ric/Hannah local-studio story with the same premium dark/green system.
+
+Scope:
+
+- `/about` or existing founder/about route only, if present
+- keep route structure intact
+- preserve analytics/cookie/privacy setup
 - no Hostinger production upload
 - no merge to main
 - no CRM integration

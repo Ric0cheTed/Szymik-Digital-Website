@@ -28,7 +28,7 @@ const timescaleOptions = [
 const contactMethods = ["Email", "Phone", "Video call"];
 
 const inputClassName =
-  "mt-2 w-full rounded-[1.35rem] border border-border bg-white px-4 py-2.5 text-sm text-foreground outline-none transition duration-200 placeholder:text-muted/70 focus:border-accent/40 focus:ring-4 focus:ring-accent-soft";
+  "mt-2 w-full rounded-[0.95rem] border border-white/12 bg-black/22 px-4 py-3 text-sm text-white outline-none transition duration-200 placeholder:text-white/36 focus:border-accent/45 focus:ring-4 focus:ring-accent/15";
 
 function getValue(formData: FormData, key: string) {
   return String(formData.get(key) ?? "").trim();
@@ -51,9 +51,9 @@ function Field({
 }: FieldProps) {
   return (
     <div className={className}>
-      <label htmlFor={htmlFor} className="text-sm font-semibold text-foreground">
+      <label htmlFor={htmlFor} className="text-sm font-semibold text-white">
         {label}
-        {required ? <span className="text-accent-strong"> *</span> : null}
+        {required ? <span className="text-accent"> *</span> : null}
       </label>
       {children}
     </div>
@@ -104,26 +104,31 @@ export function EnquiryForm() {
   }
 
   return (
-    <form className="panel p-5 sm:p-6 lg:p-7" onSubmit={handleSubmit}>
+    <form
+      className="rounded-[1.15rem] border border-accent/25 bg-[radial-gradient(circle_at_72%_0%,_rgba(87,214,129,0.13),_transparent_28%),linear-gradient(135deg,_rgba(255,255,255,0.075),_rgba(255,255,255,0.04))] p-5 shadow-[0_28px_90px_rgba(0,0,0,0.28)] sm:p-6 lg:p-7"
+      onSubmit={handleSubmit}
+    >
       <div className="mb-6 space-y-3">
         <div>
-          <span className="eyebrow">Project enquiry</span>
-          <h2 className="mt-3 text-2xl font-semibold text-foreground sm:text-3xl">
+          <span className="font-mono text-xs font-semibold uppercase tracking-[0.24em] text-accent">
+            Project enquiry
+          </span>
+          <h2 className="mt-3 text-2xl font-semibold text-white sm:text-3xl">
             Prepare a clear project email
           </h2>
         </div>
-        <p className="text-sm leading-7 text-muted sm:text-base sm:leading-8">
+        <p className="text-sm leading-7 text-white/68 sm:text-base sm:leading-8">
           This form prepares a draft email addressed to {enquiryEmail}. It keeps
           the enquiry process straightforward and gives you a chance to review
           everything before sending. Enquiries go to the main Szymik Digital
           inbox for Hannah to log and triage before Ric reviews the scope,
           quote, and next step.
         </p>
-        <div className="rounded-[1.35rem] border border-border bg-background/75 p-3.5 sm:p-4">
-          <p className="font-mono text-xs uppercase tracking-[0.22em] text-muted">
+        <div className="rounded-[0.95rem] border border-white/10 bg-black/20 p-3.5 sm:p-4">
+          <p className="font-mono text-xs uppercase tracking-[0.22em] text-white/48">
             Fit note
           </p>
-          <p className="mt-2 text-sm leading-7 text-muted">
+          <p className="mt-2 text-sm leading-7 text-white/64">
             Include the practical need, your current website link if you have
             one, location or service area if relevant, what you want improved,
             your rough timescale, budget range or whether you are unsure, and
@@ -280,7 +285,7 @@ export function EnquiryForm() {
             {contactMethods.map((method, index) => (
               <label
                 key={method}
-                className="flex cursor-pointer items-center gap-3 rounded-[1.35rem] border border-border bg-white px-4 py-2.5 text-sm font-medium text-foreground transition hover:border-accent/40 hover:bg-accent-soft"
+                className="flex cursor-pointer items-center gap-3 rounded-[0.95rem] border border-white/12 bg-black/22 px-4 py-3 text-sm font-medium text-white transition hover:border-accent/40 hover:bg-accent/10"
               >
                 <input
                   type="radio"
@@ -296,7 +301,7 @@ export function EnquiryForm() {
         </Field>
 
         <div className="sm:col-span-2">
-          <label className="flex cursor-pointer items-start gap-3 rounded-[1.35rem] border border-border bg-white px-4 py-3.5 text-sm leading-7 text-muted transition hover:border-accent/40 hover:bg-accent-soft">
+          <label className="flex cursor-pointer items-start gap-3 rounded-[0.95rem] border border-white/12 bg-black/22 px-4 py-3.5 text-sm leading-7 text-white/68 transition hover:border-accent/40 hover:bg-accent/10">
             <input
               type="checkbox"
               name="consent"
@@ -313,28 +318,28 @@ export function EnquiryForm() {
       </div>
 
       <div className="mt-6 space-y-3">
-        <p className="text-sm leading-7 text-muted">
+        <p className="text-sm leading-7 text-white/64">
           There is no black-box submission here. The enquiry details open in
           your own email app so the message is visible, editable, and easy to
           send directly.
         </p>
-        <p className="text-sm leading-7 text-muted">
+        <p className="text-sm leading-7 text-white/64">
           If your device does not open an email app automatically, you can send
           the same details directly to{" "}
           <a
             href={`mailto:${enquiryEmail}`}
-            className="font-semibold text-accent-strong transition hover:text-foreground"
+            className="font-semibold text-accent transition hover:text-white"
           >
             {enquiryEmail}
           </a>
           .
         </p>
-        <button type="submit" className="btn-primary">
+        <button type="submit" className="btn-primary !text-surface-strong hover:!text-surface-strong">
           {siteSettings.ctaLabels.enquiry}
           <span aria-hidden>{">"}</span>
         </button>
         {status ? (
-          <p className="text-sm leading-7 text-accent-strong" aria-live="polite">
+          <p className="text-sm leading-7 text-accent" aria-live="polite">
             {status}
           </p>
         ) : null}

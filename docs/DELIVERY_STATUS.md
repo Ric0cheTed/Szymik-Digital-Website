@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3 Slice 8B - V2 Header Consistency Across Homepage, Work, and Services
+Phase 3 Slice 9 - Contact / Enquiry V2
 
 ## Current Focus
 
-Header consistency fix across homepage, Work, and Services v2 pages.
+Contact / Enquiry v2 redesign using the accepted dark/green visual system while preserving the existing enquiry runtime behaviour.
 
 ## Completed
 
@@ -200,18 +200,28 @@ Header consistency fix across homepage, Work, and Services v2 pages.
 - Mobile menu styling now follows the same readable dark v2 treatment on homepage, Work, and Services
 - Non-v2 routes such as Contact, Privacy Policy, and Terms keep the existing readable light header treatment for route safety until their own v2 slices
 - Phase 3 Slice 8B stayed header-focused; no homepage redesign, Work content changes, Services content changes, route changes, contact/runtime changes, analytics/cookie/privacy changes, package/dependency changes, CRM changes, agreement pack changes, ops workspace changes, folder restructure, production upload, or merge to main were made
+- Phase 3 Slice 9 complete: Contact / Enquiry v2 redesigned on `redesign/site-v2-homepage`
+- `/contact` now uses the accepted homepage/work/services v2 visual system: dark/charcoal base, white typography, vivid Szymik green accents, rounded dark cards, compact premium rhythm, and a clear conversion flow
+- Contact hero now invites visitors to "Tell us what you're building" with low-pressure project enquiry messaging for website refreshes, starter websites, local growth websites, and practical digital tools
+- A concise "What happens next" flow now explains send enquiry, Hannah/Ric review, next-step confirmation, and quote/discovery/project start without promising instant replies or guaranteed work
+- Supporting Contact panels now cover what to include, project pathway options, Concept Preview where suitable, direct contact details, public profiles, and an email-template reference
+- The existing `EnquiryForm` was restyled to the dark v2 system while preserving its existing fields, field names, required fields, consent checkbox, mailto/email-draft submit behaviour, status message, and Hannah/Ric review wording
+- `SiteHeader` now applies the accepted dark/green v2 header treatment on `/contact` as well as `/`, `/work`, and `/services`
+- Phase 3 Slice 9 stayed Contact-page first; no production upload, merge to main, CRM changes, agreement pack changes, ops workspace changes, backend changes, email automation, analytics/cookie/privacy changes, package/dependency changes, new routes, or folder restructure were made
 
 ## Files Changed In Latest Slice
 
 - `src/components/site-header.tsx`
+- `src/components/enquiry-form.tsx`
+- `src/app/contact/page.tsx`
 - `docs/DELIVERY_STATUS.md`
 - `docs/ROADMAP.md`
 
 ## Next Recommended Slice
 
-Phase 3 Slice 9 - Contact / Enquiry V2.
+Phase 3 Slice 10 - About / Founder Story V2.
 
-Redesign the Contact / Enquiry route using the accepted v2 visual system while preserving the existing enquiry form fields, consent behaviour, email-draft/runtime behaviour, analytics/cookie/privacy setup, and Hannah/Ric review expectations.
+Redesign the About / founder-story route using the accepted v2 visual system, keeping the local-studio positioning, Ric/Hannah delivery story, and preview-branch guardrails intact.
 
 ## Open Decisions
 
@@ -224,6 +234,6 @@ Redesign the Contact / Enquiry route using the accepted v2 visual system while p
 
 ## Boundaries
 
-- Current work is homepage-first v2 redesign preview only
+- Current work is v2 redesign preview only
 - Stable live v1 remains protected on main and Hostinger production should not be updated from this slice
 - No merge to main, production upload, broad site redesign, CRM repo change, agreement pack change, business workspace docs change, client project repo change, backend/database/payment change, analytics/cookie/privacy change, package/dependency change, or contact form/runtime change was introduced
