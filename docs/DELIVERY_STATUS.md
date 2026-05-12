@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Post-Live Slice 1
+Phase 3 Slice 1 - Website V2 Homepage Redesign Branch
 
 ## Current Focus
 
-Google Analytics and consent-aware cookie setup added.
+Homepage-first premium v2 redesign preview on a separate branch.
 
 ## Completed
 
@@ -125,19 +125,27 @@ Google Analytics and consent-aware cookie setup added.
 - Google Search Console was already set up separately and the sitemap was submitted before this slice
 - Szymik Digital remains Hostinger-hosted for production, with Vercel used only for preview/testing
 - This slice added no CRM, payment, backend, database, Google Ads, Google Tag Manager, marketing pixels, package/dependency, deployment setting, or client portal changes
+- Phase 3 Slice 1 v2 homepage redesign implemented on `redesign/site-v2-homepage`
+- Homepage now follows the approved dark charcoal/black, white typography, vivid green accent, premium local-studio Concept Preview direction
+- Hero message now centres on "Websites that make local businesses look ready for bigger things."
+- Homepage CTAs now include Start a project and View our work
+- Selected Work now highlights Bent Burger, Country Pizza, and Libra Support Services with honest labels for concept preview, website refresh, and local business website context
+- Service pathway cards remain aligned to Website Refresh, Starter Website, Local Growth Website, and Automation / Custom Tool Discovery
+- Homepage process now includes Brief, Concept Preview, Build, Review, and Launch
+- Homepage trust/delivery section now reflects clear process, practical results, local-business focus, and honest support with Ric/Hannah delivery context
+- This v2 slice was homepage-first only; no production upload, merge to main, CRM changes, contact form changes, analytics/cookie/privacy changes, package/dependency changes, or folder restructure were made
 
 ## Files Changed In Latest Slice
 
-- `docs/SZYMIK_DIGITAL_MASTER_CONTROL.md`
+- `src/app/page.tsx`
 - `docs/DELIVERY_STATUS.md`
 - `docs/ROADMAP.md`
-- `docs/PROJECT_TRUTH.md`
 
 ## Next Recommended Slice
 
-Phase 3 Slice 1 - Website v2 Redesign Branch + Homepage Concept Build.
+Phase 3 Slice 2 - Review Homepage V2 Preview + Refine Responsiveness.
 
-Start the premium website redesign separately from the current live v1 by creating/using a redesign branch and building the homepage toward the approved dark/green Szymik Digital Concept Preview direction. No Hostinger production upload, CRM integration, client portal, or automation should be included in that slice.
+Review the homepage v2 preview in browser across mobile and desktop, then make a bounded refinement pass for spacing, contrast, copy, and selected-work proof accuracy before considering any wider route redesign.
 
 ## Open Decisions
 
@@ -150,6 +158,6 @@ Start the premium website redesign separately from the current live v1 by creati
 
 ## Boundaries
 
-- Current work is strategy control documentation only
-- No runtime, source, public UI, public route, styling, package, dependency, deployment, analytics/cookie, form, CRM repo, backend, database, payment, or client portal changes were introduced
-- Existing stable live v1 website baseline was preserved
+- Current work is homepage-first v2 redesign preview only
+- Stable live v1 remains protected on main and Hostinger production should not be updated from this slice
+- No merge to main, production upload, broad site redesign, CRM repo change, agreement pack change, business workspace docs change, client project repo change, backend/database/payment change, analytics/cookie/privacy change, package/dependency change, or contact form/runtime change was introduced

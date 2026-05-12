@@ -42,13 +42,17 @@ Brief
 
 Concept Previews are visual direction tools. They help align style, structure, and expectations before build, but they are not pixel-perfect technical obligations.
 
-### Next Recommended Slice
+### Current Redesign Slice
 
 Phase 3 Slice 1 - Website v2 Redesign Branch + Homepage Concept Build.
 
 Goal:
 
 Start the premium website redesign separately from the current live v1 by creating/using a redesign branch and building the homepage toward the approved dark/green Szymik Digital Concept Preview direction.
+
+Status:
+
+Implemented on `redesign/site-v2-homepage` as a homepage-first preview slice. The stable live v1 remains protected on main, and no Hostinger production upload should be prepared from this slice.
 
 Scope:
 
@@ -57,6 +61,26 @@ Scope:
 - selected work previews for Bent Burger, Country Pizza, and Libra Support Services where suitable
 - preserve existing live v1 until approved
 - no Hostinger production upload
+- no CRM integration
+- no client portal
+- no automation
+
+### Next Recommended Slice
+
+Phase 3 Slice 2 - Review Homepage V2 Preview + Refine Responsiveness.
+
+Goal:
+
+Review the homepage v2 preview in browser across mobile and desktop, then make a bounded refinement pass for spacing, contrast, copy, and selected-work proof accuracy before moving to any wider route redesign.
+
+Scope:
+
+- homepage preview QA only
+- mobile and desktop spacing review
+- selected work wording/proof accuracy review
+- CTA and route preservation check
+- no Hostinger production upload
+- no merge to main
 - no CRM integration
 - no client portal
 - no automation
