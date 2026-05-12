@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3 Slice 7 - Work / Case Studies V2
+Phase 3 Slice 7B - V2 Header Consistency Across Homepage and Work
 
 ## Current Focus
 
-Work / Case Studies route redesigned using the accepted homepage v2 visual system.
+Header consistency fix for homepage and Work v2 pages.
 
 ## Completed
 
@@ -177,10 +177,16 @@ Work / Case Studies route redesigned using the accepted homepage v2 visual syste
 - A concise Concept Preview section now explains Brief, Concept Preview, Review / direction lock, Build, and Launch / handover as the reason previews appear on the Work page
 - The Work page CTA now asks "Want your business to look this polished online?" with Start a project and View services actions
 - Phase 3 Slice 7 stayed Work-page first; no production upload, merge to main, CRM changes, agreement pack changes, ops workspace changes, contact form/runtime changes, analytics/cookie/privacy changes, package/dependency changes, new routes, or folder restructure were made
+- Phase 3 Slice 7B complete: v2 header consistency fixed across homepage and Work
+- `SiteHeader` now applies the accepted dark/green v2 header treatment on both `/` and `/work`, so the redesigned pages share the same premium dark shell, light readable nav text, vivid green active state, and green Start a project CTA
+- Active navigation remains route-aware: Home is active on `/`, and Work is active on `/work`
+- Mobile menu styling now follows the same readable dark v2 treatment on both homepage and Work
+- Other routes keep the existing readable light header treatment for route safety until their v2 redesign slices are implemented
+- Phase 3 Slice 7B stayed header-focused; no homepage section redesign, Work content redesign, route changes, contact/runtime changes, analytics/cookie/privacy changes, package/dependency changes, CRM changes, agreement pack changes, ops workspace changes, folder restructure, production upload, or merge to main were made
 
 ## Files Changed In Latest Slice
 
-- `src/app/work/page.tsx`
+- `src/components/site-header.tsx`
 - `docs/DELIVERY_STATUS.md`
 - `docs/ROADMAP.md`
 

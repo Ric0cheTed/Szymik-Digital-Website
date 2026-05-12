@@ -18,12 +18,14 @@ function isCurrentPath(pathname: string, href: string) {
 export function SiteHeader() {
   const pathname = usePathname();
   const [isOpen, setIsOpen] = useState(false);
-  const isHome = pathname === "/";
-  const headerShellClassName = isHome
+  const usesV2Header = pathname === "/" || pathname.startsWith("/work");
+  const headerShellClassName = usesV2Header
     ? "border-b border-white/10 bg-[#030504]/94 shadow-none"
     : "border border-black/6 bg-white/90 shadow-[0_24px_56px_rgba(9,18,13,0.12)]";
-  const brandHoverClassName = isHome ? "hover:bg-white/10" : "hover:bg-black/5";
-  const menuPanelClassName = isHome
+  const brandHoverClassName = usesV2Header
+    ? "hover:bg-white/10"
+    : "hover:bg-black/5";
+  const menuPanelClassName = usesV2Header
     ? "border-white/10 bg-[#030504]/96"
     : "border-border/80 bg-white/90";
 
@@ -31,15 +33,17 @@ export function SiteHeader() {
     <header
       className={[
         "sticky top-0 z-[60]",
-        isHome ? "bg-[#030504]/94 backdrop-blur-xl" : "",
+        usesV2Header ? "bg-[#030504]/94 backdrop-blur-xl" : "",
       ]
         .join(" ")
         .trim()}
     >
-      <div className={isHome ? "site-container" : "site-container pt-3 sm:pt-4"}>
+      <div
+        className={usesV2Header ? "site-container" : "site-container pt-3 sm:pt-4"}
+      >
         <div
           className={[
-            isHome
+            usesV2Header
               ? "px-0 py-3 backdrop-blur-xl"
               : "rounded-[1.35rem] px-3 py-3 backdrop-blur-xl sm:rounded-full",
             headerShellClassName,
@@ -69,10 +73,12 @@ export function SiteHeader() {
                 className="flex items-baseline text-[1.35rem] font-extrabold leading-none tracking-normal sm:text-[1.5rem]"
                 aria-hidden="true"
               >
-                <span className={isHome ? "text-white" : "text-foreground"}>
+                <span className={usesV2Header ? "text-white" : "text-foreground"}>
                   Szymik
                 </span>
-                <span className={isHome ? "text-accent" : "text-accent-strong"}>
+                <span
+                  className={usesV2Header ? "text-accent" : "text-accent-strong"}
+                >
                   Digital
                 </span>
               </span>
@@ -91,10 +97,10 @@ export function SiteHeader() {
                     className={[
                       "rounded-full px-4 py-2 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/45",
                       active
-                        ? isHome
+                        ? usesV2Header
                           ? "border border-accent/45 bg-accent/16 !text-white shadow-[inset_0_-2px_0_#57d681] hover:!text-white focus-visible:!text-white"
                           : "bg-surface-strong !text-white hover:!text-white focus-visible:!text-white"
-                        : isHome
+                        : usesV2Header
                           ? "!text-white/78 hover:bg-white/10 hover:!text-white"
                           : "text-muted hover:bg-black/5 hover:text-foreground",
                     ]
@@ -110,7 +116,11 @@ export function SiteHeader() {
             <div className="hidden md:block">
               <CtaLink
                 href="/contact#enquiry"
-                className={isHome ? "!text-surface-strong hover:!text-surface-strong" : ""}
+                className={
+                  usesV2Header
+                    ? "!text-surface-strong hover:!text-surface-strong"
+                    : ""
+                }
               >
                 {siteSettings.ctaLabels.primary}
               </CtaLink>
@@ -120,7 +130,7 @@ export function SiteHeader() {
               type="button"
               className={[
                 "inline-flex h-11 w-11 items-center justify-center rounded-full border transition md:hidden",
-                isHome
+                usesV2Header
                   ? "border-white/14 text-white hover:border-accent/40 hover:text-accent"
                   : "border-border text-foreground hover:border-accent/40 hover:text-accent-strong",
               ]
@@ -160,10 +170,10 @@ export function SiteHeader() {
                     className={[
                       "rounded-[1.3rem] px-4 py-3 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/35",
                       active
-                        ? isHome
+                        ? usesV2Header
                           ? "border border-accent/45 bg-accent/16 !text-white shadow-[inset_3px_0_0_#57d681] hover:!text-white focus-visible:!text-white"
                           : "bg-surface-strong !text-white hover:!text-white focus-visible:!text-white"
-                        : isHome
+                        : usesV2Header
                           ? "bg-white/8 !text-white/82 hover:bg-white/12 hover:!text-white"
                           : "bg-white text-foreground hover:border-accent/40 hover:bg-accent-soft",
                     ]

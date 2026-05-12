@@ -198,7 +198,7 @@ Status:
 
 Complete. No source, runtime, UI, styling, route, package, asset, deployment, analytics, contact/enquiry, CRM, agreement pack, ops workspace, or folder structure changes were made for this acceptance slice.
 
-### Current Redesign Slice
+### Completed Redesign Slice
 
 Phase 3 Slice 7 - Work / Case Studies V2.
 
@@ -224,6 +224,31 @@ Scope:
 Status:
 
 Implemented on `redesign/site-v2-homepage`. The Work / Case Studies route now uses the accepted dark/green v2 visual system with strong preview cards for Bent Burger, Country Pizza, and Libra Support Services, concise Concept Preview process explanation, and safe conversion CTAs.
+
+### Current Redesign Slice
+
+Phase 3 Slice 7B - V2 Header Consistency Across Homepage and Work.
+
+Goal:
+
+Make the site header visually consistent between the accepted homepage v2 and redesigned Work / Case Studies v2 page before moving on to Services v2.
+
+Scope:
+
+- shared header consistency for `/` and `/work`
+- dark/green premium v2 header on both accepted v2 pages
+- route-aware active state for Home and Work
+- readable mobile menu on both accepted v2 pages
+- preserve readable header behaviour on other routes until their v2 slices
+- no Hostinger production upload
+- no merge to main
+- no CRM integration
+- no client portal
+- no automation
+
+Status:
+
+Implemented on `redesign/site-v2-homepage`. The accepted dark v2 header now applies to both homepage and Work, with light readable nav text, green active state, and route-safe behaviour for pages not yet redesigned.
 
 ### Next Recommended Slice
 
