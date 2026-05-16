@@ -2,6 +2,7 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import type { FocusEvent } from "react";
 import { useEffect, useRef, useState } from "react";
 import { BrandLogo } from "@/components/brand-logo";
 import { CtaLink } from "@/components/cta-link";
@@ -85,6 +86,14 @@ export function SiteHeader() {
     setIsMobileServicesOpen(false);
   }
 
+  function handleServicesBlur(event: FocusEvent<HTMLDivElement>) {
+    const nextTarget = event.relatedTarget;
+
+    if (!nextTarget || !event.currentTarget.contains(nextTarget as Node)) {
+      setIsServicesOpen(false);
+    }
+  }
+
   function desktopNavClassName(active: boolean) {
     return [
       "inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/45",
@@ -116,7 +125,7 @@ export function SiteHeader() {
   }
 
   const desktopServiceLinkClassName =
-    "rounded-[0.9rem] px-4 py-3 text-sm font-semibold text-white/78 transition hover:bg-white/10 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/35";
+    "rounded-[0.9rem] px-4 py-3 text-sm font-semibold !text-white transition hover:bg-accent/12 hover:!text-white focus-visible:bg-accent/12 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/45";
   const mobileServiceLinkClassName = usesV2Header
     ? "rounded-[1rem] border border-white/10 bg-black/22 px-4 py-3 text-sm font-medium text-white/78 transition hover:border-accent/35 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/35"
     : "rounded-[1rem] border border-border bg-white px-4 py-3 text-sm font-medium text-foreground transition hover:border-accent/40 hover:text-accent-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/35";
@@ -187,15 +196,20 @@ export function SiteHeader() {
                       key={item.href}
                       ref={servicesDropdownRef}
                       className="relative"
+                      onMouseEnter={() => setIsServicesOpen(true)}
+                      onMouseLeave={() => setIsServicesOpen(false)}
+                      onFocus={() => setIsServicesOpen(true)}
+                      onBlur={handleServicesBlur}
                     >
-                      <button
+                      <Link
                         id="services-navigation-trigger"
-                        type="button"
+                        href={item.href}
                         aria-current={active ? "page" : undefined}
                         aria-expanded={isServicesOpen}
+                        aria-haspopup="true"
                         aria-controls="services-navigation-dropdown"
                         className={desktopNavClassName(active)}
-                        onClick={() => setIsServicesOpen((open) => !open)}
+                        onClick={closeMenus}
                       >
                         {item.label}
                         <span
@@ -209,7 +223,7 @@ export function SiteHeader() {
                         >
                           v
                         </span>
-                      </button>
+                      </Link>
 
                       {isServicesOpen ? (
                         <div

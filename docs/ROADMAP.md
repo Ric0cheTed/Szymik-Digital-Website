@@ -504,6 +504,34 @@ Status:
 
 Implemented on `redesign/site-v2-homepage`. The Services nav now opens as a click/keyboard-accessible desktop dropdown and a mobile accordion, linking to `website-refresh`, `starter-website`, `local-growth-website`, `automation-discovery`, `how-to-choose`, and `concept-preview-process`. The branch remains parked-good / preview-hold.
 
+### Completed Redesign Slice
+
+Phase 3 Slice 13B - Services Dropdown Hover/Readability Fix.
+
+Goal:
+
+Adjust the desktop Services dropdown so Services behaves like a normal link when clicked, while still revealing the anchor dropdown on hover and keyboard focus.
+
+Scope:
+
+- shared header Services dropdown behaviour
+- desktop hover/focus dropdown open state
+- keep the top-level Services item as a real `/services/` link
+- improve dropdown item text contrast on the dark v2 panel
+- keep mobile Services accordion behaviour
+- no Guide Prices item
+- no pricing section
+- no new routes/pages
+- no Services page content rewrite
+- no contact/enquiry runtime changes
+- no analytics/cookie/privacy behaviour changes
+- no Hostinger production upload
+- no merge to main
+
+Status:
+
+Implemented on `redesign/site-v2-homepage`. The desktop Services nav item now navigates to `/services/` when clicked, while hover and keyboard focus reveal the Services anchor dropdown. Dropdown item text now uses explicit light/white text on the dark v2 menu, and the mobile Services accordion remains unchanged. The branch remains parked-good / preview-hold.
+
 ## Phase 0: Source Of Truth
 
 ### Goal

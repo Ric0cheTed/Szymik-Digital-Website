@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3 Slice 13 - Services Anchors + Dropdown Navigation V2
+Phase 3 Slice 13B - Services Dropdown Hover/Readability Fix
 
 ## Current Focus
 
-Add accessible Services dropdown/accordion navigation and stable Services page anchors on the parked-good v2 preview branch.
+Refine the Services desktop dropdown so the top-level Services item remains a real `/services/` link, opens the dropdown on hover/focus, and keeps dropdown text readable on the dark v2 menu.
 
 ## Completed
 
@@ -251,11 +251,15 @@ Add accessible Services dropdown/accordion navigation and stable Services page a
 - The Services active state remains route-aware on `/services`, the dropdown uses the accepted dark/green v2 styling, and legal routes keep readable header behaviour
 - No Guide Prices item or pricing section was added in this slice
 - Phase 3 Slice 13 stayed navigation/anchors only; no new pages/routes, Services content redesign, contact form/runtime changes, analytics/cookie/privacy behaviour changes, packages, CRM, agreement pack, ops workspace, folder restructure, production upload, or merge-to-main changes were made
+- Phase 3 Slice 13B complete: Services desktop dropdown hover/readability behaviour corrected on the v2 preview branch
+- The desktop Services nav item is now a real link to `/services/` again, so clicking it navigates normally while hover and keyboard focus reveal the Services dropdown
+- Dropdown item text now uses explicit light/white text on the dark v2 panel, with green-accent hover and focus styling for readability
+- Mobile Services navigation remains an accordion/tap pattern with the same anchor links and readable dark v2 styling
+- Phase 3 Slice 13B stayed header/docs only; no Services page content or anchors, pricing, new routes, contact form/runtime, analytics/cookie/privacy behaviour, packages, CRM, agreement pack, ops workspace, folder restructure, production upload, or merge-to-main changes were made
 
 ## Files Changed In Latest Slice
 
 - `src/components/site-header.tsx`
-- `src/app/services/page.tsx`
 - `docs/DELIVERY_STATUS.md`
 - `docs/ROADMAP.md`
 
