@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3 Slice 13B - Services Dropdown Hover/Readability Fix
+Phase 3 Slice 13C - Services Dropdown Hover Persistence Fix
 
 ## Current Focus
 
-Refine the Services desktop dropdown so the top-level Services item remains a real `/services/` link, opens the dropdown on hover/focus, and keeps dropdown text readable on the dark v2 menu.
+Fix the Services desktop dropdown hover persistence so visitors can move from the `/services/` nav link into the dropdown panel and click service anchor links reliably.
 
 ## Completed
 
@@ -256,6 +256,12 @@ Refine the Services desktop dropdown so the top-level Services item remains a re
 - Dropdown item text now uses explicit light/white text on the dark v2 panel, with green-accent hover and focus styling for readability
 - Mobile Services navigation remains an accordion/tap pattern with the same anchor links and readable dark v2 styling
 - Phase 3 Slice 13B stayed header/docs only; no Services page content or anchors, pricing, new routes, contact form/runtime, analytics/cookie/privacy behaviour, packages, CRM, agreement pack, ops workspace, folder restructure, production upload, or merge-to-main changes were made
+- Phase 3 Slice 13C complete: Services desktop dropdown hover persistence fixed on the v2 preview branch
+- The desktop dropdown now includes a hover bridge between the Services link and the panel, plus a short delayed close, so users can move into the dropdown and click items such as Starter Website without the menu snapping shut
+- The top-level Services nav item remains a real `/services/` link, and the dropdown links still point to the established Services anchors
+- Focus, Escape, outside-click close behaviour, dark v2 styling, and light readable dropdown text were preserved
+- Mobile Services navigation remains the existing accordion/tap pattern
+- Phase 3 Slice 13C stayed header/docs only; no Services page content or anchors, pricing, Guide Prices item, new routes, contact form/runtime, analytics/cookie/privacy behaviour, packages, CRM, agreement pack, ops workspace, folder restructure, production upload, or merge-to-main changes were made
 
 ## Files Changed In Latest Slice
 

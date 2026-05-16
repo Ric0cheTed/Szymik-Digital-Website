@@ -532,6 +532,35 @@ Status:
 
 Implemented on `redesign/site-v2-homepage`. The desktop Services nav item now navigates to `/services/` when clicked, while hover and keyboard focus reveal the Services anchor dropdown. Dropdown item text now uses explicit light/white text on the dark v2 menu, and the mobile Services accordion remains unchanged. The branch remains parked-good / preview-hold.
 
+### Completed Redesign Slice
+
+Phase 3 Slice 13C - Services Dropdown Hover Persistence Fix.
+
+Goal:
+
+Fix the desktop Services dropdown so visitors can move from the Services nav link into the dropdown panel and click service anchor links without the menu closing too quickly.
+
+Scope:
+
+- shared header Services dropdown persistence
+- hover bridge between the Services link and dropdown panel
+- short delayed close for steadier pointer movement
+- keep the top-level Services item as a real `/services/` link
+- keep dropdown links readable and clickable
+- keep mobile Services accordion behaviour
+- no Guide Prices item
+- no pricing section
+- no new routes/pages
+- no Services page content rewrite
+- no contact/enquiry runtime changes
+- no analytics/cookie/privacy behaviour changes
+- no Hostinger production upload
+- no merge to main
+
+Status:
+
+Implemented on `redesign/site-v2-homepage`. The desktop Services dropdown now stays open while moving from the Services nav link into the dropdown panel, and the anchor links remain clickable. The top-level Services item still navigates to `/services/`, and the mobile accordion remains unchanged. The branch remains parked-good / preview-hold.
+
 ## Phase 0: Source Of Truth
 
 ### Goal

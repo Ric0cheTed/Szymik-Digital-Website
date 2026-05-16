@@ -34,6 +34,9 @@ function isCurrentPath(pathname: string, href: string) {
 export function SiteHeader() {
   const pathname = usePathname();
   const servicesDropdownRef = useRef<HTMLDivElement>(null);
+  const servicesCloseTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(
+    null,
+  );
   const [isOpen, setIsOpen] = useState(false);
   const [isServicesOpen, setIsServicesOpen] = useState(false);
   const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
@@ -77,12 +80,40 @@ export function SiteHeader() {
     return () => {
       document.removeEventListener("pointerdown", handlePointerDown);
       document.removeEventListener("keydown", handleKeyDown);
+      if (servicesCloseTimeoutRef.current) {
+        clearTimeout(servicesCloseTimeoutRef.current);
+      }
     };
   }, []);
 
+  function clearServicesCloseTimeout() {
+    if (servicesCloseTimeoutRef.current) {
+      clearTimeout(servicesCloseTimeoutRef.current);
+      servicesCloseTimeoutRef.current = null;
+    }
+  }
+
+  function openServicesDropdown() {
+    clearServicesCloseTimeout();
+    setIsServicesOpen(true);
+  }
+
+  function closeServicesDropdown() {
+    clearServicesCloseTimeout();
+    setIsServicesOpen(false);
+  }
+
+  function scheduleServicesDropdownClose() {
+    clearServicesCloseTimeout();
+    servicesCloseTimeoutRef.current = setTimeout(() => {
+      setIsServicesOpen(false);
+      servicesCloseTimeoutRef.current = null;
+    }, 160);
+  }
+
   function closeMenus() {
     setIsOpen(false);
-    setIsServicesOpen(false);
+    closeServicesDropdown();
     setIsMobileServicesOpen(false);
   }
 
@@ -90,7 +121,7 @@ export function SiteHeader() {
     const nextTarget = event.relatedTarget;
 
     if (!nextTarget || !event.currentTarget.contains(nextTarget as Node)) {
-      setIsServicesOpen(false);
+      scheduleServicesDropdownClose();
     }
   }
 
@@ -196,9 +227,9 @@ export function SiteHeader() {
                       key={item.href}
                       ref={servicesDropdownRef}
                       className="relative"
-                      onMouseEnter={() => setIsServicesOpen(true)}
-                      onMouseLeave={() => setIsServicesOpen(false)}
-                      onFocus={() => setIsServicesOpen(true)}
+                      onMouseEnter={openServicesDropdown}
+                      onMouseLeave={scheduleServicesDropdownClose}
+                      onFocus={openServicesDropdown}
                       onBlur={handleServicesBlur}
                     >
                       <Link
@@ -228,26 +259,28 @@ export function SiteHeader() {
                       {isServicesOpen ? (
                         <div
                           id="services-navigation-dropdown"
-                          className="absolute left-1/2 top-full z-[80] mt-3 w-[22rem] -translate-x-1/2 rounded-[1.15rem] border border-white/12 bg-[#030504]/98 p-3 shadow-[0_28px_90px_rgba(0,0,0,0.34)] backdrop-blur-xl"
+                          className="absolute left-1/2 top-full z-[80] w-[22rem] -translate-x-1/2 pt-3"
                         >
-                          <p className="px-4 pb-2 pt-1 font-mono text-[0.64rem] font-semibold uppercase tracking-[0.2em] text-accent">
-                            Services
-                          </p>
-                          <nav
-                            aria-label="Services sections"
-                            className="grid gap-1"
-                          >
-                            {servicesNavigation.map((service) => (
-                              <Link
-                                key={service.href}
-                                href={service.href}
-                                className={desktopServiceLinkClassName}
-                                onClick={() => setIsServicesOpen(false)}
-                              >
-                                {service.label}
-                              </Link>
-                            ))}
-                          </nav>
+                          <div className="rounded-[1.15rem] border border-white/12 bg-[#030504]/98 p-3 shadow-[0_28px_90px_rgba(0,0,0,0.34)] backdrop-blur-xl">
+                            <p className="px-4 pb-2 pt-1 font-mono text-[0.64rem] font-semibold uppercase tracking-[0.2em] text-accent">
+                              Services
+                            </p>
+                            <nav
+                              aria-label="Services sections"
+                              className="grid gap-1"
+                            >
+                              {servicesNavigation.map((service) => (
+                                <Link
+                                  key={service.href}
+                                  href={service.href}
+                                  className={desktopServiceLinkClassName}
+                                  onClick={closeServicesDropdown}
+                                >
+                                  {service.label}
+                                </Link>
+                              ))}
+                            </nav>
+                          </div>
                         </div>
                       ) : null}
                     </div>
