@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3 Slice 13C - Services Dropdown Hover Persistence Fix
+Phase 3 Slice 14 - Services Guide Pricing V2
 
 ## Current Focus
 
-Fix the Services desktop dropdown hover persistence so visitors can move from the `/services/` nav link into the dropdown panel and click service anchor links reliably.
+Add a polished Guide Prices section to `/services` and include Guide Prices in the existing Services dropdown/accordion navigation on the parked-good v2 preview branch.
 
 ## Completed
 
@@ -262,10 +262,19 @@ Fix the Services desktop dropdown hover persistence so visitors can move from th
 - Focus, Escape, outside-click close behaviour, dark v2 styling, and light readable dropdown text were preserved
 - Mobile Services navigation remains the existing accordion/tap pattern
 - Phase 3 Slice 13C stayed header/docs only; no Services page content or anchors, pricing, Guide Prices item, new routes, contact form/runtime, analytics/cookie/privacy behaviour, packages, CRM, agreement pack, ops workspace, folder restructure, production upload, or merge-to-main changes were made
+- Phase 3 Slice 14 complete: Services Guide Prices V2 added on the parked-good v2 preview branch
+- `/services` now includes a polished `#guide-prices` section after the main service pathway cards and before the decision/process content
+- Guide pricing is grouped into Website projects, E-commerce and migration, Automation and custom tools, and Ongoing care and support
+- Published guide prices use starting-point wording where appropriate and cover Local Launch Page, Website Refresh, Starter Website, Local Growth Website, Premium Service Website, Shopify / E-commerce Setup, Product / Migration Discovery, Automation / Custom Tool Discovery, Custom Tools / CRM / Dashboards, Website Care Plans, and Standard Support
+- The pricing copy makes clear that final quotes depend on scope, page count, content, design complexity, integrations, product volume, and launch support needs
+- A staged payment note was added for suitable projects without presenting payment plans as guaranteed finance or credit
+- The Services desktop dropdown and mobile accordion now include Guide Prices linking to `/services/#guide-prices`, while preserving the Slice 13C behaviour: top-level Services remains a real `/services/` link, hover/focus opens the dropdown, the hover bridge and short delayed close remain, and mobile stays tap-based
+- Phase 3 Slice 14 stayed Services pricing/dropdown/docs only; no new pages/routes, full-site redesign, contact form/runtime changes, analytics/cookie/privacy behaviour changes, packages, CRM, agreement pack, ops workspace, folder restructure, production upload, or merge-to-main changes were made
 
 ## Files Changed In Latest Slice
 
 - `src/components/site-header.tsx`
+- `src/app/services/page.tsx`
 - `docs/DELIVERY_STATUS.md`
 - `docs/ROADMAP.md`
 
@@ -273,7 +282,7 @@ Fix the Services desktop dropdown hover persistence so visitors can move from th
 
 Keep `redesign/site-v2-homepage` parked as the accepted future preview direction.
 
-If Ric wants another preview-only enhancement, the natural later slice is Guide Prices / Pricing V2 once the pricing section and wording are approved.
+Next useful preview slice would be a browser review of the Guide Prices section for density, mobile readability, and whether the public pricing wording feels commercially right before any future production decision.
 
 ## Open Decisions
 

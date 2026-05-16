@@ -561,6 +561,32 @@ Status:
 
 Implemented on `redesign/site-v2-homepage`. The desktop Services dropdown now stays open while moving from the Services nav link into the dropdown panel, and the anchor links remain clickable. The top-level Services item still navigates to `/services/`, and the mobile accordion remains unchanged. The branch remains parked-good / preview-hold.
 
+### Completed Redesign Slice
+
+Phase 3 Slice 14 - Services Guide Pricing V2.
+
+Goal:
+
+Add a polished Guide Prices section to the Services page on the v2 preview branch, and add a Guide Prices item to the existing Services dropdown navigation.
+
+Scope:
+
+- `/services` Guide Prices section
+- stable `#guide-prices` anchor
+- grouped guide pricing for website projects, e-commerce and migration, automation and custom tools, and ongoing care and support
+- staged payment wording for suitable projects
+- Guide Prices item in the desktop Services dropdown and mobile accordion
+- preserve Slice 13C dropdown behaviour
+- no new routes/pages
+- no contact/enquiry runtime changes
+- no analytics/cookie/privacy behaviour changes
+- no Hostinger production upload
+- no merge to main
+
+Status:
+
+Implemented on `redesign/site-v2-homepage`. The Services page now includes guide pricing with clear starting points, scope caveats, and cautious staged payment wording. The Services dropdown and mobile accordion now include Guide Prices linking to `/services/#guide-prices`, while the top-level Services item remains a real `/services/` link. The branch remains parked-good / preview-hold.
+
 ## Phase 0: Source Of Truth
 
 ### Goal
