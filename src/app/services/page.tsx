@@ -17,12 +17,12 @@ const choosePath = [
   },
   {
     need: "Want more local enquiries",
-    serviceId: "local-growth",
+    serviceId: "local-growth-website",
     service: "Local Growth Website",
   },
   {
     need: "Repeated admin or process pain",
-    serviceId: "automation-tools",
+    serviceId: "automation-discovery",
     service: "Automation / Custom Tool Discovery",
   },
 ];
@@ -49,6 +49,18 @@ const serviceIcon: Record<string, string> = {
   "starter-website": "rocket",
   "local-growth": "chart",
   "automation-tools": "gear",
+};
+
+const serviceAnchorIds: Record<string, string> = {
+  "website-refresh": "website-refresh",
+  "starter-website": "starter-website",
+  "local-growth": "local-growth-website",
+  "automation-tools": "automation-discovery",
+};
+
+const legacyServiceAnchorIds: Record<string, string> = {
+  "local-growth": "local-growth",
+  "automation-tools": "automation-tools",
 };
 
 export const metadata: Metadata = createPageMetadata({
@@ -178,12 +190,20 @@ export default function ServicesPage() {
           </h2>
 
           <div className="mt-8 grid gap-5 lg:grid-cols-2">
-            {services.map((service) => (
-              <article
-                key={service.id}
-                id={service.id}
-                className="scroll-mt-28 rounded-[1.15rem] border border-white/12 bg-white/[0.055] p-5 shadow-[0_28px_90px_rgba(0,0,0,0.22)] sm:p-6"
-              >
+            {services.map((service) => {
+              const anchorId = serviceAnchorIds[service.id] ?? service.id;
+              const legacyAnchorId = legacyServiceAnchorIds[service.id];
+
+              return (
+                <div
+                  key={service.id}
+                  id={legacyAnchorId}
+                  className="scroll-mt-28"
+                >
+                  <article
+                    id={anchorId}
+                    className="h-full scroll-mt-28 rounded-[1.15rem] border border-white/12 bg-white/[0.055] p-5 shadow-[0_28px_90px_rgba(0,0,0,0.22)] sm:p-6"
+                  >
                 <div className="flex flex-col gap-5 sm:flex-row sm:items-start">
                   <div className="shrink-0 rounded-[0.9rem] border border-accent/20 bg-accent/10 p-3">
                     <LineIcon name={serviceIcon[service.id] ?? "screen"} />
@@ -245,13 +265,18 @@ export default function ServicesPage() {
                     Discuss this path <span aria-hidden>{">"}</span>
                   </Link>
                 </div>
-              </article>
-            ))}
+                  </article>
+                </div>
+              );
+            })}
           </div>
         </div>
       </section>
 
-      <section className="border-b border-white/10 bg-[#050806] py-10 sm:py-12">
+      <section
+        id="how-to-choose"
+        className="scroll-mt-28 border-b border-white/10 bg-[#050806] py-10 sm:py-12"
+      >
         <div className="site-container">
           <div className="rounded-[1.25rem] border border-accent/25 bg-[radial-gradient(circle_at_28%_0%,_rgba(87,214,129,0.15),_transparent_24%),linear-gradient(135deg,_rgba(255,255,255,0.07),_rgba(255,255,255,0.035))] p-6 sm:p-8 lg:p-10">
             <Eyebrow>How to choose</Eyebrow>
@@ -276,7 +301,10 @@ export default function ServicesPage() {
         </div>
       </section>
 
-      <section className="border-b border-white/10 bg-[#050806] py-10 sm:py-12">
+      <section
+        id="concept-preview-process"
+        className="scroll-mt-28 border-b border-white/10 bg-[#050806] py-10 sm:py-12"
+      >
         <div className="site-container">
           <div className="grid gap-8 lg:grid-cols-[minmax(16rem,0.7fr)_minmax(0,1.3fr)]">
             <div>

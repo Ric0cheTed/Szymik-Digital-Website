@@ -2,10 +2,25 @@
 
 import Link from "next/link";
 import { usePathname } from "next/navigation";
-import { useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { BrandLogo } from "@/components/brand-logo";
 import { CtaLink } from "@/components/cta-link";
 import { primaryNavigation, siteName, siteSettings } from "@/lib/site";
+
+const servicesNavigation = [
+  { href: "/services/#website-refresh", label: "Website Refresh" },
+  { href: "/services/#starter-website", label: "Starter Website" },
+  { href: "/services/#local-growth-website", label: "Local Growth Website" },
+  {
+    href: "/services/#automation-discovery",
+    label: "Automation / Custom Tool Discovery",
+  },
+  { href: "/services/#how-to-choose", label: "How to choose" },
+  {
+    href: "/services/#concept-preview-process",
+    label: "Concept Preview process",
+  },
+];
 
 function isCurrentPath(pathname: string, href: string) {
   if (href === "/") {
@@ -17,7 +32,10 @@ function isCurrentPath(pathname: string, href: string) {
 
 export function SiteHeader() {
   const pathname = usePathname();
+  const servicesDropdownRef = useRef<HTMLDivElement>(null);
   const [isOpen, setIsOpen] = useState(false);
+  const [isServicesOpen, setIsServicesOpen] = useState(false);
+  const [isMobileServicesOpen, setIsMobileServicesOpen] = useState(false);
   const usesV2Header =
     pathname === "/" ||
     pathname.startsWith("/work") ||
@@ -33,6 +51,75 @@ export function SiteHeader() {
   const menuPanelClassName = usesV2Header
     ? "border-white/10 bg-[#030504]/96"
     : "border-border/80 bg-white/90";
+
+  useEffect(() => {
+    function handlePointerDown(event: PointerEvent) {
+      if (
+        servicesDropdownRef.current &&
+        event.target instanceof Node &&
+        !servicesDropdownRef.current.contains(event.target)
+      ) {
+        setIsServicesOpen(false);
+      }
+    }
+
+    function handleKeyDown(event: KeyboardEvent) {
+      if (event.key === "Escape") {
+        setIsServicesOpen(false);
+        setIsMobileServicesOpen(false);
+      }
+    }
+
+    document.addEventListener("pointerdown", handlePointerDown);
+    document.addEventListener("keydown", handleKeyDown);
+
+    return () => {
+      document.removeEventListener("pointerdown", handlePointerDown);
+      document.removeEventListener("keydown", handleKeyDown);
+    };
+  }, []);
+
+  function closeMenus() {
+    setIsOpen(false);
+    setIsServicesOpen(false);
+    setIsMobileServicesOpen(false);
+  }
+
+  function desktopNavClassName(active: boolean) {
+    return [
+      "inline-flex items-center gap-2 rounded-full px-4 py-2 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/45",
+      active
+        ? usesV2Header
+          ? "border border-accent/45 bg-accent/16 !text-white shadow-[inset_0_-2px_0_#57d681] hover:!text-white focus-visible:!text-white"
+          : "bg-surface-strong !text-white hover:!text-white focus-visible:!text-white"
+        : usesV2Header
+          ? "!text-white/78 hover:bg-white/10 hover:!text-white"
+          : "text-muted hover:bg-black/5 hover:text-foreground",
+    ]
+      .join(" ")
+      .trim();
+  }
+
+  function mobileNavClassName(active: boolean) {
+    return [
+      "rounded-[1.3rem] px-4 py-3 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/35",
+      active
+        ? usesV2Header
+          ? "border border-accent/45 bg-accent/16 !text-white shadow-[inset_3px_0_0_#57d681] hover:!text-white focus-visible:!text-white"
+          : "bg-surface-strong !text-white hover:!text-white focus-visible:!text-white"
+        : usesV2Header
+          ? "bg-white/8 !text-white/82 hover:bg-white/12 hover:!text-white"
+          : "bg-white text-foreground hover:border-accent/40 hover:bg-accent-soft",
+    ]
+      .join(" ")
+      .trim();
+  }
+
+  const desktopServiceLinkClassName =
+    "rounded-[0.9rem] px-4 py-3 text-sm font-semibold text-white/78 transition hover:bg-white/10 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/35";
+  const mobileServiceLinkClassName = usesV2Header
+    ? "rounded-[1rem] border border-white/10 bg-black/22 px-4 py-3 text-sm font-medium text-white/78 transition hover:border-accent/35 hover:text-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/35"
+    : "rounded-[1rem] border border-border bg-white px-4 py-3 text-sm font-medium text-foreground transition hover:border-accent/40 hover:text-accent-strong focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/35";
 
   return (
     <header
@@ -65,7 +152,7 @@ export function SiteHeader() {
               ]
                 .join(" ")
                 .trim()}
-              onClick={() => setIsOpen(false)}
+              onClick={closeMenus}
             >
               <BrandLogo
                 priority
@@ -94,23 +181,71 @@ export function SiteHeader() {
               {primaryNavigation.map((item) => {
                 const active = isCurrentPath(pathname, item.href);
 
+                if (item.href === "/services") {
+                  return (
+                    <div
+                      key={item.href}
+                      ref={servicesDropdownRef}
+                      className="relative"
+                    >
+                      <button
+                        id="services-navigation-trigger"
+                        type="button"
+                        aria-current={active ? "page" : undefined}
+                        aria-expanded={isServicesOpen}
+                        aria-controls="services-navigation-dropdown"
+                        className={desktopNavClassName(active)}
+                        onClick={() => setIsServicesOpen((open) => !open)}
+                      >
+                        {item.label}
+                        <span
+                          aria-hidden="true"
+                          className={[
+                            "text-xs transition-transform",
+                            isServicesOpen ? "rotate-180" : "",
+                          ]
+                            .join(" ")
+                            .trim()}
+                        >
+                          v
+                        </span>
+                      </button>
+
+                      {isServicesOpen ? (
+                        <div
+                          id="services-navigation-dropdown"
+                          className="absolute left-1/2 top-full z-[80] mt-3 w-[22rem] -translate-x-1/2 rounded-[1.15rem] border border-white/12 bg-[#030504]/98 p-3 shadow-[0_28px_90px_rgba(0,0,0,0.34)] backdrop-blur-xl"
+                        >
+                          <p className="px-4 pb-2 pt-1 font-mono text-[0.64rem] font-semibold uppercase tracking-[0.2em] text-accent">
+                            Services
+                          </p>
+                          <nav
+                            aria-label="Services sections"
+                            className="grid gap-1"
+                          >
+                            {servicesNavigation.map((service) => (
+                              <Link
+                                key={service.href}
+                                href={service.href}
+                                className={desktopServiceLinkClassName}
+                                onClick={() => setIsServicesOpen(false)}
+                              >
+                                {service.label}
+                              </Link>
+                            ))}
+                          </nav>
+                        </div>
+                      ) : null}
+                    </div>
+                  );
+                }
+
                 return (
                   <Link
                     key={item.href}
                     href={item.href}
                     aria-current={active ? "page" : undefined}
-                    className={[
-                      "rounded-full px-4 py-2 text-sm font-semibold transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/45",
-                      active
-                        ? usesV2Header
-                          ? "border border-accent/45 bg-accent/16 !text-white shadow-[inset_0_-2px_0_#57d681] hover:!text-white focus-visible:!text-white"
-                          : "bg-surface-strong !text-white hover:!text-white focus-visible:!text-white"
-                        : usesV2Header
-                          ? "!text-white/78 hover:bg-white/10 hover:!text-white"
-                          : "text-muted hover:bg-black/5 hover:text-foreground",
-                    ]
-                      .join(" ")
-                      .trim()}
+                    className={desktopNavClassName(active)}
                   >
                     {item.label}
                   </Link>
@@ -167,24 +302,66 @@ export function SiteHeader() {
               {primaryNavigation.map((item) => {
                 const active = isCurrentPath(pathname, item.href);
 
+                if (item.href === "/services") {
+                  return (
+                    <div key={item.href} className="grid gap-2">
+                      <button
+                        type="button"
+                        aria-current={active ? "page" : undefined}
+                        aria-expanded={isMobileServicesOpen}
+                        aria-controls="mobile-services-navigation"
+                        className={[
+                          "flex w-full items-center justify-between text-left",
+                          mobileNavClassName(active),
+                        ]
+                          .join(" ")
+                          .trim()}
+                        onClick={() =>
+                          setIsMobileServicesOpen((open) => !open)
+                        }
+                      >
+                        <span>{item.label}</span>
+                        <span
+                          aria-hidden="true"
+                          className={[
+                            "text-xs transition-transform",
+                            isMobileServicesOpen ? "rotate-180" : "",
+                          ]
+                            .join(" ")
+                            .trim()}
+                        >
+                          v
+                        </span>
+                      </button>
+
+                      {isMobileServicesOpen ? (
+                        <div
+                          id="mobile-services-navigation"
+                          className="grid gap-2 rounded-[1.2rem] border border-white/10 bg-[#030504]/92 p-3"
+                        >
+                          {servicesNavigation.map((service) => (
+                            <Link
+                              key={service.href}
+                              href={service.href}
+                              className={mobileServiceLinkClassName}
+                              onClick={closeMenus}
+                            >
+                              {service.label}
+                            </Link>
+                          ))}
+                        </div>
+                      ) : null}
+                    </div>
+                  );
+                }
+
                 return (
                   <Link
                     key={item.href}
                     href={item.href}
                     aria-current={active ? "page" : undefined}
-                    className={[
-                      "rounded-[1.3rem] px-4 py-3 text-sm font-medium transition focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-accent/35",
-                      active
-                        ? usesV2Header
-                          ? "border border-accent/45 bg-accent/16 !text-white shadow-[inset_3px_0_0_#57d681] hover:!text-white focus-visible:!text-white"
-                          : "bg-surface-strong !text-white hover:!text-white focus-visible:!text-white"
-                        : usesV2Header
-                          ? "bg-white/8 !text-white/82 hover:bg-white/12 hover:!text-white"
-                          : "bg-white text-foreground hover:border-accent/40 hover:bg-accent-soft",
-                    ]
-                      .join(" ")
-                      .trim()}
-                    onClick={() => setIsOpen(false)}
+                    className={mobileNavClassName(active)}
+                    onClick={closeMenus}
                   >
                     {item.label}
                   </Link>

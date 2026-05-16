@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3 Slice 12 - Park Website V2 Preview Branch
+Phase 3 Slice 13 - Services Anchors + Dropdown Navigation V2
 
 ## Current Focus
 
-Record the website v2 redesign branch as accepted future direction but intentionally parked from production while the newly launched live site remains stable.
+Add accessible Services dropdown/accordion navigation and stable Services page anchors on the parked-good v2 preview branch.
 
 ## Completed
 
@@ -243,18 +243,27 @@ Record the website v2 redesign branch as accepted future direction but intention
 - Future unlock conditions for returning to the v2 branch: more recent and confirmed client work, more real proof/performance data, reviewed human trust assets or photos of Ric and Hannah where approved, and final branch QA before any merge or production upload decision
 - Future relaunch story: Szymik Digital launched, learned, improved its own process, and can later upgrade the website to better match the quality of work it delivers
 - Phase 3 Slice 12 was docs-only; no source, UI, styling, runtime, routes, packages, analytics/cookie/privacy behaviour, CRM, agreement pack, ops workspace, folder structure, production upload, or merge-to-main changes were made
+- Phase 3 Slice 13 complete: Services anchors and dropdown/accordion navigation added on the v2 preview branch
+- `/services` now has stable anchors for `website-refresh`, `starter-website`, `local-growth-website`, `automation-discovery`, `how-to-choose`, and `concept-preview-process`
+- Existing legacy hash targets for `local-growth` and `automation-tools` were preserved so older internal links still land on the relevant Services cards
+- Desktop header Services navigation now uses a click/keyboard accessible dropdown with `aria-expanded` and `aria-controls`, linking to the Services pathway and process anchors
+- Mobile header Services navigation now uses a stacked accordion group so service links are reachable without relying on hover
+- The Services active state remains route-aware on `/services`, the dropdown uses the accepted dark/green v2 styling, and legal routes keep readable header behaviour
+- No Guide Prices item or pricing section was added in this slice
+- Phase 3 Slice 13 stayed navigation/anchors only; no new pages/routes, Services content redesign, contact form/runtime changes, analytics/cookie/privacy behaviour changes, packages, CRM, agreement pack, ops workspace, folder restructure, production upload, or merge-to-main changes were made
 
 ## Files Changed In Latest Slice
 
+- `src/components/site-header.tsx`
+- `src/app/services/page.tsx`
 - `docs/DELIVERY_STATUS.md`
 - `docs/ROADMAP.md`
-- `docs/SZYMIK_DIGITAL_MASTER_CONTROL.md`
 
 ## Next Recommended Step
 
 Keep `redesign/site-v2-homepage` parked as the accepted future preview direction.
 
-Return to it only when there is stronger recent work/proof, approved human trust assets, and time for a final QA pass before any explicit merge/Hostinger decision.
+If Ric wants another preview-only enhancement, the natural later slice is Guide Prices / Pricing V2 once the pricing section and wording are approved.
 
 ## Open Decisions
 

@@ -475,6 +475,35 @@ Production guard:
 
 The current live site remains the stable public baseline. A future v2 relaunch can become part of the business story: Szymik Digital launched, learned, improved its own process, and upgraded the website to match the quality of work it now delivers.
 
+### Completed Redesign Slice
+
+Phase 3 Slice 13 - Services Anchors + Dropdown Navigation V2.
+
+Goal:
+
+Add a polished, accessible Services dropdown/accordion navigation pattern to the v2 preview branch and add stable Services page anchors.
+
+Scope:
+
+- Services dropdown in the shared header
+- mobile Services accordion inside the header menu
+- stable Services section anchors
+- preserve legacy Services hash links where needed
+- no Guide Prices item yet
+- no pricing section
+- no new routes/pages
+- no contact/enquiry runtime changes
+- no analytics/cookie/privacy behaviour changes
+- no Hostinger production upload
+- no merge to main
+- no CRM integration
+- no client portal
+- no automation
+
+Status:
+
+Implemented on `redesign/site-v2-homepage`. The Services nav now opens as a click/keyboard-accessible desktop dropdown and a mobile accordion, linking to `website-refresh`, `starter-website`, `local-growth-website`, `automation-discovery`, `how-to-choose`, and `concept-preview-process`. The branch remains parked-good / preview-hold.
+
 ## Phase 0: Source Of Truth
 
 ### Goal
