@@ -587,6 +587,31 @@ Status:
 
 Implemented on `redesign/site-v2-homepage`. The Services page now includes guide pricing with clear starting points, scope caveats, and cautious staged payment wording. The Services dropdown and mobile accordion now include Guide Prices linking to `/services/#guide-prices`, while the top-level Services item remains a real `/services/` link. The branch remains parked-good / preview-hold.
 
+### Completed Redesign Slice
+
+Phase 3 Slice 15 - Services Guide Prices Subpage V2.
+
+Goal:
+
+Begin the agreed hybrid Services structure by moving full Guide Prices content into its own SEO-friendly subpage while keeping `/services` as a cleaner overview hub.
+
+Scope:
+
+- new `/services/guide-prices/` route
+- full guide pricing moved to the pricing subpage
+- `/services` reduced to a shorter pricing summary and CTA
+- Services dropdown and mobile accordion Guide Prices link updated
+- preserve Slice 13C Services dropdown behaviour
+- no homepage, Work, Contact, or About redesign
+- no contact/enquiry runtime changes
+- no analytics/cookie/privacy behaviour changes
+- no Hostinger production upload
+- no merge to main
+
+Status:
+
+Implemented on `redesign/site-v2-homepage`. `/services` now remains the overview hub, `/services/guide-prices/` holds the full guide pricing content, and `/services/automation-custom-tools/` remains a future candidate for deeper service explanation. The Services dropdown now sends Guide Prices to `/services/guide-prices/`. The branch remains parked-good / preview-hold.
+
 ## Phase 0: Source Of Truth
 
 ### Goal

@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3 Slice 14 - Services Guide Pricing V2
+Phase 3 Slice 15 - Services Guide Prices Subpage V2
 
 ## Current Focus
 
-Add a polished Guide Prices section to `/services` and include Guide Prices in the existing Services dropdown/accordion navigation on the parked-good v2 preview branch.
+Begin the hybrid Services structure by moving full Guide Prices content to `/services/guide-prices/`, keeping `/services` as a cleaner overview hub with a shorter pricing summary.
 
 ## Completed
 
@@ -270,11 +270,18 @@ Add a polished Guide Prices section to `/services` and include Guide Prices in t
 - A staged payment note was added for suitable projects without presenting payment plans as guaranteed finance or credit
 - The Services desktop dropdown and mobile accordion now include Guide Prices linking to `/services/#guide-prices`, while preserving the Slice 13C behaviour: top-level Services remains a real `/services/` link, hover/focus opens the dropdown, the hover bridge and short delayed close remain, and mobile stays tap-based
 - Phase 3 Slice 14 stayed Services pricing/dropdown/docs only; no new pages/routes, full-site redesign, contact form/runtime changes, analytics/cookie/privacy behaviour changes, packages, CRM, agreement pack, ops workspace, folder restructure, production upload, or merge-to-main changes were made
+- Phase 3 Slice 15 complete: Services Guide Prices subpage added as the start of the hybrid Services structure
+- New route added at `/services/guide-prices/` with a premium dark v2 hero, full grouped guide pricing, quote caveats, staged payment wording, Start a project CTA, and a link back to `/services`
+- `/services` now remains a cleaner overview hub: the full pricing grid was replaced with a shorter Guide prices summary, four highlight prices, and a View full guide prices CTA
+- Services dropdown and mobile accordion now link Guide Prices to `/services/guide-prices/` while preserving the Slice 13C dropdown behaviour and keeping the top-level Services item as a real `/services/` link
+- This slice records the agreed hybrid Services direction: `/services` as overview hub, `/services/guide-prices/` for full pricing details, and `/services/automation-custom-tools/` as a future candidate
+- Phase 3 Slice 15 stayed Services hub/pricing subpage/navigation/docs only; no homepage, Work, Contact, About, contact form/runtime, analytics/cookie/privacy behaviour, packages, CRM, agreement pack, ops workspace, production upload, or merge-to-main changes were made
 
 ## Files Changed In Latest Slice
 
 - `src/components/site-header.tsx`
 - `src/app/services/page.tsx`
+- `src/app/services/guide-prices/page.tsx`
 - `docs/DELIVERY_STATUS.md`
 - `docs/ROADMAP.md`
 
@@ -282,7 +289,7 @@ Add a polished Guide Prices section to `/services` and include Guide Prices in t
 
 Keep `redesign/site-v2-homepage` parked as the accepted future preview direction.
 
-Next useful preview slice would be a browser review of the Guide Prices section for density, mobile readability, and whether the public pricing wording feels commercially right before any future production decision.
+Next useful preview slice would be browser review/polish of the hybrid Services navigation and the new Guide Prices subpage, or a future `/services/automation-custom-tools/` explainer page if Ric wants the next Services depth page.
 
 ## Open Decisions
 

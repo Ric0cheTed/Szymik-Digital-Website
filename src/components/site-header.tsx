@@ -16,7 +16,7 @@ const servicesNavigation = [
     href: "/services/#automation-discovery",
     label: "Automation / Custom Tool Discovery",
   },
-  { href: "/services/#guide-prices", label: "Guide Prices" },
+  { href: "/services/guide-prices/", label: "Guide Prices" },
   { href: "/services/#how-to-choose", label: "How to choose" },
   {
     href: "/services/#concept-preview-process",

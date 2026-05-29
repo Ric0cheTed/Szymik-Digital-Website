@@ -44,45 +44,11 @@ const trustItems = [
   "Built to be manageable after launch",
 ];
 
-const guidePriceGroups = [
-  {
-    group: "Website projects",
-    note: "For clearer online presence, stronger trust, and a more professional local-business website.",
-    items: [
-      { name: "Local Launch Page", price: "from £450" },
-      { name: "Website Refresh", price: "from £650" },
-      { name: "Starter Website", price: "from £850" },
-      { name: "Local Growth Website", price: "from £1,250" },
-      { name: "Premium Service Website", price: "from £1,950" },
-    ],
-  },
-  {
-    group: "E-commerce and migration",
-    note: "For shops, product-led businesses, and stores that need a cleaner setup before launch.",
-    items: [
-      { name: "Shopify / E-commerce Setup", price: "from £1,800" },
-      { name: "Product / Migration Discovery", price: "from £250" },
-    ],
-  },
-  {
-    group: "Automation and custom tools",
-    note: "For repeated admin, messy spreadsheets, disconnected workflows, and practical internal systems.",
-    items: [
-      {
-        name: "Automation / Custom Tool Discovery",
-        price: "from £250",
-      },
-      { name: "Custom Tools / CRM / Dashboards", price: "from £2,500+" },
-    ],
-  },
-  {
-    group: "Ongoing care and support",
-    note: "For keeping a website maintained, supported, and easier to manage after launch.",
-    items: [
-      { name: "Website Care Plans", price: "from £49/month" },
-      { name: "Standard Support", price: "£45/hour" },
-    ],
-  },
+const pricingHighlights = [
+  { name: "Local Launch Page", price: "from \u00a3450" },
+  { name: "Starter Website", price: "from \u00a3850" },
+  { name: "Local Growth Website", price: "from \u00a31,250" },
+  { name: "Custom Tools / CRM / Dashboards", price: "from \u00a32,500+" },
 ];
 
 const serviceIcon: Record<string, string> = {
@@ -319,84 +285,47 @@ export default function ServicesPage() {
         className="scroll-mt-28 border-b border-white/10 bg-[#030504] py-10 sm:py-12"
       >
         <div className="site-container">
-          <div className="grid gap-8 lg:grid-cols-[minmax(16rem,0.62fr)_minmax(0,1.38fr)] lg:items-start">
-            <div className="lg:sticky lg:top-28">
-              <Eyebrow>Guide prices</Eyebrow>
-              <h2 className="mt-3 max-w-3xl text-3xl font-semibold text-white sm:text-4xl">
-                Clear starting points before a proper quote.
-              </h2>
-              <p className="mt-5 text-sm leading-7 text-white/68">
-                Every project is scoped properly before work starts, but these
-                guide prices help you understand where most Szymik Digital
-                projects usually begin.
-              </p>
-              <p className="mt-4 text-sm leading-7 text-white/58">
-                Final quotes depend on page count, content, design complexity,
-                integrations, product volume, and how much support is needed
-                before launch.
-              </p>
-            </div>
-
-            <div className="grid gap-5">
-              <div className="grid gap-4 md:grid-cols-2">
-                {guidePriceGroups.map((group) => (
-                  <article
-                    key={group.group}
-                    className="rounded-[1.15rem] border border-white/12 bg-white/[0.055] p-5 shadow-[0_28px_90px_rgba(0,0,0,0.2)]"
-                  >
-                    <div className="flex min-h-[7rem] flex-col justify-between gap-3 border-b border-white/10 pb-4">
-                      <div>
-                        <h3 className="text-xl font-semibold text-white">
-                          {group.group}
-                        </h3>
-                        <p className="mt-3 text-sm leading-7 text-white/62">
-                          {group.note}
-                        </p>
-                      </div>
-                    </div>
-                    <dl className="mt-4 grid gap-3">
-                      {group.items.map((item) => (
-                        <div
-                          key={item.name}
-                          className="grid gap-2 rounded-[0.9rem] border border-white/10 bg-black/18 p-4 sm:grid-cols-[minmax(0,1fr)_auto] sm:items-center"
-                        >
-                          <dt className="text-sm font-semibold text-white">
-                            {item.name}
-                          </dt>
-                          <dd className="text-sm font-bold text-accent sm:text-right">
-                            {item.price}
-                          </dd>
-                        </div>
-                      ))}
-                    </dl>
-                  </article>
-                ))}
+          <div className="rounded-[1.25rem] border border-accent/25 bg-[radial-gradient(circle_at_10%_0%,_rgba(87,214,129,0.16),_transparent_28%),linear-gradient(135deg,_rgba(255,255,255,0.07),_rgba(255,255,255,0.035))] p-6 sm:p-8 lg:p-10">
+            <div className="grid gap-8 lg:grid-cols-[minmax(16rem,0.75fr)_minmax(0,1.25fr)] lg:items-center">
+              <div>
+                <Eyebrow>Guide prices</Eyebrow>
+                <h2 className="mt-3 max-w-3xl text-3xl font-semibold text-white sm:text-4xl">
+                  Helpful starting points without crowding the service guide.
+                </h2>
+                <p className="mt-5 text-sm leading-7 text-white/68">
+                  Pricing is available as a guide so you can understand where
+                  projects usually begin before a proper quote is scoped.
+                </p>
+                <p className="mt-4 text-sm leading-7 text-white/58">
+                  Final quotes still depend on page count, content, design
+                  complexity, integrations, product volume, and launch support.
+                </p>
               </div>
 
-              <aside className="rounded-[1.15rem] border border-accent/25 bg-[radial-gradient(circle_at_8%_0%,_rgba(87,214,129,0.18),_transparent_28%),linear-gradient(135deg,_rgba(255,255,255,0.07),_rgba(255,255,255,0.035))] p-5 sm:p-6">
-                <div className="grid gap-5 lg:grid-cols-[minmax(0,0.72fr)_minmax(0,1fr)] lg:items-start">
-                  <div>
-                    <p className="font-mono text-xs font-semibold uppercase tracking-[0.22em] text-accent">
-                      Flexible staged payments
-                    </p>
-                    <h3 className="mt-3 text-2xl font-semibold text-white">
-                      Available on suitable projects.
-                    </h3>
-                  </div>
-                  <div className="grid gap-3 text-sm leading-7 text-white/68">
-                    <p>
-                      Most website projects are split into a deposit before work
-                      starts and a final balance before launch or handover.
-                      Larger projects can be split into agreed milestones so the
-                      cost is easier to manage.
-                    </p>
-                    <p>
-                      Payment schedules are agreed before work begins and
-                      included clearly in your quote.
-                    </p>
-                  </div>
+              <div className="grid gap-5">
+                <div className="grid gap-3 sm:grid-cols-2">
+                  {pricingHighlights.map((item) => (
+                    <article
+                      key={item.name}
+                      className="rounded-[0.95rem] border border-white/12 bg-black/18 p-4"
+                    >
+                      <h3 className="text-sm font-semibold text-white">
+                        {item.name}
+                      </h3>
+                      <p className="mt-3 text-lg font-bold text-accent">
+                        {item.price}
+                      </p>
+                    </article>
+                  ))}
                 </div>
-              </aside>
+
+                <Link
+                  href="/services/guide-prices/"
+                  className="inline-flex min-h-12 items-center justify-center gap-2 rounded-[0.85rem] bg-accent px-5 text-sm font-bold text-surface-strong transition hover:bg-accent/90"
+                >
+                  View full guide prices <span aria-hidden>{">"}</span>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
