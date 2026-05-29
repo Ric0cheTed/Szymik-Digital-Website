@@ -612,6 +612,35 @@ Status:
 
 Implemented on `redesign/site-v2-homepage`. `/services` now remains the overview hub, `/services/guide-prices/` holds the full guide pricing content, and `/services/automation-custom-tools/` remains a future candidate for deeper service explanation. The Services dropdown now sends Guide Prices to `/services/guide-prices/`. The branch remains parked-good / preview-hold.
 
+### Completed Redesign Slice
+
+Phase 3 Slice 16 - Automation / Custom Tools Subpage V2.
+
+Goal:
+
+Continue the hybrid Services structure by adding an SEO-friendly Automation / Custom Tools service page without cluttering the main Services overview.
+
+Scope:
+
+- new `/services/automation-custom-tools/` route
+- discovery-first automation/custom tools explanation
+- common admin/workflow pain points
+- practical tool and dashboard examples
+- simple process explanation
+- guide pricing links
+- Services overview hub link update
+- Services dropdown and mobile accordion link update
+- preserve Slice 13C Services dropdown behaviour
+- no homepage, Work, Contact, About, or Guide Prices redesign
+- no contact/enquiry runtime changes
+- no analytics/cookie/privacy behaviour changes
+- no Hostinger production upload
+- no merge to main
+
+Status:
+
+Implemented on `redesign/site-v2-homepage`. `/services` remains the overview hub, `/services/guide-prices/` holds full pricing, and `/services/automation-custom-tools/` now holds the deeper automation/custom tools explanation. The Services dropdown now sends Automation / Custom Tools to `/services/automation-custom-tools/`. The branch remains parked-good / preview-hold.
+
 ## Phase 0: Source Of Truth
 
 ### Goal

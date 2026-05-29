@@ -13,8 +13,8 @@ const servicesNavigation = [
   { href: "/services/#starter-website", label: "Starter Website" },
   { href: "/services/#local-growth-website", label: "Local Growth Website" },
   {
-    href: "/services/#automation-discovery",
-    label: "Automation / Custom Tool Discovery",
+    href: "/services/automation-custom-tools/",
+    label: "Automation / Custom Tools",
   },
   { href: "/services/guide-prices/", label: "Guide Prices" },
   { href: "/services/#how-to-choose", label: "How to choose" },

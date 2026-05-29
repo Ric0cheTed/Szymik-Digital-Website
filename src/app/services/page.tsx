@@ -70,6 +70,13 @@ const legacyServiceAnchorIds: Record<string, string> = {
   "automation-tools": "automation-tools",
 };
 
+const serviceCta: Record<string, { href: string; label: string }> = {
+  "automation-tools": {
+    href: "/services/automation-custom-tools/",
+    label: "Explore this service",
+  },
+};
+
 export const metadata: Metadata = createPageMetadata({
   title: "Small Business Website Services",
   description:
@@ -266,10 +273,11 @@ export default function ServicesPage() {
                     {service.nextStep}
                   </p>
                   <Link
-                    href="/contact#enquiry"
+                    href={serviceCta[service.id]?.href ?? "/contact#enquiry"}
                     className="inline-flex min-h-11 shrink-0 items-center justify-center gap-2 rounded-[0.75rem] border border-white/16 px-4 text-sm font-semibold text-white transition hover:border-accent/45 hover:text-accent"
                   >
-                    Discuss this path <span aria-hidden>{">"}</span>
+                    {serviceCta[service.id]?.label ?? "Discuss this path"}{" "}
+                    <span aria-hidden>{">"}</span>
                   </Link>
                 </div>
                   </article>

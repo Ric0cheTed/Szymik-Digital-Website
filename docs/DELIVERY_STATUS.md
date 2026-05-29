@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3 Slice 15 - Services Guide Prices Subpage V2
+Phase 3 Slice 16 - Automation / Custom Tools Subpage V2
 
 ## Current Focus
 
-Begin the hybrid Services structure by moving full Guide Prices content to `/services/guide-prices/`, keeping `/services` as a cleaner overview hub with a shorter pricing summary.
+Continue the hybrid Services structure by adding `/services/automation-custom-tools/` as a deeper explanation page while keeping `/services` as the overview hub.
 
 ## Completed
 
@@ -276,12 +276,19 @@ Begin the hybrid Services structure by moving full Guide Prices content to `/ser
 - Services dropdown and mobile accordion now link Guide Prices to `/services/guide-prices/` while preserving the Slice 13C dropdown behaviour and keeping the top-level Services item as a real `/services/` link
 - This slice records the agreed hybrid Services direction: `/services` as overview hub, `/services/guide-prices/` for full pricing details, and `/services/automation-custom-tools/` as a future candidate
 - Phase 3 Slice 15 stayed Services hub/pricing subpage/navigation/docs only; no homepage, Work, Contact, About, contact form/runtime, analytics/cookie/privacy behaviour, packages, CRM, agreement pack, ops workspace, production upload, or merge-to-main changes were made
+- Phase 3 Slice 16 complete: Automation / Custom Tools subpage added to the hybrid Services structure
+- New route added at `/services/automation-custom-tools/` with a premium dark v2 hero, practical pain-point examples, tool/workflow examples, discovery-first positioning, process steps, guide pricing reference, and CTAs to Contact, Guide Prices, and Services
+- The page keeps automation/custom tools grounded and scoped separately: no enterprise software claims, no guaranteed time-saving claims, no AI-first promises, and no implication that custom tools are included in standard website packages
+- `/services` remains a cleaner overview hub; only the Automation / Custom Tool Discovery card CTA was updated to link to the new detail page
+- Services dropdown and mobile accordion now link Automation / Custom Tools to `/services/automation-custom-tools/`, while Guide Prices remains linked to `/services/guide-prices/` and the Slice 13C dropdown behaviour is preserved
+- This slice records the hybrid Services structure progress: `/services` overview hub, `/services/guide-prices/` full pricing, and `/services/automation-custom-tools/` deeper automation/custom tools explanation
+- Phase 3 Slice 16 stayed automation/custom-tools page, Services hub link, dropdown link, and docs only; no homepage, Work, Contact, About, Guide Prices redesign, contact form/runtime, analytics/cookie/privacy behaviour, packages, CRM, agreement pack, ops workspace, production upload, or merge-to-main changes were made
 
 ## Files Changed In Latest Slice
 
 - `src/components/site-header.tsx`
 - `src/app/services/page.tsx`
-- `src/app/services/guide-prices/page.tsx`
+- `src/app/services/automation-custom-tools/page.tsx`
 - `docs/DELIVERY_STATUS.md`
 - `docs/ROADMAP.md`
 
@@ -289,7 +296,7 @@ Begin the hybrid Services structure by moving full Guide Prices content to `/ser
 
 Keep `redesign/site-v2-homepage` parked as the accepted future preview direction.
 
-Next useful preview slice would be browser review/polish of the hybrid Services navigation and the new Guide Prices subpage, or a future `/services/automation-custom-tools/` explainer page if Ric wants the next Services depth page.
+Next useful preview slice would be browser review/polish of the hybrid Services navigation and the new Automation / Custom Tools subpage, or consideration of whether any other service detail pages are worth adding later.
 
 ## Open Decisions
 
