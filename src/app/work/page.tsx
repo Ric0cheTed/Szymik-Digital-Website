@@ -231,6 +231,12 @@ export default function WorkPage() {
                   because that is an official Szymik Digital step. It helps
                   make style, structure, and expectations visible before build.
                 </p>
+                <Link
+                  href="/services/#concept-preview-process"
+                  className="mt-6 inline-flex min-h-11 items-center justify-center gap-2 rounded-[0.75rem] border border-white/16 px-4 text-sm font-semibold text-white transition hover:border-accent/45 hover:text-accent"
+                >
+                  See the process <span aria-hidden>{">"}</span>
+                </Link>
               </div>
 
               <div className="grid gap-4 md:grid-cols-5">

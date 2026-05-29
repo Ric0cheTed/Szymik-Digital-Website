@@ -3,7 +3,18 @@ import Link from "next/link";
 import { CtaLink } from "@/components/cta-link";
 import { createPageMetadata } from "@/lib/metadata";
 
-const guidePriceGroups = [
+type GuidePriceGroup = {
+  group: string;
+  note: string;
+  href?: string;
+  linkLabel?: string;
+  items: {
+    name: string;
+    price: string;
+  }[];
+};
+
+const guidePriceGroups: GuidePriceGroup[] = [
   {
     group: "Website projects",
     note: "For clearer online presence, stronger trust, and a more professional local-business website.",
@@ -26,6 +37,8 @@ const guidePriceGroups = [
   {
     group: "Automation and custom tools",
     note: "For repeated admin, messy spreadsheets, disconnected workflows, and practical internal systems.",
+    href: "/services/automation-custom-tools/",
+    linkLabel: "Explore automation and custom tools",
     items: [
       {
         name: "Automation / Custom Tool Discovery",
@@ -92,7 +105,7 @@ export default function GuidePricesPage() {
                   Start a project
                 </CtaLink>
                 <CtaLink
-                  href="/services"
+                  href="/services/"
                   variant="secondary"
                   className="min-h-12 border-white/22 bg-transparent !text-white hover:bg-white/10 hover:!text-white"
                 >
@@ -149,6 +162,14 @@ export default function GuidePricesPage() {
                     </div>
                   ))}
                 </dl>
+                {group.href ? (
+                  <Link
+                    href={group.href}
+                    className="mt-5 inline-flex min-h-11 items-center justify-center rounded-[0.8rem] border border-white/16 px-4 text-sm font-semibold text-white transition hover:border-accent/45 hover:text-accent"
+                  >
+                    {group.linkLabel} <span aria-hidden>{">"}</span>
+                  </Link>
+                ) : null}
               </article>
             ))}
           </div>
@@ -207,7 +228,7 @@ export default function GuidePricesPage() {
                   Start a project
                 </CtaLink>
                 <Link
-                  href="/services"
+                  href="/services/"
                   className="inline-flex min-h-12 items-center justify-center rounded-[0.85rem] border border-white/22 px-5 text-sm font-bold text-white transition hover:bg-white/10"
                 >
                   Back to services

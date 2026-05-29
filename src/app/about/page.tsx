@@ -288,6 +288,13 @@ export default function AboutPage() {
                 >
                   View services
                 </CtaLink>
+                <CtaLink
+                  href="/work/"
+                  variant="secondary"
+                  className="min-h-12 border-white/22 bg-transparent !text-white hover:bg-white/10 hover:!text-white"
+                >
+                  View work
+                </CtaLink>
               </div>
             </div>
           </div>

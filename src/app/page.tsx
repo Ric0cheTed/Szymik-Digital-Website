@@ -118,6 +118,13 @@ const serviceAccent: Record<string, string> = {
   "automation-tools": "gear",
 };
 
+const homepageServiceLinks: Record<string, string> = {
+  "website-refresh": "/services/#website-refresh",
+  "starter-website": "/services/#starter-website",
+  "local-growth": "/services/#local-growth-website",
+  "automation-tools": "/services/automation-custom-tools/",
+};
+
 function LineIcon({ name }: { name: string }) {
   const baseClassName = "h-8 w-8 text-accent";
 
@@ -304,7 +311,11 @@ function BrowserFrame({
 
 function WorkCard({ work }: { work: (typeof selectedWork)[number] }) {
   return (
-    <article className="group overflow-hidden rounded-[1rem] border border-white/12 bg-white/[0.055] transition duration-300 hover:-translate-y-1 hover:border-accent/35">
+    <Link
+      href="/work/"
+      aria-label={`View ${work.title} on the Work page`}
+      className="group block overflow-hidden rounded-[1rem] border border-white/12 bg-white/[0.055] transition duration-300 hover:-translate-y-1 hover:border-accent/35"
+    >
       <div className="relative aspect-[16/9] overflow-hidden border-b border-white/10 bg-black">
         <Image
           src={work.image}
@@ -331,12 +342,12 @@ function WorkCard({ work }: { work: (typeof selectedWork)[number] }) {
             <p className="mt-1 text-sm text-white/66">{work.summary}</p>
           </div>
           <span className="shrink-0 pt-1 text-sm font-semibold text-accent">
-            View project <span aria-hidden>{">"}</span>
+            View on Work page <span aria-hidden>{">"}</span>
           </span>
         </div>
         <p className="text-xs leading-6 text-white/46">{work.detail}</p>
       </div>
-    </article>
+    </Link>
   );
 }
 
@@ -386,7 +397,7 @@ export default function Home() {
                   Start a Project
                 </CtaLink>
                 <CtaLink
-                  href="#selected-work"
+                  href="/work/"
                   variant="secondary"
                   className="min-h-12 border-white/22 bg-transparent !text-white hover:bg-white/10 hover:!text-white"
                 >
@@ -454,16 +465,26 @@ export default function Home() {
 
       <section className="border-b border-white/10 bg-[#050806] py-10 sm:py-12">
         <div className="site-container">
-          <Eyebrow>Our Services</Eyebrow>
-          <h2 className="mt-3 max-w-4xl text-3xl font-semibold text-white sm:text-4xl">
-            Digital solutions that help local businesses grow.
-          </h2>
+          <div className="flex flex-col gap-5 sm:flex-row sm:items-end sm:justify-between">
+            <div>
+              <Eyebrow>Our Services</Eyebrow>
+              <h2 className="mt-3 max-w-4xl text-3xl font-semibold text-white sm:text-4xl">
+                Digital solutions that help local businesses grow.
+              </h2>
+            </div>
+            <Link
+              href="/services/guide-prices/"
+              className="inline-flex min-h-11 items-center justify-center gap-3 rounded-[0.75rem] border border-white/18 px-5 text-sm font-semibold text-white transition hover:border-accent/45 hover:text-accent"
+            >
+              View Guide Prices <span aria-hidden>{">"}</span>
+            </Link>
+          </div>
 
           <div className="mt-8 grid gap-5 md:grid-cols-2 xl:grid-cols-4">
             {services.map((service) => (
               <Link
                 key={service.id}
-                href={`/services#${service.id}`}
+                href={homepageServiceLinks[service.id] ?? "/services/"}
                 className="group flex min-h-56 flex-col rounded-[1rem] border border-white/12 bg-white/[0.055] p-5 transition duration-300 hover:-translate-y-1 hover:border-accent/35"
               >
                 <LineIcon name={serviceAccent[service.id] ?? "screen"} />

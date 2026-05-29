@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3 Slice 16 - Automation / Custom Tools Subpage V2
+Phase 3 Slice 17 - V2 Internal Linking + Conversion Flow Review
 
 ## Current Focus
 
-Continue the hybrid Services structure by adding `/services/automation-custom-tools/` as a deeper explanation page while keeping `/services` as the overview hub.
+Review and polish the v2 preview site's internal linking, CTA flow, and page-to-page journey without adding new pages or changing runtime behaviour.
 
 ## Completed
 
@@ -283,12 +283,19 @@ Continue the hybrid Services structure by adding `/services/automation-custom-to
 - Services dropdown and mobile accordion now link Automation / Custom Tools to `/services/automation-custom-tools/`, while Guide Prices remains linked to `/services/guide-prices/` and the Slice 13C dropdown behaviour is preserved
 - This slice records the hybrid Services structure progress: `/services` overview hub, `/services/guide-prices/` full pricing, and `/services/automation-custom-tools/` deeper automation/custom tools explanation
 - Phase 3 Slice 16 stayed automation/custom-tools page, Services hub link, dropdown link, and docs only; no homepage, Work, Contact, About, Guide Prices redesign, contact form/runtime, analytics/cookie/privacy behaviour, packages, CRM, agreement pack, ops workspace, production upload, or merge-to-main changes were made
+- Phase 3 Slice 17 complete: v2 internal linking and conversion flow reviewed across the main preview routes
+- Homepage flow was tightened by sending the hero Work CTA and selected-work cards to `/work/`, adding a Guide Prices CTA to the services teaser section, and sending homepage service cards to the current Services anchors or Automation / Custom Tools subpage
+- Guide Prices now links directly into `/services/automation-custom-tools/` from the Automation and custom tools pricing group while preserving guide-pricing caveats and quote-first language
+- Work now links Concept Preview explanation through to the Services delivery process, and About now includes a natural Work link alongside Services and Contact
+- Services hub, Automation / Custom Tools, Contact, footer legal links, cookie settings access, and the Slice 13C Services dropdown pattern were preserved
+- Phase 3 Slice 17 stayed internal-linking/CTA/docs only; no new pages/routes, blog/guides, full redesigns, contact form/runtime changes, analytics/cookie/privacy behaviour changes, packages, CRM, agreement pack, ops workspace, production upload, or merge-to-main changes were made
 
 ## Files Changed In Latest Slice
 
-- `src/components/site-header.tsx`
-- `src/app/services/page.tsx`
-- `src/app/services/automation-custom-tools/page.tsx`
+- `src/app/page.tsx`
+- `src/app/work/page.tsx`
+- `src/app/about/page.tsx`
+- `src/app/services/guide-prices/page.tsx`
 - `docs/DELIVERY_STATUS.md`
 - `docs/ROADMAP.md`
 
@@ -296,7 +303,7 @@ Continue the hybrid Services structure by adding `/services/automation-custom-to
 
 Keep `redesign/site-v2-homepage` parked as the accepted future preview direction.
 
-Next useful preview slice would be browser review/polish of the hybrid Services navigation and the new Automation / Custom Tools subpage, or consideration of whether any other service detail pages are worth adding later.
+Next useful preview slice would be a manual browser acceptance pass focused on the full v2 journey and mobile nav/dropdown behaviour, or a small Services detail-page decision if Ric wants more hybrid service pages later.
 
 ## Open Decisions
 
@@ -305,7 +312,6 @@ Next useful preview slice would be browser review/polish of the hybrid Services 
 - Which proof assets Ric wants to gather first
 - Final package names if needed
 - Whether pricing should be published publicly or handled through quote bands
-- Whether Automation / Custom Tool Discovery should be a standalone page or a section under services
 
 ## Boundaries
 

@@ -641,6 +641,33 @@ Status:
 
 Implemented on `redesign/site-v2-homepage`. `/services` remains the overview hub, `/services/guide-prices/` holds full pricing, and `/services/automation-custom-tools/` now holds the deeper automation/custom tools explanation. The Services dropdown now sends Automation / Custom Tools to `/services/automation-custom-tools/`. The branch remains parked-good / preview-hold.
 
+### Completed Redesign Slice
+
+Phase 3 Slice 17 - V2 Internal Linking + Conversion Flow Review.
+
+Goal:
+
+Review and improve the internal linking, CTA flow, and page-to-page journey across the parked-good v2 preview site so visitors can move from interest to enquiry without adding pages or bloating content.
+
+Scope:
+
+- main v2 journey routes only
+- homepage CTA and selected-work link polish
+- Services hub, Guide Prices, and Automation / Custom Tools cross-links
+- Work page Concept Preview process link
+- About page Work/Services/Contact journey support
+- preserve Services dropdown/mobile accordion behaviour
+- preserve Contact form runtime and mailto/email-draft behaviour
+- preserve analytics/cookie/privacy behaviour and legal route access
+- no new pages/routes
+- no blog/guides
+- no Hostinger production upload
+- no merge to main
+
+Status:
+
+Implemented on `redesign/site-v2-homepage`. The main v2 flow now links more clearly between Homepage, Work, Services, Guide Prices, Automation / Custom Tools, About, and Contact. The Services dropdown destinations remain intact, Contact stays the enquiry endpoint, and the branch remains parked-good / preview-hold.
+
 ## Phase 0: Source Of Truth
 
 ### Goal
