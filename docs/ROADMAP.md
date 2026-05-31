@@ -18,6 +18,8 @@ The v2 redesign uses a separate branch / preview flow and should not be merged o
 
 Current status: preview / parked-good. The v2 branch is accepted as a strong future direction, but it is intentionally not the immediate production plan because the current live site launched recently and should remain stable for now.
 
+The v2 branch now includes the main future site flow: Homepage v2, Work v2, Services hub, Guide Prices, Automation / Custom Tools, About v2, Contact v2, Website Review, Services dropdown/mobile accordion navigation, internal linking/conversion flow polish, and retained hover/dropdown motion polish. Homepage direction and pricing/content direction are accepted as the future v2 direction, but full production acceptance still requires manual final QA later.
+
 The initial redesign order is:
 
 1. Homepage first.
@@ -26,6 +28,23 @@ The initial redesign order is:
 4. Contact / enquiry flow.
 
 The v2 branch should be revisited when Szymik Digital has more recent confirmed client work, more real proof/performance data, and reviewed human trust assets such as approved photos of Ric and Hannah.
+
+Main future return items are controlled by `docs/V2_FINAL_QA_AND_TRUST_ASSET_PLAN.md` and include:
+
+1. Full Website Resource + Page QA Pass across every route, generated output, and public resource.
+2. Manual full journey QA across the main v2 routes.
+3. Mobile navigation QA.
+4. Services dropdown hover/persistence QA.
+5. Website Review to Contact handoff QA.
+6. Contact form mailto/email-draft test.
+7. Cookie banner and cookie settings visual check.
+8. Ric/Hannah photo and trust asset pass.
+9. Possible Timmy light-touch decision if it fits the brand and Ric approves it.
+10. Final proof/work review with more real work, proof, and client examples where available.
+11. Final SEO/internal linking review before any production decision.
+12. Explicit final production decision before merge or Hostinger upload.
+
+Blog/guides remain parked until the main site flow is finished and the production direction is clearer.
 
 ### Concept Preview Workflow
 
@@ -838,6 +857,62 @@ Scope:
 Status:
 
 Implemented on `redesign/site-v2-homepage`. The homepage keeps its accepted static dark/green hero composition and project-preview collage, while the non-useful hero/collage animation layer has been removed. Retained motion is limited to visible hover/focus polish and the Services dropdown entrance.
+
+### Completed Redesign Slice
+
+Phase 3 Slice 20 - V2 Preview Branch Acceptance + Hold Notes.
+
+Goal:
+
+Create a clear checkpoint for the current v2 preview branch after the recent redesign, hybrid Services structure, pricing, automation/custom tools page, Website Review route, internal linking, dropdown navigation, and motion-scope trim work.
+
+Scope:
+
+- docs/status only
+- record the v2 branch as parked-good / preview-hold
+- record recent additions and the current route/content shape
+- distinguish future direction acceptance from full production acceptance
+- keep current live v1 as the stable public baseline
+- no source/UI/styling changes
+- no route changes
+- no contact/runtime changes
+- no analytics/cookie/privacy behaviour changes
+- no Hostinger production upload
+- no merge to main
+
+Status:
+
+Complete. The v2 branch is a strong future direction and remains a priority to finish, but it is not production-approved yet. Future production consideration should wait for stronger proof, newer work, reviewed human trust assets, and final QA across navigation, contact handoff, cookie/consent UI, mobile behaviour, SEO/internal linking, and static export readiness.
+
+### Completed Redesign Slice
+
+Phase 3 Slice 21 - V2 Preview Final QA + Trust Asset Planning.
+
+Goal:
+
+Create a clear final QA and trust-asset planning checkpoint for the parked v2 preview branch before any future production decision.
+
+Scope:
+
+- docs/checklist only
+- create dedicated v2 final QA and trust asset plan
+- require full website resource and page QA, not just main-page review
+- record route checklist and generated/static output checks
+- record Ric/Hannah trust asset planning
+- record possible Timmy light-touch decision
+- record proof/work review guardrails
+- keep blog/guides parked until the main site flow is fully ready
+- no source/UI/styling changes
+- no route changes
+- no asset changes
+- no runtime/contact changes
+- no analytics/cookie/privacy behaviour changes
+- no Hostinger production upload
+- no merge to main
+
+Status:
+
+Complete. `docs/V2_FINAL_QA_AND_TRUST_ASSET_PLAN.md` is now the reference checklist before any future v2 production decision. The v2 branch remains parked-good / preview-hold, with current live v1 still the stable public baseline.
 
 ## Phase 0: Source Of Truth
 

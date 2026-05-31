@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3 Slice 19D - Motion Scope Trim
+Phase 3 Slice 21 - V2 Preview Final QA + Trust Asset Planning
 
 ## Current Focus
 
-Trim the v2 motion layer after manual review showed the homepage hero drift, accent-line movement, collage float, and entrance timing were not visibly useful. Keep the reliable button/card hover polish and Services dropdown entrance polish while preserving reduced-motion support.
+Create the final QA and trust-asset planning checkpoint for the parked v2 preview branch. The branch remains preview-only until the dedicated full website resource/page QA, trust/proof decisions, and explicit merge/Hostinger approvals are complete.
 
 ## Completed
 
@@ -331,20 +331,33 @@ Trim the v2 motion layer after manual review showed the homepage hero drift, acc
 - Visible useful motion polish remains for buttons, cards, links, panels, and the Services dropdown entrance; the Slice 13C dropdown behaviour and mobile accordion pattern were preserved
 - Reduced-motion support remains in place and now focuses on disabling the remaining non-essential dropdown entrance and keeping hover movement minimal
 - Phase 3 Slice 19D stayed motion-scope cleanup only; no page redesigns, new content, new routes, dependencies, backend/runtime changes, contact form changes, analytics/cookie/privacy behaviour changes, CRM, agreement pack, ops workspace, folder restructure, production upload, or merge-to-main changes were made
+- Phase 3 Slice 20 complete: v2 preview branch acceptance and hold checkpoint recorded
+- The v2 branch has reached a strong parked-good checkpoint across Homepage v2, Work v2, Services hub, Guide Prices, Automation / Custom Tools, About v2, Contact v2, Website Review, Services dropdown/mobile accordion, internal linking, conversion flow, and retained hover/dropdown polish
+- Recent branch additions now recorded in one checkpoint: Guide Prices page, Automation / Custom Tools page, Website Review route, Services dropdown navigation, internal linking/conversion flow pass, and motion scope trim
+- Homepage direction and pricing/content direction are accepted for the future v2 direction, and many v2 pieces have been build-verified, but full production acceptance still requires manual final QA later
+- The branch remains preview-only: no merge to main, no Hostinger production upload, and current live v1 remains the stable public baseline
+- Future production decision should wait for stronger proof, more recent confirmed work, reviewed Ric/Hannah human trust assets, possible light-touch Timmy human element if approved, and final branch QA
+- Phase 3 Slice 20 was docs/status only; no source, UI, styling, routes, assets, packages, contact/enquiry runtime, analytics/cookie/privacy behaviour, CRM, agreement pack, ops workspace, folder structure, production upload, or merge-to-main changes were made
+- Phase 3 Slice 21 complete: final QA and trust-asset planning checkpoint created for the parked v2 preview branch
+- `docs/V2_FINAL_QA_AND_TRUST_ASSET_PLAN.md` now records the production-gate checklist covering every route/resource, navigation/dropdowns/mobile menus, CTAs, assets, metadata/sitemap, pricing references, contact/enquiry behaviour, cookie/analytics consent controls, legal readability, mobile/desktop layouts, accessibility, SEO/internal links, performance/build/static export checks, proof/work wording, trust assets, and public asset exposure
+- The route checklist covers `/`, `/work/`, `/services/`, `/services/guide-prices/`, `/services/automation-custom-tools/`, `/website-review/`, `/about/`, `/contact/`, `/privacy-policy/`, and `/terms/`, plus generated/static output routes
+- Trust planning now records future Ric/Hannah photos, the Ric/Hannah working model, possible light-touch Timmy human element if tasteful and approved, alt text, cropping, and v2 design fit
+- Proof/work planning now reinforces more recent confirmed client work, accurate proof/data only where permissioned, no fake testimonials, no overclaiming, and truthful Bent Burger/Country Pizza wording unless status changes
+- Blog/guides remain parked until the main website flow is fully ready and production direction is clearer
+- Phase 3 Slice 21 was docs/checklist only; no source, UI, styling, routes, assets, packages, runtime/contact/enquiry behaviour, analytics/cookie/privacy behaviour, CRM, ops, deployment, Hostinger upload, or merge-to-main changes were made
 
 ## Files Changed In Latest Slice
 
-- `src/app/globals.css`
-- `src/app/page.tsx`
-- `src/components/site-header.tsx`
 - `docs/DELIVERY_STATUS.md`
 - `docs/ROADMAP.md`
+- `docs/SZYMIK_DIGITAL_MASTER_CONTROL.md`
+- `docs/V2_FINAL_QA_AND_TRUST_ASSET_PLAN.md`
 
 ## Next Recommended Step
 
 Keep `redesign/site-v2-homepage` parked as the accepted future preview direction.
 
-Next useful preview slice would be a manual browser acceptance pass focused on the retained hover/dropdown polish, Services dropdown/accordion behaviour, reduced-motion comfort, Website Review discovery, contact handoff, and overall v2 journey before any future production decision.
+Next useful preview slice would be the first manual pass through `docs/V2_FINAL_QA_AND_TRUST_ASSET_PLAN.md`, starting with route/resource inventory, desktop/mobile navigation, Services dropdown hover behaviour, Website Review to Contact handoff, Contact form mailto/email-draft behaviour, cookie banner/settings visibility, and final SEO/internal linking review.
 
 ## Open Decisions
 

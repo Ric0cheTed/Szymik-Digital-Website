@@ -69,7 +69,13 @@ The initial redesign should be:
 
 The redesign should be built separately from the current live v1 and only merged/uploaded once reviewed and approved.
 
-Current v2 status: accepted future visual direction, parked-good / preview-hold. Do not merge the v2 branch to main and do not prepare a Hostinger production upload yet.
+Current v2 status: accepted future visual/content direction, parked-good / preview-hold. Do not merge the v2 branch to main and do not prepare a Hostinger production upload without explicit final approval.
+
+The v2 branch has a strong checkpoint across Homepage, Work, Services hub, Guide Prices, Automation / Custom Tools, About, Contact, Website Review, Services dropdown/mobile accordion, internal linking, and restrained hover/dropdown polish. Homepage direction and pricing/content direction are accepted for the future v2 path, but full production acceptance still requires final manual QA.
+
+The current live v1 site remains the public baseline until a later production decision is made.
+
+Before any future v2 production decision, use `docs/V2_FINAL_QA_AND_TRUST_ASSET_PLAN.md` as the controlling checklist for full route/resource QA, trust asset planning, proof/work review, contact flow testing, cookie/analytics visual checks, SEO/internal linking review, and explicit merge/Hostinger approval.
 
 Return to the v2 branch when there is:
 
@@ -261,19 +267,28 @@ Codex should stay inside the agreed slice and avoid broad sweeps unless Ric expl
 
 ## Recommended Next Slice
 
-### Phase 3 Slice 1 - Website V2 Redesign Branch + Homepage Concept Build
+### V2 Preview Final QA + Trust Asset Planning
 
 Goal:
 
-Start the premium website redesign separately from the current live v1 by creating/using a redesign branch and building the homepage toward the approved dark/green Szymik Digital Concept Preview direction.
+Keep finishing the v2 site as a priority while holding it from production until final approval.
 
 Scope:
 
-- homepage-first
-- use Szymik Digital branding
-- include selected work previews for Bent Burger, Country Pizza, and Libra Support Services where suitable
-- preserve existing live v1 until approved
-- no Hostinger production upload in the slice
+- manual full journey QA
+- mobile navigation QA
+- Services dropdown hover/persistence QA
+- Website Review to Contact handoff QA
+- Contact form mailto/email-draft test
+- cookie banner/settings visual check
+- full website resource and page QA using `docs/V2_FINAL_QA_AND_TRUST_ASSET_PLAN.md`
+- Ric/Hannah human trust asset review
+- possible light-touch Timmy human element if it fits and is approved
+- more recent work/proof planning
+- final SEO/internal linking review before any production decision
+- preserve existing live v1 until explicitly approved for replacement
+- no Hostinger production upload without final approval
+- no merge to main without final approval
 - no CRM integration
 - no client portal
 - no automation
