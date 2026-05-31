@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3 Slice 21 - V2 Preview Final QA + Trust Asset Planning
+Phase 3 Slice 22 - V2 Route Inventory + QA Checklist Setup
 
 ## Current Focus
 
-Create the final QA and trust-asset planning checkpoint for the parked v2 preview branch. The branch remains preview-only until the dedicated full website resource/page QA, trust/proof decisions, and explicit merge/Hostinger approvals are complete.
+Create the route-by-route manual QA checklist for the parked v2 preview branch so the future production review can be completed route by route, resource by resource, without changing source or runtime behaviour.
 
 ## Completed
 
@@ -345,19 +345,24 @@ Create the final QA and trust-asset planning checkpoint for the parked v2 previe
 - Proof/work planning now reinforces more recent confirmed client work, accurate proof/data only where permissioned, no fake testimonials, no overclaiming, and truthful Bent Burger/Country Pizza wording unless status changes
 - Blog/guides remain parked until the main website flow is fully ready and production direction is clearer
 - Phase 3 Slice 21 was docs/checklist only; no source, UI, styling, routes, assets, packages, runtime/contact/enquiry behaviour, analytics/cookie/privacy behaviour, CRM, ops, deployment, Hostinger upload, or merge-to-main changes were made
+- Phase 3 Slice 22 complete: route-by-route QA checklist created for the parked v2 preview branch
+- `docs/V2_ROUTE_QA_CHECKLIST.md` now provides a practical manual QA checklist for `/`, `/work/`, `/services/`, `/services/guide-prices/`, `/services/automation-custom-tools/`, `/website-review/`, `/about/`, `/contact/`, `/privacy-policy/`, and `/terms/`
+- The checklist also covers sitemap, footer links, Services desktop dropdown, mobile menu / Services accordion, contact enquiry flow, cookie/analytics consent controls, pricing, proof/work wording, trust asset planning, and resource/asset QA
+- `docs/V2_FINAL_QA_AND_TRUST_ASSET_PLAN.md` now links to the route checklist as the route-by-route execution checklist
+- Phase 3 Slice 22 was docs/checklist only; no source, UI, styling, routes, assets, packages, runtime/contact/enquiry behaviour, analytics/cookie/privacy behaviour, CRM, agreement pack, ops workspace, folder structure, deployment, Hostinger upload, or merge-to-main changes were made
 
 ## Files Changed In Latest Slice
 
 - `docs/DELIVERY_STATUS.md`
 - `docs/ROADMAP.md`
-- `docs/SZYMIK_DIGITAL_MASTER_CONTROL.md`
 - `docs/V2_FINAL_QA_AND_TRUST_ASSET_PLAN.md`
+- `docs/V2_ROUTE_QA_CHECKLIST.md`
 
 ## Next Recommended Step
 
 Keep `redesign/site-v2-homepage` parked as the accepted future preview direction.
 
-Next useful preview slice would be the first manual pass through `docs/V2_FINAL_QA_AND_TRUST_ASSET_PLAN.md`, starting with route/resource inventory, desktop/mobile navigation, Services dropdown hover behaviour, Website Review to Contact handoff, Contact form mailto/email-draft behaviour, cookie banner/settings visibility, and final SEO/internal linking review.
+Next useful preview slice would be the first manual pass through `docs/V2_ROUTE_QA_CHECKLIST.md`, starting with route/resource inventory, desktop/mobile navigation, Services dropdown hover behaviour, Website Review to Contact handoff, Contact form mailto/email-draft behaviour, cookie banner/settings visibility, and final SEO/internal linking review.
 
 ## Open Decisions
 

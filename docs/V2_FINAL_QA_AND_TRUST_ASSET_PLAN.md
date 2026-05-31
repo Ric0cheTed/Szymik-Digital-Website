@@ -6,6 +6,8 @@ This document controls what must be reviewed before the parked Szymik Digital v2
 
 It exists so the v2 preview can stay useful and high-priority without being rushed onto the live site. The aim is to protect the current stable v1 website while keeping a clear path back to the stronger v2 direction when proof, trust assets, and final QA are ready.
 
+Use `docs/V2_ROUTE_QA_CHECKLIST.md` as the route-by-route execution checklist for the manual browser QA pass.
+
 ## Current v2 status
 
 - The v2 branch is a strong parked-good preview branch.
@@ -19,6 +21,8 @@ It exists so the v2 preview can stay useful and high-priority without being rush
 ## Full Website Resource + Page QA Pass
 
 Before production, complete an extensive pass across every page and resource, not just the main marketing pages.
+
+The practical execution checklist for this pass lives in `docs/V2_ROUTE_QA_CHECKLIST.md`.
 
 Checklist:
 
@@ -117,4 +121,3 @@ The v2 branch must not be merged or uploaded until:
 - [ ] Final SEO/internal linking review is complete.
 - [ ] Explicit merge approval is given.
 - [ ] Explicit Hostinger upload approval is given.
-

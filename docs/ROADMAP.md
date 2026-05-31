@@ -29,10 +29,10 @@ The initial redesign order is:
 
 The v2 branch should be revisited when Szymik Digital has more recent confirmed client work, more real proof/performance data, and reviewed human trust assets such as approved photos of Ric and Hannah.
 
-Main future return items are controlled by `docs/V2_FINAL_QA_AND_TRUST_ASSET_PLAN.md` and include:
+Main future return items are controlled by `docs/V2_FINAL_QA_AND_TRUST_ASSET_PLAN.md`, with route-by-route execution tracked in `docs/V2_ROUTE_QA_CHECKLIST.md`, and include:
 
 1. Full Website Resource + Page QA Pass across every route, generated output, and public resource.
-2. Manual full journey QA across the main v2 routes.
+2. Complete route-by-route manual QA using `docs/V2_ROUTE_QA_CHECKLIST.md`.
 3. Mobile navigation QA.
 4. Services dropdown hover/persistence QA.
 5. Website Review to Contact handoff QA.
@@ -42,7 +42,8 @@ Main future return items are controlled by `docs/V2_FINAL_QA_AND_TRUST_ASSET_PLA
 9. Possible Timmy light-touch decision if it fits the brand and Ric approves it.
 10. Final proof/work review with more real work, proof, and client examples where available.
 11. Final SEO/internal linking review before any production decision.
-12. Explicit final production decision before merge or Hostinger upload.
+12. Fix any blockers in small bounded slices.
+13. Explicit final production decision before merge or Hostinger upload.
 
 Blog/guides remain parked until the main site flow is finished and the production direction is clearer.
 
@@ -913,6 +914,33 @@ Scope:
 Status:
 
 Complete. `docs/V2_FINAL_QA_AND_TRUST_ASSET_PLAN.md` is now the reference checklist before any future v2 production decision. The v2 branch remains parked-good / preview-hold, with current live v1 still the stable public baseline.
+
+### Completed Redesign Slice
+
+Phase 3 Slice 22 - V2 Route Inventory + QA Checklist Setup.
+
+Goal:
+
+Create a route-by-route QA checklist for the parked v2 preview branch so final production review can be completed properly later.
+
+Scope:
+
+- docs/checklist only
+- create route-by-route QA checklist
+- include main v2 routes, legal routes, sitemap, footer links, navigation, contact flow, cookie/analytics consent, pricing, proof/work wording, trust asset planning, and resource/asset QA
+- link the route checklist from the final QA and trust asset plan
+- no source/UI/styling changes
+- no route changes
+- no asset changes
+- no package/dependency changes
+- no contact/runtime changes
+- no analytics/cookie/privacy behaviour changes
+- no Hostinger production upload
+- no merge to main
+
+Status:
+
+Complete. `docs/V2_ROUTE_QA_CHECKLIST.md` is now the route-by-route manual QA execution checklist. Production remains blocked until this QA is completed, blockers are fixed in small bounded slices, and explicit merge/Hostinger approval is given.
 
 ## Phase 0: Source Of Truth
 
