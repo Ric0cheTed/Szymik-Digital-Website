@@ -4,6 +4,7 @@ import { type FormEvent, useState } from "react";
 import { enquiryEmail, siteSettings } from "@/lib/site";
 
 const helpOptions = [
+  "Website Review",
   "Website Refresh",
   "Starter Website",
   "Local Growth Website",

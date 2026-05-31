@@ -592,6 +592,16 @@ export default function Home() {
                   Let us build a website or digital solution that looks
                   professional and helps your business grow.
                 </p>
+                <p className="mt-3 max-w-2xl text-sm leading-7 text-white/58">
+                  Not sure what your site needs?{" "}
+                  <Link
+                    href="/website-review/"
+                    className="font-semibold text-accent transition hover:text-white"
+                  >
+                    Request a free website review
+                  </Link>
+                  .
+                </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
                 <CtaLink

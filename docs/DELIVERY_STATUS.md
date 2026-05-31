@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3 Slice 17 - V2 Internal Linking + Conversion Flow Review
+Phase 3 Slice 18B - Website Review Navigation Visibility Fix
 
 ## Current Focus
 
-Review and polish the v2 preview site's internal linking, CTA flow, and page-to-page journey without adding new pages or changing runtime behaviour.
+Make `/website-review/` discoverable from the existing Services navigation and footer without adding a new top-level header item.
 
 ## Completed
 
@@ -289,13 +289,26 @@ Review and polish the v2 preview site's internal linking, CTA flow, and page-to-
 - Work now links Concept Preview explanation through to the Services delivery process, and About now includes a natural Work link alongside Services and Contact
 - Services hub, Automation / Custom Tools, Contact, footer legal links, cookie settings access, and the Slice 13C Services dropdown pattern were preserved
 - Phase 3 Slice 17 stayed internal-linking/CTA/docs only; no new pages/routes, blog/guides, full redesigns, contact form/runtime changes, analytics/cookie/privacy behaviour changes, packages, CRM, agreement pack, ops workspace, production upload, or merge-to-main changes were made
+- Phase 3 Slice 18 complete: Website Review CTA V2 added to the parked-good v2 preview branch
+- New route added at `/website-review/` with a premium dark v2 page explaining the free website review, what it checks, who it is for, what happens next, and a CTA into the existing Contact enquiry flow
+- The page is positioned as low-pressure practical feedback, not a full audit report, guaranteed improvement promise, unlimited consultancy offer, or SEO/results guarantee
+- Homepage, Services, and Contact gained small text links to `/website-review/` only where they support the existing conversion flow without adding large new sections
+- The existing contact form email-draft behaviour was preserved; a static `Website Review` enquiry type was added so visitors can choose the review route without new backend logic
+- The shared v2 header now treats `/website-review/` as a dark v2 route so the new page remains visually consistent and readable
+- Sitemap now includes `/website-review/` and the existing Services subroutes so the current v2 preview route set is represented in the manual sitemap
+- Phase 3 Slice 18 stayed Website Review route, subtle CTAs, static form option, sitemap, and docs only; no blog/guides, full redesigns, dependencies, backend/runtime changes, analytics/cookie/privacy behaviour changes, CRM, agreement pack, ops workspace, production upload, or merge-to-main changes were made
+- Phase 3 Slice 18B complete: Website Review navigation visibility fixed
+- Website Review was added near the top of the desktop Services dropdown and mobile Services accordion, before Website Refresh, as a low-pressure "not sure yet?" route
+- The top-level Services nav item remains a real `/services/` link; the Slice 13C hover/focus, hover bridge, delayed close, Escape/outside-click close, light-on-dark dropdown, and mobile accordion behaviour were preserved
+- The Services nav trigger now also shows the green active treatment on `/website-review/` because Website Review is presented as part of the Services navigation group
+- A subtle Website Review footer link was added in the existing Pages list, and the sitemap now avoids duplicating the route because it is present through footer navigation
+- Phase 3 Slice 18B stayed navigation/footer/docs only; no new pages/routes, page redesigns, contact form/runtime changes, analytics/cookie/privacy behaviour changes, packages, CRM, agreement pack, ops workspace, production upload, or merge-to-main changes were made
 
 ## Files Changed In Latest Slice
 
-- `src/app/page.tsx`
-- `src/app/work/page.tsx`
-- `src/app/about/page.tsx`
-- `src/app/services/guide-prices/page.tsx`
+- `src/components/site-header.tsx`
+- `src/lib/site.ts`
+- `src/app/sitemap.ts`
 - `docs/DELIVERY_STATUS.md`
 - `docs/ROADMAP.md`
 
@@ -303,7 +316,7 @@ Review and polish the v2 preview site's internal linking, CTA flow, and page-to-
 
 Keep `redesign/site-v2-homepage` parked as the accepted future preview direction.
 
-Next useful preview slice would be a manual browser acceptance pass focused on the full v2 journey and mobile nav/dropdown behaviour, or a small Services detail-page decision if Ric wants more hybrid service pages later.
+Next useful preview slice would be a manual browser acceptance pass focused on the Website Review route, Services dropdown/accordion visibility, contact handoff, and overall v2 journey before any future production decision.
 
 ## Open Decisions
 

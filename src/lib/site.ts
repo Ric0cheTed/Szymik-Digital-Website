@@ -108,7 +108,12 @@ export const primaryNavigation = [
 ];
 
 export const footerNavigation = [
-  ...primaryNavigation,
+  { href: "/", label: "Home" },
+  { href: "/services", label: "Services" },
+  { href: "/website-review/", label: "Website Review" },
+  { href: "/work", label: "Work" },
+  { href: "/about", label: "About" },
+  { href: "/contact", label: "Contact" },
   { href: "/privacy-policy", label: "Privacy Policy" },
   { href: "/terms", label: "Terms" },
 ];

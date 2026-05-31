@@ -3,13 +3,22 @@ import { footerNavigation, siteSettings } from "@/lib/site";
 
 export const dynamic = "force-static";
 
+const additionalSitemapRoutes = [
+  "/services/guide-prices/",
+  "/services/automation-custom-tools/",
+];
+
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date(siteSettings.legal.lastUpdatedIso);
+  const routes = [
+    ...footerNavigation.map((item) => item.href),
+    ...additionalSitemapRoutes,
+  ];
 
-  return footerNavigation.map((item) => ({
-    url: new URL(item.href, siteSettings.siteUrl).toString(),
+  return routes.map((href) => ({
+    url: new URL(href, siteSettings.siteUrl).toString(),
     lastModified,
-    changeFrequency: item.href === "/" ? "weekly" : "monthly",
-    priority: item.href === "/" ? 1 : 0.7,
+    changeFrequency: href === "/" ? "weekly" : "monthly",
+    priority: href === "/" ? 1 : href === "/website-review/" ? 0.75 : 0.7,
   }));
 }

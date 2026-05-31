@@ -440,6 +440,16 @@ export default function ServicesPage() {
                   Start with what feels outdated, unclear, or too manual. The
                   right pathway can be shaped after the enquiry is reviewed.
                 </p>
+                <p className="mt-3 max-w-2xl text-sm leading-7 text-white/58">
+                  Have an existing site?{" "}
+                  <Link
+                    href="/website-review/"
+                    className="font-semibold text-accent transition hover:text-white"
+                  >
+                    Start with a free website review
+                  </Link>
+                  .
+                </p>
               </div>
               <div className="flex flex-col gap-3 sm:flex-row lg:flex-col">
                 <CtaLink

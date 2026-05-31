@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { CtaLink } from "@/components/cta-link";
 import { EnquiryForm } from "@/components/enquiry-form";
 import { createPageMetadata } from "@/lib/metadata";
@@ -12,7 +13,7 @@ import {
 
 const enquiryGuidance = [
   "Your business name, website link if you have one, and location or service area",
-  "The closest pathway: Website Refresh, Starter Website, Local Growth Website, Automation / Custom Tool Discovery, or Not sure yet",
+  "The closest pathway: Website Review, Website Refresh, Starter Website, Local Growth Website, Automation / Custom Tool Discovery, or Not sure yet",
   "What feels outdated, unclear, too manual, or important to improve",
   "Any rough timescale, budget range, goals, or practical constraints",
 ];
@@ -41,6 +42,7 @@ const nextSteps = [
 ];
 
 const projectTypes = [
+  "Website Review",
   "Website Refresh",
   "Starter Website",
   "Local Growth Website",
@@ -53,7 +55,7 @@ const enquiryTemplate = [
   "Business name:",
   "Email:",
   "Phone:",
-  "Enquiry type: Website Refresh / Starter Website / Local Growth Website / Automation / Custom Tool Discovery / Not sure yet",
+  "Enquiry type: Website Review / Website Refresh / Starter Website / Local Growth Website / Automation / Custom Tool Discovery / Not sure yet",
   "Current website URL, if you have one:",
   "Location or service area, if relevant:",
   "What do you want improved, fixed, clarified, or made easier?",
@@ -67,7 +69,7 @@ const enquiryTemplate = [
 export const metadata: Metadata = createPageMetadata({
   title: "Contact Szymik Digital",
   description:
-    "Send an enquiry for a website refresh, starter website, local growth website, or automation/custom tool discovery with Szymik Digital in Todmorden, West Yorkshire.",
+    "Send an enquiry for a website review, website refresh, starter website, local growth website, or automation/custom tool discovery with Szymik Digital in Todmorden, West Yorkshire.",
   path: "/contact",
 });
 
@@ -194,6 +196,16 @@ export default function ContactPage() {
                   Share enough practical context to make the first reply useful.
                   It is completely fine if the answer is still &quot;not sure
                   yet&quot;.
+                </p>
+                <p className="mt-4 text-sm leading-7 text-white/64">
+                  Already have a website? You can also{" "}
+                  <Link
+                    href="/website-review/"
+                    className="font-semibold text-accent transition hover:text-white"
+                  >
+                    ask for a website review
+                  </Link>{" "}
+                  before choosing a larger project path.
                 </p>
                 <div className="mt-5 grid gap-3">
                   {enquiryGuidance.map((item) => (

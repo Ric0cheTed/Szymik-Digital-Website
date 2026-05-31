@@ -9,6 +9,7 @@ import { CtaLink } from "@/components/cta-link";
 import { primaryNavigation, siteName, siteSettings } from "@/lib/site";
 
 const servicesNavigation = [
+  { href: "/website-review/", label: "Website Review" },
   { href: "/services/#website-refresh", label: "Website Refresh" },
   { href: "/services/#starter-website", label: "Starter Website" },
   { href: "/services/#local-growth-website", label: "Local Growth Website" },
@@ -29,6 +30,10 @@ function isCurrentPath(pathname: string, href: string) {
     return pathname === "/";
   }
 
+  if (href === "/services") {
+    return pathname.startsWith("/services") || pathname.startsWith("/website-review");
+  }
+
   return pathname.startsWith(href);
 }
 
@@ -46,7 +51,8 @@ export function SiteHeader() {
     pathname.startsWith("/work") ||
     pathname.startsWith("/services") ||
     pathname.startsWith("/about") ||
-    pathname.startsWith("/contact");
+    pathname.startsWith("/contact") ||
+    pathname.startsWith("/website-review");
   const headerShellClassName = usesV2Header
     ? "border-b border-white/10 bg-[#030504]/94 shadow-none"
     : "border border-black/6 bg-white/90 shadow-[0_24px_56px_rgba(9,18,13,0.12)]";

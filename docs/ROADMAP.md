@@ -668,6 +668,62 @@ Status:
 
 Implemented on `redesign/site-v2-homepage`. The main v2 flow now links more clearly between Homepage, Work, Services, Guide Prices, Automation / Custom Tools, About, and Contact. The Services dropdown destinations remain intact, Contact stays the enquiry endpoint, and the branch remains parked-good / preview-hold.
 
+### Completed Redesign Slice
+
+Phase 3 Slice 18 - Website Review CTA V2.
+
+Goal:
+
+Add a polished, low-pressure Website Review enquiry route to the parked-good v2 preview branch without cluttering the main pages or changing contact runtime behaviour.
+
+Scope:
+
+- new `/website-review/` route
+- premium dark v2 Website Review page
+- concise review checks, fit guidance, process, and CTA into Contact
+- subtle Homepage, Services, and Contact links only
+- safe static `Website Review` enquiry type added to the existing email-draft form
+- v2 dark header treatment applied to the new Website Review route
+- manual sitemap updated for the new route and current Services subroutes
+- no main header nav item
+- no blog/guides
+- no full page redesigns
+- no backend/contact runtime changes
+- no analytics/cookie/privacy behaviour changes
+- no Hostinger production upload
+- no merge to main
+
+Status:
+
+Implemented on `redesign/site-v2-homepage`. `/website-review/` now gives existing-site visitors a low-pressure way to request practical feedback before choosing a larger service path. The existing Contact route remains the enquiry endpoint, and the branch remains parked-good / preview-hold.
+
+### Completed Redesign Slice
+
+Phase 3 Slice 18B - Website Review Navigation Visibility Fix.
+
+Goal:
+
+Make `/website-review/` discoverable without cluttering the top-level header navigation.
+
+Scope:
+
+- Website Review added to desktop Services dropdown
+- Website Review added to mobile Services accordion
+- subtle Website Review footer link added
+- top-level header nav kept unchanged
+- Services remains a real `/services/` link
+- preserve Slice 13C dropdown behaviour
+- no new routes
+- no page redesigns
+- no contact/runtime changes
+- no analytics/cookie/privacy behaviour changes
+- no Hostinger production upload
+- no merge to main
+
+Status:
+
+Implemented on `redesign/site-v2-homepage`. Website Review is now visible through the Services navigation group and footer while staying out of the main top-level nav. The branch remains parked-good / preview-hold.
+
 ## Phase 0: Source Of Truth
 
 ### Goal
