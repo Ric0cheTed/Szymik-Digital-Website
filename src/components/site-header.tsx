@@ -268,7 +268,7 @@ export function SiteHeader() {
                           id="services-navigation-dropdown"
                           className="absolute left-1/2 top-full z-[80] w-[22rem] -translate-x-1/2 pt-3"
                         >
-                          <div className="rounded-[1.15rem] border border-white/12 bg-[#030504]/98 p-3 shadow-[0_28px_90px_rgba(0,0,0,0.34)] backdrop-blur-xl">
+                          <div className="motion-dropdown rounded-[1.15rem] border border-white/12 bg-[#030504]/98 p-3 shadow-[0_28px_90px_rgba(0,0,0,0.34)] backdrop-blur-xl">
                             <p className="px-4 pb-2 pt-1 font-mono text-[0.64rem] font-semibold uppercase tracking-[0.2em] text-accent">
                               Services
                             </p>

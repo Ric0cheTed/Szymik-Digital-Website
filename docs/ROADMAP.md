@@ -724,6 +724,121 @@ Status:
 
 Implemented on `redesign/site-v2-homepage`. Website Review is now visible through the Services navigation group and footer while staying out of the main top-level nav. The branch remains parked-good / preview-hold.
 
+### Completed Redesign Slice
+
+Phase 3 Slice 19 - V2 Subtle Motion Polish Layer.
+
+Goal:
+
+Add restrained, premium motion to the accepted v2 preview site without turning it into a flashy redesign or adding JavaScript animation dependencies.
+
+Scope:
+
+- reusable CSS motion utilities
+- reduced-motion support
+- homepage hero background/glow/text/collage motion polish
+- smoother card, panel, button, and link transitions
+- subtle Services dropdown entrance polish
+- preserve Slice 13C dropdown behaviour
+- no new routes or sections
+- no page redesigns
+- no contact/runtime changes
+- no analytics/cookie/privacy behaviour changes
+- no Hostinger production upload
+- no merge to main
+
+Status:
+
+Implemented on `redesign/site-v2-homepage`. The v2 preview branch now has a restrained CSS-first motion layer with reduced-motion protection, while remaining parked-good / preview-hold and not intended for immediate production.
+
+### Completed Redesign Slice
+
+Phase 3 Slice 19B - Visible Motion Tuning Pass.
+
+Goal:
+
+Tune the v2 motion layer so the homepage hero movement is more noticeable while still feeling premium, calm, and performance-safe.
+
+Scope:
+
+- stronger transform-based homepage hero glow/background drift
+- more visible but gentle hero project-preview collage float
+- clearer staggered homepage hero entrance
+- preserve card/button hover polish
+- preserve Services dropdown behaviour and mobile accordion behaviour
+- preserve reduced-motion support
+- no page redesigns
+- no new content/routes
+- no dependencies
+- no contact/runtime changes
+- no analytics/cookie/privacy behaviour changes
+- no Hostinger production upload
+- no merge to main
+
+Status:
+
+Implemented on `redesign/site-v2-homepage`. The branch remains parked-good / preview-hold, with the motion layer tuned to be visible enough for manual review without changing the accepted v2 layout or production guardrails.
+
+### Completed Redesign Slice
+
+Phase 3 Slice 19C - Homepage Motion Visibility Fix.
+
+Goal:
+
+Make the homepage hero motion visibly perceptible in normal browser settings while keeping the accepted v2 design restrained and reduced-motion safe.
+
+Scope:
+
+- confirm homepage motion classes are applied to visible elements
+- stronger transform-based hero glow/background drift
+- slow moving hero accent-line layer
+- more visible but still gentle project-preview collage float
+- clearer fade/settle hero entrance on page load
+- keep button/card hover polish
+- preserve Services dropdown and mobile nav behaviour
+- preserve reduced-motion support
+- no page redesigns
+- no new content/routes
+- no dependencies
+- no contact/runtime changes
+- no analytics/cookie/privacy behaviour changes
+- no Hostinger production upload
+- no merge to main
+
+Status:
+
+Implemented on `redesign/site-v2-homepage` for manual normal-motion review, but later superseded by Slice 19D because the homepage hero/collage animation still was not visibly useful in Ric's browser review. The branch remains parked-good / preview-hold.
+
+### Completed Redesign Slice
+
+Phase 3 Slice 19D - Motion Scope Trim.
+
+Goal:
+
+Trim the v2 motion layer so it keeps only visible, reliable, restrained polish instead of continuing to chase homepage hero/collage animation that manual review did not show clearly.
+
+Scope:
+
+- remove homepage hero drift animation
+- remove moving accent-line animation
+- remove hero collage float animation
+- remove hero entrance fade/settle classes
+- keep button, card, link, and panel hover polish
+- keep the Services dropdown entrance polish where it is already visible and useful
+- preserve Slice 13C dropdown behaviour and mobile accordion behaviour
+- preserve reduced-motion support
+- no page redesigns
+- no new content/routes
+- no dependencies
+- no contact/runtime changes
+- no analytics/cookie/privacy behaviour changes
+- no Hostinger production upload
+- no merge to main
+
+Status:
+
+Implemented on `redesign/site-v2-homepage`. The homepage keeps its accepted static dark/green hero composition and project-preview collage, while the non-useful hero/collage animation layer has been removed. Retained motion is limited to visible hover/focus polish and the Services dropdown entrance.
+
 ## Phase 0: Source Of Truth
 
 ### Goal

@@ -314,7 +314,7 @@ function WorkCard({ work }: { work: (typeof selectedWork)[number] }) {
     <Link
       href="/work/"
       aria-label={`View ${work.title} on the Work page`}
-      className="group block overflow-hidden rounded-[1rem] border border-white/12 bg-white/[0.055] transition duration-300 hover:-translate-y-1 hover:border-accent/35"
+      className="motion-card group block overflow-hidden rounded-[1rem] border border-white/12 bg-white/[0.055] transition duration-300 hover:-translate-y-1 hover:border-accent/35"
     >
       <div className="relative aspect-[16/9] overflow-hidden border-b border-white/10 bg-black">
         <Image
@@ -369,8 +369,8 @@ export default function Home() {
   return (
     <div className="bg-[#030504] text-white">
       <section className="relative -mt-[5.35rem] overflow-hidden border-b border-white/10 px-0 pb-10 pt-30 sm:-mt-[5.8rem] sm:pt-36 lg:pb-8 lg:pt-32">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_20%,_rgba(87,214,129,0.24),_transparent_30%),linear-gradient(135deg,_#030504_0%,_#07100b_46%,_#090d0a_100%)]" />
-        <div className="absolute inset-0 opacity-40 [background-image:linear-gradient(130deg,_transparent_0%,_transparent_46%,_rgba(87,214,129,0.32)_47%,_transparent_48%,_transparent_58%,_rgba(87,214,129,0.2)_59%,_transparent_60%)]" />
+        <div className="absolute -inset-x-12 -inset-y-14 bg-[radial-gradient(circle_at_78%_20%,_rgba(87,214,129,0.34),_transparent_34%),radial-gradient(circle_at_88%_58%,_rgba(87,214,129,0.18),_transparent_26%),linear-gradient(135deg,_#030504_0%,_#07100b_46%,_#090d0a_100%)]" />
+        <div className="absolute -inset-x-12 -inset-y-14 opacity-40 [background-image:linear-gradient(130deg,_transparent_0%,_transparent_43%,_rgba(87,214,129,0.42)_44%,_transparent_45%,_transparent_56%,_rgba(87,214,129,0.28)_57%,_transparent_58%,_transparent_70%,_rgba(87,214,129,0.18)_71%,_transparent_72%)]" />
         <div className="site-container relative">
           <div className="grid gap-10 lg:grid-cols-[minmax(0,0.78fr)_minmax(34rem,1.22fr)] lg:items-center">
             <div className="space-y-7">
@@ -419,20 +419,22 @@ export default function Home() {
             </div>
 
             <div className="relative min-h-[29rem] sm:min-h-[37rem] lg:min-h-[42rem]">
-              <div className="absolute inset-x-8 top-16 h-64 rounded-full bg-accent/20 blur-3xl" />
-              <BrowserFrame
-                work={selectedWork[1]}
-                className="absolute right-8 top-0 z-10 w-[76%] rotate-[-1deg] opacity-86"
-              />
-              <BrowserFrame
-                work={selectedWork[0]}
-                priority
-                className="absolute left-0 top-[8.3rem] z-30 w-[92%] sm:top-[9.4rem]"
-              />
-              <BrowserFrame
-                work={selectedWork[2]}
-                className="absolute bottom-0 right-0 z-40 w-[76%]"
-              />
+              <div className="absolute inset-0">
+                <div className="absolute inset-x-2 top-12 h-80 rounded-full bg-accent/34 blur-3xl" />
+                <BrowserFrame
+                  work={selectedWork[1]}
+                  className="absolute right-8 top-0 z-10 w-[76%] rotate-[-1deg] opacity-86"
+                />
+                <BrowserFrame
+                  work={selectedWork[0]}
+                  priority
+                  className="absolute left-0 top-[8.3rem] z-30 w-[92%] sm:top-[9.4rem]"
+                />
+                <BrowserFrame
+                  work={selectedWork[2]}
+                  className="absolute bottom-0 right-0 z-40 w-[76%]"
+                />
+              </div>
             </div>
           </div>
         </div>
@@ -485,7 +487,7 @@ export default function Home() {
               <Link
                 key={service.id}
                 href={homepageServiceLinks[service.id] ?? "/services/"}
-                className="group flex min-h-56 flex-col rounded-[1rem] border border-white/12 bg-white/[0.055] p-5 transition duration-300 hover:-translate-y-1 hover:border-accent/35"
+                className="motion-card group flex min-h-56 flex-col rounded-[1rem] border border-white/12 bg-white/[0.055] p-5 transition duration-300 hover:-translate-y-1 hover:border-accent/35"
               >
                 <LineIcon name={serviceAccent[service.id] ?? "screen"} />
                 <h3 className="mt-5 text-xl font-semibold text-white">

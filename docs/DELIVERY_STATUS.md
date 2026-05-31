@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3 Slice 18B - Website Review Navigation Visibility Fix
+Phase 3 Slice 19D - Motion Scope Trim
 
 ## Current Focus
 
-Make `/website-review/` discoverable from the existing Services navigation and footer without adding a new top-level header item.
+Trim the v2 motion layer after manual review showed the homepage hero drift, accent-line movement, collage float, and entrance timing were not visibly useful. Keep the reliable button/card hover polish and Services dropdown entrance polish while preserving reduced-motion support.
 
 ## Completed
 
@@ -303,12 +303,40 @@ Make `/website-review/` discoverable from the existing Services navigation and f
 - The Services nav trigger now also shows the green active treatment on `/website-review/` because Website Review is presented as part of the Services navigation group
 - A subtle Website Review footer link was added in the existing Pages list, and the sitemap now avoids duplicating the route because it is present through footer navigation
 - Phase 3 Slice 18B stayed navigation/footer/docs only; no new pages/routes, page redesigns, contact form/runtime changes, analytics/cookie/privacy behaviour changes, packages, CRM, agreement pack, ops workspace, production upload, or merge-to-main changes were made
+- Phase 3 Slice 19 complete: subtle v2 motion polish layer added to the parked-good preview branch
+- Global CSS motion utilities now cover restrained fade-up, soft green glow pulse, slow hero background drift, gentle hero collage float, dropdown entrance, and smoother card/button transitions without adding an animation library
+- Reduced-motion support now disables non-essential motion and keeps hover movement minimal for visitors who prefer reduced motion
+- Homepage hero polish adds a slow green background drift, subtle text/trust/collage fade-up, gentle project-preview collage float, and a soft glow pulse while preserving the approved hero layout and selected-work assets
+- Shared button, dark-card, panel, and link transition polish was added so v2 cards and CTAs feel smoother without becoming bouncy or distracting
+- The Services dropdown now has a subtle fade/slide entrance while preserving the Slice 13C behaviour: top-level Services remains a real `/services/` link, hover/focus opens the dropdown, the hover bridge and delayed close remain, Escape/outside-click close remains, and mobile accordion behaviour is unchanged
+- Phase 3 Slice 19 stayed motion-polish only; no page redesigns, new sections, new routes, copy rewrites, dependencies, backend/runtime changes, contact form changes, analytics/cookie/privacy behaviour changes, CRM, agreement pack, ops workspace, folder restructure, production upload, or merge-to-main changes were made
+- Phase 3 Slice 19B complete: visible motion tuning pass applied after Ric's manual review
+- Homepage hero background motion now uses a larger transform-based drift with a slightly stronger green glow field, making the movement more noticeable without flicker, fast pulsing, or layout shift
+- Hero project-preview collage float now uses a dedicated slow collage animation with about 8px vertical movement, a tiny rotate/scale shift, and transform-only motion so the browser-window previews feel gently alive without becoming bouncy
+- Homepage hero entrance is now staggered across the label, headline/body, buttons, collage, and trust points instead of moving the whole left column as one block
+- Unused generic motion-surface styling was removed, and the applied motion classes now map directly to real homepage, card, and dropdown elements
+- Button/card hover polish and the Services dropdown entrance were preserved, including the Slice 13C Services navigation behaviour and mobile accordion pattern
+- Reduced-motion support remains in place and disables hero drift, collage float, glow motion, and fade-up movement for visitors who prefer reduced motion
+- Phase 3 Slice 19B stayed motion-tuning only; no page redesigns, new content, new routes, dependencies, backend/runtime changes, contact form changes, analytics/cookie/privacy behaviour changes, CRM, agreement pack, ops workspace, folder restructure, production upload, or merge-to-main changes were made
+- Phase 3 Slice 19C complete: homepage motion visibility fixed after the hero/collage motion still felt too subtle in manual review
+- Actual homepage motion class usage was checked: hero background, hero accent lines, hero text entrance, project-preview collage, glow layer, selected-work cards, service cards, and Services dropdown now all map to real visible elements where intended
+- Homepage hero background motion now combines a stronger transform-based green glow drift with a separate slow moving diagonal accent layer, making visible hero movement easier to spot over a 5-10 second review without flashing or fast pulsing
+- Hero collage float was tuned to roughly 10px vertical movement on a calm loop with only a tiny rotate/scale shift, so the project-preview browser windows move enough to notice without becoming bouncy or hard to read
+- Hero entrance motion now uses a clearer fade/settle across the label, headline/body, buttons, collage, and trust points, while keeping content accessible immediately
+- Reduced-motion CSS is explicitly documented in the stylesheet and disables hero drift, accent-line movement, glow motion, collage float, dropdown entrance, and fade-up movement when `prefers-reduced-motion: reduce` is active
+- Phase 3 Slice 19C stayed homepage motion/CSS only; no page redesigns, new content, new routes, dependencies, backend/runtime changes, contact form changes, analytics/cookie/privacy behaviour changes, CRM, agreement pack, ops workspace, folder restructure, production upload, or merge-to-main changes were made
+- Phase 3 Slice 19D complete: motion scope trimmed after Ric's manual review found the homepage hero/collage animation still was not visibly useful
+- The homepage hero drift, moving accent-line animation, collage float, glow pulse, and hero entrance classes/keyframes were removed instead of continuing to tune subtle animation that was not adding value
+- The hero's static dark/green background, diagonal accent layer, and layered project-preview collage remain in place, so the accepted homepage layout and visual direction are unchanged
+- Visible useful motion polish remains for buttons, cards, links, panels, and the Services dropdown entrance; the Slice 13C dropdown behaviour and mobile accordion pattern were preserved
+- Reduced-motion support remains in place and now focuses on disabling the remaining non-essential dropdown entrance and keeping hover movement minimal
+- Phase 3 Slice 19D stayed motion-scope cleanup only; no page redesigns, new content, new routes, dependencies, backend/runtime changes, contact form changes, analytics/cookie/privacy behaviour changes, CRM, agreement pack, ops workspace, folder restructure, production upload, or merge-to-main changes were made
 
 ## Files Changed In Latest Slice
 
+- `src/app/globals.css`
+- `src/app/page.tsx`
 - `src/components/site-header.tsx`
-- `src/lib/site.ts`
-- `src/app/sitemap.ts`
 - `docs/DELIVERY_STATUS.md`
 - `docs/ROADMAP.md`
 
@@ -316,7 +344,7 @@ Make `/website-review/` discoverable from the existing Services navigation and f
 
 Keep `redesign/site-v2-homepage` parked as the accepted future preview direction.
 
-Next useful preview slice would be a manual browser acceptance pass focused on the Website Review route, Services dropdown/accordion visibility, contact handoff, and overall v2 journey before any future production decision.
+Next useful preview slice would be a manual browser acceptance pass focused on the retained hover/dropdown polish, Services dropdown/accordion behaviour, reduced-motion comfort, Website Review discovery, contact handoff, and overall v2 journey before any future production decision.
 
 ## Open Decisions
 
