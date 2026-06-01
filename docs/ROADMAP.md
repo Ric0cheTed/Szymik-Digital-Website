@@ -33,17 +33,18 @@ Main future return items are controlled by `docs/V2_FINAL_QA_AND_TRUST_ASSET_PLA
 
 1. Full Website Resource + Page QA Pass across every route, generated output, and public resource.
 2. Complete route-by-route manual QA using `docs/V2_ROUTE_QA_CHECKLIST.md`.
-3. Mobile navigation QA.
-4. Services dropdown hover/persistence QA.
-5. Website Review to Contact handoff QA.
-6. Contact form mailto/email-draft test.
-7. Cookie banner and cookie settings visual check.
-8. Ric/Hannah photo and trust asset pass.
-9. Possible Timmy light-touch decision if it fits the brand and Ric approves it.
-10. Final proof/work review with more real work, proof, and client examples where available.
-11. Final SEO/internal linking review before any production decision.
-12. Fix any blockers in small bounded slices.
-13. Explicit final production decision before merge or Hostinger upload.
+3. Compare the v2 implementation against the accepted all-pages prototype reference using `docs/V2_PROTOTYPE_MATCH_QA_NOTES.md`.
+4. Mobile navigation QA.
+5. Services dropdown hover/persistence QA.
+6. Website Review to Contact handoff QA.
+7. Contact form mailto/email-draft test.
+8. Cookie banner and cookie settings visual check.
+9. Ric/Hannah photo and trust asset pass.
+10. Possible Timmy light-touch decision if it fits the brand and Ric approves it.
+11. Final proof/work review with more real work, proof, and client examples where available.
+12. Final SEO/internal linking review before any production decision.
+13. Fix visual gaps and blockers in small bounded polish slices only.
+14. Explicit final production decision before merge or Hostinger upload.
 
 Blog/guides remain parked until the main site flow is finished and the production direction is clearer.
 
@@ -941,6 +942,63 @@ Scope:
 Status:
 
 Complete. `docs/V2_ROUTE_QA_CHECKLIST.md` is now the route-by-route manual QA execution checklist. Production remains blocked until this QA is completed, blockers are fixed in small bounded slices, and explicit merge/Hostinger approval is given.
+
+### Completed Redesign Slice
+
+Phase 3 Slice 22B - Prototype Match QA Notes.
+
+Goal:
+
+Create a visual QA reference for comparing the v2 implementation against the accepted homepage concept reference before any future production decision.
+
+Scope:
+
+- docs/checklist only
+- create prototype-match QA notes
+- reference the accepted homepage concept image
+- record prototype qualities to preserve
+- add visual comparison checkpoints for header, hero, collage, accents, work proof, services, trust panel, process, CTA, footer, and mobile interpretation
+- cross-link the prototype-match notes from the final QA plan and route checklist
+- no source/UI/styling changes
+- no route changes
+- no asset changes
+- no package/dependency changes
+- no contact/runtime changes
+- no analytics/cookie/privacy behaviour changes
+- no Hostinger production upload
+- no merge to main
+
+Status:
+
+Complete. `docs/V2_PROTOTYPE_MATCH_QA_NOTES.md` now records the accepted prototype quality bar and the visual comparison checklist. Future production review should compare the v2 branch against these notes and fix any visual gaps in small bounded polish slices only.
+
+### Completed Redesign Slice
+
+Phase 3 Slice 22C - All-Pages Prototype Reference QA Update.
+
+Goal:
+
+Update the v2 QA docs so the multi-page Szymik Digital prototype is treated as the visual reference for the whole v2 site, not only the homepage.
+
+Scope:
+
+- docs/checklist only
+- expand prototype-match QA notes from homepage reference to all-pages reference
+- add page-specific prototype checks for Home, Services, Work, About, Contact, and Header/Footer
+- record that Guide Prices, Automation / Custom Tools, and Website Review should inherit the same visual polish and rhythm
+- link the all-pages prototype reference into final QA and route QA notes
+- no source/UI/styling changes
+- no route changes
+- no asset changes
+- no package/dependency changes
+- no contact/runtime changes
+- no analytics/cookie/privacy behaviour changes
+- no Hostinger production upload
+- no merge to main
+
+Status:
+
+Complete. The v2 production gate now includes comparison against the all-pages prototype reference, with any visual gaps to be handled in small bounded polish slices only.
 
 ## Phase 0: Source Of Truth
 

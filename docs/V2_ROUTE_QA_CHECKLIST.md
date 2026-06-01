@@ -6,6 +6,10 @@ This checklist is used for route-by-route manual QA before any future production
 
 It turns `docs/V2_FINAL_QA_AND_TRUST_ASSET_PLAN.md` into a practical execution checklist for browser review. The v2 branch remains preview-only until this checklist is completed, blockers are fixed in small bounded slices, and Ric gives explicit merge and Hostinger upload approval.
 
+Run this alongside `docs/V2_PROTOTYPE_MATCH_QA_NOTES.md` so route QA checks both functional route quality and all-pages prototype-match visual quality.
+
+During route QA, pay special attention to Services density, Work proof layout, About trust imagery planning, Contact form layout, footer density, and header/process discoverability.
+
 ## QA status key
 
 - Not checked
@@ -20,6 +24,7 @@ Use this format for each route:
 
 - [ ] Desktop layout
 - [ ] Mobile layout
+- [ ] Prototype-match visual quality checked where relevant
 - [ ] Header state
 - [ ] Footer state
 - [ ] Primary CTA works
@@ -381,4 +386,3 @@ Use this format for each route:
 - [ ] No stale routes or old links.
 - Notes:
 - Status: Not checked
-

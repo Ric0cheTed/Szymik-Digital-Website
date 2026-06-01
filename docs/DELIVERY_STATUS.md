@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3 Slice 22 - V2 Route Inventory + QA Checklist Setup
+Phase 3 Slice 22C - All-Pages Prototype Reference QA Update
 
 ## Current Focus
 
-Create the route-by-route manual QA checklist for the parked v2 preview branch so the future production review can be completed route by route, resource by resource, without changing source or runtime behaviour.
+Expand the prototype-match QA docs so the accepted multi-page dark/green prototype is treated as the visual quality reference for the whole parked v2 preview branch, not only the homepage.
 
 ## Completed
 
@@ -350,6 +350,19 @@ Create the route-by-route manual QA checklist for the parked v2 preview branch s
 - The checklist also covers sitemap, footer links, Services desktop dropdown, mobile menu / Services accordion, contact enquiry flow, cookie/analytics consent controls, pricing, proof/work wording, trust asset planning, and resource/asset QA
 - `docs/V2_FINAL_QA_AND_TRUST_ASSET_PLAN.md` now links to the route checklist as the route-by-route execution checklist
 - Phase 3 Slice 22 was docs/checklist only; no source, UI, styling, routes, assets, packages, runtime/contact/enquiry behaviour, analytics/cookie/privacy behaviour, CRM, agreement pack, ops workspace, folder structure, deployment, Hostinger upload, or merge-to-main changes were made
+- Phase 3 Slice 22B complete: prototype-match QA notes created for the parked v2 preview branch
+- `docs/V2_PROTOTYPE_MATCH_QA_NOTES.md` now records the accepted homepage concept reference, `docs/design-references/homepage-v2-concept-reference.png`, and the core qualities to preserve from the dark/green premium local-studio prototype
+- The prototype-match checklist covers header, hero, hero collage/work showcase, static green accents and polish, Recent Projects / Work proof, Services, trust panel, process, final CTA, footer, and mobile interpretation
+- Possible visual gaps to watch are recorded, including collage scale/overlap, static green accent strength, homepage rhythm, process visibility, footer clutter, future human trust assets, and Services hub density
+- `docs/V2_FINAL_QA_AND_TRUST_ASSET_PLAN.md` and `docs/V2_ROUTE_QA_CHECKLIST.md` now cross-reference the prototype-match notes so final QA checks both functional route quality and visual quality against the accepted prototype
+- Phase 3 Slice 22B was docs/checklist only; no source, UI, styling, routes, assets, packages, runtime/contact/enquiry behaviour, analytics/cookie/privacy behaviour, CRM, agreement pack, ops workspace, folder structure, deployment, Hostinger upload, or merge-to-main changes were made
+- Phase 3 Slice 22C complete: all-pages prototype reference QA update added
+- `docs/V2_PROTOTYPE_MATCH_QA_NOTES.md` now treats the prototype as the visual reference for the whole v2 site, covering Homepage, Services, Work, About, Contact, shared header, shared footer, and the shared dark/green visual system
+- Page-specific prototype checks were added for Homepage, Services, Work, About, Contact, and Header/Footer so final QA can compare each major page family against the accepted reference without requiring pixel-perfect copying
+- The notes now record that extra real-site routes such as Guide Prices, Automation / Custom Tools, and Website Review should inherit the same polish and rhythm even where they are not direct prototype pages
+- `docs/V2_ROUTE_QA_CHECKLIST.md` now calls out Services density, Work proof layout, About trust imagery planning, Contact form layout, footer density, and header/process discoverability as prototype-match QA concerns
+- `docs/V2_FINAL_QA_AND_TRUST_ASSET_PLAN.md` now records that the all-pages prototype must be reviewed before any future production decision
+- Phase 3 Slice 22C was docs/checklist only; no source, UI, styling, routes, assets, packages, runtime/contact/enquiry behaviour, analytics/cookie/privacy behaviour, CRM, agreement pack, ops workspace, folder structure, deployment, Hostinger upload, or merge-to-main changes were made
 
 ## Files Changed In Latest Slice
 
@@ -357,12 +370,13 @@ Create the route-by-route manual QA checklist for the parked v2 preview branch s
 - `docs/ROADMAP.md`
 - `docs/V2_FINAL_QA_AND_TRUST_ASSET_PLAN.md`
 - `docs/V2_ROUTE_QA_CHECKLIST.md`
+- `docs/V2_PROTOTYPE_MATCH_QA_NOTES.md`
 
 ## Next Recommended Step
 
 Keep `redesign/site-v2-homepage` parked as the accepted future preview direction.
 
-Next useful preview slice would be the first manual pass through `docs/V2_ROUTE_QA_CHECKLIST.md`, starting with route/resource inventory, desktop/mobile navigation, Services dropdown hover behaviour, Website Review to Contact handoff, Contact form mailto/email-draft behaviour, cookie banner/settings visibility, and final SEO/internal linking review.
+Next useful preview slice would be the first manual pass through `docs/V2_ROUTE_QA_CHECKLIST.md` alongside the all-pages prototype reference in `docs/V2_PROTOTYPE_MATCH_QA_NOTES.md`, starting with route/resource inventory, desktop/mobile navigation, Services dropdown hover behaviour, Website Review to Contact handoff, Contact form mailto/email-draft behaviour, cookie banner/settings visibility, final SEO/internal linking review, and prototype-match visual comparison.
 
 ## Open Decisions
 

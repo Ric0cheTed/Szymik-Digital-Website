@@ -8,6 +8,10 @@ It exists so the v2 preview can stay useful and high-priority without being rush
 
 Use `docs/V2_ROUTE_QA_CHECKLIST.md` as the route-by-route execution checklist for the manual browser QA pass.
 
+Use `docs/V2_PROTOTYPE_MATCH_QA_NOTES.md` as the final visual/prototype-match reference for preserving the accepted all-pages v2 concept quality.
+
+The all-pages prototype must be reviewed before any future production decision so Home, Services, Work, About, Contact, the shared header, and the shared footer keep the accepted premium dark/green visual standard.
+
 ## Current v2 status
 
 - The v2 branch is a strong parked-good preview branch.
@@ -36,6 +40,7 @@ Checklist:
 - [ ] Review cookie banner, cookie settings access, and analytics consent controls.
 - [ ] Review Privacy Policy and Terms readability.
 - [ ] Review mobile and desktop layouts.
+- [ ] Review v2 implementation against `docs/V2_PROTOTYPE_MATCH_QA_NOTES.md` and the accepted all-pages prototype.
 - [ ] Review accessibility, contrast, labels, alt text, focus states, and readability.
 - [ ] Review SEO structure and internal links.
 - [ ] Run performance, build, and static export checks.
@@ -115,6 +120,7 @@ The v2 branch must not be merged or uploaded until:
 - [ ] Pricing and service wording are checked.
 - [ ] Contact flow is tested.
 - [ ] Cookie/analytics controls are visually checked.
+- [ ] Prototype-match visual QA is completed.
 - [ ] Final mobile QA is accepted.
 - [ ] Final desktop QA is accepted.
 - [ ] Static export/build checks pass.
