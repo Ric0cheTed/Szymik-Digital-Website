@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3 Slice 23 - Contact Page Prototype Polish + Contact Options
+Phase 3 Slice 24 - About Page Trust Asset Placeholder Polish
 
 ## Current Focus
 
-Polish the v2 Contact page toward the accepted all-pages prototype style while improving contact-option presentation and adding a clearly non-live WhatsApp / quick-message placeholder.
+Polish the v2 About page toward the accepted all-pages prototype style by improving the trust/team layout and adding clearly labelled placeholder panels for future Ric/Hannah trust assets.
 
 ## Completed
 
@@ -370,18 +370,25 @@ Polish the v2 Contact page toward the accepted all-pages prototype style while i
 - The existing `EnquiryForm` component was not edited, so fields, Website Review option, consent checkbox, validation, status message, and mailto/email-draft behaviour remain unchanged
 - Website Review handoff remains available through the form option, Contact support copy, and `/website-review/` link without adding a large new block
 - Phase 3 Slice 23 stayed Contact-page polish only; no new pages/routes, dependencies, backend/runtime changes, contact form behaviour changes, analytics/cookie/privacy behaviour changes, CRM, agreement pack, ops workspace, folder restructure, production upload, or merge-to-main changes were made
+- Phase 3 Slice 24 complete: About page trust asset placeholder polish applied
+- `/about` now follows the all-pages prototype direction more closely with a stronger dark hero, clearer "why Szymik Digital exists" story section, improved small-studio trust layout, and cleaner Ric/Hannah working-model cards
+- Branded dark/green placeholder panels were added for future studio/founder photography, Future Ric photo, and Future Hannah photo so the future trust-asset layout can be previewed without using fake people, stock photos, or misleading imagery
+- Placeholder copy clearly states that real approved photography should replace the panels before production if photos are used
+- Practical trust/value cards now use compact green-accent icon treatments for Concept Preview, clear process, local-business understanding, practical pathways, honest advice, and design quality
+- The Ric/Hannah working model remains professional and truthful: Ric handles build quality, technical direction, websites, systems, and implementation; Hannah supports client communication, project organisation, follow-ups, and process clarity where appropriate
+- Phase 3 Slice 24 stayed About-page polish only; no new pages/routes, dependencies, backend/runtime changes, contact form behaviour changes, analytics/cookie/privacy behaviour changes, CRM, agreement pack, ops workspace, folder restructure, production upload, or merge-to-main changes were made
 
 ## Files Changed In Latest Slice
 
 - `docs/DELIVERY_STATUS.md`
 - `docs/ROADMAP.md`
-- `src/app/contact/page.tsx`
+- `src/app/about/page.tsx`
 
 ## Next Recommended Step
 
 Keep `redesign/site-v2-homepage` parked as the accepted future preview direction.
 
-Next useful preview slice would be manual browser QA for the polished Contact page and the wider route checklist, including desktop/mobile Contact layout, Website Review handoff, mailto/email-draft behaviour, consent visibility, no-live-WhatsApp verification, and all-pages prototype visual comparison.
+Next useful preview slice would be manual browser QA for the polished About and Contact pages against the all-pages prototype, including mobile stacking, placeholder clarity, Work/Services/Contact links, no-horizontal-overflow checks, and final trust-asset planning.
 
 ## Open Decisions
 
@@ -391,6 +398,8 @@ Next useful preview slice would be manual browser QA for the polished Contact pa
 - Final package names if needed
 - Whether pricing should be published publicly or handled through quote bands
 - Confirmed WhatsApp / quick-message number and process before any public live link is added
+- Final Ric/Hannah photography choices and whether placeholder trust panels should be replaced before any production decision
+- Whether a light Timmy human touch fits the brand later; no Timmy section has been added
 
 ## Boundaries
 

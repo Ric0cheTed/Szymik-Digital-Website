@@ -13,41 +13,51 @@ const storyPoints = [
 const workingModel = [
   {
     title: "Ric",
-    role: "Build quality, technical direction, websites, and practical digital systems.",
+    role: "Build quality, technical direction, websites, systems, and implementation.",
+    placeholder: "Future Ric photo",
+    points: ["Technical direction", "Website builds", "Digital systems"],
   },
   {
     title: "Hannah",
-    role: "Client flow, communication support, enquiry triage, and keeping project conversations organised where appropriate.",
+    role: "Client communication, project organisation, follow-ups, and making the process easier to manage where appropriate.",
+    placeholder: "Future Hannah photo",
+    points: ["Client flow", "Project organisation", "Follow-ups"],
   },
 ];
 
 const differenceCards = [
   {
+    icon: "CP",
     title: "Concept Preview where useful",
     description:
       "Visual direction can be aligned before build, so the look, structure, and expectations are clearer before deeper work starts.",
   },
   {
+    icon: "CL",
     title: "Clear process",
     description:
       "Projects are shaped around enquiry, review, scope, build, feedback, and launch rather than vague promises or messy handoffs.",
   },
   {
+    icon: "LO",
     title: "Local-business understanding",
     description:
       "The work is designed for businesses that need trust, clarity, service explanation, and easy enquiry routes more than agency theatre.",
   },
   {
+    icon: "PT",
     title: "Practical pathways",
     description:
       "Website Refresh, Starter Website, Local Growth Website, and Automation / Custom Tool Discovery give visitors a simple way to start.",
   },
   {
+    icon: "HA",
     title: "Honest advice",
     description:
       "If a smaller fix, staged approach, or different route makes more sense, the recommendation should say that clearly.",
   },
   {
+    icon: "DQ",
     title: "Design that reflects quality",
     description:
       "The aim is a website that makes the business feel more credible, polished, and easier for customers to trust.",
@@ -77,14 +87,33 @@ function Eyebrow({ children }: { children: string }) {
   );
 }
 
+function TrustPlaceholder({ label }: { label: string }) {
+  return (
+    <div className="relative min-h-[13rem] overflow-hidden rounded-[1.1rem] border border-accent/18 bg-[radial-gradient(circle_at_50%_12%,_rgba(87,214,129,0.2),_transparent_34%),linear-gradient(145deg,_rgba(87,214,129,0.12),_rgba(255,255,255,0.045)_42%,_rgba(0,0,0,0.28))]">
+      <div className="absolute inset-0 opacity-35 [background-image:linear-gradient(135deg,_transparent_0%,_transparent_58%,_rgba(87,214,129,0.32)_59%,_transparent_60%)]" />
+      <div className="absolute inset-x-8 top-8 h-20 rounded-full border border-accent/20 bg-black/24 blur-sm" />
+      <div className="relative flex h-full min-h-[13rem] flex-col justify-end p-5">
+        <div className="inline-flex w-fit rounded-full border border-white/12 bg-black/34 px-3 py-1 font-mono text-[0.65rem] font-semibold uppercase tracking-[0.18em] text-white/66">
+          Placeholder
+        </div>
+        <p className="mt-3 text-lg font-semibold text-white">{label}</p>
+        <p className="mt-2 text-xs leading-5 text-white/58">
+          Real approved photography should replace this before production if
+          photos are used.
+        </p>
+      </div>
+    </div>
+  );
+}
+
 export default function AboutPage() {
   return (
     <div className="bg-[#030504] text-white">
-      <section className="relative -mt-[5.35rem] overflow-hidden border-b border-white/10 px-0 pb-14 pt-30 sm:-mt-[5.8rem] sm:pb-16 sm:pt-36 lg:pt-32">
+      <section className="relative -mt-[5.35rem] overflow-hidden border-b border-white/10 px-0 pb-12 pt-30 sm:-mt-[5.8rem] sm:pb-14 sm:pt-36 lg:pt-32">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_78%_18%,_rgba(87,214,129,0.2),_transparent_30%),linear-gradient(135deg,_#030504_0%,_#07100b_50%,_#090d0a_100%)]" />
         <div className="absolute inset-0 opacity-35 [background-image:linear-gradient(130deg,_transparent_0%,_transparent_58%,_rgba(87,214,129,0.28)_59%,_transparent_60%)]" />
         <div className="site-container relative">
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(22rem,0.72fr)] lg:items-end">
+          <div className="grid gap-8 lg:grid-cols-[minmax(0,0.9fr)_minmax(21rem,0.66fr)] lg:items-end">
             <div className="max-w-4xl">
               <span className="inline-flex rounded-full border border-accent/35 bg-accent/10 px-4 py-2 font-mono text-[0.68rem] font-semibold uppercase tracking-[0.22em] text-accent">
                 About Szymik Digital
@@ -115,7 +144,7 @@ export default function AboutPage() {
               </div>
             </div>
 
-            <aside className="rounded-[1.15rem] border border-accent/22 bg-white/[0.055] p-5 shadow-[0_28px_90px_rgba(0,0,0,0.32)]">
+            <aside className="overflow-hidden rounded-[1.15rem] border border-accent/22 bg-[radial-gradient(circle_at_20%_0%,_rgba(87,214,129,0.18),_transparent_34%),rgba(255,255,255,0.055)] p-5 shadow-[0_28px_90px_rgba(0,0,0,0.32)] sm:p-6">
               <div className="flex items-center gap-4">
                 <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-[1rem] border border-accent/20 bg-accent/10 p-3">
                   <BrandLogo
@@ -134,9 +163,13 @@ export default function AboutPage() {
                   </p>
                 </div>
               </div>
+              <div className="mt-5">
+                <TrustPlaceholder label="Future studio / founder photo" />
+              </div>
               <p className="mt-5 text-sm leading-7 text-white/70">
                 Direct, practical website and digital systems work from a small
-                studio built around clarity, care, and useful delivery.
+                studio built around clarity, care, and useful delivery. This is
+                a preview placeholder only, not final photography.
               </p>
             </aside>
           </div>
@@ -149,7 +182,7 @@ export default function AboutPage() {
             <div>
               <Eyebrow>Founder story</Eyebrow>
               <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
-                Built from practical local-business work.
+                Why Szymik Digital exists.
               </h2>
               <p className="mt-5 text-sm leading-7 text-white/68">
                 This is intentionally small-studio work: close to the client,
@@ -173,8 +206,8 @@ export default function AboutPage() {
 
       <section className="border-b border-white/10 bg-[#050806] py-10 sm:py-12">
         <div className="site-container">
-          <div className="rounded-[1.25rem] border border-accent/25 bg-[radial-gradient(circle_at_28%_0%,_rgba(87,214,129,0.15),_transparent_24%),linear-gradient(135deg,_rgba(255,255,255,0.07),_rgba(255,255,255,0.035))] p-6 sm:p-8 lg:p-10">
-            <div className="grid gap-8 lg:grid-cols-[minmax(16rem,0.7fr)_minmax(0,1.3fr)]">
+          <div className="rounded-[1.25rem] border border-accent/25 bg-[radial-gradient(circle_at_28%_0%,_rgba(87,214,129,0.15),_transparent_24%),linear-gradient(135deg,_rgba(255,255,255,0.07),_rgba(255,255,255,0.035))] p-6 shadow-[0_28px_90px_rgba(0,0,0,0.24)] sm:p-8 lg:p-10">
+            <div className="grid gap-8 lg:grid-cols-[minmax(16rem,0.62fr)_minmax(0,1.38fr)]">
               <div>
                 <Eyebrow>How the studio works</Eyebrow>
                 <h2 className="mt-3 text-3xl font-semibold text-white sm:text-4xl">
@@ -185,19 +218,35 @@ export default function AboutPage() {
                   the work while still making enquiries, feedback, and next
                   steps feel clear.
                 </p>
+                <p className="mt-4 text-sm leading-7 text-white/60">
+                  Future real photos can add more human trust here, but the
+                  page should stay professional, focused, and clearly
+                  service-led.
+                </p>
               </div>
               <div className="grid gap-4 sm:grid-cols-2">
                 {workingModel.map((item) => (
                   <article
                     key={item.title}
-                    className="rounded-[0.95rem] border border-white/12 bg-black/18 p-5"
+                    className="rounded-[1.05rem] border border-white/12 bg-black/18 p-4"
                   >
-                    <h3 className="text-xl font-semibold text-white">
+                    <TrustPlaceholder label={item.placeholder} />
+                    <h3 className="mt-5 text-xl font-semibold text-white">
                       {item.title}
                     </h3>
                     <p className="mt-3 text-sm leading-7 text-white/68">
                       {item.role}
                     </p>
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {item.points.map((point) => (
+                        <span
+                          key={point}
+                          className="rounded-full border border-accent/20 bg-accent/10 px-3 py-1 text-xs font-semibold text-accent"
+                        >
+                          {point}
+                        </span>
+                      ))}
+                    </div>
                   </article>
                 ))}
               </div>
@@ -218,7 +267,13 @@ export default function AboutPage() {
                 key={item.title}
                 className="rounded-[1.15rem] border border-white/12 bg-white/[0.055] p-5 shadow-[0_28px_90px_rgba(0,0,0,0.18)] sm:p-6"
               >
-                <h3 className="text-xl font-semibold text-white">
+                <span
+                  className="flex h-10 w-10 items-center justify-center rounded-[0.85rem] border border-accent/25 bg-accent/10 text-xs font-bold text-accent"
+                  aria-hidden
+                >
+                  {item.icon}
+                </span>
+                <h3 className="mt-5 text-xl font-semibold text-white">
                   {item.title}
                 </h3>
                 <p className="mt-4 text-sm leading-7 text-white/66">

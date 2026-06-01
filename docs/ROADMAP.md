@@ -1027,6 +1027,34 @@ Status:
 
 Implemented on `redesign/site-v2-homepage`. The Contact page now has a cleaner prototype-aligned layout with polished contact option cards, a primary form area, and compact support panels. WhatsApp / quick message remains a planned placeholder only; final production review still requires confirming public contact channels before any live quick-message link is added.
 
+### Completed Redesign Slice
+
+Phase 3 Slice 24 - About Page Trust Asset Placeholder Polish.
+
+Goal:
+
+Polish the About page toward the accepted all-pages v2 prototype style by improving the trust/team layout and adding tasteful placeholder panels for future Ric/Hannah trust assets.
+
+Scope:
+
+- About page polish only
+- stronger dark hero and clearer founder/story section
+- improved Ric/Hannah working-model layout
+- branded placeholder panels for future real photos
+- practical values/trust cards
+- clear links to Contact, Services, and Work
+- no fake photos, fake team members, testimonials, awards, or results
+- no new pages/routes
+- no dependencies
+- no backend/runtime changes
+- no analytics/cookie/privacy behaviour changes
+- no Hostinger production upload
+- no merge to main
+
+Status:
+
+Implemented on `redesign/site-v2-homepage`. The About page now previews future Ric/Hannah trust-asset placement with clearly labelled dark/green placeholders only. Final production review still requires real trust asset decisions if photos are used, and the optional Timmy/light human touch remains parked.
+
 ## Phase 0: Source Of Truth
 
 ### Goal
