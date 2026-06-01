@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3 Slice 22C - All-Pages Prototype Reference QA Update
+Phase 3 Slice 23 - Contact Page Prototype Polish + Contact Options
 
 ## Current Focus
 
-Expand the prototype-match QA docs so the accepted multi-page dark/green prototype is treated as the visual quality reference for the whole parked v2 preview branch, not only the homepage.
+Polish the v2 Contact page toward the accepted all-pages prototype style while improving contact-option presentation and adding a clearly non-live WhatsApp / quick-message placeholder.
 
 ## Completed
 
@@ -363,20 +363,25 @@ Expand the prototype-match QA docs so the accepted multi-page dark/green prototy
 - `docs/V2_ROUTE_QA_CHECKLIST.md` now calls out Services density, Work proof layout, About trust imagery planning, Contact form layout, footer density, and header/process discoverability as prototype-match QA concerns
 - `docs/V2_FINAL_QA_AND_TRUST_ASSET_PLAN.md` now records that the all-pages prototype must be reviewed before any future production decision
 - Phase 3 Slice 22C was docs/checklist only; no source, UI, styling, routes, assets, packages, runtime/contact/enquiry behaviour, analytics/cookie/privacy behaviour, CRM, agreement pack, ops workspace, folder structure, deployment, Hostinger upload, or merge-to-main changes were made
+- Phase 3 Slice 23 complete: Contact page prototype polish and contact-option presentation updated
+- `/contact` now follows the all-pages prototype structure more closely with a compact dark hero, polished contact-option column, primary enquiry form area, and secondary Start a project / next-step support panels
+- Contact options are now presented as clean icon-led cards for confirmed routes: project enquiries email, primary email, location / service area, and active public profiles where available
+- A WhatsApp / quick message option was added as a planned, non-clickable placeholder only; no `wa.me` link, live WhatsApp URL, unconfirmed number, live chat claim, or active quick-message channel was published
+- The existing `EnquiryForm` component was not edited, so fields, Website Review option, consent checkbox, validation, status message, and mailto/email-draft behaviour remain unchanged
+- Website Review handoff remains available through the form option, Contact support copy, and `/website-review/` link without adding a large new block
+- Phase 3 Slice 23 stayed Contact-page polish only; no new pages/routes, dependencies, backend/runtime changes, contact form behaviour changes, analytics/cookie/privacy behaviour changes, CRM, agreement pack, ops workspace, folder restructure, production upload, or merge-to-main changes were made
 
 ## Files Changed In Latest Slice
 
 - `docs/DELIVERY_STATUS.md`
 - `docs/ROADMAP.md`
-- `docs/V2_FINAL_QA_AND_TRUST_ASSET_PLAN.md`
-- `docs/V2_ROUTE_QA_CHECKLIST.md`
-- `docs/V2_PROTOTYPE_MATCH_QA_NOTES.md`
+- `src/app/contact/page.tsx`
 
 ## Next Recommended Step
 
 Keep `redesign/site-v2-homepage` parked as the accepted future preview direction.
 
-Next useful preview slice would be the first manual pass through `docs/V2_ROUTE_QA_CHECKLIST.md` alongside the all-pages prototype reference in `docs/V2_PROTOTYPE_MATCH_QA_NOTES.md`, starting with route/resource inventory, desktop/mobile navigation, Services dropdown hover behaviour, Website Review to Contact handoff, Contact form mailto/email-draft behaviour, cookie banner/settings visibility, final SEO/internal linking review, and prototype-match visual comparison.
+Next useful preview slice would be manual browser QA for the polished Contact page and the wider route checklist, including desktop/mobile Contact layout, Website Review handoff, mailto/email-draft behaviour, consent visibility, no-live-WhatsApp verification, and all-pages prototype visual comparison.
 
 ## Open Decisions
 
@@ -385,6 +390,7 @@ Next useful preview slice would be the first manual pass through `docs/V2_ROUTE_
 - Which proof assets Ric wants to gather first
 - Final package names if needed
 - Whether pricing should be published publicly or handled through quote bands
+- Confirmed WhatsApp / quick-message number and process before any public live link is added
 
 ## Boundaries
 

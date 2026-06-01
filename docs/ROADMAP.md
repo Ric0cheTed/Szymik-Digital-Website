@@ -43,8 +43,9 @@ Main future return items are controlled by `docs/V2_FINAL_QA_AND_TRUST_ASSET_PLA
 10. Possible Timmy light-touch decision if it fits the brand and Ric approves it.
 11. Final proof/work review with more real work, proof, and client examples where available.
 12. Final SEO/internal linking review before any production decision.
-13. Fix visual gaps and blockers in small bounded polish slices only.
-14. Explicit final production decision before merge or Hostinger upload.
+13. Confirm public contact channels before production, including whether WhatsApp / quick message should become live.
+14. Fix visual gaps and blockers in small bounded polish slices only.
+15. Explicit final production decision before merge or Hostinger upload.
 
 Blog/guides remain parked until the main site flow is finished and the production direction is clearer.
 
@@ -999,6 +1000,32 @@ Scope:
 Status:
 
 Complete. The v2 production gate now includes comparison against the all-pages prototype reference, with any visual gaps to be handled in small bounded polish slices only.
+
+### Completed Redesign Slice
+
+Phase 3 Slice 23 - Contact Page Prototype Polish + Contact Options.
+
+Goal:
+
+Polish the Contact page toward the accepted all-pages v2 prototype style, improve contact-option presentation, and add a non-live WhatsApp / quick-message placeholder without publishing a WhatsApp link.
+
+Scope:
+
+- Contact page polish only
+- prototype-style contact info, message form, and project CTA rhythm
+- confirmed contact routes shown as active links only
+- WhatsApp / quick message shown as planned but not live
+- preserve existing enquiry form fields and mailto/email-draft behaviour
+- no new pages/routes
+- no dependencies
+- no backend/runtime changes
+- no analytics/cookie/privacy behaviour changes
+- no Hostinger production upload
+- no merge to main
+
+Status:
+
+Implemented on `redesign/site-v2-homepage`. The Contact page now has a cleaner prototype-aligned layout with polished contact option cards, a primary form area, and compact support panels. WhatsApp / quick message remains a planned placeholder only; final production review still requires confirming public contact channels before any live quick-message link is added.
 
 ## Phase 0: Source Of Truth
 
