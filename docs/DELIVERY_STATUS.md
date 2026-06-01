@@ -2,11 +2,11 @@
 
 ## Current Phase
 
-Phase 3 Slice 24 - About Page Trust Asset Placeholder Polish
+Phase 3 Slice 25 - Work Page Proof Layout Polish
 
 ## Current Focus
 
-Polish the v2 About page toward the accepted all-pages prototype style by improving the trust/team layout and adding clearly labelled placeholder panels for future Ric/Hannah trust assets.
+Polish the v2 Work page toward the accepted all-pages prototype style so it feels more proof-led, image-led, scalable, and premium while keeping project labels truthful.
 
 ## Completed
 
@@ -377,18 +377,24 @@ Polish the v2 About page toward the accepted all-pages prototype style by improv
 - Practical trust/value cards now use compact green-accent icon treatments for Concept Preview, clear process, local-business understanding, practical pathways, honest advice, and design quality
 - The Ric/Hannah working model remains professional and truthful: Ric handles build quality, technical direction, websites, systems, and implementation; Hannah supports client communication, project organisation, follow-ups, and process clarity where appropriate
 - Phase 3 Slice 24 stayed About-page polish only; no new pages/routes, dependencies, backend/runtime changes, contact form behaviour changes, analytics/cookie/privacy behaviour changes, CRM, agreement pack, ops workspace, folder restructure, production upload, or merge-to-main changes were made
+- Phase 3 Slice 25 complete: Work page proof layout polished toward the all-pages prototype
+- `/work` now has a stronger proof-led hero panel, compact status/category chips, image-led project cards, clearer proof narrative, and a polished final CTA section with Start a project, View services, and View guide prices routes
+- Project cards now separate truthful group/status labels from project type labels: Bent Burger and Country Pizza remain Concept previews, while Libra Support Services is labelled as local business website work without overstated case-study or performance claims
+- The Work page now includes a short proof narrative explaining image-led proof, truthful status labelling, and room for future client work/case studies as real examples grow
+- No fake testimonials, metrics, rankings, enquiry results, sales results, client approval claims, or live status claims were added
+- Phase 3 Slice 25 stayed Work-page polish only; no new pages/routes, dependencies, backend/runtime changes, contact form behaviour changes, analytics/cookie/privacy behaviour changes, CRM, agreement pack, ops workspace, folder restructure, production upload, or merge-to-main changes were made
 
 ## Files Changed In Latest Slice
 
 - `docs/DELIVERY_STATUS.md`
 - `docs/ROADMAP.md`
-- `src/app/about/page.tsx`
+- `src/app/work/page.tsx`
 
 ## Next Recommended Step
 
 Keep `redesign/site-v2-homepage` parked as the accepted future preview direction.
 
-Next useful preview slice would be manual browser QA for the polished About and Contact pages against the all-pages prototype, including mobile stacking, placeholder clarity, Work/Services/Contact links, no-horizontal-overflow checks, and final trust-asset planning.
+Next useful preview slice would be manual browser QA across Work, About, and Contact against the all-pages prototype, including Work card image polish, truthful status labels, mobile stacking, CTA routes, no-horizontal-overflow checks, and final proof/trust asset planning.
 
 ## Open Decisions
 
@@ -400,6 +406,7 @@ Next useful preview slice would be manual browser QA for the polished About and 
 - Confirmed WhatsApp / quick-message number and process before any public live link is added
 - Final Ric/Hannah photography choices and whether placeholder trust panels should be replaced before any production decision
 - Whether a light Timmy human touch fits the brand later; no Timmy section has been added
+- Future Work examples/case studies to add only when real, permissioned, and accurately labelled
 
 ## Boundaries
 

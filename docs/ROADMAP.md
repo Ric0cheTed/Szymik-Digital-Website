@@ -1055,6 +1055,34 @@ Status:
 
 Implemented on `redesign/site-v2-homepage`. The About page now previews future Ric/Hannah trust-asset placement with clearly labelled dark/green placeholders only. Final production review still requires real trust asset decisions if photos are used, and the optional Timmy/light human touch remains parked.
 
+### Completed Redesign Slice
+
+Phase 3 Slice 25 - Work Page Proof Layout Polish.
+
+Goal:
+
+Polish the Work page toward the accepted all-pages v2 prototype style so it feels more proof-led, scalable, and premium while keeping all project labels truthful.
+
+Scope:
+
+- Work page polish only
+- stronger dark hero and proof-led introduction
+- image-led project cards
+- compact category/status labels
+- proof narrative for concept previews and real/local work
+- future scalability for more work examples later
+- no fake testimonials, fake metrics, fake results, or overclaimed live/client status
+- no new pages/routes
+- no dependencies
+- no backend/runtime changes
+- no analytics/cookie/privacy behaviour changes
+- no Hostinger production upload
+- no merge to main
+
+Status:
+
+Implemented on `redesign/site-v2-homepage`. Bent Burger and Country Pizza remain clearly labelled as concept previews, Libra Support Services remains cautiously labelled as local business website work, and future case studies/work examples should only be added when real, permissioned, and accurately described.
+
 ## Phase 0: Source Of Truth
 
 ### Goal
